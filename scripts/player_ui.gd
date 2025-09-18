@@ -7,10 +7,10 @@ var ui_enabled: bool = true
 func _ready():
 	prompt_label.visible = false
 
-func set_ui_enabled(enabled: bool) -> void:
-	ui_enabled = enabled
-	visible = enabled
-	if not enabled:
+func set_ui_enabled(disabled: bool) -> void:
+	ui_enabled = !disabled
+	visible = !disabled
+	if disabled:
 		prompt_label.visible = false
 
 # Показать подсказку

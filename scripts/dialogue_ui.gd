@@ -11,7 +11,7 @@ var _current_npc: Node = null
 var _current_buttons: Array[Button] = []
 
 signal dialogue_finished(npc)
-signal set_player_ui_enabled(enabled)
+signal is_dialogue_mode(enabled)
 
 func _ready() -> void:
 	visible = false
@@ -21,7 +21,7 @@ func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_npc = npc
 	visible = true
 	_show_node(root)
-	emit_signal("set_player_ui_enabled", false)
+	emit_signal("is_dialogue_mode", true)
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
@@ -75,4 +75,4 @@ func _on_end_pressed() -> void:
 		_current_npc.end_interaction()
 	_current_node = null
 	_current_npc = null
-	emit_signal("set_player_ui_enabled", true)
+	emit_signal("is_dialogue_mode", false)
