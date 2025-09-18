@@ -11,6 +11,7 @@ var _current_npc: Node = null
 var _current_buttons: Array[Button] = []
 
 signal dialogue_finished(npc)
+signal set_player_ui_enabled(enabled)
 
 func _ready() -> void:
 	visible = false
@@ -20,6 +21,7 @@ func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_npc = npc
 	visible = true
 	_show_node(root)
+	emit_signal("set_player_ui_enabled", false)
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
@@ -43,7 +45,7 @@ func _show_node(node: DialogueResource) -> void:
 				btn.text = "[%d] %s" % [index, choice.text]
 				btn.clip_text = true
 				btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
-				btn.pressed.connect(Callable(self, "_on_choice_selected").bind(choice))
+				btn.pressed.connect(func(): _on_choice_selected(choice))
 				choices_container.add_child(btn)
 				_current_buttons.append(btn)
 
@@ -73,3 +75,4 @@ func _on_end_pressed() -> void:
 		_current_npc.end_interaction()
 	_current_node = null
 	_current_npc = null
+	emit_signal("set_player_ui_enabled", true)

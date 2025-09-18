@@ -1,5 +1,5 @@
 # res://scripts/npc.gd
-extends Node3D
+extends StaticBody3D
 class_name NPC
 
 @export var NPC_name: String = "NPC"
@@ -7,7 +7,6 @@ class_name NPC
 
 # имя action из Input Map
 @export var interact_action: String = "interact"
-@export var prompt_text: String = "E - talk"
 
 # Узлы
 @onready var area: Area3D = $InteractionArea
@@ -15,8 +14,6 @@ class_name NPC
 
 var _player_in_range: Node = null
 
-signal player_in_range(prompt_text)
-signal hide_prompt()
 signal interaction_started(dialogue, npc)
 signal interaction_ended(dialogue, npc)
 
@@ -27,12 +24,11 @@ func _ready() -> void:
 func _on_area_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		_player_in_range = body
-		emit_signal("player_in_range", "E - talk")
+		#emit_signal("player_in_range", "E - talk")
 
 func _on_area_body_exited(body: Node) -> void:
 	if body == _player_in_range:
 		_player_in_range = null
-		emit_signal("hide_prompt")
 
 func _process(_delta: float) -> void:
 	if _player_in_range and Input.is_action_just_pressed(interact_action):
@@ -48,6 +44,7 @@ func _start_interaction() -> void:
 
 	emit_signal("hide_prompt")
 	emit_signal("interaction_started", dialogue, self)
+
 
 func end_interaction() -> void:
 	#var anim_node = model_root.find_node("AnimationPlayer", true, false)

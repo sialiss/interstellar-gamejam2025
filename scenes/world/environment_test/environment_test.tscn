@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://da0ga2fo8fkks"]
+[gd_scene load_steps=41 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="11_wxyf7"]
 [ext_resource type="PackedScene" uid="uid://dbc2nd4l67jug" path="res://assets/models/environment/Rock_3.fbx" id="12_1lye0"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
-[ext_resource type="PackedScene" uid="uid://dqmpwhsg5r52e" path="res://scenes/UI/player_ui.tscn" id="14_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
 [ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="17_ostp6"]
@@ -284,9 +283,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fjkjc")
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_owvsi")]
 
-[node name="PlayerUI" parent="." instance=ExtResource("14_3ss8m")]
-
-[node name="NPC" parent="." instance=ExtResource("16_8dmbb")]
+[node name="NPC" parent="." groups=["npc"] instance=ExtResource("16_8dmbb")]
 transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939334, 0.027662396, 0.39081055, -0.01719806, 0.9203104, -156.9545, -15.630709, -159.8055)
 NPC_name = "Test"
 dialogue = ExtResource("17_ostp6")
