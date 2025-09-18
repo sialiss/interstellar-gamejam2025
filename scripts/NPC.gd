@@ -8,7 +8,6 @@ class_name NPC
 # имя action из Input Map
 @export var interact_action: String = "interact"
 @export var prompt_text: String = "E - talk"
-@export var player_node: Node3D
 
 # Узлы
 @onready var area: Area3D = $InteractionArea

@@ -18,7 +18,6 @@ func _ready() -> void:
 func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_node = root
 	_current_npc = npc
-	print(_current_node, _current_npc)
 	visible = true
 	_show_node(root)
 
@@ -44,7 +43,7 @@ func _show_node(node: DialogueResource) -> void:
 				btn.text = "[%d] %s" % [index, choice.text]
 				btn.clip_text = true
 				btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
-				btn.pressed.connect(func(): _on_choice_selected(choice))
+				btn.pressed.connect(Callable(self, "_on_choice_selected").bind(choice))
 				choices_container.add_child(btn)
 				_current_buttons.append(btn)
 
@@ -65,10 +64,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_node = choice
-	if choice.choices.is_empty():
-		_show_node(choice)
-	else:
-		_show_node(choice)
+	_show_node(choice)
 
 func _on_end_pressed() -> void:
 	visible = false
