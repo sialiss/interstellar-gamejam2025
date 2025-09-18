@@ -149,9 +149,11 @@ func _set_mouse_capture(value: bool):
 	if value:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		do_camera_move = true
+		$RuneDrawing.set_runes_enabled(false)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		do_camera_move = false
+		$RuneDrawing.set_runes_enabled(true)
 
 func grab(item: Grabbable):
 	grabbed_item = item

@@ -1,0 +1,25 @@
+class_name RuneManager
+
+# todo: добавить сюда новые руны. Можно сделать удобнее с автозаполнением.
+static var rune_patterns: Array[RunePattern] = [
+	preload("res://runes/runes_impl/test_rune/test_rune.tres")
+]
+
+static func get_patterns() -> Array[RunePattern]:
+	return rune_patterns
+
+
+static func find_matching_rune_pattern(input_directions_array: Array[int]) -> RunePattern:
+	for rune in rune_patterns:
+		if arrays_equal(rune.directions_array, input_directions_array):
+			return rune
+	return null
+
+
+static func arrays_equal(arr1: Array[int], arr2: Array[int]) -> bool:
+	if arr1.size != arr2.size:
+		return false
+	for i in range(arr1.size()):
+		if arr1[i] != arr2[i]:
+			return false
+	return true
