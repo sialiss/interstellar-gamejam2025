@@ -1,0 +1,279 @@
+[gd_scene load_steps=36 format=3 uid="uid://da0ga2fo8fkks"]
+
+[ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
+[ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="2_ach2h"]
+[ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_d43b2"]
+[ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Sand/simple_sand.png" id="4_jkamq"]
+[ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="5_gla0e"]
+[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="6_owvsi"]
+[ext_resource type="Material" uid="uid://kigts7l2aepp" path="res://assets/materials/new_shader_material.tres" id="7_3ss8m"]
+[ext_resource type="Script" uid="uid://ck5cuh4s3y5mg" path="res://scenes/world/environment_test/fish_eye.gd" id="8_dap6o"]
+[ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="9_8dmbb"]
+[ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="10_ostp6"]
+[ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="11_wxyf7"]
+[ext_resource type="PackedScene" uid="uid://dbc2nd4l67jug" path="res://assets/models/environment/Rock_3.fbx" id="12_1lye0"]
+
+[sub_resource type="Gradient" id="Gradient_0lv6l"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i6ktq"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dhygo"]
+noise = SubResource("FastNoiseLite_i6ktq")
+color_ramp = SubResource("Gradient_0lv6l")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_8i24j"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.10000000475,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": false,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_dhygo"),
+&"projection_threshold": 0.8
+}
+world_background = 0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6u0cg"]
+name = "Rock_1"
+scene_file = ExtResource("1_jkamq")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_fjkjc"]
+name = "Plant_1"
+id = 1
+scene_file = ExtResource("2_ach2h")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_llfyq"]
+name = "Plant_2"
+id = 2
+scene_file = ExtResource("3_d43b2")
+density = 4.5433965
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Image" id="Image_jkamq"]
+data = {
+"data": PackedByteArray(255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 0, 64, 2, 36, 73, 146, 36, 255, 123, 0, 0, 80, 80, 85, 85, 255, 0, 72, 146, 36, 73, 146, 36, 255, 123, 0, 0, 84, 85, 85, 85),
+"format": "DXT5 RGBA8",
+"height": 16,
+"mipmaps": true,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_x6kr7"]
+image = SubResource("Image_jkamq")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nj0d7"]
+name = "sand"
+albedo_texture = ExtResource("4_jkamq")
+normal_texture = SubResource("ImageTexture_x6kr7")
+uv_scale = 0.07
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_seayw"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6u0cg"), SubResource("Terrain3DMeshAsset_fjkjc"), SubResource("Terrain3DMeshAsset_llfyq")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nj0d7")])
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xrhaj"]
+sky_top_color = Color(0.16470589, 0.5647059, 0.9137255, 1)
+sky_horizon_color = Color(0.69411767, 0.78431374, 0.78431374, 1)
+ground_bottom_color = Color(0.93, 0.84816, 0.7254, 1)
+ground_horizon_color = Color(0.69411767, 0.78431374, 0.78431374, 1)
+
+[sub_resource type="Sky" id="Sky_psw0a"]
+sky_material = SubResource("ProceduralSkyMaterial_xrhaj")
+
+[sub_resource type="Environment" id="Environment_iumo6"]
+background_mode = 2
+sky = SubResource("Sky_psw0a")
+tonemap_mode = 1
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_light_color = Color(0.97, 0.83662504, 0.64989996, 1)
+fog_sun_scatter = 0.15
+fog_density = 0.0025
+fog_aerial_perspective = 1.0
+adjustment_enabled = true
+adjustment_saturation = 1.4
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lysqy"]
+auto_exposure_scale = 0.8
+dof_blur_far_distance = 120.59
+dof_blur_far_transition = 209.75
+auto_exposure_max_sensitivity = 700.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7muls"]
+
+[sub_resource type="Animation" id="Animation_7muls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iumo6"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj0d7"]
+_data = {
+&"RESET": SubResource("Animation_7muls"),
+&"spin": SubResource("Animation_iumo6")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l0prp"]
+size = Vector2(50, 50)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l3fwm"]
+frequency = 0.1
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pwb0t"]
+noise = SubResource("FastNoiseLite_l3fwm")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+bump_strength = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjkjc"]
+transparency = 1
+albedo_color = Color(0.40949106, 0.7377313, 0.8784058, 0.7176471)
+metallic = 0.61
+metallic_specular = 0.43
+roughness = 0.14
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_pwb0t")
+rim_tint = 0.0
+clearcoat_enabled = true
+clearcoat = 0.32
+clearcoat_roughness = 0.2
+refraction_scale = -0.15
+stencil_flags = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://Scenes/World/environment_test/terrain_data"
+material = SubResource("Terrain3DMaterial_8i24j")
+assets = SubResource("Terrain3DAssets_seayw")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iumo6")
+camera_attributes = SubResource("CameraAttributesPractical_lysqy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 762.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.59364, -16.29766, -154.87585)
+mesh = SubResource("CapsuleMesh_7muls")
+
+[node name="house" parent="." instance=ExtResource("5_gla0e")]
+transform = Transform3D(0.65599316, 0, 0.7547668, 0, 1, 0, -0.7547668, 0, 0.65599316, -159.2766, -16.32644, -164.09947)
+
+[node name="fish" parent="." instance=ExtResource("6_owvsi")]
+transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026, -235.33492, 672.01074, 702.15295, 3000, 5000, -2000)
+rotation_order = 1
+
+[node name="Cube" parent="fish" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0)
+material_override = ExtResource("7_3ss8m")
+
+[node name="Cube_001" parent="fish" index="1"]
+material_override = ExtResource("7_3ss8m")
+
+[node name="Cube_002" parent="fish" index="2"]
+material_override = ExtResource("7_3ss8m")
+
+[node name="Cube_003" parent="fish/Empty" index="0"]
+material_override = ExtResource("7_3ss8m")
+script = ExtResource("8_dap6o")
+limit_angle = 0.5410520681182421
+
+[node name="Cube_004" parent="fish/Empty_001" index="0"]
+material_override = ExtResource("7_3ss8m")
+script = ExtResource("8_dap6o")
+limit_angle = 0.5410520681182421
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fish"]
+libraries = {
+&"": SubResource("AnimationLibrary_nj0d7")
+}
+autoplay = "spin"
+speed_scale = 0.004
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.52991927, -0.5080008, -0.67905873, 0, 0.80073136, -0.5990236, 0.8480481, 0.31743413, 0.42432296, -163.75177, -16.53141, -150.13533)
+far = 10000.0
+
+[node name="house2" parent="." instance=ExtResource("9_8dmbb")]
+transform = Transform3D(-0.9969908, 0, 0.07751945, 0, 1, 0, -0.07751945, 0, -0.9969908, -151.06221, -17.082838, -136.15335)
+
+[node name="Rock_1" parent="." instance=ExtResource("10_ostp6")]
+transform = Transform3D(0.9979459, 0.064050905, 0.001194054, -0.064062044, 0.99777246, 0.01860075, 4.6505916e-10, -0.018639036, 0.9998262, -142.43065, -17.83455, -152.00014)
+
+[node name="Rock_2" parent="." instance=ExtResource("11_wxyf7")]
+transform = Transform3D(3.013473, 0.3151944, -0.023069, -0.3160375, 3.0054343, -0.21996701, -2.8219074e-09, 0.22117338, 3.0219169, -113.73564, -19.814405, -174.77022)
+
+[node name="Rock_3" parent="." instance=ExtResource("12_1lye0")]
+transform = Transform3D(0.9830539, 0.18331656, 0, -0.18331656, 0.9830539, 0, 0, 0, 1, -7.2018104, -26.109911, -130.73122)
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.861155, -32.610664, -156.00848)
+mesh = SubResource("PlaneMesh_l0prp")
+surface_material_override/0 = SubResource("StandardMaterial3D_fjkjc")
+
+[editable path="fish"]
