@@ -23,13 +23,13 @@ func _process(_delta):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			do_camera_move = true
-	
+
 	# Респавн
 	if Input.is_action_just_pressed("restart"):
 		position = Vector3(0, 10, 0)
 		do_camera_move = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
+
 
 func _input(event):
 	if event is InputEventMouseMotion and do_camera_move:
@@ -42,11 +42,11 @@ func _physics_process(delta: float) -> void:
 	# Рассчёт скорости в падении
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	# Прыжок
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
+
 
 	# Управление движением
 	var direction: Vector3 = Vector3.ZERO # todo: сейчас не сохраняет инерцию
@@ -63,6 +63,6 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
-		
+
 	# Применение движения
 	move_and_slide()

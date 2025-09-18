@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://2la34qriog66"]
+
+[ext_resource type="PackedScene" uid="uid://b0p8b8qn0p4km" path="res://assets/Hea-Yo.glb" id="1_b8oie"]
+
+[node name="Hea-Yo" instance=ExtResource("1_b8oie")]

@@ -1,6 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://8xckckpuknb4"]
+[gd_scene load_steps=12 format=3 uid="uid://8xckckpuknb4"]
 
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="1_ifns1"]
+[ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="1_v6rby"]
+[ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="2_2j2p2"]
+[ext_resource type="PackedScene" uid="uid://dqmpwhsg5r52e" path="res://scenes/UI/player_ui.tscn" id="2_ejtda"]
+[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="4_dh6dg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ifns1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,6 +30,14 @@ data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0,
 
 [node name="Testing Scene" type="Node3D"]
 
+[node name="DialogueUI" parent="." instance=ExtResource("1_v6rby")]
+offset_left = 42.15866
+offset_top = 21.857727
+offset_right = 42.15869
+offset_bottom = 21.857727
+
+[node name="PlayerUI" parent="." instance=ExtResource("2_ejtda")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v6rby")
 
@@ -35,10 +47,11 @@ light_energy = 1.5
 shadow_enabled = true
 directional_shadow_max_distance = 33.0
 
-[node name="Player" parent="." instance=ExtResource("1_ifns1")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_ifns1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.785324, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00057029724, 0, 0)
 mesh = SubResource("PlaneMesh_dh6dg")
 surface_material_override/0 = SubResource("StandardMaterial3D_ejtda")
 
@@ -46,3 +59,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ejtda")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_srtiu")
+
+[node name="NPC" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_2j2p2")]
+transform = Transform3D(0.27313256, -0.02083692, 0.96175075, -0.021162009, 0.9993933, 0.027662398, -0.9617437, -0.027908077, 0.27252588, 0.04378295, 1.439867, -15.293161)
+NPC_name = "Test"
+dialogue = ExtResource("4_dh6dg")
+player_node = NodePath("../Player")
+
+[connection signal="hide_prompt" from="NPC" to="PlayerUI" method="hide_prompt"]
+[connection signal="interaction_started" from="NPC" to="DialogueUI" method="start_dialogue"]
+[connection signal="player_in_range" from="NPC" to="PlayerUI" method="show_prompt"]
