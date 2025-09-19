@@ -10,9 +10,7 @@ func _ready():
 	player.connect("show_prompt", Callable(player_ui, "_on_show_prompt"))
 	#player.connect("show_timer_prompt", Callable(player_ui, "_on_show_timer_prompt"))
 	player.connect("hide_prompt", Callable(player_ui, "_on_hide_prompt"))
-	npc.connect("show_timer_prompt", Callable(player_ui, "_on_show_timer_prompt"))
-	npc.connect("hide_prompt", Callable(player_ui, "_on_hide_prompt"))
-	dualogue_ui.connect("is_dialogue_mode", Callable(player_ui, "set_ui_enabled"))
+	dualogue_ui.connect("is_dialogue_mode", Callable(player_ui, "_set_ui_enabled"))
 	dualogue_ui.connect("is_dialogue_mode", Callable(player, "_on_dialogue_mode"))
 	#npc.connect("interaction_started", Callable(self, "_on_npc_interaction_started"))
 	npc.interaction_started.connect(
