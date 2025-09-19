@@ -11,6 +11,7 @@ var _current_npc: Node = null
 var _current_buttons: Array[Button] = []
 
 signal dialogue_finished(npc)
+signal is_dialogue_mode(enabled)
 
 func _ready() -> void:
 	visible = false
@@ -18,13 +19,16 @@ func _ready() -> void:
 func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_node = root
 	_current_npc = npc
-	print(_current_node, _current_npc)
 	visible = true
 	_show_node(root)
+	is_dialogue_mode.emit(true)
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
 	npc_name_label.text = _current_npc.name if node.speaker == "npc" else "You"
+
+	if node.speaker == "npc" and _current_npc.has_method("play_random_sound"):
+		_play_npc_sounds(node)
 
 	for child in choices_container.get_children():
 		child.queue_free()
@@ -59,21 +63,30 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
-		var key_number = event.keycode - KEY_1 + 1  # KEY_1 → 1, KEY_2 → 2 и т.д.
+		var key_number = event.keycode - KEY_1 + 1 # KEY_1 → 1, KEY_2 → 2 и т.д.
 		if key_number >= 1 and key_number <= _current_buttons.size():
-			_current_buttons[key_number - 1].emit_signal("pressed")
+			_current_buttons[key_number - 1].pressed.emit()
 
 func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_node = choice
-	if choice.choices.is_empty():
-		_show_node(choice)
-	else:
-		_show_node(choice)
+	_show_node(choice)
 
 func _on_end_pressed() -> void:
 	visible = false
-	emit_signal("dialogue_finished", _current_npc)
+	dialogue_finished.emit(_current_npc)
 	if _current_npc and _current_npc.has_method("end_interaction"):
 		_current_npc.end_interaction()
 	_current_node = null
 	_current_npc = null
+	is_dialogue_mode.emit(false)
+
+func _play_npc_sounds(node: DialogueResource) -> void:
+	var char_count = node.text.length()
+	var play_count = char_count
+	if char_count > 15:
+		play_count = randi_range(10, min(15, char_count))
+
+	_current_npc.jump(play_count / 8.0)
+	for i in range(play_count):
+		_current_npc.play_random_sound()
+		await get_tree().create_timer(1.0 / 8.0).timeout
