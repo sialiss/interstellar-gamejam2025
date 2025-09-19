@@ -64,7 +64,6 @@ shape = SubResource("ConcavePolygonShape3D_srtiu")
 transform = Transform3D(0.27313256, -0.02083692, 0.96175075, -0.021162009, 0.9993933, 0.027662398, -0.9617437, -0.027908077, 0.27252588, 0.04378295, 1.439867, -6.1501465)
 NPC_name = "Test"
 dialogue = ExtResource("4_dh6dg")
-player_node = NodePath("../Player")
 
 [connection signal="hide_prompt" from="NPC" to="PlayerUI" method="hide_prompt"]
 [connection signal="interaction_started" from="NPC" to="DialogueUI" method="start_dialogue"]
