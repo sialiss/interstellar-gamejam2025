@@ -23,6 +23,6 @@ func trigger_revolution():
 	current_revolution += 1
 	if current_revolution >= revolution_triggers.size() or current_revolution < 0:
 		return
-		
+
 	var revolution_trigger := revolution_triggers[current_revolution]
 	revolution_trigger.trigger()

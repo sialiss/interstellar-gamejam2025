@@ -27,8 +27,8 @@ func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
 	npc_name_label.text = str(_current_npc.name) if node.speaker == "npc" else "You"
 
-	if node.speaker == "npc" and _current_npc.has_method("play_random_sound"):
-		_play_npc_sounds(node)
+	if node.speaker == "npc" and _current_npc.has_method("start_talking"):
+		_current_npc.start_talking(node)
 
 	for child in choices_container.get_children():
 		child.queue_free()
@@ -68,25 +68,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			_current_buttons[key_number - 1].pressed.emit()
 
 func _on_choice_selected(choice: DialogueResource) -> void:
+	_current_npc.stop_talking()
 	_current_node = choice
 	_show_node(choice)
 
 func _on_end_pressed() -> void:
 	visible = false
 	dialogue_finished.emit(_current_npc)
+	_current_npc.stop_talking()
 	if _current_npc and _current_npc.has_method("end_interaction"):
 		_current_npc.end_interaction()
 	_current_node = null
 	_current_npc = null
 	is_dialogue_mode.emit(false)
-
-func _play_npc_sounds(node: DialogueResource) -> void:
-	var char_count = node.text.length()
-	var play_count = char_count
-	if char_count > 15:
-		play_count = randi_range(10, min(15, char_count))
-
-	_current_npc.jump(play_count / 8.0)
-	for i in range(play_count):
-		_current_npc.play_random_sound()
-		await get_tree().create_timer(1.0 / 8.0).timeout
