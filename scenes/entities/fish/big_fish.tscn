@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://xme6ovlyreju"]
+
+[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="1_acrr1"]
+[ext_resource type="Script" uid="uid://kkjkuo7566ao" path="res://scenes/entities/fish/big_fish.gd" id="1_p55er"]
+[ext_resource type="Script" uid="uid://ck5cuh4s3y5mg" path="res://scenes/world/environment_test/fish_eye.gd" id="2_aykk1"]
+[ext_resource type="Texture2D" uid="uid://tjr74s7mqc82" path="res://scenes/entities/fish/fish_eye_jitter_noise.tres" id="3_aykk1"]
+
+[sub_resource type="Animation" id="Animation_7muls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iumo6"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_emit_revolutioned"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj0d7"]
+_data = {
+&"RESET": SubResource("Animation_7muls"),
+&"spin": SubResource("Animation_iumo6")
+}
+
+[node name="BigFish" type="Node3D"]
+transform = Transform3D(999.9999, 0, 0, 0, 999.9998, 0, 0, 0, 999.9999, 0, 0, 0)
+script = ExtResource("1_p55er")
+
+[node name="Fish" parent="." instance=ExtResource("1_acrr1")]
+transform = Transform3D(1, 1.4901161e-08, 0, -1.4901161e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_order = 1
+
+[node name="Cube" parent="Fish" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="Cube_003" parent="Fish/Empty" index="0"]
+script = ExtResource("2_aykk1")
+limit_angle = 0.5410520681182421
+jitter_noise_texture = ExtResource("3_aykk1")
+jitter_speed = 100.0
+jitter_magnitude = 0.06
+
+[node name="Cube_004" parent="Fish/Empty_001" index="0"]
+script = ExtResource("2_aykk1")
+limit_angle = 0.5410520681182421
+jitter_noise_texture = ExtResource("3_aykk1")
+jitter_speed = 100.0
+jitter_magnitude = 0.06
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Fish")
+libraries = {
+&"": SubResource("AnimationLibrary_nj0d7")
+}
+autoplay = "spin"
+speed_scale = 0.004
+
+[editable path="Fish"]

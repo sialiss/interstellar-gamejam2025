@@ -21,11 +21,11 @@ func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_npc = npc
 	visible = true
 	_show_node(root)
-	emit_signal("is_dialogue_mode", true)
+	is_dialogue_mode.emit(true)
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
-	npc_name_label.text = _current_npc.name if node.speaker == "npc" else "You"
+	npc_name_label.text = str(_current_npc.name) if node.speaker == "npc" else "You"
 
 	if node.speaker == "npc" and _current_npc.has_method("play_random_sound"):
 		_play_npc_sounds(node)
@@ -63,9 +63,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
-		var key_number = event.keycode - KEY_1 + 1  # KEY_1 → 1, KEY_2 → 2 и т.д.
+		var key_number = event.keycode - KEY_1 + 1 # KEY_1 → 1, KEY_2 → 2 и т.д.
 		if key_number >= 1 and key_number <= _current_buttons.size():
-			_current_buttons[key_number - 1].emit_signal("pressed")
+			_current_buttons[key_number - 1].pressed.emit()
 
 func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_node = choice
@@ -73,12 +73,12 @@ func _on_choice_selected(choice: DialogueResource) -> void:
 
 func _on_end_pressed() -> void:
 	visible = false
-	emit_signal("dialogue_finished", _current_npc)
+	dialogue_finished.emit(_current_npc)
 	if _current_npc and _current_npc.has_method("end_interaction"):
 		_current_npc.end_interaction()
 	_current_node = null
 	_current_npc = null
-	emit_signal("is_dialogue_mode", false)
+	is_dialogue_mode.emit(false)
 
 func _play_npc_sounds(node: DialogueResource) -> void:
 	var char_count = node.text.length()
