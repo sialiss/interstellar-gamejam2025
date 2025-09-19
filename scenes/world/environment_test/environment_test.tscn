@@ -81,9 +81,10 @@ clearcoat_roughness = 0.2
 refraction_scale = -0.15
 stencil_flags = 2
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_3ss8m")
 revolution_triggers = Array[ExtResource("2_8dmbb")]([ExtResource("19_dap6o")])
+npcs = [NodePath("NPC")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
