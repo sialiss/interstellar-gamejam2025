@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp8ubqftqvsur"]
+[gd_scene load_steps=7 format=3 uid="uid://bp8ubqftqvsur"]
 
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://bbwxppese7bml" path="res://player/zoomer.gd" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://dqmpwhsg5r52e" path="res://scenes/UI/player_ui.tscn" id="2_rkbax"]
 
 [sub_resource type="GDScript" id="GDScript_oul6g"]
@@ -14,6 +15,14 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_oul6g")
+
+[node name="Zoomer" type="Node" parent="." node_paths=PackedStringArray("camera", "player")]
+script = ExtResource("2_g1dw6")
+camera = NodePath("../Camera3D")
+player = NodePath("..")
+zoom_fov = 40.0
+zoom_mouse_sens_multiplier = 0.533
+zoom_duration = 0.4
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.583, 0)

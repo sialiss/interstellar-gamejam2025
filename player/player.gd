@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 signal show_prompt(prompt_text)
 #signal show_timer_prompt(prompt_text)
@@ -8,6 +8,8 @@ signal hide_prompt()
 
 ## Скорость движения
 @export var speed: float = 5.0
+## Скорость бега
+@export var run_speed: float = 10.0
 ## Чувствительность мыши
 @export var mouse_sensitivity: float = 0.002
 ## Скорость прыжка
@@ -54,7 +56,7 @@ func _process(_delta: float):
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
-		return  # игрок заморожен
+		return # игрок заморожен
 	
 	# Рассчёт скорости в падении
 	if not is_on_floor():
@@ -77,8 +79,11 @@ func _physics_process(delta: float) -> void:
 	
 	# Нормализация направления и применение скорости
 	direction = direction.normalized()
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
+	var target_speed = speed
+	if Input.is_action_pressed("move_run"):
+		target_speed = run_speed
+	velocity.x = direction.x * target_speed
+	velocity.z = direction.z * target_speed
 	
 	# Применение движения
 	move_and_slide()
