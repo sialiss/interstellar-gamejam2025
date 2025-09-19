@@ -8,15 +8,10 @@ class_name NPC
 @export var sound_count: int = 64
 var sound_length: float = 1.0 / 8.0 # каждый звук по 1/8 секунды
 
-# имя action из Input Map
-@export var interact_action: String = "interact"
-
 # Узлы
-@onready var area: Area3D = $InteractionArea
 @onready var model_root: Node3D = $Model
 @onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
-var _player_in_range: Node = null
 var _can_talking: bool = false
 var _can_jumping: bool = false
 var is_jumping: bool = false
@@ -24,25 +19,7 @@ var is_jumping: bool = false
 signal interaction_started(dialogue, npc)
 signal interaction_ended(dialogue, npc)
 
-func _ready() -> void:
-	area.body_entered.connect(Callable(self, "_on_area_body_entered"))
-	area.body_exited.connect(Callable(self, "_on_area_body_exited"))
-
-func _on_area_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		_player_in_range = body
-		#emit_signal("player_in_range", "E - talk")
-
-func _on_area_body_exited(body: Node) -> void:
-	if body == _player_in_range:
-		_player_in_range = null
-
-func _process(_delta: float) -> void:
-	if (_player_in_range and Input.is_action_just_pressed(interact_action) and
-	_player_in_range.can_move and !is_jumping):
-		_start_interaction()
-
-func _start_interaction() -> void:
+func interact() -> void:
 	emit_signal("interaction_started", dialogue, self)
 
 func end_interaction() -> void:
