@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=38 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_d43b2"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Sand/simple_sand.png" id="4_jkamq"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="5_gla0e"]
-[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="6_owvsi"]
-[ext_resource type="Material" uid="uid://kigts7l2aepp" path="res://assets/materials/new_shader_material.tres" id="7_3ss8m"]
-[ext_resource type="Script" uid="uid://ck5cuh4s3y5mg" path="res://scenes/world/environment_test/fish_eye.gd" id="8_dap6o"]
+[ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="7_owvsi"]
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="9_8dmbb"]
 [ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="10_ostp6"]
 [ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="11_wxyf7"]
 [ext_resource type="PackedScene" uid="uid://dbc2nd4l67jug" path="res://assets/models/environment/Rock_3.fbx" id="12_1lye0"]
+[ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="13_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
@@ -139,43 +138,6 @@ auto_exposure_max_sensitivity = 700.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7muls"]
 
-[sub_resource type="Animation" id="Animation_7muls"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_iumo6"]
-resource_name = "spin"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.283]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj0d7"]
-_data = {
-&"RESET": SubResource("Animation_7muls"),
-&"spin": SubResource("Animation_iumo6")
-}
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_l0prp"]
 size = Vector2(50, 50)
 
@@ -232,36 +194,8 @@ mesh = SubResource("CapsuleMesh_7muls")
 [node name="house" parent="." instance=ExtResource("5_gla0e")]
 transform = Transform3D(0.65599316, 0, 0.7547668, 0, 1, 0, -0.7547668, 0, 0.65599316, -159.2766, -16.32644, -164.09947)
 
-[node name="fish" parent="." instance=ExtResource("6_owvsi")]
+[node name="BigFish" parent="." instance=ExtResource("7_owvsi")]
 transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026, -235.33492, 672.01074, 702.15295, 3000, 5000, -2000)
-rotation_order = 1
-
-[node name="Cube" parent="fish" index="0"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0)
-material_override = ExtResource("7_3ss8m")
-
-[node name="Cube_001" parent="fish" index="1"]
-material_override = ExtResource("7_3ss8m")
-
-[node name="Cube_002" parent="fish" index="2"]
-material_override = ExtResource("7_3ss8m")
-
-[node name="Cube_003" parent="fish/Empty" index="0"]
-material_override = ExtResource("7_3ss8m")
-script = ExtResource("8_dap6o")
-limit_angle = 0.5410520681182421
-
-[node name="Cube_004" parent="fish/Empty_001" index="0"]
-material_override = ExtResource("7_3ss8m")
-script = ExtResource("8_dap6o")
-limit_angle = 0.5410520681182421
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fish"]
-libraries = {
-&"": SubResource("AnimationLibrary_nj0d7")
-}
-autoplay = "spin"
-speed_scale = 0.004
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("15_dap6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.60442, -17.195755, -154.1159)
@@ -278,10 +212,25 @@ transform = Transform3D(3.013473, 0.3151944, -0.023069, -0.3160375, 3.0054343, -
 [node name="Rock_3" parent="." instance=ExtResource("12_1lye0")]
 transform = Transform3D(0.9830539, 0.18331656, 0, -0.18331656, 0.9830539, 0, 0, 0, 1, -7.2018104, -26.109911, -130.73122)
 
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Pond" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.861155, -32.610664, -156.00848)
+
+[node name="Water" type="MeshInstance3D" parent="Pond"]
 mesh = SubResource("PlaneMesh_l0prp")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_fjkjc")
+
+[node name="BabyFish" parent="Pond" instance=ExtResource("13_3ss8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2160091, -1.7129326, -3.0758667)
+
+[node name="BabyFish2" parent="Pond" instance=ExtResource("13_3ss8m")]
+transform = Transform3D(0.1760884, 0, -0.98437434, 0, 1, 0, 0.98437434, 0, 0.1760884, -6.1099567, -2.7741394, 4.016403)
+
+[node name="BabyFish3" parent="Pond" instance=ExtResource("13_3ss8m")]
+transform = Transform3D(0.050087422, 0, 0.99874485, 0, 1, 0, -0.99874485, 0, 0.050087422, 1.1757622, -2.3192024, 6.688217)
+
+[node name="BabyFish4" parent="Pond" instance=ExtResource("13_3ss8m")]
+transform = Transform3D(-0.9468123, 0, 0.3217864, 0, 1, 0, -0.3217864, 0, -0.9468123, -9.973406, -1.362236, -7.946167)
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_owvsi")]
 
@@ -290,5 +239,3 @@ transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939
 NPC_name = "Test"
 dialogue = ExtResource("17_ostp6")
 funny_sound = ExtResource("18_3ss8m")
-
-[editable path="fish"]
