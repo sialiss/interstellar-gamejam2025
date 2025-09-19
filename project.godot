@@ -15,6 +15,10 @@ run/main_scene="uid://cc7ya3ksex0y4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://scenes/music_manager.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
