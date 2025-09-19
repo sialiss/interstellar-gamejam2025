@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://desowp246qpu8"]
+
+[ext_resource type="PackedScene" uid="uid://cj7ukhgirhfk" path="res://assets/models/fish/bullet.glb" id="1_fm1pa"]
+[ext_resource type="Script" uid="uid://c1gui4t6u775r" path="res://scenes/entities/fish/bullet.gd" id="1_lbqui"]
+
+[node name="Bullet" type="Node3D"]
+script = ExtResource("1_lbqui")
+speed = 1000.0
+
+[node name="bullet" parent="." instance=ExtResource("1_fm1pa")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.9915122e-07, 0, 1.5273309)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+target_position = Vector3(0, 0, -100)
