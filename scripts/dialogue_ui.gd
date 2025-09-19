@@ -72,6 +72,9 @@ func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_node = choice
 	_show_node(choice)
 
+func stop_dialogue() -> void:
+	_on_end_pressed()
+
 func _on_end_pressed() -> void:
 	visible = false
 	dialogue_finished.emit(_current_npc)
@@ -81,3 +84,7 @@ func _on_end_pressed() -> void:
 	_current_node = null
 	_current_npc = null
 	is_dialogue_mode.emit(false)
+
+func is_current_npc(npc):
+	if npc == _current_npc: return true
+	else: return false
