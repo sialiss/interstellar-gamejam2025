@@ -6,6 +6,7 @@ signal revolutioned
 @onready var fish: Node3D = $Fish
 
 @export var kill_turn_duration := 1.0
+@export var bullet_scene: PackedScene
 
 func _ready() -> void:
 	state_manager.set_state(NormalState.new())
@@ -15,6 +16,11 @@ func _emit_revolutioned():
 
 func enter_kill_state():
 	state_manager.set_state(KillTurnState.new())
+
+func shoot_bullet():
+	var bullet: Node3D = bullet_scene.instantiate()
+	get_parent().add_child(bullet)
+	bullet.global_transform = %MuzzlePoint.global_transform
 
 
 class BigFishState extends State:
@@ -36,7 +42,7 @@ class KillTurnState extends BigFishState:
 	var current_quat: Quaternion
 	
 	func _ready():
-		host.get_node(^"AnimationPlayer").stop(true)
+		host.get_node(^"SpinAnimationPlayer").stop(true)
 		current_transform = host.fish.global_transform
 		current_quat = Quaternion(current_transform.basis.orthonormalized())
 	
@@ -56,6 +62,9 @@ class KillTurnState extends BigFishState:
 			host.state_manager.set_state(KillShootState.new())
 
 class KillShootState extends BigFishState:
+	func _ready() -> void:
+		host.get_node(^"AnimationPlayer").play("kill")
+	
 	func _process(_delta: float) -> void:
 		var player := get_player()
 		host.fish.look_at(player.global_position, Vector3.UP, true)
