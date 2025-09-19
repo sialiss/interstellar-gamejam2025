@@ -45,6 +45,13 @@ func _input(event: InputEvent):
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -1.5, 1.5)
 	
+	#TODO replace `can_move` with something else?
+	if event.is_action_pressed("interact") and can_move:
+		if ray.is_colliding():
+			var entity = ray.get_collider()
+			if entity.is_in_group("interactable") or entity.is_in_group("npc"):
+				entity.interact()
+
 	if event.is_action_pressed("grab"):
 		if ray.is_colliding():
 			var item = ray.get_collider()
