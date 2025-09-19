@@ -3,7 +3,7 @@ extends StaticBody3D
 class_name NPC
 
 @export var NPC_name: String = "NPC"
-@export var dialogue: DialogueResource
+@export var dialogues: Array[DialogueResource] = []
 @export var funny_sound: AudioStream = null
 @export var sound_count: int = 64
 var sound_length: float = 1.0 / 8.0 # каждый звук по 1/8 секунды
@@ -16,14 +16,14 @@ var _can_talking: bool = false
 var _can_jumping: bool = false
 var is_jumping: bool = false
 
-signal interaction_started(dialogue, npc)
-signal interaction_ended(dialogue, npc)
+signal interaction_started(dialogues, npc)
+signal interaction_ended(dialogues, npc)
 
 func interact() -> void:
-	emit_signal("interaction_started", dialogue, self)
+	emit_signal("interaction_started", dialogues, self)
 
 func end_interaction() -> void:
-	emit_signal("interaction_ended", dialogue, self)
+	emit_signal("interaction_ended", dialogues, self)
 
 func start_talking(node: DialogueResource) -> void:
 	var char_count = node.text.length()

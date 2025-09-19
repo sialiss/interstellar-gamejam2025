@@ -28,6 +28,8 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [resource]
 script = ExtResource("1_bmq75")
+is_repeatable = true
+dialogue_id = "greeting"
 text = "Привет! Как дела?"
 choices = Array[ExtResource("1_bmq75")]([SubResource("Resource_b3fij"), SubResource("Resource_fgi28")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

@@ -21,7 +21,7 @@ func play_music(stream: AudioStream):
 	inactive_player.volume_db = -80
 	inactive_player.play()
 
-	# плавный переход (надеюсь работает)
+	# плавный переход (надеюсь работает, проверять пока негде)
 	var tween := create_tween()
 	tween.parallel().tween_property(active_player, "volume_db", -80.0, fade_time)
 	tween.parallel().tween_property(inactive_player, "volume_db", -35.0, fade_time)

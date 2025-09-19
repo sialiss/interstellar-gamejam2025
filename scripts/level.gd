@@ -20,7 +20,7 @@ func _ready():
 	#dualogue_ui.is_dialogue_mode.connect(self._switch_dialogue_mode)
 	#npc.interaction_started.connect(self._on_npc_interaction_started)
 	for npc in npcs:
-		npc.interaction_started.connect(dualogue_ui.start_dialogue)
+		npc.interaction_started.connect(dualogue_ui.choose_npc_dialogue)
 
 func trigger_revolution():
 	current_revolution += 1

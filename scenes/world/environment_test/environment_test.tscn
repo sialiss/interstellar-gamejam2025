@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=35 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="13_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/dialogue_resource.gd" id="16_1lye0"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
 [ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="17_ostp6"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="18_3ss8m"]
@@ -84,6 +85,12 @@ clearcoat = 0.32
 clearcoat_roughness = 0.2
 refraction_scale = -0.15
 stencil_flags = 2
+
+[sub_resource type="Resource" id="Resource_1lye0"]
+script = ExtResource("16_1lye0")
+dialogue_id = "story1"
+text = "Давно не виделись, хочешь начать сюжет?"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wxyf7"]
 radius = 300.0
@@ -162,7 +169,7 @@ transform = Transform3D(-0.9468123, 0, 0.3217864, 0, 1, 0, -0.3217864, 0, -0.946
 [node name="NPC" parent="." groups=["npc"] instance=ExtResource("16_8dmbb")]
 transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939334, 0.027662396, 0.39081055, -0.01719806, 0.9203104, -156.9545, -15.630709, -159.8055)
 NPC_name = "Test"
-dialogue = ExtResource("17_ostp6")
+dialogues = Array[ExtResource("16_1lye0")]([ExtResource("17_ostp6"), SubResource("Resource_1lye0")])
 funny_sound = ExtResource("18_3ss8m")
 
 [node name="BecomeFish" type="Node" parent="NPC"]
