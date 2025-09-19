@@ -72,14 +72,14 @@ script = ExtResource("2_aykk1")
 limit_angle = 0.5410520681182421
 jitter_noise_texture = ExtResource("3_aykk1")
 jitter_speed = 100.0
-jitter_magnitude = 0.1
+jitter_magnitude = 0.06
 
 [node name="Cube_004" parent="Fish/Empty_001" index="0"]
 script = ExtResource("2_aykk1")
 limit_angle = 0.5410520681182421
 jitter_noise_texture = ExtResource("3_aykk1")
 jitter_speed = 100.0
-jitter_magnitude = 0.1
+jitter_magnitude = 0.06
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Fish")
