@@ -1,11 +1,9 @@
 [gd_scene load_steps=45 format=3 uid="uid://bilxshjre5gg6"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
-[ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
-[ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="2_ach2h"]
-[ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_d43b2"]
-[ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Sand/simple_sand.png" id="4_jkamq"]
+[ext_resource type="Terrain3DMaterial" uid="uid://ttuk6cv3bn48" path="res://scenes/world/environment_test/environment_test_terrain3d_material.tres" id="4_3ss8m"]
+[ext_resource type="Terrain3DAssets" uid="uid://by6kwp20vgrmo" path="res://scenes/world/environment_test/environment_test_terrain3d_assets.tres" id="5_dap6o"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="5_gla0e"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="7_owvsi"]
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="9_8dmbb"]
@@ -184,8 +182,8 @@ npcs = [NodePath("NPC")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
-material = SubResource("Terrain3DMaterial_8i24j")
-assets = SubResource("Terrain3DAssets_seayw")
+material = ExtResource("4_3ss8m")
+assets = ExtResource("5_dap6o")
 top_level = true
 metadata/_edit_lock_ = true
 
