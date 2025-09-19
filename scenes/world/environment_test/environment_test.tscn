@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=41 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
 [ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="2_ach2h"]
 [ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_d43b2"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Sand/simple_sand.png" id="4_jkamq"]
@@ -17,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
 [ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="17_ostp6"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="18_3ss8m"]
+[ext_resource type="Script" uid="uid://ck21km2sgfifg" path="res://scripts/fish_transform/become_fish.gd" id="18_dap6o"]
+[ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/revolution_trigger_1.tres" id="19_dap6o"]
 
 [sub_resource type="Gradient" id="Gradient_0lv6l"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -84,7 +87,7 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
-[sub_resource type="Image" id="Image_3ss8m"]
+[sub_resource type="Image" id="Image_owvsi"]
 data = {
 "data": PackedByteArray(255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 0, 64, 2, 36, 73, 146, 36, 255, 123, 0, 0, 80, 80, 85, 85, 255, 0, 72, 146, 36, 73, 146, 36, 255, 123, 0, 0, 84, 85, 85, 85),
 "format": "DXT5 RGBA8",
@@ -94,7 +97,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_x6kr7"]
-image = SubResource("Image_3ss8m")
+image = SubResource("Image_owvsi")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nj0d7"]
 name = "sand"
@@ -170,6 +173,7 @@ stencil_flags = 2
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_3ss8m")
+revolution_triggers = Array[ExtResource("2_8dmbb")]([ExtResource("19_dap6o")])
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
@@ -239,3 +243,10 @@ transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939
 NPC_name = "Test"
 dialogue = ExtResource("17_ostp6")
 funny_sound = ExtResource("18_3ss8m")
+
+[node name="BecomeFish" type="Node" parent="NPC"]
+script = ExtResource("18_dap6o")
+revolution_trigger = ExtResource("19_dap6o")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
