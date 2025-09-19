@@ -1,0 +1,52 @@
+[gd_resource type="Terrain3DAssets" load_steps=11 format=3 uid="uid://by6kwp20vgrmo"]
+
+[ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_bvii1"]
+[ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="2_j1xct"]
+[ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_mnure"]
+[ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Sand/simple_sand.png" id="4_vteru"]
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6u0cg"]
+name = "Rock_1"
+scene_file = ExtResource("1_bvii1")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_fjkjc"]
+name = "Plant_1"
+id = 1
+scene_file = ExtResource("2_j1xct")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_llfyq"]
+name = "Plant_2"
+id = 2
+scene_file = ExtResource("3_mnure")
+density = 4.5433965
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Image" id="Image_ed23v"]
+data = {
+"data": PackedByteArray(255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 255, 73, 146, 36, 73, 146, 36, 95, 132, 95, 115, 170, 170, 170, 170, 255, 0, 64, 2, 36, 73, 146, 36, 255, 123, 0, 0, 80, 80, 85, 85, 255, 0, 72, 146, 36, 73, 146, 36, 255, 123, 0, 0, 84, 85, 85, 85),
+"format": "DXT5 RGBA8",
+"height": 16,
+"mipmaps": true,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_x6kr7"]
+image = SubResource("Image_ed23v")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nj0d7"]
+name = "sand"
+albedo_texture = ExtResource("4_vteru")
+normal_texture = SubResource("ImageTexture_x6kr7")
+uv_scale = 0.07
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6u0cg"), SubResource("Terrain3DMeshAsset_fjkjc"), SubResource("Terrain3DMeshAsset_llfyq")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nj0d7")])

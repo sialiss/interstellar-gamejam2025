@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://xme6ovlyreju"]
+[gd_scene load_steps=9 format=3 uid="uid://xme6ovlyreju"]
 
 [ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="1_acrr1"]
 [ext_resource type="Script" uid="uid://kkjkuo7566ao" path="res://scenes/entities/fish/big_fish.gd" id="1_p55er"]
 [ext_resource type="Script" uid="uid://ck5cuh4s3y5mg" path="res://scenes/world/environment_test/fish_eye.gd" id="2_aykk1"]
+[ext_resource type="Script" uid="uid://dxhjy8wd5ad5c" path="res://scripts/states/state_manager.gd" id="2_qn52e"]
 [ext_resource type="Texture2D" uid="uid://tjr74s7mqc82" path="res://scenes/entities/fish/fish_eye_jitter_noise.tres" id="3_aykk1"]
 
 [sub_resource type="Animation" id="Animation_7muls"]
@@ -59,10 +60,14 @@ _data = {
 [node name="BigFish" type="Node3D"]
 transform = Transform3D(999.9999, 0, 0, 0, 999.9998, 0, 0, 0, 999.9999, 0, 0, 0)
 script = ExtResource("1_p55er")
+kill_turn_duration = 10.0
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("2_qn52e")
+metadata/_custom_type_script = "uid://dxhjy8wd5ad5c"
 
 [node name="Fish" parent="." instance=ExtResource("1_acrr1")]
-transform = Transform3D(1, 1.4901161e-08, 0, -1.4901161e-08, 1, 0, 0, 0, 1, 0, 0, 0)
-rotation_order = 1
+transform = Transform3D(0.99999994, -1.4901163e-08, 0, 1.4901161e-08, 1, -1.3027009e-15, 1.9411757e-23, 1.302701e-15, 0.99999994, 0, 0, 0)
 
 [node name="Cube" parent="Fish" index="0"]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0)
