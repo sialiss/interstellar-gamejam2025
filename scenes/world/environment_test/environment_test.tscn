@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=33 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
@@ -173,6 +173,7 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 [node name="MusicManager" parent="." instance=ExtResource("21_ostp6")]
 
 [node name="DesertArea" type="Area3D" parent="."]
+collision_mask = 2
 script = ExtResource("22_wxyf7")
 music = ExtResource("23_1lye0")
 

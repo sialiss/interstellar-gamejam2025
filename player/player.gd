@@ -33,18 +33,18 @@ func _input(event: InputEvent):
 	# Захват мышки (как в арксе)
 	if Input.is_action_just_pressed("ui_cancel"):
 		_toggle_mouse_capture()
-	
+
 	# Респавн
 	if Input.is_action_just_pressed("restart"):
 		position = Vector3(0, 10, 0)
 		_set_mouse_capture(true)
-	
+
 	if event is InputEventMouseMotion and do_camera_move:
 		# Вращение камеры по вертикали
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -1.5, 1.5)
-	
+
 	#TODO replace `can_move` with something else?
 	if event.is_action_pressed("interact") and can_move:
 		if ray.is_colliding():
@@ -57,14 +57,14 @@ func _input(event: InputEvent):
 			var item = ray.get_collider()
 			if item is Grabbable:
 				grab(item)
-	
+
 	if event.is_action_released("grab"):
 		ungrab()
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		return # игрок заморожен
-	
+
 	# Подсказка при наведении на объект
 	if ray.is_colliding():
 		var obj = ray.get_collider()
@@ -76,15 +76,15 @@ func _physics_process(delta: float) -> void:
 			hide_prompt.emit()
 	else:
 		hide_prompt.emit()
-	
+
 	# Рассчёт скорости в падении
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	# Прыжок
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
+
 	# Управление движением
 	var direction: Vector3 = Vector3.ZERO # todo: сейчас не сохраняет инерцию
 	if Input.is_action_pressed("move_forward"):
@@ -95,7 +95,7 @@ func _physics_process(delta: float) -> void:
 		direction -= transform.basis.x
 	if Input.is_action_pressed("move_right"):
 		direction += transform.basis.x
-	
+
 	# Нормализация направления и применение скорости
 	direction = direction.normalized()
 	var target_speed = speed
@@ -103,14 +103,14 @@ func _physics_process(delta: float) -> void:
 		target_speed = run_speed
 	velocity.x = direction.x * target_speed
 	velocity.z = direction.z * target_speed
-	
+
 	# Толкание предметов
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider is not RigidBody3D:
 			continue
-		
+
 		var push_direction := -collision.get_normal()
 		var velocity_diff_in_direction = velocity.dot(push_direction) - collider.linear_velocity.dot(push_direction)
 		velocity_diff_in_direction = max(0.0, velocity_diff_in_direction)
@@ -121,7 +121,7 @@ func _physics_process(delta: float) -> void:
 			push_direction * velocity_diff_in_direction * push_force,
 			collision.get_position() - collider.global_position
 		)
-	
+
 	# Применение движения
 	move_and_slide()
 

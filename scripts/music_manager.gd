@@ -14,7 +14,7 @@ func _ready():
 func play_music(stream: AudioStream):
 	if active_player.stream == stream:
 		return # уже играет эта музыка
-
+	#print("music start")
 	# второй плеер
 	inactive_player.stop()
 	inactive_player.stream = stream
@@ -24,7 +24,7 @@ func play_music(stream: AudioStream):
 	# плавный переход (надеюсь работает)
 	var tween := create_tween()
 	tween.parallel().tween_property(active_player, "volume_db", -80.0, fade_time)
-	tween.parallel().tween_property(inactive_player, "volume_db", -40.0, fade_time)
+	tween.parallel().tween_property(inactive_player, "volume_db", -35.0, fade_time)
 
 	tween.finished.connect(_swap_players)
 
