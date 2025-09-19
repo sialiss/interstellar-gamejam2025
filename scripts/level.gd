@@ -7,13 +7,10 @@ extends Node3D
 
 func _ready():
 	# сигналы к методам UI
-	player.connect("show_prompt", Callable(player_ui, "_on_show_prompt"))
-	#player.connect("show_timer_prompt", Callable(player_ui, "_on_show_timer_prompt"))
-	player.connect("hide_prompt", Callable(player_ui, "_on_hide_prompt"))
-	dualogue_ui.connect("is_dialogue_mode", Callable(player_ui, "_set_ui_enabled"))
-	dualogue_ui.connect("is_dialogue_mode", Callable(player, "_on_dialogue_mode"))
-	#npc.connect("interaction_started", Callable(self, "_on_npc_interaction_started"))
-	npc.interaction_started.connect(
-		func(dialogue, npc_ref):
-			dualogue_ui.start_dialogue(dialogue, npc_ref)
-	)
+	player.show_prompt.connect(player_ui._on_show_prompt)
+	#player.show_timer_prompt.connect(player_ui._on_show_timer_prompt)
+	player.hide_prompt.connect(player_ui._on_hide_prompt)
+	dualogue_ui.is_dialogue_mode.connect(player_ui._set_ui_enabled)
+	dualogue_ui.is_dialogue_mode.connect(player._on_dialogue_mode)
+	#npc.interaction_started.connect(self._on_npc_interaction_started)
+	npc.interaction_started.connect(dualogue_ui.start_dialogue)
