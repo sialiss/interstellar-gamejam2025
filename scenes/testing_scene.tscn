@@ -60,8 +60,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ejtda")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_srtiu")
 
-[node name="NPC" parent="." instance=ExtResource("2_2j2p2")]
-transform = Transform3D(0.27313256, -0.02083692, 0.96175075, -0.021162009, 0.9993933, 0.027662398, -0.9617437, -0.027908077, 0.27252588, 0.04378295, 1.439867, -5.5063467)
+[node name="NPC" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_2j2p2")]
+transform = Transform3D(0.27313256, -0.02083692, 0.96175075, -0.021162009, 0.9993933, 0.027662398, -0.9617437, -0.027908077, 0.27252588, 0.04378295, 1.439867, -6.1501465)
 NPC_name = "Test"
 dialogue = ExtResource("4_dh6dg")
 
