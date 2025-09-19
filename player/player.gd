@@ -1,5 +1,11 @@
 extends CharacterBody3D
 
+@onready var ray: RayCast3D = $Camera3D/RayCast3D
+signal show_prompt(prompt_text)
+#signal show_timer_prompt(prompt_text)
+signal hide_prompt()
+
+var can_move: bool = true
 # Скорость движения
 @export var speed: float = 5.0
 # Чувствительность мыши
@@ -30,6 +36,18 @@ func _process(_delta):
 		do_camera_move = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+	# Подсказка при наведении на объект
+	if ray.is_colliding():
+		var obj = ray.get_collider()
+		if obj.is_in_group("interactable"):
+			emit_signal("show_prompt", "[E] - interact")
+		elif obj.is_in_group("npc"):
+			emit_signal("show_prompt", "[E] - talk")
+		else:
+			emit_signal("hide_prompt")
+	else:
+		emit_signal("hide_prompt")
+
 
 func _input(event):
 	if event is InputEventMouseMotion and do_camera_move:
@@ -39,6 +57,9 @@ func _input(event):
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -1.5, 1.5)
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		return  # игрок заморожен
+
 	# Рассчёт скорости в падении
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -66,3 +87,6 @@ func _physics_process(delta: float) -> void:
 
 	# Применение движения
 	move_and_slide()
+
+func _on_dialogue_mode(is_dialogue_mode: bool):
+	can_move = !is_dialogue_mode
