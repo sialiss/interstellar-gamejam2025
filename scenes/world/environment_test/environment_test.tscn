@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://da0ga2fo8fkks"]
+[gd_scene load_steps=42 format=3 uid="uid://cc7ya3ksex0y4"]
 
+[ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="PackedScene" uid="uid://v1hdc5ru6ty7" path="res://assets/models/environment/Stone_1.fbx" id="1_jkamq"]
 [ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="2_ach2h"]
 [ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="3_d43b2"]
@@ -12,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="10_ostp6"]
 [ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="11_wxyf7"]
 [ext_resource type="PackedScene" uid="uid://dbc2nd4l67jug" path="res://assets/models/environment/Rock_3.fbx" id="12_1lye0"]
+[ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
+[ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
+[ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
+[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="17_ostp6"]
+[ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="18_3ss8m"]
 
 [sub_resource type="Gradient" id="Gradient_0lv6l"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -200,6 +206,7 @@ refraction_scale = -0.15
 stencil_flags = 2
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_3ss8m")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
@@ -255,9 +262,8 @@ libraries = {
 autoplay = "spin"
 speed_scale = 0.004
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.52991927, -0.5080008, -0.67905873, 0, 0.80073136, -0.5990236, 0.8480481, 0.31743413, 0.42432296, -163.75177, -16.53141, -150.13533)
-far = 10000.0
+[node name="Player" parent="." groups=["player"] instance=ExtResource("15_dap6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.60442, -17.195755, -154.1159)
 
 [node name="house2" parent="." instance=ExtResource("9_8dmbb")]
 transform = Transform3D(-0.9969908, 0, 0.07751945, 0, 1, 0, -0.07751945, 0, -0.9969908, -151.06221, -17.082838, -136.15335)
@@ -275,5 +281,13 @@ transform = Transform3D(0.9830539, 0.18331656, 0, -0.18331656, 0.9830539, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.861155, -32.610664, -156.00848)
 mesh = SubResource("PlaneMesh_l0prp")
 surface_material_override/0 = SubResource("StandardMaterial3D_fjkjc")
+
+[node name="DialogueUI" parent="." instance=ExtResource("13_owvsi")]
+
+[node name="NPC" parent="." groups=["npc"] instance=ExtResource("16_8dmbb")]
+transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939334, 0.027662396, 0.39081055, -0.01719806, 0.9203104, -156.9545, -15.630709, -159.8055)
+NPC_name = "Test"
+dialogue = ExtResource("17_ostp6")
+funny_sound = ExtResource("18_3ss8m")
 
 [editable path="fish"]
