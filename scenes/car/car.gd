@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 
 	steering = move_toward(steering, Input.get_axis("move_right", "move_left") * max_steer, delta * 2.5)
 
-	var accel_input = Input.get_axis("move_forward", "move_backward")
+	var accel_input = Input.get_axis("move_backward", "move_forward")
 	if accel_input == 0:
 		engine_force = 0
 		brake = brake_power
