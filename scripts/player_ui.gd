@@ -2,10 +2,17 @@ extends Control
 class_name PlayerUI
 
 @onready var prompt_label: Label = $InteractionPrompt
+@onready var runes_ui = $RunesUI
 var ui_enabled: bool = true
 
 func _ready():
 	prompt_label.visible = false
+	runes_ui.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("notebook"):
+		if !runes_ui.visible: runes_ui.visible = true
+		else: runes_ui.visible = false
 
 func _set_ui_enabled(disabled: bool) -> void:
 	ui_enabled = !disabled

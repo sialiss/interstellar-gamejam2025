@@ -21,11 +21,11 @@ func paint_magic_particles() -> void:
 	var camera: Camera3D = get_parent().get_node("Camera3D") as Camera3D
 	if not camera:
 		push_error("Player's camera not found!")
-	
-	var mouse_pos: Vector2 = get_global_mouse_position()	
+
+	var mouse_pos: Vector2 = get_global_mouse_position()
 	var from: Vector3 = camera.project_ray_origin(mouse_pos)
 	var direction: Vector3 = camera.project_ray_normal(mouse_pos)
-	
+
 	create_particle(from + direction * 2)
 
 
@@ -53,13 +53,14 @@ func calculate_direction(event: InputEvent) -> void:
 			if event.is_released():
 				is_mouse_pressed = false
 				cast_rune()
-				
+
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT) or (event is InputEventMouseMotion and is_mouse_pressed):
 		paint_magic_particles()
 
 
 func cast_rune() -> void:
 	var rune: RunePattern = RuneManager.find_matching_rune_pattern(returned_directions)
+	print_debug(returned_directions)
 	if rune:
 		var player: CharacterBody3D = get_parent() as CharacterBody3D
 		if not player:
@@ -67,7 +68,7 @@ func cast_rune() -> void:
 		rune.execute(player.position, self)
 	else:
 		pass
-	
+
 	# cleanup
 	returned_directions = []
 	if current_rune_node:
@@ -80,7 +81,7 @@ func spawn_rune_direction_detector() -> void:
 	if current_rune_node:
 		current_rune_node.queue_free()
 		current_rune_node = null
-	
+
 	# Создать новую область
 	current_rune_node = rune_direction_controller_scene.instantiate()
 	current_rune_node.position = get_global_mouse_position()

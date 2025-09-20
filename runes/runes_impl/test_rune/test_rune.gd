@@ -6,7 +6,7 @@ class_name TestRune
 
 # Это просто тестовая логика для тестовой руны, можно сюда что угодно писать
 func execute(where: Vector3, parent_node: Node) -> void:
-	#print_debug("some logic in " + rune_name)
+	print_debug("some logic in " + rune_name)
 	var sprite = Sprite3D.new()
 	sprite.texture = texture
 	sprite.centered = true
@@ -14,20 +14,20 @@ func execute(where: Vector3, parent_node: Node) -> void:
 	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	sprite.position = where + Vector3(0, 3, 0)
 	parent_node.add_child(sprite)
-	
+
 	var timer = Timer.new()
 	timer.wait_time = 3
 	timer.one_shot = true
 	timer.timeout.connect(_remove_sprite.bind(sprite))
 	sprite.add_child(timer)
 	timer.start()
-	
+
 	var audio_player = AudioStreamPlayer.new()
 	audio_player.stream = sound_effect
 	audio_player.finished.connect(audio_player.queue_free)
 	parent_node.add_child(audio_player)
 	audio_player.play()
-	
+
 
 func _remove_sprite(sprite: Sprite3D) -> void:
 	if is_instance_valid(sprite):

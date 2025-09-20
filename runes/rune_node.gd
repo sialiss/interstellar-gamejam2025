@@ -28,7 +28,7 @@ func get_direction_from_center(exit_pos: Vector2) -> int:
 	var center: Vector2 = global_position
 	var relative_pos: Vector2 = exit_pos - center
 	var angle: float = relative_pos.angle()
-	
+
 	if angle >= -PI/8 and angle < PI/8:
 		return 0  # Восток
 	elif angle >= PI/8 and angle < 3*PI/8:
