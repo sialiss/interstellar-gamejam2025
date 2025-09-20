@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=34 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="11_wxyf7"]
 [ext_resource type="PackedScene" uid="uid://dbc2nd4l67jug" path="res://assets/models/environment/Rock_3.fbx" id="12_1lye0"]
 [ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="13_3ss8m"]
+[ext_resource type="Material" uid="uid://bwirrnln368j7" path="res://assets/materials/water.tres" id="13_aagqy"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/dialogue_resource.gd" id="16_1lye0"]
@@ -31,12 +32,12 @@ sky_horizon_color = Color(0.69411767, 0.78431374, 0.78431374, 1)
 ground_bottom_color = Color(0.93, 0.84816, 0.7254, 1)
 ground_horizon_color = Color(0.69411767, 0.78431374, 0.78431374, 1)
 
-[sub_resource type="Sky" id="Sky_psw0a"]
+[sub_resource type="Sky" id="Sky_yu2f3"]
 sky_material = SubResource("ProceduralSkyMaterial_xrhaj")
 
 [sub_resource type="Environment" id="Environment_iumo6"]
 background_mode = 2
-sky = SubResource("Sky_psw0a")
+sky = SubResource("Sky_yu2f3")
 tonemap_mode = 1
 ssao_enabled = true
 ssil_enabled = true
@@ -60,33 +61,6 @@ auto_exposure_max_sensitivity = 700.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_l0prp"]
 size = Vector2(50, 50)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_l3fwm"]
-frequency = 0.1
-fractal_octaves = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pwb0t"]
-noise = SubResource("FastNoiseLite_l3fwm")
-seamless = true
-in_3d_space = true
-as_normal_map = true
-bump_strength = 0.8
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjkjc"]
-transparency = 1
-cull_mode = 2
-albedo_color = Color(0.40949106, 0.7377313, 0.8784058, 0.7176471)
-metallic = 0.61
-metallic_specular = 0.43
-roughness = 0.14
-normal_enabled = true
-normal_texture = SubResource("NoiseTexture2D_pwb0t")
-rim_tint = 0.0
-clearcoat_enabled = true
-clearcoat = 0.32
-clearcoat_roughness = 0.2
-refraction_scale = -0.15
-stencil_flags = 2
-
 [sub_resource type="Resource" id="Resource_1lye0"]
 script = ExtResource("16_1lye0")
 dialogue_id = "story1"
@@ -99,7 +73,7 @@ radius = 300.0
 [node name="World" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_3ss8m")
 revolution_triggers = Array[ExtResource("2_8dmbb")]([ExtResource("19_dap6o")])
-npcs = [null]
+npcs = [NodePath("NPC")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
@@ -151,7 +125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.861155, -32.610664, -156.
 [node name="Water" type="MeshInstance3D" parent="Pond"]
 mesh = SubResource("PlaneMesh_l0prp")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_fjkjc")
+surface_material_override/0 = ExtResource("13_aagqy")
 
 [node name="BabyFish" parent="Pond" instance=ExtResource("13_3ss8m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2160091, -1.7129326, -3.0758667)
