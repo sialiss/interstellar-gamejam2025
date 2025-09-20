@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2mju6gjlhrvh"]
+
+[ext_resource type="PackedScene" uid="uid://buu3oa28nv7tn" path="res://scenes/entities/persons/default_person/person.tscn" id="1_qa4h5"]
+[ext_resource type="Material" uid="uid://dwxkeiu0r7id" path="res://scenes/entities/persons/fisher/fisher_skin.tres" id="2_jxd24"]
+[ext_resource type="PackedScene" uid="uid://5oqfj7fjlsb0" path="res://assets/models/people/person fisher hat.glb" id="3_clllx"]
+[ext_resource type="PackedScene" uid="uid://dye80wp7mp6m" path="res://assets/models/people/person fisher vest.glb" id="4_fioc4"]
+
+[node name="FisherModel" type="Node3D"]
+
+[node name="person" parent="." instance=ExtResource("1_qa4h5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Hand_L" parent="person/Armature/Skeleton3D/Hand_L" index="0"]
+surface_material_override/0 = ExtResource("2_jxd24")
+
+[node name="Head" parent="person/Armature/Skeleton3D/Head_2" index="0"]
+surface_material_override/0 = ExtResource("2_jxd24")
+
+[node name="person fisher hat" parent="person/Armature/Skeleton3D/Head_2/Head" index="1" instance=ExtResource("3_clllx")]
+
+[node name="Body" parent="person/Armature/Skeleton3D/Body_2" index="0"]
+surface_material_override/0 = ExtResource("2_jxd24")
+
+[node name="person fisher vest" parent="person/Armature/Skeleton3D/Body_2/Body" index="0" instance=ExtResource("4_fioc4")]
+
+[node name="Hand_R" parent="person/Armature/Skeleton3D/Hand_R" index="0"]
+surface_material_override/0 = ExtResource("2_jxd24")
+
+[editable path="person"]
