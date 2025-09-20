@@ -1,16 +1,21 @@
 extends VehicleBody3D
 
-@export var max_steer = 0.8
+@export var max_steer = 0.5
 @export var engine_power = 300
-@export var brake_power = 50
+@export var brake_power = 1
 @export var mouse_sensitivity = 0.002
+@export var camera_smooth_speed = 8.0
+@export var camera_follow_strength := 0.05
 
 @onready var car_camera: Camera3D = $CarCamera
 @onready var seat = $SeatMarker
 
 var is_active: bool = false
 var driver: Player = null
-var camera_rotation: Vector2 = Vector2.ZERO
+var camera_rotation: Vector3 = Vector3.ZERO
+
+var target_rotation: Vector3 = Vector3.ZERO  # x = вверх/вниз, y = влево/вправо
+var current_rotation: Vector3 = Vector3.ZERO
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -31,19 +36,34 @@ func _physics_process(delta: float) -> void:
 		engine_force = accel_input * engine_power
 		brake = 0
 
+	#var car_yaw = global_transform.basis.get_euler().y
+	#target_rotation.y = lerp_angle(target_rotation.y, car_yaw, camera_follow_strength)
+	#current_rotation = current_rotation.lerp(target_rotation, camera_smooth_speed * delta)
+
+	var car_euler = global_transform.basis.get_euler()
+	print(car_euler.z, " ", current_rotation.z, " ", target_rotation.z)
+	# плавно выравниваем camera target_rotation по машине
+	target_rotation.x = lerp_angle(target_rotation.x, car_euler.x, camera_follow_strength)
+	target_rotation.y = lerp_angle(target_rotation.y, car_euler.y, camera_follow_strength)
+	target_rotation.z = lerp_angle(target_rotation.z, car_euler.z, camera_follow_strength)
+
+	# плавное приближение текущей камеры к цели
+	current_rotation.x = lerp_angle(current_rotation.x, target_rotation.x, camera_smooth_speed * delta)
+	current_rotation.y = lerp_angle(current_rotation.y, target_rotation.y, camera_smooth_speed * delta)
+	current_rotation.z = lerp_angle(current_rotation.z, target_rotation.z, camera_smooth_speed * delta)
+
+	if car_camera:
+		var basis1 = Basis(Vector3.UP, current_rotation.y)
+		#basis1 = basis1.rotated(basis1.x, current_rotation.x)
+		car_camera.global_transform.basis = basis1
 
 func _input(event: InputEvent) -> void:
 	if is_active and event.is_action_pressed("interact"):
 		exit_vehicle()
 
 	if is_active and event is InputEventMouseMotion:
-		camera_rotation.x = clamp(camera_rotation.x - event.relative.y * mouse_sensitivity, -1.2, 0.5)
-		camera_rotation.y -= event.relative.x * mouse_sensitivity
-
-		if car_camera:
-			var basis1 = Basis(Vector3.UP, camera_rotation.y)  # поворот по горизонтали
-			basis1 = basis1.rotated(basis1.x, camera_rotation.x)  # поворот по вертикали
-			car_camera.global_transform.basis = basis1
+		target_rotation.x = clamp(target_rotation.x - event.relative.y * mouse_sensitivity, -1.2, 0.5)
+		target_rotation.y -= event.relative.x * mouse_sensitivity
 
 func interact(player: Player):
 	if !driver:
@@ -64,6 +84,7 @@ func enter_vehicle(player: Player):
 	car_camera.current = true
 
 	is_active = true
+	self.sleeping = false
 
 func exit_vehicle():
 	engine_force = 0
@@ -85,5 +106,6 @@ func exit_vehicle():
 
 		driver = null
 	is_active = false
+	self.sleeping = true
 	engine_force = 0
 	brake = brake_power
