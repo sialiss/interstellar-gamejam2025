@@ -1,0 +1,62 @@
+[gd_resource type="Terrain3DAssets" load_steps=14 format=3 uid="uid://bllt8qrx3jixa"]
+
+[ext_resource type="PackedScene" uid="uid://rxv6pfa7kvo6" path="res://assets/models/environment/Grass_2.fbx" id="1_8yy1j"]
+[ext_resource type="Texture2D" uid="uid://b7gj4nedvl7ra" path="res://assets/textures/Ground/simple_rock.png" id="1_m0puo"]
+[ext_resource type="PackedScene" uid="uid://y714k5u5w6gq" path="res://assets/models/environment/Tree_1_hello.fbx" id="2_f7nnc"]
+[ext_resource type="Texture2D" uid="uid://derxxlka3ir0h" path="res://assets/textures/normal_square.tres" id="2_pk3e5"]
+[ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="3_8yy1j"]
+[ext_resource type="PackedScene" uid="uid://boilh6ifadem3" path="res://assets/models/environment/Tree_2_hello.fbx" id="3_htppu"]
+[ext_resource type="Texture2D" uid="uid://brv4qf8e75dnr" path="res://assets/textures/Ground/simple_grass.png" id="4_f7nnc"]
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_htppu"]
+name = "Grass_2"
+enabled = false
+scene_file = ExtResource("1_8yy1j")
+density = 0.82
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_k482g"]
+name = "Tree_1"
+id = 1
+enabled = false
+scene_file = ExtResource("2_f7nnc")
+density = 0.016913125
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 431.5
+lod2_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_hvgqh"]
+name = "Tree_2_hello"
+id = 2
+enabled = false
+scene_file = ExtResource("3_htppu")
+density = 0.022244567
+last_lod = 2
+last_shadow_lod = 2
+lod0_range = 119.85
+lod1_range = 266.75
+lod2_range = 1020.4
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_htppu"]
+name = "simple_rock"
+albedo_texture = ExtResource("1_m0puo")
+normal_texture = ExtResource("2_pk3e5")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_m0puo"]
+name = "simple_grass"
+id = 1
+albedo_texture = ExtResource("4_f7nnc")
+normal_texture = ExtResource("2_pk3e5")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_pk3e5"]
+name = "simple_sand"
+id = 2
+albedo_texture = ExtResource("3_8yy1j")
+normal_texture = ExtResource("2_pk3e5")
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_htppu"), SubResource("Terrain3DMeshAsset_k482g"), SubResource("Terrain3DMeshAsset_hvgqh")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_htppu"), SubResource("Terrain3DTextureAsset_m0puo"), SubResource("Terrain3DTextureAsset_pk3e5")])
