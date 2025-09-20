@@ -5,7 +5,6 @@ signal mouse_exited_in_direction(value: int)
 var last_mouse_position: Vector2 = Vector2.ZERO
 var is_mouse_inside: bool = false
 
-
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)

@@ -62,10 +62,10 @@ func cast_rune() -> void:
 	var rune: RunePattern = RuneManager.find_matching_rune_pattern(returned_directions)
 	print_debug(returned_directions)
 	if rune:
-		var player: CharacterBody3D = get_parent() as CharacterBody3D
+		var player: Player = get_parent() as Player
 		if not player:
 			push_error("Player is not found")
-		rune.execute(player.position, self)
+		rune.execute(player)
 	else:
 		pass
 
@@ -86,6 +86,7 @@ func spawn_rune_direction_detector() -> void:
 	current_rune_node = rune_direction_controller_scene.instantiate()
 	current_rune_node.position = get_global_mouse_position()
 	add_sibling(current_rune_node)
+	print(current_rune_node)
 	if current_rune_node.has_signal("mouse_exited_in_direction"):
 		current_rune_node.mouse_exited_in_direction.connect(_on_rune_detector_exited)
 
@@ -99,3 +100,4 @@ func _on_rune_detector_exited(value: int) -> void:
 		current_rune_node.queue_free()
 		current_rune_node = null
 	spawn_rune_direction_detector()
+	print('returned_directions', returned_directions)

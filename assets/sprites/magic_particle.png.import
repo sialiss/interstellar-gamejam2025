@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqecgh65161wp"
-path="res://.godot/imported/amnyam.png-3b5d7c44f8e937e2d252a869bc03655b.ctex"
+uid="uid://bnn0ynfde8hfx"
+path="res://.godot/imported/magic_particle.png-2696e271d835b620560d1dd5097b2879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/amnyam.png"
-dest_files=["res://.godot/imported/amnyam.png-3b5d7c44f8e937e2d252a869bc03655b.ctex"]
+source_file="res://assets/sprites/magic_particle.png"
+dest_files=["res://.godot/imported/magic_particle.png-2696e271d835b620560d1dd5097b2879.ctex"]
 
 [params]
 

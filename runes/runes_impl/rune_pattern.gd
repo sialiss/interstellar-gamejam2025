@@ -6,5 +6,5 @@ class_name RunePattern
 
 # Это наследуемый класс. При создании новой руны наследуйте его и добавляйте логику руны в execute
 
-func execute(_where: Vector3, _parent_node: Node) -> void:
+func execute(_parent_node: Player) -> void:
 	push_error("Execute not implemented in " + resource_path)

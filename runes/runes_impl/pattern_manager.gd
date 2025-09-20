@@ -2,7 +2,9 @@ class_name RuneManager
 
 # todo: добавить сюда новые руны. Можно сделать удобнее с автозаполнением.
 static var rune_patterns: Array[RunePattern] = [
-	preload("res://runes/runes_impl/test_rune/test_rune.tres")
+	preload("res://resources/runes/test_rune/test_rune.tres"),
+	preload("res://resources/runes/speed_rune/speed_rune.tres")
+
 ]
 
 static func get_patterns() -> Array[RunePattern]:
