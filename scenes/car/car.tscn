@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://ijq2ocxk1dk3"]
+[gd_scene load_steps=15 format=4 uid="uid://ijq2ocxk1dk3"]
 
 [ext_resource type="Script" uid="uid://dry5thxc4c161" path="res://scenes/car/car.gd" id="1_yr3gr"]
+[ext_resource type="Material" uid="uid://i78ri6a2v6tq" path="res://assets/materials/cool_prop.tres" id="2_yhfra"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lm4f"]
 resource_name = "Material"
@@ -183,7 +184,7 @@ sleeping = true
 script = ExtResource("1_yr3gr")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.108, 0.573, 1.547)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.108, 0.573, 1.547)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.55
@@ -194,11 +195,13 @@ damping_compression = 1.0
 damping_relaxation = 1.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7bjis")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.108, 0.573, 1.54735)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.108, 0.573, 1.54735)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.55
@@ -209,12 +212,12 @@ damping_compression = 1.0
 damping_relaxation = 1.0
 
 [node name="Wheel_001" type="MeshInstance3D" parent="VehicleWheel3D2"]
-transform = Transform3D(-1, 0, -3.2584137e-07, 0, 1, 0, 3.2584137e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7bjis")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.108, 0.573, -1.615)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.108, 0.573, -1.615)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.55
@@ -225,11 +228,13 @@ damping_compression = 1.0
 damping_relaxation = 1.0
 
 [node name="Wheel_002" type="MeshInstance3D" parent="VehicleWheel3D3"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7bjis")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.108, 0.573, -1.615)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.108, 0.573, -1.615)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.55
@@ -240,9 +245,9 @@ damping_compression = 1.0
 damping_relaxation = 1.0
 
 [node name="Wheel_003" type="MeshInstance3D" parent="VehicleWheel3D4"]
-transform = Transform3D(-1, 0, -3.8941437e-07, 0, 1, 0, 3.8941437e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7bjis")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0.12400246, 1.841105, -0.10349321)
@@ -252,16 +257,19 @@ shape = SubResource("BoxShape3D_yr3gr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61131746, 1.5671874, -1.6149637)
 mesh = SubResource("ArrayMesh_i751g")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="Seats" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9872756, 0)
 mesh = SubResource("ArrayMesh_w25ah")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="Plate" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774546, 2.4453194)
 mesh = SubResource("ArrayMesh_yaw5r")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="Empty" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.94201213, 0.3355789, 0, -0.3355789, 0.94201213, -0.61131746, 1.6304957, -1.8867824)
@@ -269,6 +277,7 @@ transform = Transform3D(1, 0, 0, 0, 0.94201213, 0.3355789, 0, -0.3355789, 0.9420
 [node name="Steering" type="MeshInstance3D" parent="Empty"]
 mesh = SubResource("ArrayMesh_rphgt")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yhfra")
 
 [node name="SeatMarker" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4431758, 1.3561364, -0.8882096)
