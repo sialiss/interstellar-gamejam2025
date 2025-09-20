@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://buu3oa28nv7tn"]
+
+[ext_resource type="PackedScene" uid="uid://evlxpchpnnpf" path="res://assets/models/people/person.glb" id="1_7co8b"]
+[ext_resource type="Material" uid="uid://bdkq3vcxckdwu" path="res://assets/materials/person_eyes.tres" id="2_2pkho"]
+[ext_resource type="Material" uid="uid://bp7shmmi03o5j" path="res://scenes/entities/persons/default_person/person_skin.tres" id="2_j0fd5"]
+
+[node name="person" instance=ExtResource("1_7co8b")]
+
+[node name="Hand_L" parent="Armature/Skeleton3D/Hand_L" index="0"]
+surface_material_override/0 = ExtResource("2_j0fd5")
+
+[node name="Head" parent="Armature/Skeleton3D/Head_2" index="0"]
+surface_material_override/0 = ExtResource("2_j0fd5")
+
+[node name="Eyes" parent="Armature/Skeleton3D/Head_2/Head" index="0"]
+material_override = ExtResource("2_2pkho")
+cast_shadow = 0
+
+[node name="Body" parent="Armature/Skeleton3D/Body_2" index="0"]
+surface_material_override/0 = ExtResource("2_j0fd5")
+
+[node name="Hand_R" parent="Armature/Skeleton3D/Hand_R" index="0"]
+surface_material_override/0 = ExtResource("2_j0fd5")

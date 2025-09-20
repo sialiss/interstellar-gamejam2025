@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" path="res://player/zoomer.gd" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://dqmpwhsg5r52e" path="res://scenes/UI/player_ui.tscn" id="2_rkbax"]
-[ext_resource type="Script" path="res://player/inventory.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://ctqu8vfmogof7" path="res://player/inventory.gd" id="4_yw30f"]
 
 [sub_resource type="GDScript" id="GDScript_oul6g"]
 script/source = "extends Camera3D
