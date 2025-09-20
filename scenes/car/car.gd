@@ -44,7 +44,6 @@ func _input(event: InputEvent) -> void:
 			var basis1 = Basis(Vector3.UP, camera_rotation.y)  # поворот по горизонтали
 			basis1 = basis1.rotated(basis1.x, camera_rotation.x)  # поворот по вертикали
 			car_camera.global_transform.basis = basis1
-			#car_camera.global_transform.origin = seat.global_transform.origin
 
 func interact(player: Player):
 	if !driver:
