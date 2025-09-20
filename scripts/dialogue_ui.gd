@@ -1,4 +1,3 @@
-# res://scripts/dialogue_ui.gd
 extends Control
 class_name DialogueUI
 
