@@ -1,4 +1,3 @@
-# res://scripts/npc.gd
 extends StaticBody3D
 class_name NPC
 
