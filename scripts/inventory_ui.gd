@@ -1,8 +1,9 @@
-extends Control
+extends Node
 
 @export var icon: SceneTexture
 
-@onready var inventory = $"../Inventory"
+@onready var inventory = $"../../Inventory"
+@onready var player = $"../.."
 @onready var grid = $GridContainer
 
 func _ready():
@@ -31,7 +32,15 @@ func update_slots():
 		grid.add_child(btn)
 
 func _on_slot_pressed(index: int):
-	get_parent().unstore(index)
+	player.unstore(index)
+
+func _input(event):
+	var key_event = event as InputEventKey
+	if key_event and key_event.pressed and not key_event.echo:
+		var slot_index = key_event.keycode - Key.KEY_1
+		if slot_index >= 0 and slot_index < inventory.slots.size():
+			_on_slot_pressed(slot_index)
+
 
 func get_scene_from_path(scene_file: String) -> PackedScene:
 	var scene_res = load(scene_file)

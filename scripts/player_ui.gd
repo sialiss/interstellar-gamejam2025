@@ -13,7 +13,7 @@ func _set_ui_enabled(disabled: bool) -> void:
 	if disabled:
 		prompt_label.visible = false
 
-# Показать подсказку
+# Показать подсказкуно работаетно работает
 func _on_show_prompt(text: String) -> void:
 	prompt_label.text = text
 	prompt_label.visible = true
