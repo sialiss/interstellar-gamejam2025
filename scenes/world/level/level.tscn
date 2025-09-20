@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=59 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://bk4mhmruqr8yp" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="16_2v6y8"]
 [ext_resource type="Script" uid="uid://bcqje518k3e3f" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_60pun"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
+[ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
 
 [sub_resource type="Resource" id="Resource_60pun"]
 script = ExtResource("7_6l5f2")
@@ -394,3 +395,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 [node name="DialogueUI" parent="." instance=ExtResource("13_svlle")]
 
 [node name="MusicManager" parent="." instance=ExtResource("14_8mghl")]
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="NPC" parent="NPCs" instance=ExtResource("29_o4wlm")]
+transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 73.88464, -0.8531324, 89.50265)
