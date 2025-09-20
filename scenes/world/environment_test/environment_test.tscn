@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=36 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://scenes/music_manager.tscn" id="21_ostp6"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="22_wxyf7"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="23_1lye0"]
+[ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="24_yu2f3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xrhaj"]
 sky_top_color = Color(0.16470589, 0.5647059, 0.9137255, 1)
@@ -191,5 +192,7 @@ debug_color = Color(2.4065375e-06, 0.58100146, 0.799715, 0.41960785)
 
 [node name="Box" parent="." instance=ExtResource("19_8dmbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.00323, -15.00914, -152.88914)
+
+[node name="MusicTest" parent="." instance=ExtResource("24_yu2f3")]
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
