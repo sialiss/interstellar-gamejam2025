@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3s1rn4rew1yd"]
+
+[ext_resource type="PackedScene" uid="uid://d5parsu1o54g" path="res://runes/rune_node.tscn" id="1_tnwrl"]
+
+[node name="Testing2d" type="Node2D"]
+
+[node name="mouseline" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(374.00003, 247)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline2" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(467.00003, 248)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline3" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(374, 339)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline4" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(468.00003, 340)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline5" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(279, 155)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline6" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(280, 247)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline7" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(281, 340)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline8" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(467, 155)
+scale = Vector2(4.6343985, 4.6343985)
+
+[node name="mouseline9" parent="." instance=ExtResource("1_tnwrl")]
+position = Vector2(374, 154)
+scale = Vector2(4.6343985, 4.6343985)
