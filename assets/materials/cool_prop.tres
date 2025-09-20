@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://i78ri6a2v6tq"]
 
-[ext_resource type="Shader" uid="uid://dxoncufpd7fij" path="res://assets/materials/ImphenziaPixPal.tres" id="1_74umr"]
+[ext_resource type="Shader" uid="uid://iiofcpnw3dao" path="res://assets/materials/ImphenziaPixPalNormal.tres" id="1_74umr"]
 [ext_resource type="Texture2D" uid="uid://chsgxgdpfr5yh" path="res://assets/textures/palette_attributes.png" id="2_c8nf0"]
 [ext_resource type="Texture2D" uid="uid://bec2mb0ollyj3" path="res://assets/textures/palette.png" id="3_25mgx"]
 [ext_resource type="Texture2D" uid="uid://qemxu5byxxh" path="res://assets/textures/palette_emission.png" id="4_y3n34"]
