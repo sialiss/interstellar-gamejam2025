@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqmpwhsg5r52e"]
+[gd_scene load_steps=7 format=3 uid="uid://dqmpwhsg5r52e"]
 
 [ext_resource type="Script" uid="uid://14cpmjcncpl4" path="res://scripts/player_ui.gd" id="1_d6j1s"]
+[ext_resource type="PackedScene" uid="uid://cgmdgketpnli8" path="res://scenes/UI/inventory_ui.tscn" id="2_q3y81"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6j1s"]
 bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
@@ -82,3 +83,5 @@ offset_bottom = 2.143982
 grow_vertical = 0
 theme = SubResource("Theme_50a1s")
 text = "I"
+
+[node name="InventoryUI" parent="." instance=ExtResource("2_q3y81")]
