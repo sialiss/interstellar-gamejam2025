@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqmpwhsg5r52e"]
+[gd_scene load_steps=6 format=3 uid="uid://dqmpwhsg5r52e"]
 
 [ext_resource type="Script" uid="uid://14cpmjcncpl4" path="res://scripts/player_ui.gd" id="1_d6j1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6j1s"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50a1s"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3y81"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_50a1s"]
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/focus = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/hover = SubResource("StyleBoxFlat_50a1s")
+Button/styles/normal = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/pressed = SubResource("StyleBoxFlat_q3y81")
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -19,3 +54,31 @@ offset_right = 905.0
 offset_bottom = 278.0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
+
+[node name="NotebookButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -64.0
+offset_right = 72.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme = SubResource("Theme_50a1s")
+text = "N"
+
+[node name="InventoryButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.97200006
+anchor_right = 0.081
+anchor_bottom = 0.97200006
+offset_left = 2.6880035
+offset_top = -45.856018
+offset_right = 58.688004
+offset_bottom = 2.143982
+grow_vertical = 0
+theme = SubResource("Theme_50a1s")
+text = "I"

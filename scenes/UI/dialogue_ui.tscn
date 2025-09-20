@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctkwti7f04w2f"]
+[gd_scene load_steps=7 format=3 uid="uid://ctkwti7f04w2f"]
 
 [ext_resource type="Script" uid="uid://f68c14ccgj3f" path="res://scripts/dialogue_ui.gd" id="1_80yk7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6j1s"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50a1s"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3y81"]
+bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0056876484, 0.004135638, 0, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_qq553"]
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/focus = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/hover = SubResource("StyleBoxFlat_50a1s")
+Button/styles/normal = SubResource("StyleBoxFlat_d6j1s")
+Button/styles/pressed = SubResource("StyleBoxFlat_q3y81")
+Label/constants/outline_size = 4
+
+[sub_resource type="Theme" id="Theme_rc63b"]
+Button/constants/outline_size = 4
 
 [node name="DialogueUI" type="Control"]
 layout_mode = 3
@@ -30,6 +69,7 @@ offset_top = -264.0
 offset_right = 192.0
 offset_bottom = -200.0
 grow_vertical = 0
+theme = SubResource("Theme_qq553")
 
 [node name="DialogueText" type="Label" parent="Panel"]
 layout_mode = 1
@@ -43,6 +83,7 @@ offset_right = -24.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_qq553")
 
 [node name="Choices" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
@@ -50,3 +91,4 @@ offset_left = 768.0
 offset_top = -328.0
 offset_right = 1128.0
 offset_bottom = -200.0
+theme = SubResource("Theme_rc63b")
