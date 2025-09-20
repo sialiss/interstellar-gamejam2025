@@ -1,0 +1,14 @@
+[gd_resource type="Texture2D" script_class="SceneTexture" load_steps=3 format=3 uid="uid://bgdiv6mave6ly"]
+
+[ext_resource type="Script" uid="uid://bfdh0yp1ac87r" path="res://addons/scene_texture/SceneTexture.gd" id="1_2ysel"]
+[ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="1_8ai3a"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_2ysel")
+scene = ExtResource("1_8ai3a")
+camera_fov = 35.5
+camera_position = Vector3(0, 0, 0)
+render_auto_bake = false
+metadata/_custom_type_script = "uid://bfdh0yp1ac87r"
