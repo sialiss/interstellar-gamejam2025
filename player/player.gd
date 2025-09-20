@@ -5,6 +5,7 @@ signal show_prompt(prompt_text)
 signal hide_prompt()
 
 @onready var ray: RayCast3D = %InteractionRay
+@onready var inventory = $Inventory
 
 ## Скорость движения
 @export var speed: float = 5.0
@@ -24,7 +25,6 @@ var camera_angle: float = 0
 var do_camera_move: bool = true
 
 var grabbed_item: Grabbable
-
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -61,16 +61,26 @@ func _input(event: InputEvent):
 	if event.is_action_released("grab"):
 		ungrab()
 
+	if event.is_action_pressed("store"):
+		if ray.is_colliding():
+			var item = ray.get_collider()
+			if item is Grabbable:
+				store(item)
+
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		return # игрок заморожен
 
+	# TODO переместить это в player UI и как-то улучшить
 	# Подсказка при наведении на объект
 	if ray.is_colliding():
 		var obj = ray.get_collider()
-		if obj.is_in_group("interactable"):
+		#print(obj)
+		#if obj.is_class("Item"):
+			#show_prompt.emit("[F] - store")
+		if obj and obj.is_in_group("interactable"):
 			show_prompt.emit("[E] - interact")
-		elif obj.is_in_group("npc"):
+		elif obj and obj.is_in_group("npc"):
 			show_prompt.emit("[E] - talk")
 		else:
 			hide_prompt.emit()
@@ -150,3 +160,16 @@ func ungrab():
 		grabbed_item.ungrabbed()
 		grabbed_item = null
 		%GrabTransform.remote_path = ^""
+
+func store(item: Grabbable):
+	grabbed_item = item
+	if inventory.add_item(item):
+		#item.stored()
+		item.hide_from_world()
+		#%GrabTransform.remote_path = item.get_path()
+
+func unstore(index: int):
+	var item = inventory.remove_item(index)
+	if item:
+		var drop_pos = global_transform.origin + Vector3(0, 1, -1)
+		item.show_in_world(drop_pos, get_parent())
