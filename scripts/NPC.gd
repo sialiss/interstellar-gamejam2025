@@ -8,7 +8,7 @@ class_name NPC
 var sound_length: float = 1.0 / 8.0 # каждый звук по 1/8 секунды
 
 # Узлы
-@onready var model_root: Node3D = $Model
+@onready var model_root: Node3D = $ModelOrigin
 @onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 var _can_talking: bool = false

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dutyley7ypu7u"]
+
+[ext_resource type="PackedScene" uid="uid://buu3oa28nv7tn" path="res://scenes/entities/persons/default_person/person.tscn" id="1_bpam4"]
+[ext_resource type="Material" uid="uid://g2ap4sxxwmmf" path="res://scenes/entities/persons/astronomer/astronomer_skin.tres" id="2_6x8e2"]
+[ext_resource type="PackedScene" uid="uid://c1gqg11djmgl4" path="res://assets/models/people/person astronomy.glb" id="3_ta2rr"]
+
+[node name="AstronomerModel" type="Node3D"]
+
+[node name="person" parent="." instance=ExtResource("1_bpam4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Hand_L" parent="person/Armature/Skeleton3D/Hand_L" index="0"]
+surface_material_override/0 = ExtResource("2_6x8e2")
+
+[node name="Head" parent="person/Armature/Skeleton3D/Head_2" index="0"]
+surface_material_override/0 = ExtResource("2_6x8e2")
+
+[node name="person astronomy" parent="person/Armature/Skeleton3D/Head_2/Head" index="0" instance=ExtResource("3_ta2rr")]
+
+[node name="Body" parent="person/Armature/Skeleton3D/Body_2" index="0"]
+surface_material_override/0 = ExtResource("2_6x8e2")
+
+[node name="Hand_R" parent="person/Armature/Skeleton3D/Hand_R" index="0"]
+surface_material_override/0 = ExtResource("2_6x8e2")
+
+[editable path="person"]

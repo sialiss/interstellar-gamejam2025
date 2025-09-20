@@ -99,7 +99,7 @@ radius = 300.0
 [node name="World" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_3ss8m")
 revolution_triggers = Array[ExtResource("2_8dmbb")]([ExtResource("19_dap6o")])
-npcs = [NodePath("NPC")]
+npcs = [null]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
@@ -168,7 +168,7 @@ transform = Transform3D(-0.9468123, 0, 0.3217864, 0, 1, 0, -0.3217864, 0, -0.946
 [node name="DialogueUI" parent="." instance=ExtResource("13_owvsi")]
 
 [node name="NPC" parent="." groups=["npc"] instance=ExtResource("16_8dmbb")]
-transform = Transform3D(0.9202278, 0.03028636, -0.3902095, -0.021162009, 0.99939334, 0.027662396, 0.39081055, -0.01719806, 0.9203104, -156.9545, -15.630709, -159.8055)
+transform = Transform3D(-0.75272214, 0.0022833664, -0.65833455, -0.02116201, 0.99939346, 0.0276624, 0.6579983, 0.034753755, -0.75221705, -156.9545, -17.095573, -159.8055)
 NPC_name = "Test"
 dialogues = Array[ExtResource("16_1lye0")]([ExtResource("17_ostp6"), SubResource("Resource_1lye0")])
 funny_sound = ExtResource("18_3ss8m")
