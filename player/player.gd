@@ -49,8 +49,11 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("interact") and can_move:
 		if ray.is_colliding():
 			var entity = ray.get_collider()
+			print(entity)
 			if entity.is_in_group("interactable") or entity.is_in_group("npc"):
 				entity.interact()
+			elif entity.is_in_group("car"):
+				entity.interact(self)
 
 	if event.is_action_pressed("grab"):
 		if ray.is_colliding():
@@ -78,7 +81,7 @@ func _physics_process(delta: float) -> void:
 		#print(obj)
 		#if obj.is_class("Item"):
 			#show_prompt.emit("[F] - store")
-		if obj and obj.is_in_group("interactable"):
+		if obj and (obj.is_in_group("interactable") or obj.is_in_group("car")):
 			show_prompt.emit("[E] - interact")
 		elif obj and obj.is_in_group("npc"):
 			show_prompt.emit("[E] - talk")

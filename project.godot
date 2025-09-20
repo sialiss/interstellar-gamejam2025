@@ -29,6 +29,8 @@ enabled=PackedStringArray("res://addons/scene_texture/plugin.cfg", "res://addons
 
 player=""
 npc=""
+interactable=""
+car=""
 
 [input]
 

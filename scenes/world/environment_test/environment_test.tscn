@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cc7ya3ksex0y4"]
+[gd_scene load_steps=38 format=3 uid="uid://cc7ya3ksex0y4"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="23_1lye0"]
 [ext_resource type="Script" uid="uid://pjnh4xpj6r4w" path="res://scripts/item.gd" id="24_aagqy"]
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="24_yu2f3"]
+[ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="26_kpglo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xrhaj"]
 sky_top_color = Color(0.16470589, 0.5647059, 0.9137255, 1)
@@ -100,7 +101,7 @@ radius = 300.0
 [node name="World" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_3ss8m")
 revolution_triggers = Array[ExtResource("2_8dmbb")]([ExtResource("19_dap6o")])
-npcs = [null]
+npcs = [NodePath("NPC")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Scenes/World/environment_test/terrain_data"
@@ -191,11 +192,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.425316, -8.591461, -183.7
 shape = SubResource("SphereShape3D_wxyf7")
 debug_color = Color(2.4065375e-06, 0.58100146, 0.799715, 0.41960785)
 
-[node name="Box" parent="." instance=ExtResource("19_8dmbb")]
+[node name="Box" parent="." groups=["interactable"] instance=ExtResource("19_8dmbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.00323, -15.00914, -152.88914)
 script = ExtResource("24_aagqy")
 can_be_stored = true
+item_name = "item"
 
 [node name="MusicTest" parent="." instance=ExtResource("24_yu2f3")]
+
+[node name="Car" parent="." instance=ExtResource("26_kpglo")]
+transform = Transform3D(0.36944014, -0.032317884, -0.9286924, 0.01194576, 0.9994777, -0.030029044, 0.92917776, 0, 0.36963323, -152.85754, -16.085745, -169.79701)
+collision_layer = 4
+collision_mask = 7
+mass = 150.0
+gravity_scale = 1.0
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
