@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=80 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://ccxfo0hdmypac" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="6_2wrvh"]
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="6_65y7h"]
 [ext_resource type="PackedScene" uid="uid://ca8wl56yovi2i" path="res://assets/models/props/observatory.glb" id="7_5m2y6"]
-[ext_resource type="Script" uid="uid://dpysnq47idk5n" path="res://addons/proton_scatter/src/modifiers/create_inside_poisson.gd" id="7_6l5f2"]
 [ext_resource type="Script" uid="uid://buoque686huhy" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_60pun"]
 [ext_resource type="PackedScene" uid="uid://bvexwqwhagvoo" path="res://assets/models/props/rocket.glb" id="8_850c4"]
 [ext_resource type="PackedScene" uid="uid://cdjh443y4b5fx" path="res://assets/models/props/house_wood.glb" id="9_850c4"]
@@ -51,32 +50,7 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
 [sub_resource type="Resource" id="Resource_wj558"]
-script = ExtResource("7_6l5f2")
-radius = 13.0
-samples_before_rejection = 5
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_uxisk"]
-script = ExtResource("16_2v6y8")
-scale = Vector3(0.7, 0.7, 0.7)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_km357"]
-script = ExtResource("8_60pun")
-position = Vector3(5, 5, 0)
-rotation = Vector3(0, 360, 0)
-scale = Vector3(3, 3, 3)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_3eonq"]
-script = ExtResource("10_ml3ux")
-ray_length = 100.0
-max_slope = 15.0
-
-[sub_resource type="Resource" id="Resource_el80l"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_wj558"), SubResource("Resource_uxisk"), SubResource("Resource_km357"), SubResource("Resource_3eonq")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -255,7 +229,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_el80l")
+modifier_stack = SubResource("Resource_wj558")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
