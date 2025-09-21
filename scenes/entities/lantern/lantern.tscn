@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddlk028qp6ygu"]
+
+[ext_resource type="Script" uid="uid://bc14eixdrhjwa" path="res://scenes/entities/lantern/lantern.gd" id="1_nvquv"]
+[ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="1_ypn4y"]
+[ext_resource type="Material" uid="uid://i78ri6a2v6tq" path="res://assets/materials/cool_prop.tres" id="2_omibx"]
+[ext_resource type="Material" uid="uid://bklmmn2qww4av" path="res://scenes/entities/lantern/glass.tres" id="3_nvquv"]
+[ext_resource type="Material" uid="uid://ckd71dynmrwiq" path="res://scenes/entities/lantern/thread.tres" id="4_6ahoc"]
+[ext_resource type="Material" uid="uid://dhn4i8a7ytx67" path="res://scenes/entities/lantern/flame.tres" id="5_omibx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nvquv"]
+orientation = 2
+
+[sub_resource type="Animation" id="Animation_6ahoc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlameOrigin:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlameOrigin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nvquv"]
+resource_name = "on"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlameOrigin:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001, 1),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.065, 1.185, 1.165), Vector3(1, 1, 1), Vector3(1.065, 1.185, 1.165), Vector3(1, 1, 1), Vector3(1.065, 1.185, 1.165), Vector3(1, 1, 1), Vector3(1.065, 1.185, 1.165), Vector3(1, 1, 1), Vector3(1.065, 1.185, 1.165), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlameOrigin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_omibx"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlameOrigin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7xal"]
+_data = {
+&"RESET": SubResource("Animation_6ahoc"),
+&"off": SubResource("Animation_omibx"),
+&"on": SubResource("Animation_nvquv")
+}
+
+[node name="Lantern" type="Node3D"]
+script = ExtResource("1_nvquv")
+
+[node name="lantern" parent="." instance=ExtResource("1_ypn4y")]
+
+[node name="Cylinder" parent="lantern" index="0"]
+surface_material_override/0 = ExtResource("2_omibx")
+surface_material_override/1 = ExtResource("3_nvquv")
+surface_material_override/2 = ExtResource("4_6ahoc")
+
+[node name="FlameOrigin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18810776, 0)
+visible = false
+
+[node name="Flame" type="MeshInstance3D" parent="FlameOrigin"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.037272286, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_nvquv")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_omibx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="FlameOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072606176, 0)
+light_color = Color(1, 0.6776406, 0.4019169, 1)
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 10.0
+omni_attenuation = 1.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a7xal")
+}
+autoplay = "on"
+
+[editable path="lantern"]
