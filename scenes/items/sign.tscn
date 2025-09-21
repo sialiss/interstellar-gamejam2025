@@ -23,6 +23,8 @@ visible = false
 shape = SubResource("ConvexPolygonShape3D_xgkao")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, 0, 0, -0.054014385)
+transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, 0, 0.010404706, -0.054014385)
+modulate = Color(0, 0, 0, 1)
 text = "Hello"
+font_size = 20
 outline_size = 0
