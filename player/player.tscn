@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp8ubqftqvsur"]
+[gd_scene load_steps=12 format=3 uid="uid://bp8ubqftqvsur"]
 
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://bbwxppese7bml" path="res://player/zoomer.gd" id="2_g1dw6"]
@@ -11,6 +11,8 @@
 [sub_resource type="GDScript" id="GDScript_oul6g"]
 script/source = "extends Camera3D
 "
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgyib"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rgyib"]
 radius = 0.31445313
@@ -44,11 +46,16 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -3)
 collision_mask = 268
 
-[node name="GrabPosition" type="Marker3D" parent="Camera3D"]
-unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -1.4961576)
+[node name="GrabSpring" type="SpringArm3D" parent="Camera3D"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0.5)
+shape = SubResource("BoxShape3D_rgyib")
+spring_length = 2.0
 
-[node name="GrabTransform" type="RemoteTransform3D" parent="Camera3D/GrabPosition"]
+[node name="GrabPosition" type="Marker3D" parent="Camera3D/GrabSpring"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="GrabTransform" type="RemoteTransform3D" parent="Camera3D/GrabSpring/GrabPosition"]
 unique_name_in_owner = true
 update_rotation = false
 update_scale = false

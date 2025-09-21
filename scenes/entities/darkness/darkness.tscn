@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx7dwd1x6akhh"]
+
+[ext_resource type="Script" uid="uid://cn75dxi1elwxo" path="res://scenes/entities/darkness/darkness.gd" id="1_giwtc"]
+
+[sub_resource type="Curve" id="Curve_a76df"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
+curve = SubResource("Curve_a76df")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_88k61"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.1499999
+scale_max = 2.1499999
+alpha_curve = SubResource("CurveTexture_iu8k4")
+
+[sub_resource type="Gradient" id="Gradient_wtytl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pqgu7"]
+gradient = SubResource("Gradient_wtytl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsiqw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("GradientTexture2D_pqgu7")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_g7qrx"]
+material = SubResource("StandardMaterial3D_xsiqw")
+
+[node name="Darkness" type="GPUParticles3D"]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, 0, 0, 0)
+amount = 500
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_88k61")
+draw_pass_1 = SubResource("QuadMesh_g7qrx")
+script = ExtResource("1_giwtc")
