@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=98 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -45,7 +45,9 @@
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
+[ext_resource type="Resource" uid="uid://dfstdxgqdlkqu" path="res://resources/dialogues/desert_after_cool_rod.tres" id="45_ethiv"]
 [ext_resource type="PackedScene" uid="uid://bqovlqy66tk4p" path="res://scenes/entities/persons/desertian/desertian_model.tscn" id="46_3vvvx"]
+[ext_resource type="Resource" uid="uid://bkwtdnx57003f" path="res://resources/dialogues/desert_win.tres" id="46_ohyet"]
 [ext_resource type="PackedScene" uid="uid://cb8nhyt70tlyg" path="res://scenes/items/sign.tscn" id="46_sdkx4"]
 [ext_resource type="Resource" uid="uid://dh3vovj25dqvb" path="res://resources/dialogues/astronomer_start.tres" id="47_7w7vh"]
 [ext_resource type="PackedScene" uid="uid://dutyley7ypu7u" path="res://scenes/entities/persons/astronomer/astronomer_model.tscn" id="47_sdkx4"]
@@ -55,13 +57,16 @@
 [ext_resource type="Resource" uid="uid://0sjyvf1of6px" path="res://resources/dialogues/fisher_start.tres" id="51_el80l"]
 [ext_resource type="PackedScene" uid="uid://d2mju6gjlhrvh" path="res://scenes/entities/persons/fisher/fisher_model.tscn" id="51_uxisk"]
 [ext_resource type="Resource" uid="uid://bmkoevxuvckb" path="res://resources/dialogues/fisher_crazy.tres" id="52_abblm"]
+[ext_resource type="Resource" uid="uid://2sk3gb43vvdo" path="res://resources/dialogues/astronomer_win.tres" id="52_nnxxf"]
 [ext_resource type="Resource" uid="uid://qhghgyf0aft6" path="res://resources/dialogues/fisher_after_charm_rune.tres" id="53_abblm"]
 [ext_resource type="Resource" uid="uid://d4crgsmqea2he" path="res://resources/dialogues/fisher_after_cool_rod.tres" id="54_6xvrv"]
 [ext_resource type="Resource" uid="uid://dmk6xsg7td6q4" path="res://resources/dialogues/fisher_final.tres" id="55_ethiv"]
+[ext_resource type="Resource" uid="uid://df4q0ibcduk3h" path="res://resources/dialogues/fisher_after_giant_rod.tres" id="57_3mjd8"]
+[ext_resource type="Resource" uid="uid://dgffi4fi8fkmo" path="res://resources/dialogues/fisher_win.tres" id="58_yra41"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_6xvrv"]
+[sub_resource type="Resource" id="Resource_3mjd8"]
 script = ExtResource("5_vi8x0")
 
 [sub_resource type="Resource" id="Resource_a76df"]
@@ -90,31 +95,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_ethiv"]
+[sub_resource type="Resource" id="Resource_yra41"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_3mjd8"]
+[sub_resource type="Resource" id="Resource_6mwst"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_yra41"]
+[sub_resource type="Resource" id="Resource_nnxxf"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_6mwst"]
+[sub_resource type="Resource" id="Resource_ohyet"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_nnxxf"]
+[sub_resource type="Resource" id="Resource_jntar"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_ethiv"), SubResource("Resource_3mjd8"), SubResource("Resource_yra41"), SubResource("Resource_6mwst")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_yra41"), SubResource("Resource_6mwst"), SubResource("Resource_nnxxf"), SubResource("Resource_ohyet")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -245,7 +250,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_6xvrv")
+modifier_stack = SubResource("Resource_3mjd8")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -302,7 +307,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_nnxxf")
+modifier_stack = SubResource("Resource_jntar")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -577,7 +582,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Desert dweller"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Desert" instance=ExtResource("46_3vvvx")]
@@ -596,7 +601,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Astronomer"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("47_7w7vh"), ExtResource("48_uxisk"), ExtResource("49_wj558")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("47_7w7vh"), ExtResource("48_uxisk"), ExtResource("49_wj558"), ExtResource("52_nnxxf")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Astronomer" instance=ExtResource("47_sdkx4")]
@@ -616,7 +621,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Fisher"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("51_el80l"), ExtResource("52_abblm"), ExtResource("53_abblm"), ExtResource("54_6xvrv"), ExtResource("55_ethiv")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("51_el80l"), ExtResource("52_abblm"), ExtResource("53_abblm"), ExtResource("54_6xvrv"), ExtResource("55_ethiv"), ExtResource("57_3mjd8"), ExtResource("58_yra41")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Fisher" instance=ExtResource("51_uxisk")]
