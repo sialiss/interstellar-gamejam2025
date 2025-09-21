@@ -1,13 +1,13 @@
 extends Node
 
 # Сигналы
-signal event_triggered(data)
+signal event_triggered(type, data)
 signal rune_unlocked(rune: RunePattern)
 signal rune_name_revealed(rune: RunePattern)
 signal rune_pattern_revealed(rune: RunePattern)
 
-func trigger(data = null):
-	emit_signal("event_triggered", data)
+func trigger(type = null, data = null):
+	emit_signal("event_triggered", type, data)
 
 # Открытие имени руны
 func reveal_name(rune: RunePattern):
