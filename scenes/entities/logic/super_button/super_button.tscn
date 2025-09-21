@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4u0v4x0cbfxb"]
+
+[ext_resource type="Script" uid="uid://b1owv3nof6qkj" path="res://scenes/entities/logic/super_button/super_button.gd" id="1_k8f6i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c3xpq"]
+size = Vector3(1.1, 0.08, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8f6i"]
+albedo_color = Color(0.31, 0.31, 0.31, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yvvvu"]
+size = Vector3(1.1, 0.08, 1.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qge3s"]
+size = Vector3(1, 0.08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0tck"]
+size = Vector3(1, 0.08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iyrm"]
+albedo_color = Color(0.34, 0.21510668, 0.2108, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kv0c0"]
+size = Vector3(1, 0.18383789, 1)
+
+[node name="SuperButton" type="Node3D"]
+script = ExtResource("1_k8f6i")
+
+[node name="ButtonBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("BoxMesh_c3xpq")
+surface_material_override/0 = SubResource("StandardMaterial3D_k8f6i")
+
+[node name="BaseBody" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BaseBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+shape = SubResource("BoxShape3D_yvvvu")
+
+[node name="SurfaceBody" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SurfaceBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+shape = SubResource("BoxShape3D_qge3s")
+
+[node name="ButtonSurface" type="MeshInstance3D" parent="SurfaceBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("BoxMesh_i0tck")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6iyrm")
+
+[node name="SurfaceArea" type="Area3D" parent="SurfaceBody/ButtonSurface"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0)
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SurfaceBody/ButtonSurface/SurfaceArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10217285, 0)
+shape = SubResource("BoxShape3D_kv0c0")
+
+[node name="SurfaceBodyUnpressedPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+
+[node name="SurfaceBodyPressedPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
