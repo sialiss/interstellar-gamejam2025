@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=79 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bgaa066vtrwmj" path="res://scenes/entities/super_door/super_door.tscn" id="25_7bk07"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
+[ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://resources/dialogues/test_npc.tres" id="31_wtytl"]
@@ -188,7 +189,8 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
 curve = SubResource("Curve_a76df")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_88k61"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
+resource_local_to_scene = true
 emission_shape = 3
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
 gravity = Vector3(0, 0, 0)
@@ -196,32 +198,11 @@ scale_min = 2.1499999
 scale_max = 2.1499999
 alpha_curve = SubResource("CurveTexture_iu8k4")
 
-[sub_resource type="Gradient" id="Gradient_wtytl"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mjd8"]
+albedo_color = Color(0.05, 0.05, 0.05, 1)
+metallic_specular = 0.31
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pqgu7"]
-gradient = SubResource("Gradient_wtytl")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsiqw"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0, 0, 1)
-albedo_texture = SubResource("GradientTexture2D_pqgu7")
-disable_receive_shadows = true
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-proximity_fade_enabled = true
-stencil_flags = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_g7qrx"]
-material = SubResource("StandardMaterial3D_xsiqw")
+[sub_resource type="QuadMesh" id="QuadMesh_yra41"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1mhee"]
 lightmap_size_hint = Vector2i(10002, 10002)
@@ -397,15 +378,15 @@ directional_shadow_split_2 = 0.03
 directional_shadow_split_3 = 0.157
 directional_shadow_max_distance = 762.4
 
+[node name="Player" parent="." instance=ExtResource("5_pcmfc")]
+transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 66.28232, 0.6192311, 68.79785)
+
 [node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
 transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026, -235.33492, 672.01074, 702.15295, 3000, 5000, -2000)
 kill_turn_duration = 4.0
 
-[node name="Box" parent="." instance=ExtResource("22_5xoqh")]
-transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 66.60299, 1.4026684, 70.88002)
-
-[node name="Player" parent="." instance=ExtResource("5_pcmfc")]
-transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 65.88378, 0.49488926, 68.636734)
+[node name="Lantern" parent="." instance=ExtResource("25_iu8k4")]
+transform = Transform3D(-0.9773272, 0, 0.21173427, 0, 1, 0, -0.21173427, 0, -0.9773272, 69.08747, 0.49660444, 71.2636)
 
 [node name="DesertTown" type="Node3D" parent="."]
 
@@ -480,15 +461,23 @@ transform = Transform3D(-0.98379135, 0, -0.1793172, 0, 1, 0, 0.1793172, 0, -0.98
 [node name="evil_house" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.5271337, 0, -0.84978247, 0, 1, 0, 0.84978247, 0, 0.5271337, -407.06573, -8.094151, 472.49527)
 
-[node name="evil_smoke" type="GPUParticles3D" parent="Village/evil_house"]
+[node name="evil_smoke" parent="Village/evil_house" instance=ExtResource("29_i2f8p")]
 transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
-amount = 500
-lifetime = 5.0
-process_material = SubResource("ParticleProcessMaterial_88k61")
-draw_pass_1 = SubResource("QuadMesh_g7qrx")
+process_material = SubResource("ParticleProcessMaterial_yra41")
+emission_box_extents = Vector3(3.535, 1.705, 2.78)
 
-[node name="Lantern" parent="Village/evil_house" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93572974, 0.0017151833, -0.67346215)
+[node name="EvilHouseLantern" parent="Village/evil_house" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.93572974, 0.0017151833, -0.67346215)
+
+[node name="RuneHint" type="Label3D" parent="Village/evil_house"]
+transform = Transform3D(-0.9999999, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.9999999, 1.5254613e-05, 1.3120532, 3.1013653)
+text = "Here be the
+enchanting rune"
+
+[node name="HintHider" type="MeshInstance3D" parent="Village/evil_house"]
+transform = Transform3D(-2.09, 0, 1.509958e-07, 0, 1, 0, -3.1558122e-07, 0, -1, -4.1163853e-06, 1.3120532, 3.0812163)
+material_override = SubResource("StandardMaterial3D_3mjd8")
+mesh = SubResource("QuadMesh_yra41")
 
 [node name="house_wood8" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.6590441, 0, -0.7521044, 0, 1, 0, 0.7521044, 0, -0.6590441, -429.8965, -7.794083, 507.08243)
@@ -557,3 +546,5 @@ transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9
 [connection signal="output_changed" from="Cave/cave/SuperButton2" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/SuperButton3" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/LogicCounter" to="Cave/cave/SuperDoor" method="receive_input"]
+[connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/evil_smoke" method="disable"]
+[connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/HintHider" method="hide"]
