@@ -366,7 +366,7 @@ directional_shadow_max_distance = 762.4
 transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026, -235.33492, 672.01074, 702.15295, 3000, 5000, -2000)
 
 [node name="Player" parent="." instance=ExtResource("5_pcmfc")]
-transform = Transform3D(0.0706096, 0, 0.997504, 0, 1, 0, -0.997504, 0, 0.0706096, -399.8122, -7.2824283, 471.386)
+transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 65.88378, 0.49488926, 68.636734)
 
 [node name="DesertTown" type="Node3D" parent="."]
 
