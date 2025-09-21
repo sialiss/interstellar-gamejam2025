@@ -12,8 +12,8 @@ func execute(parent_node: Player) -> void:
 	sprite.centered = true
 	sprite.scale = Vector3(3, 3, 3)
 	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	parent_node.add_child(sprite)
-	sprite.position = Vector3(0, 5, 0)
+	parent_node.get_parent().add_child(sprite)
+	sprite.global_position = parent_node.global_position + Vector3(0, 5, 0)
 
 	var timer = Timer.new()
 	timer.wait_time = 3
