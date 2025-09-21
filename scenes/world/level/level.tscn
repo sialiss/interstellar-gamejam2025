@@ -236,7 +236,7 @@ albedo_texture = ExtResource("26_60pun")
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
-npcs = [NodePath("NPCs/NPC"), null]
+npcs = [NodePath("NPCs/NPC")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/world/level/terrain_data"
@@ -431,11 +431,11 @@ script = ExtResource("23_i2f8p")
 metadata/_custom_type_script = "uid://duonbjg3okn3g"
 
 [node name="caveArea" type="Area3D" parent="Cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.39796, -6.224028, 150.50533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.79521, 0.5197687, 150.50533)
+collision_mask = 2
 script = ExtResource("22_51y1d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/caveArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.800598, 9.153914, 3.5927124)
 shape = SubResource("CylinderShape3D_xrtkb")
 
 [node name="Observatory" type="Node3D" parent="."]

@@ -3,7 +3,7 @@ extends Node
 # todo: добавить сюда новые руны. Можно сделать удобнее с автозаполнением.
 static var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/test_rune/test_rune.tres"),
-	preload("res://resources/runes/speed_rune/speed_rune.tres"),
+	preload("res://resources/runes/time_rune/time_rune.tres"),
 	preload("res://resources/runes/fire_rune/fire_rune.tres"),
 	preload("res://resources/runes/gigantism_rune/gigantism_rune.tres"),
 ]
@@ -23,6 +23,7 @@ static func find_matching_rune_pattern(input_directions_array: Array[int]) -> Ru
 			matched_rune = rune
 	if matched_rune != null and !matched_rune.is_pattern_known:
 		EventBus.reveal_pattern(matched_rune)
+		EventBus.trigger("Rune", matched_rune.rune_name)
 	return matched_rune
 
 
