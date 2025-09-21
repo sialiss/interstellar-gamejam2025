@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d5parsu1o54g"]
 
-[ext_resource type="Script" uid="uid://dlwsn57pvdb2e" path="res://runes/rune_node.gd" id="1_cyyuu"]
+[ext_resource type="Script" uid="uid://dlwsn57pvdb2e" path="res://scripts/resources/runes/rune_node.gd" id="1_cyyuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj0ju"]
 size = Vector2(53, 48)

@@ -6,7 +6,7 @@ var returned_directions: Array[int] = []
 var current_rune_node: Area2D = null
 var is_mouse_pressed: bool = false
 
-static var rune_direction_controller_scene: PackedScene = preload("res://runes/rune_node.tscn")
+static var rune_direction_controller_scene: PackedScene = preload("res://scripts/resources/runes/rune_node.tscn")
 
 var can_paint_runes: bool = false
 

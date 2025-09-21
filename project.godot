@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://globals/scene_manager.gd"
 MusicManager="*res://globals/music_manager.tscn"
 DialogueManager="*res://globals/dialogue_manager.gd"
-RuneManager="*res://runes/runes_impl/pattern_manager.gd"
+RuneManager="*res://scripts/resources/runes/runes_impl/pattern_manager.gd"
 EventBus="*res://globals/eventBus.gd"
 
 [editor_plugins]

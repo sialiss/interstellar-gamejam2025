@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3s1rn4rew1yd"]
 
-[ext_resource type="PackedScene" uid="uid://d5parsu1o54g" path="res://runes/rune_node.tscn" id="1_tnwrl"]
+[ext_resource type="PackedScene" uid="uid://d5parsu1o54g" path="res://scripts/resources/runes/rune_node.tscn" id="1_tnwrl"]
 
 [node name="Testing2d" type="Node2D"]
 
