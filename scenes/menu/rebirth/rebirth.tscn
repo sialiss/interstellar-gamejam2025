@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://13trmybt0r2q"]
+
+[ext_resource type="Script" uid="uid://blo6m51d75q1u" path="res://scenes/menu/rebirth/rebirth.gd" id="1_nmm6q"]
+[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="2_7v2r4"]
+
+[sub_resource type="Sky" id="Sky_7v2r4"]
+
+[sub_resource type="Environment" id="Environment_0hta1"]
+background_mode = 1
+sky = SubResource("Sky_7v2r4")
+ambient_light_source = 3
+
+[sub_resource type="Animation" id="Animation_7v2r4"]
+resource_name = "rebirth"
+length = 10.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxai7"]
+_data = {
+&"rebirth": SubResource("Animation_7v2r4")
+}
+
+[node name="Rebirth" type="Node3D"]
+script = ExtResource("1_nmm6q")
+
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0hta1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7477981, -0.35182732, 0.5630413, 0, 0.8480482, 0.5299192, -0.66392624, -0.39627266, 0.6341687, 0, -2.592248, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9690933, 0.2466946, 0, -0.2466946, 0.9690933, 0, 0.81034565, 4.3185997)
+
+[node name="FishOrigin" type="Node3D" parent="."]
+transform = Transform3D(-0.7482846, 0, 0.6633779, 0, 1, 0, -0.6633779, 0, -0.7482846, 0, 0, 0)
+
+[node name="fish" parent="FishOrigin" instance=ExtResource("2_7v2r4")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uxai7")
+}
+
+[connection signal="timeout" from="RestartTimer" to="." method="restart_game"]
