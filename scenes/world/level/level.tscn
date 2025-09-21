@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=80 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://ccxfo0hdmypac" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="6_2wrvh"]
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="6_65y7h"]
 [ext_resource type="PackedScene" uid="uid://ca8wl56yovi2i" path="res://assets/models/props/observatory.glb" id="7_5m2y6"]
-[ext_resource type="Script" uid="uid://dpysnq47idk5n" path="res://addons/proton_scatter/src/modifiers/create_inside_poisson.gd" id="7_6l5f2"]
 [ext_resource type="Script" uid="uid://buoque686huhy" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_60pun"]
 [ext_resource type="PackedScene" uid="uid://bvexwqwhagvoo" path="res://assets/models/props/rocket.glb" id="8_850c4"]
 [ext_resource type="PackedScene" uid="uid://cdjh443y4b5fx" path="res://assets/models/props/house_wood.glb" id="9_850c4"]
@@ -34,44 +33,24 @@
 [ext_resource type="PackedScene" uid="uid://bgaa066vtrwmj" path="res://scenes/entities/super_door/super_door.tscn" id="25_7bk07"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
+[ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
+[ext_resource type="Texture2D" uid="uid://3mtdvoayf8iw" path="res://assets/sprites/cave_rune_pic.png" id="27_x13hu"]
+[ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="28_ni50r"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
+[ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
+[ext_resource type="PackedScene" uid="uid://cb8nhyt70tlyg" path="res://scenes/items/sign.tscn" id="46_sdkx4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_i2f8p"]
-script = ExtResource("7_6l5f2")
-radius = 13.0
-samples_before_rejection = 5
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_lhtwf"]
-script = ExtResource("16_2v6y8")
-scale = Vector3(0.7, 0.7, 0.7)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_uwxqb"]
-script = ExtResource("8_60pun")
-position = Vector3(5, 5, 0)
-rotation = Vector3(0, 360, 0)
-scale = Vector3(3, 3, 3)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_emdua"]
-script = ExtResource("10_ml3ux")
-ray_length = 100.0
-max_slope = 15.0
-
 [sub_resource type="Resource" id="Resource_wj558"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_i2f8p"), SubResource("Resource_lhtwf"), SubResource("Resource_uwxqb"), SubResource("Resource_emdua")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -99,31 +78,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_3eonq"]
+[sub_resource type="Resource" id="Resource_uxisk"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_el80l"]
+[sub_resource type="Resource" id="Resource_km357"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_abblm"]
+[sub_resource type="Resource" id="Resource_3eonq"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_6xvrv"]
+[sub_resource type="Resource" id="Resource_el80l"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_ethiv"]
+[sub_resource type="Resource" id="Resource_abblm"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_3eonq"), SubResource("Resource_el80l"), SubResource("Resource_abblm"), SubResource("Resource_6xvrv")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_uxisk"), SubResource("Resource_km357"), SubResource("Resource_3eonq"), SubResource("Resource_el80l")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -186,6 +165,9 @@ auto_exposure_max_sensitivity = 700.0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xrtkb"]
 height = 10.0
 radius = 15.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
+size = Vector3(2, 5, 2.5)
 
 [sub_resource type="Curve" id="Curve_a76df"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -304,7 +286,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_ethiv")
+modifier_stack = SubResource("Resource_abblm")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -424,6 +406,37 @@ transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -0.15362549, -5.6627
 script = ExtResource("23_i2f8p")
 metadata/_custom_type_script = "uid://duonbjg3okn3g"
 
+[node name="Sprite3D" type="Sprite3D" parent="Cave/cave"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.347642, -23.527863)
+texture = ExtResource("26_lhtwf")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Cave/cave"]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 35.792152, -4.3602133, -17.557861)
+texture = ExtResource("27_x13hu")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Cave/cave"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 26.02494, -4.3602133, -26.365082)
+texture = ExtResource("27_x13hu")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Cave/cave"]
+transform = Transform3D(-3, 2.6226832e-07, 0, -2.6226832e-07, -3, 0, 0, 0, 3, 26.02494, -3.4551191, -10.048325)
+texture = ExtResource("27_x13hu")
+
+[node name="lantern" parent="Cave/cave" instance=ExtResource("28_ni50r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.068275, -7.366039, -25.775726)
+
+[node name="Sign" parent="Cave/cave" instance=ExtResource("46_sdkx4")]
+transform = Transform3D(-1.06763, 0.96335566, 0.19390075, -0.025104405, 0.37564132, -0.9651182, -1.0390059, -0.9989718, -0.17592356, 33.478058, -5.904281, -24.12332)
+
+[node name="CollisionShape3D" parent="Cave/cave/Sign" index="1"]
+visible = true
+
+[node name="Label3D" parent="Cave/cave/Sign" index="2"]
+text = "Three steps back will save 
+you from a single mistake.
+But if you take none — 
+you’ll remain a fish forever."
+
 [node name="caveArea" type="Area3D" parent="Cave"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.79521, 0.5197687, 150.50533)
 collision_mask = 2
@@ -431,6 +444,21 @@ script = ExtResource("22_51y1d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/caveArea"]
 shape = SubResource("CylinderShape3D_xrtkb")
+
+[node name="pedestal" parent="Cave" instance=ExtResource("30_l083c")]
+transform = Transform3D(-0.63232684, 0, 0.7747017, 0, 0.2526077, 0, -0.7747017, 0, -0.63232684, 217.84996, -0.022253677, 159.69714)
+
+[node name="Cube_001" parent="Cave/pedestal" index="2"]
+transform = Transform3D(0.15166925, -0.6232116, 0, 0.1254102, 0.75370306, 0, 0, 0, 1.3166035, -0.024387741, 4.469016, 0)
+
+[node name="Cylinder_001" parent="Cave/pedestal" index="3"]
+transform = Transform3D(-0.18811391, 0, -0.04528498, 0.049953938, 0, -0.1705318, 0, 1.0634594, 0, 0.50106937, 4.0113096, -9.409026e-09)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cave/pedestal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/pedestal/StaticBody3D"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.21616219, 1.8470113, 3.5236013e-08)
+shape = SubResource("BoxShape3D_ni50r")
 
 [node name="Observatory" type="Node3D" parent="."]
 
@@ -535,6 +563,9 @@ funny_sound = ExtResource("32_pqgu7")
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
 
+[node name="lantern" parent="." instance=ExtResource("28_ni50r")]
+transform = Transform3D(0.9976736, -0.06817201, 1.8626451e-09, 0.03016985, 0.4415252, -0.89674145, 0.06113267, 0.89465517, 0.44255474, 216.40552, -0.18008593, 161.34335)
+
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/SuperButton2" to="Cave/cave/LogicCounter" method="receive_input"]
@@ -542,3 +573,6 @@ transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9
 [connection signal="output_changed" from="Cave/cave/LogicCounter" to="Cave/cave/SuperDoor" method="receive_input"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/evil_smoke" method="disable"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/HintHider" method="hide"]
+
+[editable path="Cave/cave/Sign"]
+[editable path="Cave/pedestal"]
