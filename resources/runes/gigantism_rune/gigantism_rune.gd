@@ -1,0 +1,2 @@
+extends RunePattern
+class_name GigantismRune

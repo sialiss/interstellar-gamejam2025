@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FireRune" load_steps=2 format=3 uid="uid://urhawc1lk606"]
+
+[ext_resource type="Script" uid="uid://b501kk7fnpkb6" path="res://resources/runes/fire_rune/fire_rune.gd" id="1_0k5mw"]
+
+[resource]
+resource_name = "Fire Rune"
+script = ExtResource("1_0k5mw")
+directions_array = Array[int]([1, 4, 6, 7, 4, 1])
+metadata/_custom_type_script = "uid://b501kk7fnpkb6"
