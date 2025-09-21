@@ -107,6 +107,7 @@ store={
 3d_physics/layer_1="Static World"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Physical Items"
+3d_physics/layer_7="Grabbed Items"
 3d_physics/layer_9="NPC Areas"
 
 [physics]
