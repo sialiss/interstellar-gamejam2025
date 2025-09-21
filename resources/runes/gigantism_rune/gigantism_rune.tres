@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GigantismRune" load_steps=2 format=3 uid="uid://b52ayro4djcv2"]
+
+[ext_resource type="Script" uid="uid://d3qbo24syt5g1" path="res://resources/runes/gigantism_rune/gigantism_rune.gd" id="1_ryw6n"]
+
+[resource]
+script = ExtResource("1_ryw6n")
+metadata/_custom_type_script = "uid://d3qbo24syt5g1"
