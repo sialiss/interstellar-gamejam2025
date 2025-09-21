@@ -42,6 +42,8 @@
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
+
 [sub_resource type="Resource" id="Resource_i2f8p"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
