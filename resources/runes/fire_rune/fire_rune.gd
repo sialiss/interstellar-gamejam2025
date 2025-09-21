@@ -10,7 +10,7 @@ func execute(player: Player) -> void:
 	var fire_particle: Area3D = fire_particle_scene.instantiate()
 	var direction: Vector3 = camera.global_transform.basis.z.normalized()
 	player.add_sibling(fire_particle)
-	
+
 	fire_particle.global_position = camera.global_position - direction * 1.0
 	if fire_particle.has_method("set_velocity"):
 		fire_particle.set_velocity(-direction * 10.0)

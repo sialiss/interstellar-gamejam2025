@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://dqtyjpeyv4eik"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_12pbo"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_s3xei"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_gdukb"]
+
+[sub_resource type="Resource" id="Resource_12pbo"]
+script = ExtResource("1_12pbo")
+text = "Эта руна явно связана с пламенем. Думаю, она может помочь запустить ракету."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_6xvrv"]
+script = ExtResource("3_gdukb")
+type = "Rune"
+data = "fire_rune"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_12pbo")
+dialogue_id = "astronomer_after_rune"
+text = "Ты видел? Это… это символ, и он пылает, даже в холоде космоса!"
+choices = Array[ExtResource("1_12pbo")]([SubResource("Resource_12pbo")])
+conditions = Array[ExtResource("2_s3xei")]([SubResource("Resource_6xvrv")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

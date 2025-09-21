@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://dh3vovj25dqvb"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_jihgp"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_sph3y"]
+
+[sub_resource type="Resource" id="Resource_ipqdx"]
+script = ExtResource("1_jihgp")
+text = "Только помоги отрегулировать телескоп. Мои руки дрожат, я не могу навести его точно."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_jihgp"]
+script = ExtResource("1_jihgp")
+speaker = "player"
+text = "Что именно нужно сделать?"
+choices = Array[ExtResource("1_jihgp")]([SubResource("Resource_ipqdx")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_cc3bl"]
+script = ExtResource("1_jihgp")
+text = "Сначала фокус. Без него ты увидишь лишь туман."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_sph3y"]
+script = ExtResource("1_jihgp")
+speaker = "player"
+text = "Я просто хочу взглянуть в телескоп."
+choices = Array[ExtResource("1_jihgp")]([SubResource("Resource_cc3bl")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_kv32v"]
+script = ExtResource("1_jihgp")
+text = "С каждым её движением реальность меняется. Разве ты этого не чувствуешь?"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_y6ino"]
+script = ExtResource("1_jihgp")
+speaker = "player"
+text = "Рыба? Ты серьёзно?"
+choices = Array[ExtResource("1_jihgp")]([SubResource("Resource_kv32v")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[resource]
+script = ExtResource("1_jihgp")
+dialogue_id = "astronomer_start"
+text = "Ах, наконец-то кто-то пришёл! Я наблюдаю за этой гигантской рыбой… но её тайна ускользает от меня.
+Каждый её оборот меняет мир, а я всё ещё ничего не понимаю.
+Может, ты сможешь мне помочь?"
+choices = Array[ExtResource("1_jihgp")]([SubResource("Resource_jihgp"), SubResource("Resource_sph3y"), SubResource("Resource_y6ino")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

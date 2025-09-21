@@ -6,8 +6,11 @@ var slots: Array = []
 var max_slots := 5
 
 func add_item(item: Node):
+	print(slots.size() < max_slots)
 	if slots.size() < max_slots:
 		slots.append(item)
+		print(item)
+		EventBus.trigger("Inventory", item.name)
 		emit_signal("inventory_changed")
 		return true
 	return false
