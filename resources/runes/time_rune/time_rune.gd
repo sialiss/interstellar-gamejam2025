@@ -1,5 +1,5 @@
 extends RunePattern
-class_name SpeedRune
+class_name TimeRune
 
 func execute(player: Player) -> void:
 	#print_debug("some logic in " + rune_name)

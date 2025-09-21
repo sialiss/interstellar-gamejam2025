@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=5 format=3 uid="uid://ch8lfoaucgyff"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_4ob2y"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_w72co"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_w72co"]
+
+[sub_resource type="Resource" id="Resource_ngdvu"]
+script = ExtResource("3_w72co")
+type = "Rune"
+data = "time_rune"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_4ob2y")
+dialogue_id = "desert_after_rune"
+text = "У тебя получилось!
+Честно говоря, я не уверен насчёт эффекта. Может быть, ты что-нибудь поймёшь."
+conditions = Array[ExtResource("2_w72co")]([SubResource("Resource_ngdvu")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
