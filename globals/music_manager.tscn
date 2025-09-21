@@ -7,7 +7,9 @@
 script = ExtResource("1_tn5dr")
 
 [node name="LocationAudio1" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("2_hetdf")
 autoplay = true
 
 [node name="LocationAudio2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
