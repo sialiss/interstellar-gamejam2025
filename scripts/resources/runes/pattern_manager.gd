@@ -4,7 +4,8 @@ extends Node
 static var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/test_rune/test_rune.tres"),
 	preload("res://resources/runes/speed_rune/speed_rune.tres"),
-
+	preload("res://resources/runes/fire_rune/fire_rune.tres"),
+	preload("res://resources/runes/gigantism_rune/gigantism_rune.tres"),
 ]
 
 static var max_errors: int = 1 # Все руны должны состоять из n + 1 линий!
