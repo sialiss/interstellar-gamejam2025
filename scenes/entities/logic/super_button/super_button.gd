@@ -20,16 +20,18 @@ var tween: Tween
 
 
 func _ready():
-	surface_area.body_entered.connect(_on_body_entered)
-	surface_area.body_exited.connect(_on_body_exited)
+	surface_area.body_entered.connect(_on_entered)
+	surface_area.body_exited.connect(_on_exited)
+	surface_area.area_entered.connect(_on_entered)
+	surface_area.area_exited.connect(_on_exited)
 
 
-func _on_body_entered(_body: PhysicsBody3D):
+func _on_entered(_body):
 	pressed_counter += 1
 	is_pressed = pressed_counter > 0
 
 
-func _on_body_exited(_body: PhysicsBody3D):
+func _on_exited(_body):
 	pressed_counter -= 1
 	is_pressed = pressed_counter > 0
 

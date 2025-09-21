@@ -427,13 +427,13 @@ transform = Transform3D(0.906352, 0, -0.42252332, 0, 1, 0, 0.42252332, 0, 0.9063
 transform = Transform3D(0.906352, 0, -0.42252332, 0, 1, 0, 0.42252332, 0, 0.906352, 2.7837064, -5.053808, -15.32106)
 
 [node name="SuperButton" parent="Cave/cave" instance=ExtResource("22_7bk07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.973793, -5.662764, -17.709183)
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 3.973793, -5.662764, -17.709183)
 
 [node name="SuperButton2" parent="Cave/cave" instance=ExtResource("22_7bk07")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5087657, -5.662764, -19.908478)
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -1.5087657, -5.662764, -19.908478)
 
 [node name="SuperButton3" parent="Cave/cave" instance=ExtResource("22_7bk07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15362549, -5.662764, -15.523819)
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -0.15362549, -5.662764, -15.523819)
 
 [node name="LogicCounter" type="Node" parent="Cave/cave"]
 script = ExtResource("23_i2f8p")
