@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp8ubqftqvsur"]
+[gd_scene load_steps=10 format=3 uid="uid://bp8ubqftqvsur"]
 
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Script" path="res://player/zoomer.gd" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://bbwxppese7bml" path="res://player/zoomer.gd" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://dqmpwhsg5r52e" path="res://scenes/UI/player_ui.tscn" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://buu3oa28nv7tn" path="res://scenes/entities/persons/default_person/person.tscn" id="3_boad6"]
 [ext_resource type="Texture2D" uid="uid://bnn0ynfde8hfx" path="res://assets/sprites/magic_particle.png" id="3_g1dw6"]
