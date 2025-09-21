@@ -21,7 +21,7 @@
 [ext_resource type="Script" uid="uid://ck21km2sgfifg" path="res://scripts/fish_transform/become_fish.gd" id="18_dap6o"]
 [ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="19_8dmbb"]
 [ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/revolution_trigger_1.tres" id="19_dap6o"]
-[ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://scenes/music_manager.tscn" id="21_ostp6"]
+[ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://globals/music_manager.tscn" id="21_ostp6"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="22_wxyf7"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="23_1lye0"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="24_aagqy"]

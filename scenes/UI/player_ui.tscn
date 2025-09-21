@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqmpwhsg5r52e"]
+[gd_scene load_steps=10 format=3 uid="uid://dqmpwhsg5r52e"]
 
 [ext_resource type="Script" uid="uid://14cpmjcncpl4" path="res://scripts/player_ui.gd" id="1_d6j1s"]
 [ext_resource type="PackedScene" uid="uid://cgmdgketpnli8" path="res://scenes/UI/inventory_ui.tscn" id="2_q3y81"]
 [ext_resource type="Texture2D" uid="uid://nokxltsb07ft" path="res://assets/textures/page.png" id="3_q3y81"]
+[ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/textures/speed_rune.png" id="4_hxbk0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6j1s"]
 bg_color = Color(0.57196844, 0.6061543, 0.6300106, 0.08235294)
@@ -105,6 +106,49 @@ offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Page1" type="TextureRect" parent="RunesUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -192.0
+offset_right = -4.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_q3y81")
+
+[node name="name" type="Label" parent="RunesUI/Page1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.0625
+anchor_right = 0.5
+anchor_bottom = 0.0625
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "?????"
+label_settings = SubResource("LabelSettings_q3y81")
+
+[node name="content" type="TextureRect" parent="RunesUI/Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -192.0
+offset_right = 156.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Page2" type="TextureRect" parent="RunesUI"]
 layout_mode = 1
 anchors_preset = 8
@@ -135,34 +179,20 @@ grow_horizontal = 2
 text = "?????"
 label_settings = SubResource("LabelSettings_q3y81")
 
-[node name="Page1" type="TextureRect" parent="RunesUI"]
+[node name="content" type="TextureRect" parent="RunesUI/Page2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -316.0
+offset_left = -156.0
 offset_top = -192.0
-offset_right = -4.0
+offset_right = 156.0
 offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_q3y81")
-
-[node name="name" type="Label" parent="RunesUI/Page1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.0625
-anchor_right = 0.5
-anchor_bottom = 0.0625
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "?????"
-label_settings = SubResource("LabelSettings_q3y81")
+texture = ExtResource("4_hxbk0")
 
 [node name="ColorRect" type="ColorRect" parent="RunesUI"]
 layout_mode = 1
@@ -178,3 +208,27 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.20847604, 0.07657356, 0.056487992, 1)
+
+[node name="Prev" type="Button" parent="RunesUI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="Next" type="Button" parent="RunesUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.013
+anchor_top = 0.5
+anchor_right = 1.013
+anchor_bottom = 0.5
+offset_left = -8.216003
+offset_top = -32.0
+offset_right = 7.7839966
+offset_bottom = 32.0
+grow_vertical = 2
