@@ -82,6 +82,7 @@ func _show_node(node: DialogueResource) -> void:
 		if node.choices.is_empty():
 			_on_end_pressed()
 		else:
+			node.choices[0].dialogue_id = _current_node.dialogue_id
 			_show_node(node.choices[0])
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -95,6 +96,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_npc.stop_talking()
+	choice.dialogue_id = _current_node.dialogue_id
 	_current_node = choice
 	_show_node(choice)
 
@@ -102,7 +104,7 @@ func stop_dialogue() -> void:
 	_on_end_pressed()
 
 func _on_end_pressed() -> void:
-	if _current_node and not _current_node.is_repeatable:
+	if _current_node:
 		DialogueManager.mark_completed(_current_node.dialogue_id)
 
 	visible = false

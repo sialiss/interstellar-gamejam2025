@@ -18,6 +18,9 @@ var is_jumping: bool = false
 signal interaction_started(dialogues, npc)
 signal interaction_ended(dialogues, npc)
 
+func _ready() -> void:
+	bind_dualogues()
+
 func interact() -> void:
 	emit_signal("interaction_started", dialogues, self)
 
@@ -93,3 +96,9 @@ func _jump(jump_height: float, jump_duration: float):
 
 	position.y = start_y
 	is_jumping = false
+
+func bind_dualogues():
+	for each in dialogues:
+		if each.conditions:
+			for cond in each.conditions:
+				cond._bind_to_bus()
