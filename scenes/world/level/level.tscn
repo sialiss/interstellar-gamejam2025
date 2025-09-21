@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=75 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://7v4qjmoe1607" path="res://addons/proton_scatter/src/cache/scatter_cache.gd" id="15_2wrvh"]
 [ext_resource type="Script" uid="uid://bk4mhmruqr8yp" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="16_2v6y8"]
 [ext_resource type="Script" uid="uid://bcqje518k3e3f" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_60pun"]
+[ext_resource type="PackedScene" uid="uid://cc6b2vssow7al" path="res://assets/models/props/cave.glb" id="21_a76df"]
+[ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
@@ -172,6 +174,48 @@ auto_exposure_scale = 0.8
 dof_blur_far_distance = 120.59
 dof_blur_far_transition = 209.75
 auto_exposure_max_sensitivity = 700.0
+
+[sub_resource type="Curve" id="Curve_a76df"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
+curve = SubResource("Curve_a76df")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_88k61"]
+emission_shape = 3
+emission_box_extents = Vector3(3.535, 1.705, 2.78)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.1499999
+scale_max = 2.1499999
+alpha_curve = SubResource("CurveTexture_iu8k4")
+
+[sub_resource type="Gradient" id="Gradient_wtytl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pqgu7"]
+gradient = SubResource("Gradient_wtytl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsiqw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("GradientTexture2D_pqgu7")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_g7qrx"]
+material = SubResource("StandardMaterial3D_xsiqw")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1mhee"]
 lightmap_size_hint = Vector2i(10002, 10002)
@@ -344,7 +388,7 @@ transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026,
 kill_turn_duration = 4.0
 
 [node name="Player" parent="." instance=ExtResource("5_pcmfc")]
-transform = Transform3D(-0.9742757, 0, -0.22535916, 0, 1, 0, 0.22535916, 0, -0.9742757, 66.34034, 0.67256665, 68.26814)
+transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 65.88378, 0.49488926, 68.636734)
 
 [node name="DesertTown" type="Node3D" parent="."]
 
@@ -363,39 +407,74 @@ transform = Transform3D(-0.04939028, 0, 0.9987796, 0, 1, 0, -0.9987796, 0, -0.04
 [node name="house3" parent="DesertTown" instance=ExtResource("6_65y7h")]
 transform = Transform3D(-0.5523445, 0, 0.8336159, 0, 1, 0, -0.8336159, 0, -0.5523445, 71.171555, 0.38530874, 93.24507)
 
+[node name="Cave" type="Node3D" parent="."]
+
+[node name="cave" parent="Cave" instance=ExtResource("21_a76df")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 194.00519, 7.180512, 126.01787)
+
 [node name="Observatory" type="Node3D" parent="."]
 
 [node name="observatory" parent="Observatory" instance=ExtResource("7_5m2y6")]
-transform = Transform3D(0.5540892, 0, -0.8324573, 0, 1, 0, 0.8324573, 0, 0.5540892, 176.1565, 33.36252, 400.3235)
+transform = Transform3D(0.5087861, 0, -0.86089295, 0, 1, 0, 0.86089295, 0, 0.5087861, 206.44095, 39.082474, 651.58887)
 
 [node name="rocket" parent="Observatory" instance=ExtResource("8_850c4")]
-transform = Transform3D(2.7704458, 0, -4.1622868, 0, 5, 0, 4.1622868, 0, 2.7704458, 166.16379, 0.5544956, 537.5773)
+transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
 
 [node name="Village" type="Node3D" parent="."]
 
 [node name="house_wood" parent="Village" instance=ExtResource("9_850c4")]
-transform = Transform3D(0.95114815, 0, 0.3087348, 0, 1, 0, -0.3087348, 0, 0.95114815, -392.7869, -8.388227, 504.71957)
+transform = Transform3D(0.9976555, 0, 0.068433285, 0, 1, 0, -0.068433285, 0, 0.9976555, -386.98352, -8.388227, 502.51328)
 
 [node name="house_wood2" parent="Village" instance=ExtResource("9_850c4")]
-transform = Transform3D(-0.8924048, 0, -0.4512357, 0, 1, 0, 0.4512357, 0, -0.8924048, -399.7094, -8.388227, 487.81723)
+transform = Transform3D(0.44112983, 0, -0.89744323, 0, 1, 0, 0.89744323, 0, 0.44112983, -399.26385, -8.388227, 488.4465)
 
 [node name="house_wood3" parent="Village" instance=ExtResource("9_850c4")]
-transform = Transform3D(0.34282374, 0, 0.9393997, 0, 1, 0, -0.9393997, 0, 0.34282374, -376.54285, -8.388227, 495.2526)
+transform = Transform3D(0.71895176, 0, 0.6950599, 0, 1, 0, -0.6950599, 0, 0.71895176, -376.54285, -8.388227, 495.2526)
+
+[node name="house_wood5" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(0.3983648, 0, -0.9172271, 0, 1, 0, 0.9172271, 0, 0.3983648, -402.8826, -8.388227, 480.66397)
+
+[node name="house_wood6" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(-0.98379135, 0, -0.1793172, 0, 1, 0, 0.1793172, 0, -0.98379135, -395.28186, -8.167064, 452.13278)
+
+[node name="evil_house" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(0.5271337, 0, -0.84978247, 0, 1, 0, 0.84978247, 0, 0.5271337, -407.06573, -8.094151, 472.49527)
+
+[node name="evil_smoke" type="GPUParticles3D" parent="Village/evil_house"]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
+amount = 500
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_88k61")
+draw_pass_1 = SubResource("QuadMesh_g7qrx")
+
+[node name="Lantern" parent="Village/evil_house" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93572974, 0.0017151833, -0.67346215)
+
+[node name="house_wood8" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(-0.6590441, 0, -0.7521044, 0, 1, 0, 0.7521044, 0, -0.6590441, -429.8965, -7.794083, 507.08243)
+
+[node name="house_wood9" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(-0.66324735, 0, -0.7484002, 0, 1, 0, 0.7484002, 0, -0.66324735, -423.78702, -8.110708, 499.84396)
+
+[node name="house_wood10" parent="Village" instance=ExtResource("9_850c4")]
+transform = Transform3D(-0.44411936, 0, -0.8959676, 0, 1, 0, 0.8959676, 0, -0.44411936, -418.70865, -8.143508, 492.05612)
 
 [node name="house_wood4" parent="Village" instance=ExtResource("9_850c4")]
-transform = Transform3D(-0.6356336, 0, 0.77199084, 0, 1, 0, -0.77199084, 0, -0.6356336, -463.052, -8.932535, 371.999)
+transform = Transform3D(-0.98837733, 0, 0.15201998, 0, 1, 0, -0.15201998, 0, -0.98837733, -453.0579, -7.0896072, 450.75476)
 
 [node name="bridge" parent="Village" instance=ExtResource("10_ve8xh")]
-transform = Transform3D(-0.24239594, 0, 0.9701773, 0, 1, 0, -0.9701773, 0, -0.24239594, -473.8919, -10.289656, 378.8355)
+transform = Transform3D(0.4110371, 0, 0.9116185, 0, 1, 0, -0.9116185, 0, 0.4110371, -479.06168, -10.289656, 454.33215)
 
 [node name="bridge2" parent="Village" instance=ExtResource("10_ve8xh")]
-transform = Transform3D(-0.9710176, 0, -0.23900796, 0, 1, 0, 0.23900796, 0, -0.9710176, -487.25476, -10.310419, 380.72455)
+transform = Transform3D(0.4142168, 0, 0.91017824, 0, 1, 0, -0.91017824, 0, 0.4142168, -489.67538, -10.310419, 449.46912)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_1mhee")
 surface_material_override/0 = ExtResource("11_ve8xh")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="UnderwaterSand" type="MeshInstance3D" parent="Water"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.105, 0)
@@ -407,6 +486,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3370.101, -10.829, 414.45)
 mesh = SubResource("PlaneMesh_1mhee")
 surface_material_override/0 = ExtResource("11_ve8xh")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="UnderwaterSand" type="MeshInstance3D" parent="Water2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.105, 0)
