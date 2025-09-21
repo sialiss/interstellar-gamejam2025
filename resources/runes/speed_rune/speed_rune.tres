@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpeedRune" load_steps=3 format=3 uid="uid://cmrgsajfpa3dh"]
+
+[ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/textures/speed_rune.png" id="1_2ud4h"]
+[ext_resource type="Script" uid="uid://372ugn800bkr" path="res://resources/runes/speed_rune/speed_rune.gd" id="1_nl8o5"]
+
+[resource]
+script = ExtResource("1_nl8o5")
+rune_name = "speed_rune"
+directions_array = Array[int]([0, 2, 4])
+image = ExtResource("1_2ud4h")
+metadata/_custom_type_script = "uid://deyjd1bbu5t8v"

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RevolutionTrigger" load_steps=2 format=3 uid="uid://t3ubsev478qp"]
 
-[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="1_xinqh"]
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="1_xinqh"]
 
 [resource]
 script = ExtResource("1_xinqh")

@@ -9,10 +9,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1lye0"]
 size = Vector3(3, 5.086, 6)
 
-[node name="MusicTest" type="Node"]
+[node name="MusicTest" type="Node3D"]
 
 [node name="MusicTestHouse" parent="." instance=ExtResource("1_3trob")]
-transform = Transform3D(1.5773633, 0, 0.033381797, 0, 1.1343355, 0, -0.050866053, 0, 1.035174, -147.22362, -15.614238, -176.67548)
+transform = Transform3D(1.5773633, 0, 0.033381797, 0, 1.1343355, 0, -0.050866053, 0, 1.035174, 0, 0, 0)
 
 [node name="MiniCountyArea" type="Area3D" parent="MusicTestHouse"]
 transform = Transform3D(0.9987949, 0, -0.049078517, 0, 1, 0, 0.049078517, 0, 0.9987949, -5.2763443, 4.513319, -0.64071655)

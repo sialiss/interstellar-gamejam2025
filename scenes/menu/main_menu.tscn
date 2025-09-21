@@ -1,0 +1,163 @@
+[gd_scene load_steps=18 format=3 uid="uid://ben60xq4768re"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://c1tg3fb1ge3aw" path="res://scenes/menu/menu_terrain_3d_material.tres" id="1_3rkf3"]
+[ext_resource type="Script" uid="uid://df1nynb8hajh8" path="res://scenes/menu/main_menu.gd" id="1_qgo02"]
+[ext_resource type="Material" uid="uid://bwirrnln368j7" path="res://assets/materials/water.tres" id="1_xn6kt"]
+[ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_247la"]
+[ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="2_isoef"]
+[ext_resource type="PackedScene" uid="uid://ca8wl56yovi2i" path="res://assets/models/props/observatory.glb" id="3_kiqgm"]
+[ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="4_kiqgm"]
+[ext_resource type="AudioStream" uid="uid://d6ggf3w2m66k" path="res://assets/sounds/menu.wav" id="7_isoef"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qgo02"]
+lightmap_size_hint = Vector2i(10002, 10002)
+add_uv2 = true
+size = Vector2(2000, 2000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vovv2"]
+albedo_texture = ExtResource("2_isoef")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isoef"]
+bg_color = Color(0.20916122, 0.24968919, 0.3068866, 0.27058825)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgo02"]
+bg_color = Color(0.19653463, 0.23796424, 0.29069042, 0.27058825)
+
+[sub_resource type="Theme" id="Theme_qgo02"]
+Button/styles/normal = SubResource("StyleBoxFlat_isoef")
+Button/styles/pressed = SubResource("StyleBoxFlat_qgo02")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kiqgm"]
+sky_top_color = Color(0.5575474, 0.7708913, 0.9903249, 1)
+sky_horizon_color = Color(0.7149523, 0.5511847, 1, 1)
+
+[sub_resource type="Sky" id="Sky_psw0a"]
+sky_material = SubResource("ProceduralSkyMaterial_kiqgm")
+
+[sub_resource type="Environment" id="Environment_hj162"]
+background_mode = 2
+sky = SubResource("Sky_psw0a")
+ambient_light_source = 3
+tonemap_mode = 1
+ssao_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.41171336, 0.54680234, 0.8087982, 1)
+fog_sun_scatter = 0.38
+fog_density = 1.0
+fog_depth_curve = 1.2745621
+fog_depth_begin = 0.0
+fog_depth_end = 2511.9
+adjustment_enabled = true
+adjustment_saturation = 1.4
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_xn6kt"]
+auto_exposure_scale = 0.8
+dof_blur_far_distance = 120.59
+dof_blur_far_transition = 209.75
+auto_exposure_max_sensitivity = 700.0
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_qgo02")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9613915, -7.450581e-09, -0.27518433, 0.1897725, 0.7241718, 0.6629944, 0.19928072, -0.68961954, 0.69621265, 65.51643, 30.305954, 25.433195)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.8673313, -0.19543825, -0.45775568, 1.4901161e-08, 0.91968447, -0.39265823, 0.49773127, -0.3405648, -0.79767114, 62.57579, 31.828465, 22.245735)
+far = 10000.0
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99950105, -0.031585205, 0, 0.031585205, 0.99950105, 379.04175, 5.9721317, 414.44995)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_qgo02")
+skeleton = NodePath("../Terrain3D")
+surface_material_override/0 = ExtResource("1_xn6kt")
+
+[node name="UnderwaterSand" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.105, 0)
+mesh = SubResource("PlaneMesh_qgo02")
+skeleton = NodePath("../../Terrain3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_vovv2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -224.0
+offset_right = 344.0
+offset_bottom = -160.0
+theme = SubResource("Theme_qgo02")
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -144.0
+offset_right = 344.0
+offset_bottom = -80.0
+theme = SubResource("Theme_qgo02")
+text = "EXIT"
+
+[node name="Start" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -304.0
+offset_right = 344.0
+offset_bottom = -240.0
+theme = SubResource("Theme_qgo02")
+text = "START"
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://scenes/menu/menu_terrain_data"
+material = ExtResource("1_3rkf3")
+assets = ExtResource("2_247la")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="observatory" parent="." instance=ExtResource("3_kiqgm")]
+transform = Transform3D(0.50372875, 0, -0.8638619, 0, 1, 0, 0.8638619, 0, 0.50372875, 63.173523, 33.92754, 74.83094)
+
+[node name="Hole" parent="observatory" index="3"]
+transform = Transform3D(-0.27600646, 0, 0.9611558, 0, 1, 0, -0.9611558, 0, -0.27600646, 0.058094665, 13.70026, 11.7003)
+
+[node name="Dome" parent="observatory" index="4"]
+transform = Transform3D(-0.6729221, 0, 0.7397133, 0, 1, 0, -0.7397133, 0, -0.6729221, 0, 12.559138, 10.162193)
+
+[node name="Tube" parent="observatory/Dome" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.9091271, 0.41651884, 0, -0.41651884, 0.9091271, 0, 0, 0)
+
+[node name="BigFish" parent="." instance=ExtResource("4_kiqgm")]
+transform = Transform3D(678.7165, -414.03494, -606.56323, 574.52185, 813.8137, 87.36151, 457.45874, -407.77734, 790.22095, 2302.3914, 2272.1128, 2186.8743)
+kill_turn_duration = 4.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hj162")
+camera_attributes = SubResource("CameraAttributesPractical_xn6kt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_isoef")
+
+[editable path="observatory"]

@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Interstellar Gamejam 2025"
-run/main_scene="uid://cc7ya3ksex0y4"
+run/main_scene="uid://cqelj6eb7mfuo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SceneManager="*res://globals/scene_manager.gd"
-MusicManager="*res://scenes/music_manager.tscn"
+MusicManager="*res://globals/music_manager.tscn"
 DialogueManager="*res://globals/dialogue_manager.gd"
+RuneManager="*res://scripts/resources/runes/runes_impl/pattern_manager.gd"
+EventBus="*res://globals/eventBus.gd"
 
 [editor_plugins]
 

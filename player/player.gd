@@ -14,7 +14,7 @@ signal hide_prompt()
 ## Чувствительность мыши
 @export var mouse_sensitivity: float = 0.002
 ## Скорость прыжка
-@export var JUMP_VELOCITY: float = 4.5
+@export var JUMP_VELOCITY: float = 6
 ## Масса игрока, влияет на силу толкания физических объектов
 @export var mass := 1.0
 
@@ -49,7 +49,7 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("interact") and can_move:
 		if ray.is_colliding():
 			var entity = ray.get_collider()
-			print(entity)
+			#print(entity)
 			if entity.is_in_group("interactable") or entity.is_in_group("npc"):
 				entity.interact()
 			elif entity.is_in_group("car"):
@@ -92,7 +92,7 @@ func _physics_process(delta: float) -> void:
 
 	# Рассчёт скорости в падении
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * 1.2 * delta
 
 	# Прыжок
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
