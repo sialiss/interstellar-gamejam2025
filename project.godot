@@ -33,6 +33,7 @@ player=""
 npc=""
 interactable=""
 car=""
+flammable=""
 
 [input]
 
