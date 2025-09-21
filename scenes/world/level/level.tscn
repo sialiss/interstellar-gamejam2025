@@ -232,7 +232,7 @@ albedo_texture = ExtResource("26_60pun")
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
-npcs = [NodePath("NPCs/NPC"), NodePath("NPCs/NPC2")]
+npcs = [NodePath("NPCs/NPC"), NodePath("")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/world/level/terrain_data"
@@ -501,10 +501,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 [node name="NPC" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
 transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 73.88464, -0.8531324, 89.50265)
 dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx")])
-funny_sound = ExtResource("32_pqgu7")
-
-[node name="NPC2" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
-transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 75.82806, -0.8531324, 89.50265)
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
