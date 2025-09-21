@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Interstellar Gamejam 2025"
-run/main_scene="uid://cc7ya3ksex0y4"
+run/main_scene="uid://cqelj6eb7mfuo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

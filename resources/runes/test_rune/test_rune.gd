@@ -6,7 +6,7 @@ class_name TestRune
 
 # Это просто тестовая логика для тестовой руны, можно сюда что угодно писать
 func execute(parent_node: Player) -> void:
-	print_debug("some logic in " + rune_name)
+	#print_debug("some logic in " + rune_name)
 	var sprite = Sprite3D.new()
 	sprite.texture = texture
 	sprite.centered = true
@@ -18,7 +18,7 @@ func execute(parent_node: Player) -> void:
 	var timer = Timer.new()
 	timer.wait_time = 3
 	timer.one_shot = true
-	timer.timeout.connect(_remove_sprite.bind(sprite))
+	timer.timeout.connect(_remove_sprite.bind(timer, sprite))
 	sprite.add_child(timer)
 	timer.start()
 

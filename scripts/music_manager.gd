@@ -14,7 +14,7 @@ func _ready():
 func play_music(stream: AudioStream):
 	if active_player.stream == stream:
 		return # уже играет эта музыка
-	print("music start", stream.resource_path)
+	#print("music start", stream.resource_path)
 	# второй плеер
 	inactive_player.stop()
 	inactive_player.stream = stream

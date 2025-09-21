@@ -24,6 +24,7 @@ func _ready():
 
 func trigger_revolution():
 	current_revolution += 1
+	print('current_revolution', current_revolution)
 	if current_revolution >= revolution_triggers.size() or current_revolution < 0:
 		return
 
