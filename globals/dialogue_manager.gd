@@ -6,7 +6,7 @@ var completed_dialogues: Dictionary = {}
 func mark_completed(id: String) -> void:
 	if id != "":
 		completed_dialogues[id] = true
-		EventBus.event_triggered.emit("dialogue", id)
+		EventBus.trigger("dialogue", id)
 
 func is_completed(id: String) -> bool:
 	return id != "" and completed_dialogues.has(id)

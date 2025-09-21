@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=66 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="32_wtytl"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="33_pqgu7"]
 
 [sub_resource type="Resource" id="Resource_g7qrx"]
 script = ExtResource("7_6l5f2")
@@ -180,10 +181,10 @@ size = Vector2(2000, 2000)
 albedo_texture = ExtResource("26_60pun")
 
 [sub_resource type="Resource" id="Resource_km357"]
-script = ExtResource("32_wtytl")
+script = ExtResource("33_pqgu7")
 type = "dialogue"
 data = "desert_greeting"
-metadata/_custom_type_script = "uid://f7k5f1q4u1o7"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Resource" id="Resource_uxisk"]
 script = ExtResource("30_88k61")
