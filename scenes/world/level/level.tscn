@@ -27,15 +27,16 @@
 [ext_resource type="Script" uid="uid://bk4mhmruqr8yp" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="16_2v6y8"]
 [ext_resource type="Script" uid="uid://bcqje518k3e3f" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_60pun"]
 [ext_resource type="PackedScene" uid="uid://cc6b2vssow7al" path="res://assets/models/props/cave.glb" id="21_a76df"]
+[ext_resource type="Script" uid="uid://07xs4oo4capw" path="res://scenes/world/level/cave_area.gd" id="22_51y1d"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
-[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://resources/dialogues/test_npc.tres" id="31_wtytl"]
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
-[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="32_wtytl"]
-[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="33_pqgu7"]
+[ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
+[ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
+[ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 
 [sub_resource type="Resource" id="Resource_g7qrx"]
 script = ExtResource("7_6l5f2")
@@ -175,6 +176,10 @@ dof_blur_far_distance = 120.59
 dof_blur_far_transition = 209.75
 auto_exposure_max_sensitivity = 700.0
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xrtkb"]
+height = 10.0
+radius = 15.0
+
 [sub_resource type="Curve" id="Curve_a76df"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -224,20 +229,6 @@ size = Vector2(2000, 2000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
-
-[sub_resource type="Resource" id="Resource_km357"]
-script = ExtResource("33_pqgu7")
-type = "dialogue"
-data = "desert_greeting"
-metadata/_custom_type_script = "uid://cujws3rcdujt0"
-
-[sub_resource type="Resource" id="Resource_uxisk"]
-script = ExtResource("30_88k61")
-is_repeatable = true
-dialogue_id = "wow"
-text = "Ого, ты уже поговорил с тем человечком!"
-conditions = Array[ExtResource("32_wtytl")]([SubResource("Resource_km357")])
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
@@ -412,6 +403,14 @@ transform = Transform3D(-0.5523445, 0, 0.8336159, 0, 1, 0, -0.8336159, 0, -0.552
 [node name="cave" parent="Cave" instance=ExtResource("21_a76df")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 194.00519, 7.180512, 126.01787)
 
+[node name="caveArea" type="Area3D" parent="Cave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.39796, -6.224028, 150.50533)
+script = ExtResource("22_51y1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/caveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.800598, 9.153914, 3.5927124)
+shape = SubResource("CylinderShape3D_xrtkb")
+
 [node name="Observatory" type="Node3D" parent="."]
 
 [node name="observatory" parent="Observatory" instance=ExtResource("7_5m2y6")]
@@ -501,12 +500,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 
 [node name="NPC" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
 transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 73.88464, -0.8531324, 89.50265)
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("31_wtytl")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="NPC2" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
 transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 75.82806, -0.8531324, 89.50265)
-dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_uxisk")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]

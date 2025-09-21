@@ -28,7 +28,7 @@ static func find_matching_rune_pattern(input_directions_array: Array[int]) -> Ru
 static func calculate_array_distance(arr1: Array[int], arr2: Array[int]) -> int:
 	var m: int = arr1.size()
 	var n: int = arr2.size()
-	
+
 	var dp = []
 	for i in range(m + 1):
 		dp.append([])
@@ -38,7 +38,7 @@ static func calculate_array_distance(arr1: Array[int], arr2: Array[int]) -> int:
 		dp[i][0] = i
 	for j in range(n + 1):
 		dp[0][j] = j
-		
+
 	for i in range(1, m + 1):
 		for j in range(1, n + 1):
 			if arr1[i - 1] == arr2[j - 1]:
