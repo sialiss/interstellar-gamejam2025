@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://coh1a2bw6hpoy"]
+
+[ext_resource type="Script" uid="uid://dam00albwwbdp" path="res://scenes/fishrod/fishrod.gd" id="1_8mowb"]
+[ext_resource type="PackedScene" uid="uid://cnop4fxa4gxug" path="res://assets/models/props/fishing_rod.glb" id="2_bbjin"]
+
+[node name="fishrod" type="Node3D" groups=["enchantable", "enlargable"]]
+script = ExtResource("1_8mowb")
+
+[node name="fishing_rod" parent="." instance=ExtResource("2_bbjin")]
