@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Interstellar Gamejam 2025"
-run/main_scene="uid://cc7ya3ksex0y4"
+run/main_scene="uid://cqelj6eb7mfuo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SceneManager="*res://globals/scene_manager.gd"
-MusicManager="*res://scenes/music_manager.tscn"
+MusicManager="*res://globals/music_manager.tscn"
 DialogueManager="*res://globals/dialogue_manager.gd"
+RuneManager="*res://scripts/resources/runes/pattern_manager.gd"
+EventBus="*res://globals/eventBus.gd"
 
 [editor_plugins]
 
@@ -105,6 +107,7 @@ store={
 3d_physics/layer_1="Static World"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Physical Items"
+3d_physics/layer_7="Grabbed Items"
 3d_physics/layer_9="NPC Areas"
 
 [physics]

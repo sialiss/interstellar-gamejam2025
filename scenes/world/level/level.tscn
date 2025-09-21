@@ -1,6 +1,6 @@
-[gd_scene load_steps=68 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=75 format=3 uid="uid://cqelj6eb7mfuo"]
 
-[ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_1mhee"]
+[ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_m7tpt"]
@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://63oua4i1wyv1" path="res://addons/proton_scatter/src/scatter_shape.gd" id="12_88k61"]
 [ext_resource type="Script" uid="uid://dto7dy11vsd32" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="12_vi8x0"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_svlle"]
-[ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://scenes/music_manager.tscn" id="14_8mghl"]
 [ext_resource type="Script" uid="uid://b2gd7p5b5u88y" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_vi8x0"]
 [ext_resource type="Script" uid="uid://7v4qjmoe1607" path="res://addons/proton_scatter/src/cache/scatter_cache.gd" id="15_2wrvh"]
 [ext_resource type="Script" uid="uid://bk4mhmruqr8yp" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="16_2v6y8"]
@@ -31,6 +30,12 @@
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
+[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://resources/dialogues/test_npc.tres" id="31_wtytl"]
+[ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
+[ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="32_wtytl"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="33_pqgu7"]
 
 [sub_resource type="Resource" id="Resource_g7qrx"]
 script = ExtResource("7_6l5f2")
@@ -144,14 +149,15 @@ size = Vector3(94.83258, 13.535, 187.78976)
 sky_top_color = Color(0.5575474, 0.7708913, 0.9903249, 1)
 sky_horizon_color = Color(0.7149523, 0.5511847, 1, 1)
 
-[sub_resource type="Sky" id="Sky_psw0a"]
+[sub_resource type="Sky" id="Sky_uxisk"]
 sky_material = SubResource("ProceduralSkyMaterial_mtdlx")
 
 [sub_resource type="Environment" id="Environment_2br6d"]
 background_mode = 2
-sky = SubResource("Sky_psw0a")
+sky = SubResource("Sky_uxisk")
 ambient_light_source = 3
-tonemap_mode = 1
+tonemap_mode = 2
+tonemap_exposure = 0.8
 ssao_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.41171336, 0.54680234, 0.8087982, 1)
@@ -219,8 +225,23 @@ size = Vector2(2000, 2000)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
 
-[node name="Level" type="Node3D"]
+[sub_resource type="Resource" id="Resource_km357"]
+script = ExtResource("33_pqgu7")
+type = "dialogue"
+data = "desert_greeting"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="Resource" id="Resource_uxisk"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+dialogue_id = "wow"
+text = "Ого, ты уже поговорил с тем человечком!"
+conditions = Array[ExtResource("32_wtytl")]([SubResource("Resource_km357")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
+npcs = [NodePath("NPCs/NPC"), NodePath("NPCs/NPC2")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/world/level/terrain_data"
@@ -364,6 +385,7 @@ directional_shadow_max_distance = 762.4
 
 [node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
 transform = Transform3D(943.8008, 330.51447, 0, -232.07175, 662.69257, -712.026, -235.33492, 672.01074, 702.15295, 3000, 5000, -2000)
+kill_turn_duration = 4.0
 
 [node name="Player" parent="." instance=ExtResource("5_pcmfc")]
 transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 65.88378, 0.49488926, 68.636734)
@@ -475,9 +497,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_svlle")]
 
-[node name="MusicManager" parent="." instance=ExtResource("14_8mghl")]
-
 [node name="NPCs" type="Node3D" parent="."]
 
-[node name="NPC" parent="NPCs" instance=ExtResource("29_o4wlm")]
+[node name="NPC" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
 transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 73.88464, -0.8531324, 89.50265)
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("31_wtytl")])
+funny_sound = ExtResource("32_pqgu7")
+
+[node name="NPC2" parent="NPCs" groups=["npc"] instance=ExtResource("29_o4wlm")]
+transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 75.82806, -0.8531324, 89.50265)
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_uxisk")])
+funny_sound = ExtResource("32_pqgu7")
+
+[node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
+transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
+
+[connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]

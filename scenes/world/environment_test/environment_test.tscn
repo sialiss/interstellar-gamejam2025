@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://cc7ya3ksex0y4"]
 
-[ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scripts/level.gd" id="1_3ss8m"]
-[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/revolution_trigger.gd" id="2_8dmbb"]
+[ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_3ss8m"]
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_8dmbb"]
 [ext_resource type="Terrain3DMaterial" uid="uid://ttuk6cv3bn48" path="res://scenes/world/environment_test/environment_test_terrain3d_material.tres" id="4_3ss8m"]
 [ext_resource type="Terrain3DAssets" uid="uid://by6kwp20vgrmo" path="res://scenes/world/environment_test/environment_test_terrain3d_assets.tres" id="5_dap6o"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="5_gla0e"]
@@ -14,14 +14,14 @@
 [ext_resource type="Material" uid="uid://bwirrnln368j7" path="res://assets/materials/water.tres" id="13_aagqy"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_owvsi"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="15_dap6o"]
-[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/dialogue_resource.gd" id="16_1lye0"]
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="16_1lye0"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="16_8dmbb"]
-[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://dialogues/test_npc.tres" id="17_ostp6"]
+[ext_resource type="Resource" uid="uid://b77r056svigpw" path="res://resources/dialogues/test_npc.tres" id="17_ostp6"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="18_3ss8m"]
 [ext_resource type="Script" uid="uid://ck21km2sgfifg" path="res://scripts/fish_transform/become_fish.gd" id="18_dap6o"]
 [ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="19_8dmbb"]
 [ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/revolution_trigger_1.tres" id="19_dap6o"]
-[ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://scenes/music_manager.tscn" id="21_ostp6"]
+[ext_resource type="PackedScene" uid="uid://bb5onqsighxn5" path="res://globals/music_manager.tscn" id="21_ostp6"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="22_wxyf7"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="23_1lye0"]
 [ext_resource type="Script" uid="uid://pjnh4xpj6r4w" path="res://scripts/item.gd" id="24_aagqy"]
@@ -166,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.425316, -8.591461, -183.7
 shape = SubResource("SphereShape3D_wxyf7")
 debug_color = Color(2.4065375e-06, 0.58100146, 0.799715, 0.41960785)
 
-[node name="Box" parent="." groups=["interactable"] instance=ExtResource("19_8dmbb")]
+[node name="Box" parent="." instance=ExtResource("19_8dmbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.00323, -15.00914, -152.88914)
 script = ExtResource("24_aagqy")
 can_be_stored = true

@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 
 	steering = move_toward(steering, Input.get_axis("move_right", "move_left") * max_steer, delta * 2.5)
 
-	var accel_input = Input.get_axis("move_forward", "move_backward")
+	var accel_input = Input.get_axis("move_backward", "move_forward")
 	if accel_input == 0:
 		engine_force = 0
 		brake = brake_power
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	#current_rotation = current_rotation.lerp(target_rotation, camera_smooth_speed * delta)
 
 	var car_euler = global_transform.basis.get_euler()
-	print(car_euler.z, " ", current_rotation.z, " ", target_rotation.z)
+	#print(car_euler.z, " ", current_rotation.z, " ", target_rotation.z)
 	# плавно выравниваем camera target_rotation по машине
 	target_rotation.x = lerp_angle(target_rotation.x, car_euler.x, camera_follow_strength)
 	target_rotation.y = lerp_angle(target_rotation.y, car_euler.y, camera_follow_strength)

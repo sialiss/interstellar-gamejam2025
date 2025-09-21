@@ -6,7 +6,7 @@ var returned_directions: Array[int] = []
 var current_rune_node: Area2D = null
 var is_mouse_pressed: bool = false
 
-static var rune_direction_controller_scene: PackedScene = preload("res://runes/rune_node.tscn")
+static var rune_direction_controller_scene: PackedScene = preload("res://scripts/resources/runes/rune_node.tscn")
 
 var can_paint_runes: bool = false
 
@@ -21,11 +21,11 @@ func paint_magic_particles() -> void:
 	var camera: Camera3D = get_parent().get_node("Camera3D") as Camera3D
 	if not camera:
 		push_error("Player's camera not found!")
-	
-	var mouse_pos: Vector2 = get_global_mouse_position()	
+
+	var mouse_pos: Vector2 = get_global_mouse_position()
 	var from: Vector3 = camera.project_ray_origin(mouse_pos)
 	var direction: Vector3 = camera.project_ray_normal(mouse_pos)
-	
+
 	create_particle(from + direction * 2)
 
 
@@ -53,7 +53,7 @@ func calculate_direction(event: InputEvent) -> void:
 			if event.is_released():
 				is_mouse_pressed = false
 				cast_rune()
-				
+
 	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT) or (event is InputEventMouseMotion and is_mouse_pressed):
 		paint_magic_particles()
 
@@ -61,13 +61,13 @@ func calculate_direction(event: InputEvent) -> void:
 func cast_rune() -> void:
 	var rune: RunePattern = RuneManager.find_matching_rune_pattern(returned_directions)
 	if rune:
-		var player: CharacterBody3D = get_parent() as CharacterBody3D
+		var player: Player = get_parent() as Player
 		if not player:
 			push_error("Player is not found")
-		rune.execute(player.position, self)
+		rune.execute(player)
 	else:
 		pass
-	
+
 	# cleanup
 	returned_directions = []
 	if current_rune_node:
@@ -80,7 +80,7 @@ func spawn_rune_direction_detector() -> void:
 	if current_rune_node:
 		current_rune_node.queue_free()
 		current_rune_node = null
-	
+
 	# Создать новую область
 	current_rune_node = rune_direction_controller_scene.instantiate()
 	current_rune_node.position = get_global_mouse_position()
@@ -98,3 +98,4 @@ func _on_rune_detector_exited(value: int) -> void:
 		current_rune_node.queue_free()
 		current_rune_node = null
 	spawn_rune_direction_detector()
+	print('returned_directions', returned_directions)
