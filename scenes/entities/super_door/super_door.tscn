@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgaa066vtrwmj"]
+
+[ext_resource type="Script" uid="uid://bqxy42lqnww10" path="res://scenes/entities/super_door/super_door.gd" id="1_kukrd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ry8qm"]
+size = Vector3(4, 3.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kukrd"]
+size = Vector3(4, 3.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ry8qm"]
+albedo_color = Color(0.6706898, 0.6706893, 0.67068964, 1)
+
+[node name="SuperDoor" type="Node3D"]
+script = ExtResource("1_kukrd")
+
+[node name="Body" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("BoxShape3D_ry8qm")
+
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("BoxMesh_kukrd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ry8qm")
+
+[node name="OpenPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 0)

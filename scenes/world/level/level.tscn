@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=79 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -27,6 +27,10 @@
 [ext_resource type="Script" uid="uid://bk4mhmruqr8yp" path="res://addons/proton_scatter/src/modifiers/offset_scale.gd" id="16_2v6y8"]
 [ext_resource type="Script" uid="uid://bcqje518k3e3f" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_60pun"]
 [ext_resource type="PackedScene" uid="uid://cc6b2vssow7al" path="res://assets/models/props/cave.glb" id="21_a76df"]
+[ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="22_5xoqh"]
+[ext_resource type="PackedScene" uid="uid://b4u0v4x0cbfxb" path="res://scenes/entities/logic/super_button/super_button.tscn" id="22_7bk07"]
+[ext_resource type="Script" uid="uid://duonbjg3okn3g" path="res://scenes/entities/logic/logic_counter/logic_counter.gd" id="23_i2f8p"]
+[ext_resource type="PackedScene" uid="uid://bgaa066vtrwmj" path="res://scenes/entities/super_door/super_door.tscn" id="25_7bk07"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="PackedScene" uid="uid://34pnqkoassb1" path="res://scenes/npc.tscn" id="29_o4wlm"]
@@ -37,33 +41,33 @@
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="32_wtytl"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="33_pqgu7"]
 
-[sub_resource type="Resource" id="Resource_g7qrx"]
+[sub_resource type="Resource" id="Resource_7bk07"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_51y1d"]
+[sub_resource type="Resource" id="Resource_i2f8p"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_xrtkb"]
+[sub_resource type="Resource" id="Resource_lhtwf"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_5xoqh"]
+[sub_resource type="Resource" id="Resource_uwxqb"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_7bk07"]
+[sub_resource type="Resource" id="Resource_emdua"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_g7qrx"), SubResource("Resource_51y1d"), SubResource("Resource_xrtkb"), SubResource("Resource_5xoqh")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_7bk07"), SubResource("Resource_i2f8p"), SubResource("Resource_lhtwf"), SubResource("Resource_uwxqb")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -91,31 +95,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_i2f8p"]
+[sub_resource type="Resource" id="Resource_wj558"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_lhtwf"]
+[sub_resource type="Resource" id="Resource_3eonq"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_uwxqb"]
+[sub_resource type="Resource" id="Resource_el80l"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_emdua"]
+[sub_resource type="Resource" id="Resource_abblm"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_wj558"]
+[sub_resource type="Resource" id="Resource_6xvrv"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_i2f8p"), SubResource("Resource_lhtwf"), SubResource("Resource_uwxqb"), SubResource("Resource_emdua")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_wj558"), SubResource("Resource_3eonq"), SubResource("Resource_el80l"), SubResource("Resource_abblm")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -261,7 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_7bk07")
+modifier_stack = SubResource("Resource_emdua")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -318,7 +322,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_wj558")
+modifier_stack = SubResource("Resource_6xvrv")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -411,6 +415,29 @@ transform = Transform3D(-0.5523445, 0, 0.8336159, 0, 1, 0, -0.8336159, 0, -0.552
 
 [node name="cave" parent="Cave" instance=ExtResource("21_a76df")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 194.00519, 7.180512, 126.01787)
+
+[node name="SuperDoor" parent="Cave/cave" instance=ExtResource("25_7bk07")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.198875, -5.0218205, -18.083069)
+opening_duration = 5.0
+
+[node name="Box" parent="Cave/cave" instance=ExtResource("22_5xoqh")]
+transform = Transform3D(0.906352, 0, -0.42252332, 0, 1, 0, 0.42252332, 0, 0.906352, 1.4425046, -5.0538077, -21.193832)
+
+[node name="Box2" parent="Cave/cave" instance=ExtResource("22_5xoqh")]
+transform = Transform3D(0.906352, 0, -0.42252332, 0, 1, 0, 0.42252332, 0, 0.906352, 2.7837064, -5.053808, -15.32106)
+
+[node name="SuperButton" parent="Cave/cave" instance=ExtResource("22_7bk07")]
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 3.973793, -5.662764, -17.709183)
+
+[node name="SuperButton2" parent="Cave/cave" instance=ExtResource("22_7bk07")]
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -1.5087657, -5.662764, -19.908478)
+
+[node name="SuperButton3" parent="Cave/cave" instance=ExtResource("22_7bk07")]
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -0.15362549, -5.662764, -15.523819)
+
+[node name="LogicCounter" type="Node" parent="Cave/cave"]
+script = ExtResource("23_i2f8p")
+metadata/_custom_type_script = "uid://duonbjg3okn3g"
 
 [node name="Observatory" type="Node3D" parent="."]
 
@@ -513,3 +540,7 @@ funny_sound = ExtResource("32_pqgu7")
 transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
+[connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
+[connection signal="output_changed" from="Cave/cave/SuperButton2" to="Cave/cave/LogicCounter" method="receive_input"]
+[connection signal="output_changed" from="Cave/cave/SuperButton3" to="Cave/cave/LogicCounter" method="receive_input"]
+[connection signal="output_changed" from="Cave/cave/LogicCounter" to="Cave/cave/SuperDoor" method="receive_input"]
