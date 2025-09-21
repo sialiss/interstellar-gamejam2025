@@ -8,7 +8,8 @@ var velocity: Vector3 = Vector3.ZERO
 
 func _ready():
 	initial_position = global_position
-	body_entered.connect(_on_body_entered)
+	body_entered.connect(_on_entered)
+	area_entered.connect(_on_entered)
 	
 	var timer = Timer.new()
 	timer.wait_time = 10
@@ -23,11 +24,10 @@ func set_velocity(direction: Vector3):
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
 
-func _on_body_entered(body):
+func _on_entered(body):
 	if body.is_in_group("flammable") && body.has_method("ignite"):
 		body.ignite()
 		queue_free()
 	if body != self:
 		print_debug("not flammable")
 		queue_free()
-	

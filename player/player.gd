@@ -67,7 +67,8 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("store"):
 		if ray.is_colliding():
 			var item = ray.get_collider()
-			if item is Grabbable:
+			print(item, item is Item)
+			if item is Item:
 				store(item)
 
 func _physics_process(delta: float) -> void:
@@ -166,8 +167,9 @@ func ungrab():
 		grabbed_item = null
 		%GrabTransform.remote_path = ^""
 
-func store(item: Grabbable):
+func store(item: Item):
 	grabbed_item = item
+	print('store', item)
 	if inventory.add_item(item):
 		#item.stored()
 		item.hide_from_world()
