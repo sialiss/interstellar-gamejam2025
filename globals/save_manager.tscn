@@ -4,4 +4,5 @@
 
 [node name="SaveManager" type="Node"]
 script = ExtResource("1_dj7e2")
+debug_dont_save = true
 metadata/_custom_type_script = "uid://wh4vnhyvijd4"
