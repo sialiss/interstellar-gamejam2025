@@ -5,5 +5,6 @@
 [resource]
 resource_name = "Fire Rune"
 script = ExtResource("1_0k5mw")
+rune_name = "fire_rune"
 directions_array = Array[int]([1, 4, 6, 7, 4, 1])
 metadata/_custom_type_script = "uid://b501kk7fnpkb6"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=5 format=3 uid="uid://bbqrn3yt4bwoo"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_7gqg0"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_wbesa"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_wbesa"]
+
+[sub_resource type="Resource" id="Resource_yykwv"]
+script = ExtResource("3_wbesa")
+type = "Area"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_7gqg0")
+dialogue_id = "astronomer_telescope_fixed"
+text = "Прекрасно! Смотри сам, на её плавнике… кажется, что-то есть."
+conditions = Array[ExtResource("2_wbesa")]([SubResource("Resource_yykwv")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
