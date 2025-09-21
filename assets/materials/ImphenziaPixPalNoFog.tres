@@ -42,22 +42,22 @@ default_value_enabled = true
 default_value = 20.0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_atka3"]
-size = Vector2(1124, 381.99997)
+size = Vector2(1124.0001, 432.00003)
 title = "Animated Colors"
 attached_nodes = PackedInt32Array(9, 3, 10, 4, 8, 11)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_lf4tu"]
-size = Vector2(1184, 321.99994)
+size = Vector2(1184, 405.00003)
 title = "Attributes"
 attached_nodes = PackedInt32Array(6, 12, 7, 22)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_6xcqm"]
-size = Vector2(724, 162)
+size = Vector2(752, 405)
 title = "Colors"
 attached_nodes = PackedInt32Array(14, 21)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_1uhbc"]
-size = Vector2(863.9998, 622)
+size = Vector2(863.9998, 873.0001)
 title = "Emission"
 attached_nodes = PackedInt32Array(13, 15, 16, 23)
 
@@ -226,4 +226,4 @@ nodes/fragment/22/node = SubResource("VisualShaderNodeTexture2DParameter_mwyow")
 nodes/fragment/22/position = Vector2(-571.89496, -782.0836)
 nodes/fragment/23/node = SubResource("VisualShaderNodeTexture2DParameter_d062q")
 nodes/fragment/23/position = Vector2(1144.0525, 39.29451)
-nodes/fragment/connections = PackedInt32Array(6, 0, 7, 0, 9, 0, 10, 0, 10, 1, 8, 0, 10, 0, 11, 0, 8, 0, 11, 1, 7, 1, 12, 0, 13, 0, 15, 0, 16, 0, 15, 1, 3, 0, 4, 1, 7, 2, 4, 0, 21, 0, 14, 2, 22, 0, 6, 2, 23, 0, 13, 2, 14, 0, 0, 0, 15, 0, 0, 5, 7, 0, 0, 2, 12, 0, 0, 3, 11, 0, 14, 0, 11, 0, 13, 0, 4, 0, 8, 1)
+nodes/fragment/connections = PackedInt32Array(9, 0, 10, 0, 10, 1, 8, 0, 10, 0, 11, 0, 8, 0, 11, 1, 3, 0, 4, 1, 7, 2, 4, 0, 21, 0, 14, 2, 14, 0, 0, 0, 15, 0, 0, 5, 7, 0, 0, 2, 12, 0, 0, 3, 11, 0, 14, 0, 11, 0, 13, 0, 4, 0, 8, 1, 22, 0, 6, 2, 6, 0, 7, 0, 7, 1, 12, 0, 23, 0, 13, 2, 16, 0, 15, 1, 13, 0, 15, 0)
