@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp8ubqftqvsur"]
+[gd_scene load_steps=11 format=3 uid="uid://bp8ubqftqvsur"]
 
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://bbwxppese7bml" path="res://player/zoomer.gd" id="2_g1dw6"]
@@ -16,9 +16,13 @@ script/source = "extends Camera3D
 radius = 0.31445313
 height = 1.9008789
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_boad6"]
+size = Vector3(0.2, 1, 0.2)
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
+floor_max_angle = 0.87266463
 script = ExtResource("1_oul6g")
 mass = 70.0
 
@@ -71,6 +75,15 @@ cast_shadow = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95123875, 0)
 shape = SubResource("CapsuleShape3D_rgyib")
+
+[node name="PressureArea" type="Area3D" parent="."]
+collision_layer = 512
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PressureArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_boad6")
 
 [node name="RuneDrawing" type="Control" parent="."]
 layout_mode = 3
