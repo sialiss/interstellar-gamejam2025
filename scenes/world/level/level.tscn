@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=171 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -20,7 +20,6 @@
 [ext_resource type="Resource" uid="uid://chyxot58e0urv" path="res://resources/revolution_triggers/5_revolution_trigger.tres" id="7_usf2n"]
 [ext_resource type="Resource" uid="uid://co30ta6jjyppe" path="res://resources/revolution_triggers/6_revolution_trigger.tres" id="8_53qi2"]
 [ext_resource type="Script" uid="uid://buoque686huhy" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_60pun"]
-[ext_resource type="PackedScene" uid="uid://bvexwqwhagvoo" path="res://assets/models/props/rocket.glb" id="8_850c4"]
 [ext_resource type="PackedScene" uid="uid://cdjh443y4b5fx" path="res://assets/models/props/house_wood.glb" id="9_850c4"]
 [ext_resource type="Script" uid="uid://bqq8pjuytnm8r" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_ml3ux"]
 [ext_resource type="PackedScene" uid="uid://do40ho7xllh1v" path="res://assets/models/props/bridge.glb" id="10_ve8xh"]
@@ -52,6 +51,7 @@
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 [ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
+[ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
 [ext_resource type="PackedScene" uid="uid://by4hy0ojy1o12" path="res://assets/models/props/computer.glb" id="41_53qi2"]
@@ -91,6 +91,7 @@
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="69_oj0e3"]
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
+[ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="77_dekj3"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
@@ -103,33 +104,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_bjfvr"]
+[sub_resource type="Resource" id="Resource_oqj6p"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_bgqjc"]
+[sub_resource type="Resource" id="Resource_56jom"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_2811w"]
+[sub_resource type="Resource" id="Resource_usf2n"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_aghih"]
+[sub_resource type="Resource" id="Resource_53qi2"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_n4u2g"]
+[sub_resource type="Resource" id="Resource_b37fd"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_bjfvr"), SubResource("Resource_bgqjc"), SubResource("Resource_2811w"), SubResource("Resource_aghih")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_oqj6p"), SubResource("Resource_56jom"), SubResource("Resource_usf2n"), SubResource("Resource_53qi2")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -162,31 +163,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_0hvbb"]
+[sub_resource type="Resource" id="Resource_yj7bl"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_je5e5"]
+[sub_resource type="Resource" id="Resource_dekj3"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_78awm"]
+[sub_resource type="Resource" id="Resource_gw5i7"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_sr2vx"]
+[sub_resource type="Resource" id="Resource_8167w"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_kge0y"]
+[sub_resource type="Resource" id="Resource_xb217"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_0hvbb"), SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_yj7bl"), SubResource("Resource_dekj3"), SubResource("Resource_gw5i7"), SubResource("Resource_8167w")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -683,7 +684,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_n4u2g")
+modifier_stack = SubResource("Resource_b37fd")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -748,7 +749,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_kge0y")
+modifier_stack = SubResource("Resource_xb217")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1153,8 +1154,9 @@ camera = NodePath("../../../Dome/Tube/SubViewport/Camera3D")
 completion_animation = NodePath("../../../Dome/Tube/SubViewport/AnimationPlayer")
 metadata/_custom_type_script = "uid://covh76n2nab30"
 
-[node name="rocket" parent="Observatory" instance=ExtResource("8_850c4")]
-transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
+
+[node name="Rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
+transform = Transform3D(-1.0383022, 0, 2.814592, 0, 3, 0, -2.814592, 0, -1.0383022, 32.853, -1.245, 750.699)
 
 [node name="Sprite3D" type="Sprite3D" parent="Observatory/rocket"]
 transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
@@ -1248,11 +1250,11 @@ theme_override_constants/margin_left = 20
 [node name="Label" type="Label" parent="Village/evil_house/open_book/SubViewport/ColorRect/MarginContainer"]
 layout_mode = 2
 text = "
-Runes always seem to 
-hide themselves in the 
-shadows; they do not 
+Runes always seem to
+hide themselves in the
+shadows; they do not
 reveal themselves
-immediately and do not 
+immediately and do not
 tolerate haste."
 label_settings = SubResource("LabelSettings_pk7k4")
 horizontal_alignment = 3
@@ -1276,11 +1278,11 @@ theme_override_constants/margin_left = 20
 [node name="Label" type="Label" parent="Village/evil_house/open_book/SubViewport2/ColorRect/MarginContainer"]
 layout_mode = 2
 text = "
-Each line seems to be 
-carved not only into stone 
-or wood, but also into 
-the fabric of reality itself, 
-where the lines form 
+Each line seems to be
+carved not only into stone
+or wood, but also into
+the fabric of reality itself,
+where the lines form
 a map of the path."
 label_settings = SubResource("LabelSettings_pk7k4")
 horizontal_alignment = 3
@@ -1452,6 +1454,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("5_oqj6p")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
+transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
 
 [node name="extras" type="Node3D" parent="."]
 

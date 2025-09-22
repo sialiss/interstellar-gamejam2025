@@ -6,7 +6,7 @@ func execute(player: Player) -> void:
 	var old_speed = player.speed
 	var old_run = player.run_speed
 	player.speed = 20
-	player.run_speed = 25
+	player.run_speed = 55
 	var timer = Timer.new()
 	timer.wait_time = 25
 	timer.one_shot = true
