@@ -31,7 +31,7 @@ func _ready():
 
 func _input(event: InputEvent):
 	# Захват мышки (как в арксе)
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("rune_mode"):
 		_toggle_mouse_capture()
 
 	# Респавн
@@ -178,6 +178,6 @@ func store(item: Item):
 func unstore(index: int):
 	var item = inventory.remove_item(index)
 	if item:
-		var forward = -global_transform.basis.z.normalized()
+		var forward = - global_transform.basis.z.normalized()
 		var drop_pos = global_transform.origin + forward * 1.5 + Vector3(0, 1, 0)
 		item.show_in_world(drop_pos, get_parent())

@@ -1,6 +1,6 @@
 extends Node
 
-const MAIN_MENU_SCENE = "res://scenes/menu/main_menu.tscn"
+const MAIN_MENU_SCENE = "res://scenes/menu/main/main_menu.tscn"
 const GAME_SCENE = "res://scenes/world/level/level.tscn"
 const DEATH_SCENE = "res://scenes/menu/death/death.tscn"
 const REBIRTH_SCENE = "res://scenes/menu/rebirth/rebirth.tscn"

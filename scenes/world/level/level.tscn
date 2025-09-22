@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
 [ext_resource type="Texture2D" uid="uid://3mtdvoayf8iw" path="res://assets/sprites/cave_rune_pic.png" id="27_x13hu"]
-[ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="28_ni50r"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
@@ -59,6 +58,7 @@
 [ext_resource type="Resource" uid="uid://qhghgyf0aft6" path="res://resources/dialogues/fisher_after_charm_rune.tres" id="53_abblm"]
 [ext_resource type="Resource" uid="uid://d4crgsmqea2he" path="res://resources/dialogues/fisher_after_cool_rod.tres" id="54_6xvrv"]
 [ext_resource type="Resource" uid="uid://dmk6xsg7td6q4" path="res://resources/dialogues/fisher_final.tres" id="55_ethiv"]
+[ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -446,6 +446,7 @@ transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, -0.15362549, -5.6627
 
 [node name="LogicCounter" type="Node" parent="Cave/cave"]
 script = ExtResource("23_i2f8p")
+inputs_required_to_activate = 3
 metadata/_custom_type_script = "uid://duonbjg3okn3g"
 
 [node name="Sprite3D" type="Sprite3D" parent="Cave/cave"]
@@ -464,8 +465,11 @@ texture = ExtResource("27_x13hu")
 transform = Transform3D(-3, 2.6226832e-07, 0, -2.6226832e-07, -3, 0, 0, 0, 3, 26.02494, -3.4551191, -10.048325)
 texture = ExtResource("27_x13hu")
 
-[node name="lantern" parent="Cave/cave" instance=ExtResource("28_ni50r")]
+[node name="Lantern" parent="Cave/cave" instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.068275, -7.366039, -25.775726)
+
+[node name="Lantern2" parent="Cave/cave" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(0.061132625, 0.89465517, 0.44255474, 0.03016985, 0.4415252, -0.89674145, -0.9976736, 0.06817197, -2.1207327e-08, 35.325478, -7.360598, -22.40033)
 
 [node name="Sign" parent="Cave/cave" instance=ExtResource("46_sdkx4")]
 transform = Transform3D(-1.06763, 0.96335566, 0.19390075, -0.025104405, 0.37564132, -0.9651182, -1.0390059, -0.9989718, -0.17592356, 33.478058, -5.904281, -24.12332)
@@ -673,8 +677,7 @@ transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
 
-[node name="lantern" parent="." instance=ExtResource("28_ni50r")]
-transform = Transform3D(0.9976736, -0.06817201, 1.8626451e-09, 0.03016985, 0.4415252, -0.89674145, 0.06113267, 0.89465517, 0.44255474, 216.40552, -0.18008593, 161.34335)
+[node name="PauseMenu" parent="." instance=ExtResource("59_ethiv")]
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
