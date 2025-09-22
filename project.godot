@@ -37,6 +37,7 @@ car=""
 flammable=""
 enlargable=""
 enchantable=""
+fishing_rod=""
 
 [input]
 

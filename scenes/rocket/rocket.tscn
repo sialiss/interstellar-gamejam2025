@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bor4qdfoac56u"]
+
+[ext_resource type="Script" uid="uid://8ypg8fgvsjvy" path="res://scripts/rocket.gd" id="1_7lajs"]
+[ext_resource type="PackedScene" uid="uid://bvexwqwhagvoo" path="res://assets/models/props/rocket.glb" id="1_s723n"]
+[ext_resource type="PackedScene" uid="uid://cnop4fxa4gxug" path="res://assets/models/props/fishing_rod.glb" id="3_2efvq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0wp70"]
+height = 24.56958
+radius = 9.883301
+
+[node name="Rocket" type="StaticBody3D"]
+
+[node name="rocket" parent="." instance=ExtResource("1_s723n")]
+
+[node name="fishing_rod" parent="." instance=ExtResource("3_2efvq")]
+transform = Transform3D(10, 0, 0, 0, 0.031066764, 9.999952, 0, -9.999952, 0.031066764, 2.1002407, 14.597013, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_7lajs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.662891, 0)
+shape = SubResource("CylinderShape3D_0wp70")
