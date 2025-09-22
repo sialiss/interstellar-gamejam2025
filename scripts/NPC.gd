@@ -15,6 +15,8 @@ var _can_talking: bool = false
 var _can_jumping: bool = false
 var is_jumping: bool = false
 
+var block_dialogues: Array[DialogueResource] = []
+
 signal interaction_started(dialogues, npc)
 signal interaction_ended(dialogues, npc)
 
@@ -22,7 +24,10 @@ func _ready() -> void:
 	bind_dualogues()
 
 func interact() -> void:
-	emit_signal("interaction_started", dialogues, self)
+	if (block_dialogues):
+		emit_signal("interaction_started", block_dialogues, self)
+	else:
+		emit_signal("interaction_started", dialogues, self)
 
 func end_interaction() -> void:
 	emit_signal("interaction_ended", dialogues, self)

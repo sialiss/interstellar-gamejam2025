@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://dcumsjnaf8udk"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_28xpt"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_xj6cj"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_2t3xn"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="4_frx6e"]
+
+[sub_resource type="Resource" id="Resource_xc25k"]
+script = ExtResource("3_2t3xn")
+type = "Revolution"
+data = "3"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_28xpt")
+is_repeatable = true
+dialogue_id = "astronomer_coming_soon"
+text = "Скоро что-то произойдёт..."
+conditions = Array[ExtResource("2_xj6cj")]([SubResource("Resource_xc25k")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

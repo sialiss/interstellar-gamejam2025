@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://dqtyjpeyv4eik"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://dqtyjpeyv4eik"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_12pbo"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_s3xei"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_gdukb"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_s3xei"]
+[ext_resource type="Resource" uid="uid://urhawc1lk606" path="res://resources/runes/fire_rune/fire_rune.tres" id="5_nj3at"]
+[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="6_2upxx"]
 
 [sub_resource type="Resource" id="Resource_12pbo"]
 script = ExtResource("1_12pbo")
@@ -15,10 +18,16 @@ type = "Rune"
 data = "fire_rune"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
+[sub_resource type="Resource" id="Resource_701w3"]
+script = ExtResource("6_2upxx")
+rune = ExtResource("5_nj3at")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
 [resource]
 script = ExtResource("1_12pbo")
 dialogue_id = "astronomer_after_rune"
 text = "Ты видел? Это… это символ, и он пылает, даже в холоде космоса!"
 choices = Array[ExtResource("1_12pbo")]([SubResource("Resource_12pbo")])
 conditions = Array[ExtResource("2_s3xei")]([SubResource("Resource_6xvrv")])
+effects = Array[ExtResource("3_s3xei")]([SubResource("Resource_701w3")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

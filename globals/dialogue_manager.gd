@@ -19,6 +19,6 @@ func is_completed(id: String) -> bool:
 
 func is_dialogue_available(dialogue: DialogueResource) -> bool:
 	# Проверка: уже пройден
-	if !dialogue.is_available() or is_completed(dialogue.dialogue_id):
+	if !dialogue.is_available() or (is_completed(dialogue.dialogue_id) and !dialogue.is_repeatable):
 		return false
 	return true

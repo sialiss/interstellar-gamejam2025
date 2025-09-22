@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=17 format=3 uid="uid://dfstdxgqdlkqu"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_tyqoy"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_e5ikp"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_6l01a"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="4_o0hm2"]
+
+[sub_resource type="Resource" id="Resource_vih3d"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Как мне найти руну гигантов?"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_h8hf2"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Как мне найти руну гигантов?"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_axmp5"]
+script = ExtResource("1_tyqoy")
+text = "Кто-то должен это остановить."
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_h8hf2")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_0orci"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Зачем ловить рыбу, которая крутит мир?"
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_axmp5")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_d56qq"]
+script = ExtResource("1_tyqoy")
+text = "Верю. В пустыне нет рек, но память о воде там вечна. Мы слушаем её эхо в песках."
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_vih3d"), SubResource("Resource_0orci")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_6l01a"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Ты веришь, что эта руна существует?"
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_d56qq")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_o0hm2"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Зачем ловить рыбу, которая крутит мир?"
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_axmp5")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_vgo5i"]
+script = ExtResource("1_tyqoy")
+text = "Ты уже несёшь её фрагменты. Осталось лишь соединить их так, как делали древние мастера."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_h8il7"]
+script = ExtResource("1_tyqoy")
+speaker = "player"
+text = "Как мне найти руну гигантов?"
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_vgo5i")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_e5ikp"]
+script = ExtResource("1_tyqoy")
+text = "Представь… удочка размером с башню. Разве это не чудо? С такой можно поймать даже саму космическую рыбу."
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_6l01a"), SubResource("Resource_o0hm2"), SubResource("Resource_h8il7")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_tyqoy"]
+script = ExtResource("1_tyqoy")
+text = "Есть ещё одна руна, о которой шепчут пески. Руна гигантов. Говорят, она сложена из осколков двух других: руны чар и того, что записано на древних страницах."
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_e5ikp")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_mykmr"]
+script = ExtResource("4_o0hm2")
+type = "Inventory"
+data = "charmed_rod"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_tyqoy")
+is_repeatable = true
+dialogue_id = "desert_after_cool_rod"
+text = "Ты сделал это… ты оживил удочку. Я знал, что руна чар существует, но её половина ускользнула от моей книги. И всё же ты нашёл её."
+choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_tyqoy")])
+conditions = Array[ExtResource("2_e5ikp")]([SubResource("Resource_mykmr")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

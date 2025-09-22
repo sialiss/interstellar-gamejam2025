@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://d4crgsmqea2he"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://d4crgsmqea2he"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_l01e8"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_1mggj"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_1mggj"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_tvygs"]
+[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="5_0oo1s"]
 
 [sub_resource type="Resource" id="Resource_1mggj"]
 script = ExtResource("1_l01e8")
@@ -21,10 +23,15 @@ type = "Inventory"
 data = "charmed_rod"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
+[sub_resource type="Resource" id="Resource_tvygs"]
+script = ExtResource("5_0oo1s")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
 [resource]
 script = ExtResource("1_l01e8")
 dialogue_id = "fisher_after_cool_rod"
 text = "Что это?.. Она словно ожила! Удочка дрожит, как будто сама тянется к воде."
 choices = Array[ExtResource("1_l01e8")]([SubResource("Resource_l01e8")])
 conditions = Array[ExtResource("2_1mggj")]([SubResource("Resource_6b61x")])
+effects = Array[ExtResource("3_tvygs")]([SubResource("Resource_tvygs")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

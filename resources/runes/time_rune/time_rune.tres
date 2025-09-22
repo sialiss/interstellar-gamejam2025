@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_bf5oi")
-rune_name = "time_rune"
+rune_name = "time rune"
 directions_array = Array[int]([0, 2, 4])
 image = ExtResource("1_p3ovv")
 metadata/_custom_type_script = "uid://deyjd1bbu5t8v"
