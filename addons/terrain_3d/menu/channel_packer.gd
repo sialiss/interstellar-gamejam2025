@@ -54,6 +54,10 @@ func pack_textures_popup() -> void:
 		window.move_to_center()
 		return
 	window = (load(WINDOW_SCENE) as PackedScene).instantiate()
+	var base_color: Color = plugin.editor_settings.get_setting("interface/theme/base_color")
+	var panel_style := StyleBoxFlat.new()
+	panel_style.bg_color = base_color
+	window.get_node("PanelContainer").set("theme_override_styles/panel", panel_style)
 	window.close_requested.connect(_on_close_requested)
 	window.window_input.connect(func(event:InputEvent):
 		if event is InputEventKey:

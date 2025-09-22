@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ben60xq4768re"]
+[gd_scene load_steps=17 format=3 uid="uid://ben60xq4768re"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://c1tg3fb1ge3aw" path="res://scenes/menu/main/menu_terrain_3d_material.tres" id="1_3rkf3"]
 [ext_resource type="Script" uid="uid://df1nynb8hajh8" path="res://scenes/menu/main/main_menu.gd" id="1_qgo02"]
@@ -17,6 +17,9 @@ size = Vector2(2000, 2000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vovv2"]
 albedo_texture = ExtResource("2_isoef")
+
+[sub_resource type="LabelSettings" id="LabelSettings_521j7"]
+font_size = 34
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kiqgm"]
 sky_top_color = Color(0.5575474, 0.7708913, 0.9903249, 1)
@@ -72,7 +75,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vovv2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Menu" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,7 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Credits" type="Button" parent="CanvasLayer/Control"]
+[node name="Credits" type="Button" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -92,7 +95,7 @@ offset_bottom = -160.0
 theme = ExtResource("4_521j7")
 text = "CREDITS"
 
-[node name="Exit" type="Button" parent="CanvasLayer/Control"]
+[node name="Exit" type="Button" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -104,7 +107,7 @@ offset_bottom = -80.0
 theme = ExtResource("4_521j7")
 text = "EXIT"
 
-[node name="Start" type="Button" parent="CanvasLayer/Control"]
+[node name="Start" type="Button" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -115,6 +118,34 @@ offset_right = 344.0
 offset_bottom = -240.0
 theme = ExtResource("4_521j7")
 text = "START"
+
+[node name="Credits" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 288.0
+offset_right = 344.0
+offset_bottom = 485.0
+text = "camellia
+ou
+Zcukini
+peps_i"
+label_settings = SubResource("LabelSettings_521j7")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Credits"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 504.0
+offset_right = 344.0
+offset_bottom = 568.0
+theme = ExtResource("4_521j7")
+text = "Back"
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/menu/main/menu_terrain_data"

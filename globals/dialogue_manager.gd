@@ -11,14 +11,8 @@ func mark_completed(id: String) -> void:
 func is_completed(id: String) -> bool:
 	return id != "" and completed_dialogues.has(id)
 
-#func set_trigger(trigger: String, value: bool = true) -> void:
-	#active_triggers[trigger] = value
-
-#func has_trigger(trigger: String) -> bool:
-	#return active_triggers.get(trigger, false)
-
 func is_dialogue_available(dialogue: DialogueResource) -> bool:
-	# Проверка: уже пройден
+	# Проверка: уже пройден или недоступен
 	if !dialogue.is_available() or (is_completed(dialogue.dialogue_id) and !dialogue.is_repeatable):
 		return false
 	return true
