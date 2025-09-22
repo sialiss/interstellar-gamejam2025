@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://f4jq7vu5p1am"]
+[gd_scene load_steps=6 format=3 uid="uid://f4jq7vu5p1am"]
 
 [ext_resource type="Theme" uid="uid://c8nb6ck7k047d" path="res://scenes/menu/main/main_menu_theme.tres" id="1_a3xnm"]
 [ext_resource type="Script" uid="uid://c3hfssw4tkp7d" path="res://scenes/menu/pause/pause_menu.gd" id="1_ab405"]
+[ext_resource type="Script" uid="uid://rt1yhlpa3o0f" path="res://scenes/menu/pause/volume_slider.gd" id="2_igexi"]
 
 [sub_resource type="Gradient" id="Gradient_3lxs2"]
 colors = PackedColorArray(0, 0, 0, 0.35686275, 0, 0, 0, 0.77254903)
@@ -26,18 +27,34 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_a3xnm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 302.0
 grow_vertical = 2
 theme_override_constants/margin_left = 110
-metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+script = ExtResource("2_igexi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 16
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer"]

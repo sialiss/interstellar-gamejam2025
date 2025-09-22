@@ -17,12 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventBus="*res://globals/eventBus.gd"
+SaveManager="*res://globals/save_manager.tscn"
 SceneManager="*res://globals/scene_manager.gd"
 MusicManager="*res://globals/music_manager.tscn"
 DialogueManager="*res://globals/dialogue_manager.gd"
 RuneManager="*res://scripts/resources/runes/pattern_manager.gd"
-EventBus="*res://globals/eventBus.gd"
-SaveManager="*res://globals/save_manager.tscn"
 
 [editor_plugins]
 
