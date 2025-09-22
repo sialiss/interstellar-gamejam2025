@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 signal show_prompt(prompt_text)
-#signal show_timer_prompt(prompt_text)
+signal show_timer_prompt(time, prompt_text)
 signal hide_prompt()
 
 @onready var ray: RayCast3D = %InteractionRay
