@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_7gyyf")
 is_repeatable = true
 dialogue_id = "fisher_win"
-text = "Ха! Даже сети снова наполнятся! Может, я поймаю что-нибудь обычное, кроме этой кошмарной рыбины."
+text = "Ha! Even the nets'll get full! Maybe, I'll fish something normal, and not this nightmare trout."
 conditions = Array[ExtResource("2_yxf1f")]([SubResource("Resource_fahfl")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

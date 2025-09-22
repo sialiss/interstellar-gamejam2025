@@ -9,13 +9,13 @@
 
 [sub_resource type="Resource" id="Resource_12pbo"]
 script = ExtResource("1_12pbo")
-text = "Эта руна явно связана с пламенем. Думаю, она может помочь запустить ракету."
+text = "With this, I reckon, we can launch the rocket. Use it as a crude form of fuel. Maybe if we get close to the specimen, we'll learn more."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_6xvrv"]
 script = ExtResource("3_gdukb")
 type = "Rune"
-data = "fire_rune"
+data = "Fire Rune"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Resource" id="Resource_701w3"]
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://beg4qik32tc5x"
 [resource]
 script = ExtResource("1_12pbo")
 dialogue_id = "astronomer_after_rune"
-text = "Ты видел? Это… это символ, и он пылает, даже в холоде космоса!"
+text = "How curious. This symbol… that's what produces the heat? It must be how the fish stays warm out there."
 choices = Array[ExtResource("1_12pbo")]([SubResource("Resource_12pbo")])
 conditions = Array[ExtResource("2_s3xei")]([SubResource("Resource_6xvrv")])
 effects = Array[ExtResource("3_s3xei")]([SubResource("Resource_701w3")])

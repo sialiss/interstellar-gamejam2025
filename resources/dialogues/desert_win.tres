@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_pcmta")
 is_repeatable = true
 dialogue_id = "desert_win"
-text = "Я видел во сне, что пески перестали дрожать. Теперь мне можно вернуться домой."
+text = "In a deam I saw how the sands stopped shivering. Now I'm free to go back home."
 conditions = Array[ExtResource("2_pdh52")]([SubResource("Resource_y33e6")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=170 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -51,17 +51,20 @@
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
+[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
 [ext_resource type="PackedScene" uid="uid://by4hy0ojy1o12" path="res://assets/models/props/computer.glb" id="41_53qi2"]
 [ext_resource type="ArrayMesh" uid="uid://bqgxbklobey4w" path="res://assets/models/props/screen.res" id="42_b37fd"]
 [ext_resource type="PackedScene" uid="uid://bi0trp734wehx" path="res://assets/models/props/buttons/button_arrow.glb" id="43_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://ia2u7qhjrb6g" path="res://assets/models/props/buttons/button_minus.glb" id="44_b37fd"]
+[ext_resource type="Script" uid="uid://4pbkj1hegmmh" path="res://scenes/entities/computer/telescope_button.gd" id="44_dekj3"]
 [ext_resource type="Resource" uid="uid://dfstdxgqdlkqu" path="res://resources/dialogues/desert_after_cool_rod.tres" id="45_ethiv"]
 [ext_resource type="PackedScene" uid="uid://cw68f65orw85v" path="res://assets/models/props/buttons/button_plus.glb" id="45_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://bqovlqy66tk4p" path="res://scenes/entities/persons/desertian/desertian_model.tscn" id="46_3vvvx"]
 [ext_resource type="Resource" uid="uid://bkwtdnx57003f" path="res://resources/dialogues/desert_win.tres" id="46_ohyet"]
 [ext_resource type="PackedScene" uid="uid://cb8nhyt70tlyg" path="res://scenes/items/sign.tscn" id="46_sdkx4"]
+[ext_resource type="Script" uid="uid://covh76n2nab30" path="res://scenes/entities/computer/telescope_controller.gd" id="46_yj7bl"]
 [ext_resource type="Resource" uid="uid://dh3vovj25dqvb" path="res://resources/dialogues/astronomer_start.tres" id="47_7w7vh"]
 [ext_resource type="Texture2D" uid="uid://c41pssh0sp6i7" path="res://assets/sprites/qrcode.png" id="47_dkddj"]
 [ext_resource type="PackedScene" uid="uid://dutyley7ypu7u" path="res://scenes/entities/persons/astronomer/astronomer_model.tscn" id="47_sdkx4"]
@@ -250,12 +253,125 @@ radius = 15.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
 size = Vector3(2, 5, 2.5)
 
+[sub_resource type="Animation" id="Animation_gw5i7"]
+resource_name = "scan"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Data:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.2176372, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_8167w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Data:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb217"]
+_data = {
+&"RESET": SubResource("Animation_8167w"),
+&"scan": SubResource("Animation_gw5i7")
+}
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
 viewport_path = NodePath("Observatory/observatory/Dome/Tube/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_qbtvk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gw5i7"]
+size = Vector3(0.27, 0.068894535, 0.27)
 
 [sub_resource type="Curve" id="Curve_a76df"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -817,16 +933,107 @@ shape = SubResource("BoxShape3D_ni50r")
 [node name="observatory" parent="Observatory" instance=ExtResource("7_5m2y6")]
 transform = Transform3D(0.5087861, 0, -0.86089295, 0, 1, 0, 0.86089295, 0, 0.5087861, 206.44095, 39.082474, 651.58887)
 
-[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="1"]
+[node name="Building" parent="Observatory/observatory" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Plug" parent="Observatory/observatory" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Chord" parent="Observatory/observatory" index="2"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Hole" parent="Observatory/observatory" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="Tube" parent="Observatory/observatory/Dome" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Observatory/observatory/Dome/Tube" index="1"]
+transform = Transform3D(-1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000002, 0, 11.933823, 13.318619)
+remote_path = NodePath("../SubViewport/Camera3D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Observatory/observatory/Dome/Tube" index="2"]
+layer = 406
+
+[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="3"]
 size = Vector2i(256, 256)
 
 [node name="Camera3D" type="Camera3D" parent="Observatory/observatory/Dome/Tube/SubViewport"]
-transform = Transform3D(-0.5087861, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, -0.5087861, 186.22647, 63.575436, 663.5356)
-fov = 60.0
+transform = Transform3D(-0.5087862, 0, 0.860893, 0, 0.9999999, 0, -0.86089313, 0, -0.50878614, 186.22649, 63.575436, 663.5356)
+fov = 65.0
 far = 10000.0
 
+[node name="ColorRect" type="ColorRect" parent="Observatory/observatory/Dome/Tube/SubViewport"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011770378, 0.020875523, 0.012100077, 1)
+
+[node name="Scan" type="VBoxContainer" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Scan"]
+layout_mode = 2
+text = "Scanning Fish..."
+
+[node name="ProgressBar" type="ProgressBar" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Scan"]
+layout_mode = 2
+
+[node name="Data" type="VBoxContainer" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Data retrieved successfully!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Temperature: Overwhelming°K"
+
+[node name="Label3" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Pictographical Data Decoded:"
+
+[node name="TextureRect" type="TextureRect" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
+layout_mode = 2
+texture = ExtResource("40_gw5i7")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Observatory/observatory/Dome/Tube/SubViewport"]
+libraries = {
+&"": SubResource("AnimationLibrary_xb217")
+}
+
 [node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
-transform = Transform3D(0.3435942, 0, 0.93911827, 0, 1, 0, -0.93911827, 0, 0.3435942, 2.4825466, 0, -1.3031888)
+transform = Transform3D(0.029334787, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334787, 3.3853662, 0, -0.5534874)
 
 [node name="computer" parent="Observatory/observatory/table" instance=ExtResource("41_53qi2")]
 transform = Transform3D(-0.015881866, 0, -0.9998739, 0, 1, 0, 0.9998739, 0, -0.015881866, 0.3868103, 0.79795074, -0.057006836)
@@ -844,20 +1051,107 @@ transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0
 [node name="button_arrow" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
 transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, 0.27850342, 0, 0.108444214)
 
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_arrow"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_arrow/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
+
 [node name="button_arrow2" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
 transform = Transform3D(1.7881393e-07, 0, 1, 0, 1, 0, -1, 0, 1.7881393e-07, -0.28320313, 0, 0.108444214)
+
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_arrow2"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_arrow2/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
 
 [node name="button_arrow3" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
 transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, -6.1035156e-05, 0, 0.27090454)
 
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_arrow3"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_arrow3/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
+
 [node name="button_arrow4" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
 transform = Transform3D(1.0000001, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000001, 9.721479e-10, 0, -0.01699487)
+
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_arrow4"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_arrow4/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
 
 [node name="button_minus" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("44_b37fd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6237916, 0, -0.03598502)
 
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_minus"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_minus/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
+
 [node name="button_plus" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("45_yj7bl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6237916, 0, 0.23781297)
+
+[node name="TelescopeButton" type="Area3D" parent="Observatory/observatory/table/Keyboard/button_plus"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+collision_layer = 8
+monitoring = false
+script = ExtResource("44_dekj3")
+metadata/_custom_type_script = "uid://4pbkj1hegmmh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/observatory/table/Keyboard/button_plus/TelescopeButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032051086, 0)
+shape = SubResource("BoxShape3D_gw5i7")
+
+[node name="TelescopeController" type="Node" parent="Observatory/observatory/table/Keyboard" node_paths=PackedStringArray("y_rotor", "x_rotor", "camera", "completion_animation")]
+script = ExtResource("46_yj7bl")
+min_angle = -0.9075712110370514
+max_angle = 0.19198621771937624
+y_step = 0.17453292519943295
+x_step = 0.08726646259971647
+min_fov = 5.0
+max_fov = 60.0
+zoom_step = 5.0
+target_y_min = 3.141592653589793
+target_y_max = 3.6651914291880923
+target_x_min = -0.9599310885968813
+target_x_max = -0.7853981633974483
+target_zoom_max = 27.0
+y_rotor = NodePath("../../../Dome")
+x_rotor = NodePath("../../../Dome/Tube")
+camera = NodePath("../../../Dome/Tube/SubViewport/Camera3D")
+completion_animation = NodePath("../../../Dome/Tube/SubViewport/AnimationPlayer")
+metadata/_custom_type_script = "uid://covh76n2nab30"
 
 [node name="rocket" parent="Observatory" instance=ExtResource("8_850c4")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
@@ -1317,6 +1611,12 @@ shape = SubResource("SphereShape3D_kapuu")
 [connection signal="output_changed" from="Cave/cave/SuperButton2" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/SuperButton3" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/LogicCounter" to="Cave/cave/SuperDoor" method="receive_input"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_arrow/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="move_left"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_arrow2/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="move_right"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_arrow3/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="move_up"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_arrow4/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="move_down"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_minus/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="zoom_out"]
+[connection signal="interacted" from="Observatory/observatory/table/Keyboard/button_plus/TelescopeButton" to="Observatory/observatory/table/Keyboard/TelescopeController" method="zoom_in"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/evil_smoke" method="disable"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/HintHider" method="hide"]
 
