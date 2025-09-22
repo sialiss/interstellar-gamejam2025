@@ -1,9 +1,10 @@
-[gd_scene load_steps=113 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=116 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_m7tpt"]
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="4_l07wb"]
 [ext_resource type="Script" uid="uid://dux7gm4b61iwq" path="res://addons/proton_scatter/src/scatter.gd" id="4_ml3ux"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="5_pcmfc"]
@@ -72,6 +73,14 @@
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
+
+[sub_resource type="Resource" id="Resource_ovfp0"]
+script = ExtResource("2_oj0e3")
+metadata/_custom_type_script = "uid://bfy0wsrhdba5v"
+
+[sub_resource type="Resource" id="Resource_yvoaw"]
+script = ExtResource("2_oj0e3")
+metadata/_custom_type_script = "uid://bfy0wsrhdba5v"
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -263,6 +272,7 @@ radius = 400.0
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([SubResource("Resource_ovfp0"), null, null, null, null, SubResource("Resource_yvoaw")])
 npcs = [NodePath("NPCs/Desert"), NodePath("NPCs/Astronomer"), NodePath("NPCs/Fisher")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
@@ -719,6 +729,7 @@ volume_db = -32.381
 [node name="PauseMenu" parent="." instance=ExtResource("59_ethiv")]
 
 [node name="Desert" type="Area3D" parent="."]
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("69_oj0e3")
@@ -729,6 +740,7 @@ shape = SubResource("SphereShape3D_kapuu")
 
 [node name="Observatory2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 829.07434)
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("70_bdgmh")
@@ -739,6 +751,7 @@ shape = SubResource("SphereShape3D_kapuu")
 
 [node name="Forest" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.49374, 139.8728, 188.84857)
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("71_3sil5")
@@ -750,6 +763,7 @@ debug_color = Color(0.51265943, 0, 0.20523602, 0.41960785)
 
 [node name="Sea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -737.77563, 0, 276.29208)
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("72_3osn7")
