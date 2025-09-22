@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=175 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -100,36 +100,37 @@
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://c82v7bnpdv1r8" path="res://assets/models/props/bed.glb" id="92_pnpbx"]
 [ext_resource type="Texture2D" uid="uid://dm7td23ipbh3k" path="res://assets/sprites/fishroll.svg" id="93_lc8gy"]
+[ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_bjfvr"]
+[sub_resource type="Resource" id="Resource_bgqjc"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_bgqjc"]
+[sub_resource type="Resource" id="Resource_2811w"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_2811w"]
+[sub_resource type="Resource" id="Resource_aghih"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_aghih"]
+[sub_resource type="Resource" id="Resource_n4u2g"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_n4u2g"]
+[sub_resource type="Resource" id="Resource_0hvbb"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_bjfvr"), SubResource("Resource_bgqjc"), SubResource("Resource_2811w"), SubResource("Resource_aghih")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_bgqjc"), SubResource("Resource_2811w"), SubResource("Resource_aghih"), SubResource("Resource_n4u2g")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -162,31 +163,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_0hvbb"]
+[sub_resource type="Resource" id="Resource_je5e5"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_je5e5"]
+[sub_resource type="Resource" id="Resource_78awm"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_78awm"]
+[sub_resource type="Resource" id="Resource_sr2vx"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_sr2vx"]
+[sub_resource type="Resource" id="Resource_kge0y"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_kge0y"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_0hvbb"), SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -253,6 +254,57 @@ radius = 15.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
 size = Vector3(2, 5, 2.5)
 
+[sub_resource type="Animation" id="Animation_8167w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Data:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_gw5i7"]
 resource_name = "scan"
 length = 3.0
@@ -304,57 +356,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(0.2176372, 1),
 "update": 0,
 "values": [0.0, 100.0]
-}
-
-[sub_resource type="Animation" id="Animation_8167w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Scan:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Data:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xb217"]
@@ -651,6 +652,19 @@ radius = 400.0
 height = 200.0
 radius = 400.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_xgkao"]
+size = Vector3(1.5, 0.85, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgkao"]
+albedo_color = Color(0.40942743, 0.17377031, 0.1330474, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2811w"]
+size = Vector3(1.6, 2, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2811w"]
+top_radius = 0.1
+bottom_radius = 0.1
+
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
@@ -683,7 +697,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_n4u2g")
+modifier_stack = SubResource("Resource_0hvbb")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -748,7 +762,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_kge0y")
+modifier_stack = SubResource("Resource_jpodg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1143,7 +1157,7 @@ min_fov = 5.0
 max_fov = 60.0
 zoom_step = 5.0
 target_y_min = 3.141592653589793
-target_y_max = 3.6651914291880923
+target_y_max = 3.665191429188092
 target_x_min = -0.9599310885968813
 target_x_max = -0.7853981633974483
 target_zoom_max = 27.0
@@ -1605,6 +1619,33 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.19157, -92.18227, 130.34619)
 shape = SubResource("SphereShape3D_kapuu")
+
+[node name="Car" parent="." instance=ExtResource("101_2811w")]
+transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
+
+[node name="Sign" type="StaticBody3D" parent="."]
+transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.043214113, 1.2726736, -0.0008886811)
+mesh = SubResource("BoxMesh_xgkao")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_xgkao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sign"]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.7173553, 0)
+shape = SubResource("BoxShape3D_2811w")
+
+[node name="Label3D" type="Label3D" parent="Sign"]
+transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, -1.6915994e-09, 1.3581362, -0.07336403)
+modulate = Color(0, 0, 0, 1)
+text = "Caution!
+Broken car!"
+font_size = 20
+outline_size = 0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sign"]
+mesh = SubResource("CylinderMesh_2811w")
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
