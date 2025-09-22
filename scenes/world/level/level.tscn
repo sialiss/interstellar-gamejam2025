@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=139 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -63,6 +63,7 @@
 [ext_resource type="Resource" uid="uid://bkwtdnx57003f" path="res://resources/dialogues/desert_win.tres" id="46_ohyet"]
 [ext_resource type="PackedScene" uid="uid://cb8nhyt70tlyg" path="res://scenes/items/sign.tscn" id="46_sdkx4"]
 [ext_resource type="Resource" uid="uid://dh3vovj25dqvb" path="res://resources/dialogues/astronomer_start.tres" id="47_7w7vh"]
+[ext_resource type="Texture2D" uid="uid://c41pssh0sp6i7" path="res://assets/sprites/qrcode.png" id="47_dkddj"]
 [ext_resource type="PackedScene" uid="uid://dutyley7ypu7u" path="res://scenes/entities/persons/astronomer/astronomer_model.tscn" id="47_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://buu3oa28nv7tn" path="res://scenes/entities/persons/default_person/person.tscn" id="48_3vvvx"]
 [ext_resource type="Resource" uid="uid://bbqrn3yt4bwoo" path="res://resources/dialogues/astronomer_telescope_fixed.tres" id="48_uxisk"]
@@ -80,42 +81,49 @@
 [ext_resource type="Resource" uid="uid://dgffi4fi8fkmo" path="res://resources/dialogues/fisher_win.tres" id="58_yra41"]
 [ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
 [ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
-[ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="66_gy2um"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="68_esmde"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="69_oj0e3"]
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="77_dekj3"]
+[ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="78_gw5i7"]
+[ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
+[ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
+[ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
+[ext_resource type="PackedScene" uid="uid://c82v7bnpdv1r8" path="res://assets/models/props/bed.glb" id="92_pnpbx"]
+[ext_resource type="Texture2D" uid="uid://dm7td23ipbh3k" path="res://assets/sprites/fishroll.svg" id="93_lc8gy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_dekj3"]
+[sub_resource type="Resource" id="Resource_lc8gy"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_gw5i7"]
+[sub_resource type="Resource" id="Resource_dkddj"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_8167w"]
+[sub_resource type="Resource" id="Resource_32eyw"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_xb217"]
+[sub_resource type="Resource" id="Resource_c6ddm"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_pnpbx"]
+[sub_resource type="Resource" id="Resource_bjfvr"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_dekj3"), SubResource("Resource_gw5i7"), SubResource("Resource_8167w"), SubResource("Resource_xb217")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_lc8gy"), SubResource("Resource_dkddj"), SubResource("Resource_32eyw"), SubResource("Resource_c6ddm")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -143,31 +151,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_lc8gy"]
+[sub_resource type="Resource" id="Resource_bgqjc"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_dkddj"]
+[sub_resource type="Resource" id="Resource_2811w"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_32eyw"]
+[sub_resource type="Resource" id="Resource_aghih"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_c6ddm"]
+[sub_resource type="Resource" id="Resource_n4u2g"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_pk7k4"]
+[sub_resource type="Resource" id="Resource_0hvbb"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_lc8gy"), SubResource("Resource_dkddj"), SubResource("Resource_32eyw"), SubResource("Resource_c6ddm")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_bgqjc"), SubResource("Resource_2811w"), SubResource("Resource_aghih"), SubResource("Resource_n4u2g")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -272,8 +280,18 @@ size = Vector2(2000, 2000)
 albedo_texture = ExtResource("26_60pun")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqhh"]
-radius = 0.345
-height = 1.9060879
+radius = 0.4
+height = 2.632
+
+[sub_resource type="Resource" id="Resource_pk7k4"]
+script = ExtResource("30_88k61")
+text = "Привет! Сходишь с нами в тёмный дом?"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_qbtvk"]
+script = ExtResource("30_88k61")
+text = "Мне страшно... Я возьму с собой фонарик..."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
 radius = 400.0
@@ -285,7 +303,7 @@ radius = 400.0
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
-npcs = [NodePath("NPCs/Desert"), NodePath("NPCs/Astronomer"), NodePath("NPCs/Fisher")]
+npcs = [NodePath("NPCs/Desert"), NodePath("NPCs/Astronomer"), NodePath("NPCs/Fisher"), NodePath("NPCs/VillageChild"), NodePath("NPCs/VillageChild2"), NodePath("NPCs/VillageChild3"), NodePath("MusicTest/Fishie")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/world/level/terrain_data"
@@ -313,7 +331,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_pnpbx")
+modifier_stack = SubResource("Resource_bjfvr")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -372,7 +390,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_pk7k4")
+modifier_stack = SubResource("Resource_0hvbb")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -602,6 +620,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6237916, 0, 0.23781297)
 [node name="rocket" parent="Observatory" instance=ExtResource("8_850c4")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
 
+[node name="Sprite3D" type="Sprite3D" parent="Observatory/rocket"]
+transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
+texture_filter = 0
+texture = ExtResource("47_dkddj")
+
 [node name="Village" type="Node3D" parent="."]
 
 [node name="house_wood" parent="Village" instance=ExtResource("9_850c4")]
@@ -766,41 +789,124 @@ script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("7_usf2n")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
+[node name="VillageChild" parent="NPCs" instance=ExtResource("77_yj7bl")]
+transform = Transform3D(-0.19972709, 0, 0.97985154, 0, 1, 0, -0.97985154, 0, -0.19972709, -401.03235, -8.761753, 477.2537)
+NPC_name = "Child"
+
+[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("5_oqj6p")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="VillageChild2" parent="NPCs" instance=ExtResource("77_yj7bl")]
+transform = Transform3D(0.7131527, 0, 0.70100886, 0, 1, 0, -0.70100886, 0, 0.7131527, -400.92978, -8.7505045, 476.2841)
+NPC_name = "Child"
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_pk7k4")])
+
+[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("5_oqj6p")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="VillageChild3" parent="NPCs" instance=ExtResource("77_yj7bl")]
+transform = Transform3D(-0.8447578, 0, 0.53514874, 0, 1, 0, -0.53514874, 0, -0.8447578, -399.7589, -8.753624, 479.89548)
+NPC_name = "Child"
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_qbtvk")])
+
+[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("5_oqj6p")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
 [node name="extras" type="Node3D" parent="."]
 
 [node name="person" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.095116064, 0, -0.9954662, 0, 1, 0, 0.9954662, 0, -0.095116064, 202.01492, 37.87734, 643.65155)
+transform = Transform3D(-0.095116064, 0, -0.9954662, 0, 1, 0, 0.9954662, 0, -0.095116064, 202.86366, 37.87734, 642.0101)
+
+[node name="BecomeFish" type="Node3D" parent="extras/person"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("3_yvoaw")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="person2" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 201.02238, 37.87734, 644.435)
+transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 200.96378, 37.87734, 643.00397)
+
+[node name="BecomeFish" type="Node3D" parent="extras/person2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("3_yvoaw")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="person3" parent="extras" instance=ExtResource("48_3vvvx")]
 transform = Transform3D(-0.4573773, 0, -0.88927275, 0, 1, 0, 0.88927275, 0, -0.4573773, 216.93947, 39.192673, 644.96875)
 
+[node name="BecomeFish" type="Node3D" parent="extras/person3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("4_6oqdp")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
 [node name="person4" parent="extras" instance=ExtResource("48_3vvvx")]
 transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 196.52242, 39.16148, 664.78265)
 
+[node name="BecomeFish" type="Node3D" parent="extras/person4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_trigger = ExtResource("4_6oqdp")
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
-transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
+transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 258.92923, 1.7948748, 468.81332)
 
 [node name="Fishie" type="StaticBody3D" parent="MusicTest" groups=["npc"]]
-transform = Transform3D(0.73056763, 0, 0.6828404, 0, 1, 0, -0.6828404, 0, 0.73056763, -2.3292189, 0.80459225, 4.6723547)
+transform = Transform3D(0.73056763, 0, 0.6828404, 0, 1, 0, -0.6828404, 0, 0.73056763, -2.160997, 0.80459225, 4.5151224)
 collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
-NPC_name = "Fishie"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("65_3vwys")])
+NPC_name = "camellia the tiny fishie"
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("65_3vwys"), ExtResource("83_xb217"), ExtResource("84_pnpbx")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MusicTest/Fishie"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960874, 0)
+transform = Transform3D(0.9611771, -0.045424342, -0.2721687, -0.2713158, 0.024107747, -0.9621888, 0.050268114, 0.99867725, 0.010847487, -0.06488037, -0.600441, 0.05331421)
 shape = SubResource("CapsuleShape3D_abqhh")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MusicTest/Fishie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
 volume_db = -32.381
 
-[node name="ModelOrigin" parent="MusicTest/Fishie" instance=ExtResource("66_gy2um")]
+[node name="fish_pink" parent="MusicTest/Fishie" instance=ExtResource("83_gw5i7")]
+transform = Transform3D(0.7991075, 9.778887e-09, 2.9802322e-08, 1.071021e-08, 0.793405, 2.7939677e-09, -7.4505806e-08, 0, 0.4528981, -0.026672363, -0.6413355, 0.021881104)
+
+[node name="bed" parent="MusicTest" instance=ExtResource("92_pnpbx")]
+transform = Transform3D(-0.11963436, 0, 0.992818, 0, 0.99999976, 0, -0.992818, 0, -0.11963436, -10.4852295, -0.24614298, 2.1528015)
+
+[node name="Lantern2" parent="MusicTest" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.99999976, 0, -0.8651514, 0, 0.50151074, -10.954224, 0.8657743, -2.0390472)
+
+[node name="table" parent="MusicTest" instance=ExtResource("40_usf2n")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.99999976, 0, -0.8651514, 0, 0.50151074, -10.991577, 0.064814925, -1.5917969)
+
+[node name="pedestal" parent="MusicTest" instance=ExtResource("30_l083c")]
+transform = Transform3D(-0.39039192, 0, -0.007853836, 0, 0.2639199, 0, 0.0030661672, 0, -0.9999692, 2.9586792, 0.16125834, -1.6918335)
+
+[node name="Cube_001" parent="MusicTest/pedestal" index="2"]
+transform = Transform3D(0.19677831, 0.05139359, 0, -0.003093997, 3.2686357, 0, 0, 0, 1.3166035, 0.058293525, 7.496479, 7.970187e-09)
+
+[node name="Cylinder_001" parent="MusicTest/pedestal" index="3"]
+transform = Transform3D(-0.46112087, 0, 0.096622474, 0.12245136, 0, 0.36385584, 0, 0.77598864, 0, 0.07027161, 4.22417, 7.92339e-09)
+
+[node name="Sign" parent="MusicTest/pedestal" instance=ExtResource("46_sdkx4")]
+transform = Transform3D(-0.0090252, 0, 0.99998534, 0, 6.7187715, 0, -1.6627098, 0, -0.005427927, 0.31617343, 7.5537815, -0.011568073)
+
+[node name="Sprite3D" type="Sprite3D" parent="MusicTest/pedestal"]
+transform = Transform3D(-7.86805e-09, 0, -0.45, 0, 0.45, 0, 0.18, 0, -1.9670125e-08, 0.42048323, 7.6158476, -8.338197e-09)
+texture_filter = 0
+texture = ExtResource("93_lc8gy")
 
 [node name="PauseMenu" parent="." instance=ExtResource("59_ethiv")]
 
@@ -868,3 +974,4 @@ shape = SubResource("SphereShape3D_kapuu")
 [editable path="Cave/pedestal"]
 [editable path="Observatory/observatory"]
 [editable path="Observatory/observatory/table/computer"]
+[editable path="MusicTest/pedestal"]
