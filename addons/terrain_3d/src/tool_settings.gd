@@ -48,12 +48,14 @@ var height_list: VBoxContainer
 var scale_list: VBoxContainer
 var rotation_list: VBoxContainer
 var color_list: VBoxContainer
+var collision_list: VBoxContainer
 var settings: Dictionary = {}
 
 
 func _ready() -> void:
-	# Remove old editor settings
-	for setting in ["lift_floor", "flatten_peaks", "lift_flatten", "automatic_regions"]:
+	# Remove old editor settings, newer first so oldest can be removed
+	for setting in ["jitter", "lift_floor", "flatten_peaks", "lift_flatten", "automatic_regions",
+			"show_cursor_while_painting", "crosshair_threshold"]:
 		plugin.erase_setting(ES_TOOL_SETTINGS + setting)
 
 	# Setup buttons	
@@ -154,8 +156,12 @@ func _ready() -> void:
 								"list":color_list, "default":0, "unit":"°", "range":Vector3(0, 360, 1) })
 	add_setting({ "name":"random_darken", "type":SettingType.SLIDER, "list":color_list, "default":50, 
 								"unit":"%", "range":Vector3(0, 100, 1) })
-	#add_setting({ "name":"blend_mode", "type":SettingType.OPTION, "list":color_list, "default":0, 
-								#"range":Vector3(0, 3, 1) })
+
+	collision_list = create_submenu(main_list, "Collision", Layout.VERTICAL)
+	add_setting({ "name":"on_collision", "label":"On Collision", "type":SettingType.CHECKBOX, "list":collision_list,
+								"default":true })
+	add_setting({ "name":"raycast_height", "label":"Raycast Height", "type":SettingType.SLIDER, 
+								"list":collision_list, "default":10, "unit":"m", "range":Vector3(0, 200, .25) })
 
 	if DisplayServer.is_touchscreen_available():
 		add_setting({ "name":"invert", "label":"Invert", "type":SettingType.CHECKBOX, "list":main_list, "default":false, "flags":ADD_SEPARATOR })
@@ -168,17 +174,15 @@ func _ready() -> void:
 	advanced_list = create_submenu(main_list, "", Layout.VERTICAL, false)
 	add_setting({ "name":"auto_regions", "label":"Add regions while sculpting", "type":SettingType.CHECKBOX, 
 								"list":advanced_list, "default":true })
+	advanced_list.add_child(HSeparator.new(), true)
+	add_setting({ "name":"show_brush_texture", "type":SettingType.CHECKBOX, "list":advanced_list, 
+								"default":true })
 	add_setting({ "name":"align_to_view", "type":SettingType.CHECKBOX, "list":advanced_list, 
 								"default":true })
-	add_setting({ "name":"show_cursor_while_painting", "type":SettingType.CHECKBOX, "list":advanced_list, 
-								"default":true })
-	advanced_list.add_child(HSeparator.new(), true)
+	add_setting({ "name":"brush_spin_speed", "type":SettingType.SLIDER, "list":advanced_list, "default":50, 
+								"unit":"%", "range":Vector3(0, 100, 1) })
 	add_setting({ "name":"gamma", "type":SettingType.SLIDER, "list":advanced_list, "default":1.0, 
 								"unit":"γ", "range":Vector3(0.1, 2.0, 0.01) })
-	add_setting({ "name":"jitter", "type":SettingType.SLIDER, "list":advanced_list, "default":50, 
-								"unit":"%", "range":Vector3(0, 100, 1) })
-	add_setting({ "name":"crosshair_threshold", "type":SettingType.SLIDER, "list":advanced_list, "default":16., 
-								"unit":"m", "range":Vector3(0, 200, 1) })
 
 
 func create_submenu(p_parent: Control, p_button_name: String, p_layout: Layout, p_hover_pop: bool = true) -> Container:
@@ -568,8 +572,7 @@ func get_setting(p_setting: String) -> Variant:
 	if object is Range:
 		value = object.get_value()
 		# Adjust widths of all sliders on update of values
-		var digits: float = count_digits(value)
-		var width: float = clamp( (1 + count_digits(value)) * 19., 50, 80) * clamp(EditorInterface.get_editor_scale(), .9, 2)
+		var width: float = clamp( (1 + _count_digits(value)) * 19., 50, 80) * clamp(EditorInterface.get_editor_scale(), .9, 2)
 		object.set_custom_minimum_size(Vector2(width, 0))
 	elif object is DoubleSlider:
 		value = object.get_value()
@@ -672,7 +675,7 @@ func _get_brush_preview_material() -> ShaderMaterial:
 
 
 # Counts digits of a number including negative sign, decimal points, and up to 3 decimals 
-func count_digits(p_value: float) -> int:
+func _count_digits(p_value: float) -> int:
 	var count: int = 1
 	for i in range(5, 0, -1):
 		if abs(p_value) >= pow(10, i):
@@ -690,4 +693,21 @@ func count_digits(p_value: float) -> int:
 	if p_value < 0:
 		count += 1
 	return count
-	
+
+
+func inverse_slope_range() -> void:
+	var slope_range: Vector2 = get_setting("slope")
+	if slope_range.y - slope_range.x > 89.99:
+		return
+	if slope_range.x == 0.0:
+		slope_range = Vector2(slope_range.y, 90.0)
+	elif slope_range.y == 90.0:
+		slope_range = Vector2(0.0, slope_range.x)
+	else:
+		# If midpoint <= 45, inverse to 90, else to 0
+		var midpoint: float = 0.5 * (slope_range.x + slope_range.y)
+		if midpoint <= 45.0:
+			slope_range = Vector2(slope_range.y, 90.0)
+		else:
+			slope_range = Vector2(0.0, slope_range.x)
+	set_setting("slope", slope_range)
