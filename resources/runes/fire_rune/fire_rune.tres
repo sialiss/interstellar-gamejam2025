@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="FireRune" load_steps=2 format=3 uid="uid://urhawc1lk606"]
+[gd_resource type="Resource" script_class="FireRune" load_steps=3 format=3 uid="uid://urhawc1lk606"]
 
 [ext_resource type="Script" uid="uid://b501kk7fnpkb6" path="res://resources/runes/fire_rune/fire_rune.gd" id="1_0k5mw"]
+[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="1_3tmeq"]
 
 [resource]
 resource_name = "Fire Rune"
 script = ExtResource("1_0k5mw")
 rune_name = "fire_rune"
 directions_array = Array[int]([1, 4, 6, 7, 4, 1])
+image = ExtResource("1_3tmeq")
 metadata/_custom_type_script = "uid://b501kk7fnpkb6"

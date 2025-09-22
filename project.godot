@@ -35,6 +35,8 @@ npc=""
 interactable=""
 car=""
 flammable=""
+enlargable=""
+enchantable=""
 
 [input]
 

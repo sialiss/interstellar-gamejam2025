@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b7j4y"]
 
-[node name="Box" type="RigidBody3D"]
+[node name="Box" type="RigidBody3D" groups=["enlargable"]]
 collision_layer = 516
 collision_mask = 7
 mass = 5.0
