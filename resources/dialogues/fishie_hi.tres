@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_etlma")
-is_repeatable = true
+dialogue_id = "fishie_hi"
 text = "Hiiiiiiiiiii
 It's my music! Do you like it?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

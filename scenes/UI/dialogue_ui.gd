@@ -16,12 +16,6 @@ signal is_dialogue_mode(enabled)
 func _ready() -> void:
 	visible = false
 
-func get_available_dialogue(npc_dialogues: Array[DialogueResource]) -> DialogueResource:
-	for dialogue in npc_dialogues:
-		if DialogueManager.is_dialogue_available(dialogue):
-			return dialogue
-	return null
-
 func choose_npc_dialogue(npc_dialogues: Array[DialogueResource], npc: Node) -> void:
 	var story_dialogue: DialogueResource = null
 	var repeatable_dialogue: DialogueResource = null
@@ -35,15 +29,14 @@ func choose_npc_dialogue(npc_dialogues: Array[DialogueResource], npc: Node) -> v
 	var root = story_dialogue if story_dialogue else repeatable_dialogue
 	if root == null:
 		return # нет доступных диалогов
-	start_dialogue(root, npc)
+	_start_dialogue(root, npc)
 
-func start_dialogue(root: DialogueResource, npc: Node) -> void:
-	if not root.is_repeatable and DialogueManager.is_completed(root.dialogue_id):
-		if root.choices.size() > 0:
-			root = root.choices[0]
-		else:
-			return
-
+func _start_dialogue(root: DialogueResource, npc: Node) -> void:
+	#if not root.is_repeatable and DialogueManager.is_completed(root.dialogue_id):
+		#if root.choices.size() > 0:
+			#root = root.choices[0]
+		#else:
+			#return
 	_current_node = root
 	_current_npc = npc
 	visible = true
@@ -63,18 +56,18 @@ func _show_node(node: DialogueResource) -> void:
 
 	if node.speaker == "npc":
 		if node.choices.is_empty():
-			var close_btn := Button.new()
-			close_btn.text = "Next"
-			close_btn.pressed.connect(_on_end_pressed)
-			choices_container.add_child(close_btn)
-			_current_buttons.append(close_btn)
+			var btn = create_button(1, "Next")
+			btn.pressed.connect(_on_end_pressed)
+			choices_container.add_child(btn)
+			_current_buttons.append(btn)
+		elif node.choices.size() == 1 and node.choices[0].speaker == "npc":
+			var btn = create_button(1, "Next")
+			btn.pressed.connect(func(): _on_choice_selected(node.choices[0]))
+			choices_container.add_child(btn)
+			_current_buttons.append(btn)
 		else:
 			for choice in node.choices:
-				var btn := Button.new()
-				var index = node.choices.find(choice) + 1
-				btn.text = "[%d] %s" % [index, choice.text]
-				btn.clip_text = true
-				btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
+				var btn = create_button(node.choices.find(choice) + 1, choice.text)
 				btn.pressed.connect(func(): _on_choice_selected(choice))
 				choices_container.add_child(btn)
 				_current_buttons.append(btn)
@@ -124,3 +117,9 @@ func _on_end_pressed() -> void:
 func is_current_npc(npc):
 	if npc == _current_npc: return true
 	else: return false
+
+func create_button(i, name):
+	var btn := Button.new()
+	btn.text = "[%d] %s" % [i, name]
+	btn.clip_text = true
+	btn.alignment = HORIZONTAL_ALIGNMENT_LEFT

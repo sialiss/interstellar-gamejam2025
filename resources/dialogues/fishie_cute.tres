@@ -7,5 +7,6 @@
 [resource]
 script = ExtResource("1_nb82t")
 is_repeatable = true
+dialogue_id = "fishie_cute"
 text = "I love cute things!!!!!!!!!!!!!!!!!!!!!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

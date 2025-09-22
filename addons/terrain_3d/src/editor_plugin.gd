@@ -38,12 +38,12 @@ var _use_meta: bool = false
 func _init() -> void:
 	if OS.get_name() == "macOS":
 		_use_meta = true
-	
+
 	# Get the Godot Editor window. Structure is root:Window/EditorNode/Base Control
 	godot_editor_window = EditorInterface.get_base_control().get_parent().get_parent()
 	godot_editor_window.focus_entered.connect(_on_godot_focus_entered)
 
-	
+
 func _enter_tree() -> void:
 	editor = Terrain3DEditor.new()
 	setup_editor_settings()
@@ -77,7 +77,7 @@ func _on_godot_focus_entered() -> void:
 
 
 ## EditorPlugin selection function call chain isn't consistent. Here's the map of calls:
-## Assume we handle Terrain3D and NavigationRegion3D  
+## Assume we handle Terrain3D and NavigationRegion3D
 # Click Terrain3D: 					_handles(Terrain3D), _make_visible(true), _edit(Terrain3D)
 # Deselect:							_make_visible(false), _edit(null)
 # Click other node:					_handles(OtherNode)
@@ -89,14 +89,14 @@ func _handles(p_object: Object) -> bool:
 		return true
 	elif p_object is NavigationRegion3D and is_instance_valid(_last_terrain):
 		return true
-	
+
 	# Terrain3DObjects requires access to EditorUndoRedoManager. The only way to make sure it
 	# always has it, is to pass it in here. _edit is NOT called if the node is cut and pasted.
 	elif p_object is Terrain3DObjects:
 		p_object.editor_setup(self)
 	elif p_object is Node3D and p_object.get_parent() is Terrain3DObjects:
 		p_object.get_parent().editor_setup(self)
-	
+
 	return false
 
 
@@ -143,18 +143,18 @@ func _edit(p_object: Object) -> void:
 		else:
 			nav_region = null
 
-	
+
 func _clear() -> void:
 	if is_terrain_valid():
 		if terrain.data.region_map_changed.is_connected(update_region_grid):
 			terrain.data.region_map_changed.disconnect(update_region_grid)
-		
+
 		terrain.clear_gizmos()
 		terrain = null
 		editor.set_terrain(null)
-		
+
 		ui.clear_picking()
-		
+
 	region_gizmo.clear()
 
 
@@ -166,13 +166,13 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 	if continue_input != AFTER_GUI_INPUT_CUSTOM:
 		return continue_input
 	ui.update_decal()
-	
+
 	## Setup active camera & viewport
 	# Always update this for all inputs, as the mouse position can move without
 	# necessarily being a InputEventMouseMotion object. get_intersection() also
 	# returns the last frame position, and should be updated more frequently.
-	
-	# Snap terrain to current camera 
+
+	# Snap terrain to current camera
 	terrain.set_camera(p_viewport_camera)
 
 	# Detect if viewport is set to half_resolution
@@ -197,7 +197,7 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 		if intersection_point.z > 3.4e38 or is_nan(intersection_point.y): # max double or nan
 			return AFTER_GUI_INPUT_PASS
 		mouse_global_position = intersection_point
-	
+
 	## Handle mouse movement
 	if p_event is InputEventMouseMotion:
 
@@ -215,7 +215,7 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 
 				editor.operate(mouse_global_position, p_viewport_camera.rotation.y)
 				return AFTER_GUI_INPUT_STOP
-			
+
 		return AFTER_GUI_INPUT_PASS
 
 	if p_event is InputEventMouseButton and _input_mode > 0:
@@ -225,12 +225,12 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 				ui.pick(mouse_global_position)
 				if not ui.operation_builder or not ui.operation_builder.is_ready():
 					return AFTER_GUI_INPUT_STOP
-			
+
 			if modifier_ctrl and editor.get_tool() == Terrain3DEditor.HEIGHT:
 				var height: float = terrain.data.get_height(mouse_global_position)
 				ui.brush_data["height"] = height
 				ui.tool_settings.set_setting("height", height)
-				
+
 			# If adjusting regions
 			if editor.get_tool() == Terrain3DEditor.REGION:
 				# Skip regions that already exist or don't
@@ -239,17 +239,17 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 				if	( has_region and op == Terrain3DEditor.ADD) or \
 					( not has_region and op == Terrain3DEditor.SUBTRACT ):
 					return AFTER_GUI_INPUT_STOP
-			
+
 			# If an automatic operation is ready to go (e.g. gradient)
 			if ui.operation_builder and ui.operation_builder.is_ready():
 				ui.operation_builder.apply_operation(editor, mouse_global_position, p_viewport_camera.rotation.y)
 				return AFTER_GUI_INPUT_STOP
-			
+
 			# Mouse clicked, start editing
 			editor.start_operation(mouse_global_position)
 			editor.operate(mouse_global_position, p_viewport_camera.rotation.y)
 			return AFTER_GUI_INPUT_STOP
-		
+
 		# _input_apply released, save undo data
 		elif editor.is_operating():
 			editor.stop_operation()
@@ -263,15 +263,15 @@ func _read_input(p_event: InputEvent = null) -> AfterGUIInput:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or \
 		p_event is InputEventMouseButton and p_event.is_released() and \
 		p_event.get_button_index() == MOUSE_BUTTON_LEFT:
-			_input_mode = 1 
+			_input_mode = 1
 	else:
 			_input_mode = 0
-	
+
 	match get_setting("editors/3d/navigation/navigation_scheme", 0):
 		2, 1: # Modo, Maya
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or \
 	 			( Input.is_key_pressed(KEY_ALT) and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) ):
-					_input_mode = -1 
+					_input_mode = -1
 			if p_event is InputEventMouseButton and p_event.is_released() and \
 				( p_event.get_button_index() == MOUSE_BUTTON_RIGHT or \
 				( Input.is_key_pressed(KEY_ALT) and p_event.get_button_index() == MOUSE_BUTTON_LEFT )):
@@ -279,7 +279,7 @@ func _read_input(p_event: InputEvent = null) -> AfterGUIInput:
 		0, _: # Godot
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or \
 				Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
-					_input_mode = -1 
+					_input_mode = -1
 			if p_event is InputEventMouseButton and p_event.is_released() and \
 				( p_event.get_button_index() == MOUSE_BUTTON_RIGHT or \
 				p_event.get_button_index() == MOUSE_BUTTON_MIDDLE ):
@@ -290,13 +290,13 @@ func _read_input(p_event: InputEvent = null) -> AfterGUIInput:
 
 	## Determine modifiers pressed
 	modifier_shift = Input.is_key_pressed(KEY_SHIFT)
-	
-	# Editor responds to modifier_ctrl so we must register touchscreen Invert 
+
+	# Editor responds to modifier_ctrl so we must register touchscreen Invert
 	if _use_meta:
 		modifier_ctrl = Input.is_key_pressed(KEY_META) || ui.inverted_input
 	else:
 		modifier_ctrl = Input.is_key_pressed(KEY_CTRL) || ui.inverted_input
-	
+
 	# Keybind enum: Alt,Space,Meta,Capslock
 	var alt_key: int
 	match get_setting("terrain3d/config/alt_key_bind", 0):
@@ -383,10 +383,10 @@ func update_region_grid() -> void:
 		region_gizmo.region_position = current_region_position
 		region_gizmo.region_size = terrain.get_region_size() * terrain.get_vertex_spacing()
 		region_gizmo.grid = terrain.get_data().get_region_locations()
-		
+
 		terrain.update_gizmos()
 		return
-		
+
 	region_gizmo.show_rect = false
 	region_gizmo.region_size = 1024
 	region_gizmo.grid = [Vector2i.ZERO]
@@ -397,7 +397,7 @@ func _on_scene_changed(scene_root: Node) -> void:
 		print("Terrain3DEditorPlugin: _on_scene_changed: ", scene_root)
 	if not scene_root:
 		return
-		
+
 	for node in scene_root.find_children("", "Terrain3DObjects"):
 		node.editor_setup(self)
 
@@ -432,7 +432,7 @@ func is_selected() -> bool:
 		if ( is_instance_valid(_last_terrain) and node.get_instance_id() == _last_terrain.get_instance_id() ) or \
 			node is Terrain3D:
 				return true
-	return false	
+	return false
 
 
 func select_terrain() -> void:
@@ -460,7 +460,7 @@ func setup_editor_settings() -> void:
 		"hint_string": "Alt,Space,Meta,Capslock"
 	}
 	editor_settings.add_property_info(property_info)
-	
+
 
 func set_setting(p_str: String, p_value: Variant) -> void:
 	editor_settings.set_setting(p_str, p_value)
