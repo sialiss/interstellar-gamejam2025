@@ -10,16 +10,16 @@ func _ready():
 	initial_position = global_position
 	body_entered.connect(_on_entered)
 	area_entered.connect(_on_entered)
-	
+
 	var timer = Timer.new()
 	timer.wait_time = 10
 	timer.timeout.connect(queue_free)
 	add_child(timer)
 	timer.start()
-	
+
 func set_velocity(direction: Vector3):
 	velocity = direction.normalized() * speed
-	
+
 
 func _physics_process(delta: float) -> void:
 	position += velocity * delta

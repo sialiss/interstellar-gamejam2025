@@ -9,6 +9,7 @@ class_name DialogueResource
 
 # массив условий
 @export var conditions: Array[EventCondition] = []
+@export var effects: Array[DialogueEffect] = []
 
 func is_available() -> bool:
 	if conditions.is_empty():
@@ -17,3 +18,7 @@ func is_available() -> bool:
 		if not cond.is_completed:
 			return false
 	return true
+
+func apply_effects(player, npc):
+	for eff in effects:
+		eff.apply_effect(player, npc)

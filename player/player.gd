@@ -67,7 +67,6 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("store"):
 		if ray.is_colliding():
 			var item = ray.get_collider()
-			print(item, item is Item)
 			if item is Item:
 				store(item)
 

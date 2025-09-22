@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://0sjyvf1of6px"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://0sjyvf1of6px"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_neuk6"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_2d82t"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_jdncu"]
 
 [sub_resource type="Resource" id="Resource_fvn6n"]
 script = ExtResource("1_neuk6")
@@ -41,6 +42,7 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [resource]
 script = ExtResource("1_neuk6")
+is_repeatable = true
 dialogue_id = "fisher_start"
 text = "Эй, ты тоже заметил? Сети пусты, удочки молчат…
 Всё море кишит только этими… копиями рыбы. Огромной, крутящейся… да ведь ты тоже её видел?"

@@ -4,6 +4,7 @@ class_name DialogueUI
 @onready var npc_name_label: Label = $Panel/NPCname
 @onready var dialogue_label: Label = $Panel/DialogueText
 @onready var choices_container: VBoxContainer = $Panel/Choices
+@onready var player: Player = $"../Player"
 
 var _current_node: DialogueResource = null
 var _current_npc: Node = null
@@ -97,6 +98,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_choice_selected(choice: DialogueResource) -> void:
 	_current_npc.stop_talking()
 	choice.dialogue_id = _current_node.dialogue_id
+	if _current_node.effects.size() > 0:
+		for effect in _current_node.effects:
+			choice.effects.append(effect)
 	_current_node = choice
 	_show_node(choice)
 
@@ -106,6 +110,7 @@ func stop_dialogue() -> void:
 func _on_end_pressed() -> void:
 	if _current_node:
 		DialogueManager.mark_completed(_current_node.dialogue_id)
+		_current_node.apply_effects(player, _current_npc)
 
 	visible = false
 	dialogue_finished.emit(_current_npc)

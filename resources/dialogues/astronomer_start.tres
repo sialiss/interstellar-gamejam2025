@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://dh3vovj25dqvb"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://dh3vovj25dqvb"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_jihgp"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_sph3y"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_sph3y"]
 
 [sub_resource type="Resource" id="Resource_ipqdx"]
 script = ExtResource("1_jihgp")
@@ -41,6 +42,7 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [resource]
 script = ExtResource("1_jihgp")
+is_repeatable = true
 dialogue_id = "astronomer_start"
 text = "Ах, наконец-то кто-то пришёл! Я наблюдаю за этой гигантской рыбой… но её тайна ускользает от меня.
 Каждый её оборот меняет мир, а я всё ещё ничего не понимаю.
