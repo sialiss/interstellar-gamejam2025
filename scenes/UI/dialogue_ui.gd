@@ -118,8 +118,9 @@ func is_current_npc(npc):
 	if npc == _current_npc: return true
 	else: return false
 
-func create_button(i, name):
+func create_button(i, choice_name):
 	var btn := Button.new()
-	btn.text = "[%d] %s" % [i, name]
+	btn.text = "[%d] %s" % [i, choice_name]
 	btn.clip_text = true
 	btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	return btn
