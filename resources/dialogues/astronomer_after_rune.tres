@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 [sub_resource type="Resource" id="Resource_6xvrv"]
 script = ExtResource("3_gdukb")
 type = "Rune"
-data = "fire_rune"
+data = "Fire Rune"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Resource" id="Resource_701w3"]
