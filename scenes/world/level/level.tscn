@@ -1,9 +1,10 @@
-[gd_scene load_steps=104 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=116 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_m7tpt"]
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="4_l07wb"]
 [ext_resource type="Script" uid="uid://dux7gm4b61iwq" path="res://addons/proton_scatter/src/scatter.gd" id="4_ml3ux"]
 [ext_resource type="PackedScene" uid="uid://bp8ubqftqvsur" path="res://player/player.tscn" id="5_pcmfc"]
@@ -65,36 +66,51 @@
 [ext_resource type="Resource" uid="uid://df4q0ibcduk3h" path="res://resources/dialogues/fisher_after_giant_rod.tres" id="57_3mjd8"]
 [ext_resource type="Resource" uid="uid://dgffi4fi8fkmo" path="res://resources/dialogues/fisher_win.tres" id="58_yra41"]
 [ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
+[ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
+[ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="66_gy2um"]
+[ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="68_esmde"]
+[ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="69_oj0e3"]
+[ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
+[ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
+[ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
+
+[sub_resource type="Resource" id="Resource_ovfp0"]
+script = ExtResource("2_oj0e3")
+metadata/_custom_type_script = "uid://bfy0wsrhdba5v"
+
+[sub_resource type="Resource" id="Resource_yvoaw"]
+script = ExtResource("2_oj0e3")
+metadata/_custom_type_script = "uid://bfy0wsrhdba5v"
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_ethiv"]
+[sub_resource type="Resource" id="Resource_28ede"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_3mjd8"]
+[sub_resource type="Resource" id="Resource_xc25k"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_yra41"]
+[sub_resource type="Resource" id="Resource_shadd"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_6mwst"]
+[sub_resource type="Resource" id="Resource_esmde"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_nnxxf"]
+[sub_resource type="Resource" id="Resource_oj0e3"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_ethiv"), SubResource("Resource_3mjd8"), SubResource("Resource_yra41"), SubResource("Resource_6mwst")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_28ede"), SubResource("Resource_xc25k"), SubResource("Resource_shadd"), SubResource("Resource_esmde")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -122,31 +138,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_ohyet"]
+[sub_resource type="Resource" id="Resource_bdgmh"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_jntar"]
+[sub_resource type="Resource" id="Resource_3sil5"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_y33e6"]
+[sub_resource type="Resource" id="Resource_3osn7"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3vwys"]
+[sub_resource type="Resource" id="Resource_kapuu"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_gy2um"]
+[sub_resource type="Resource" id="Resource_hfud1"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_ohyet"), SubResource("Resource_jntar"), SubResource("Resource_y33e6"), SubResource("Resource_3vwys")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_bdgmh"), SubResource("Resource_3sil5"), SubResource("Resource_3osn7"), SubResource("Resource_kapuu")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -247,8 +263,16 @@ albedo_texture = ExtResource("26_60pun")
 radius = 0.345
 height = 1.9060879
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
+radius = 400.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hfud1"]
+height = 200.0
+radius = 400.0
+
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([SubResource("Resource_ovfp0"), null, null, null, null, SubResource("Resource_yvoaw")])
 npcs = [NodePath("NPCs/Desert"), NodePath("NPCs/Astronomer"), NodePath("NPCs/Fisher")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
@@ -277,7 +301,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_nnxxf")
+modifier_stack = SubResource("Resource_oj0e3")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -334,7 +358,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_gy2um")
+modifier_stack = SubResource("Resource_hfud1")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -683,7 +707,70 @@ transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50172216, -0.049583536, -0.86360663, 0.0070203124, 0.9985566, -0.053253077, 0.86500037, 0.020655466, 0.50134593, 244.63684, 0.40060997, 237.72185)
 
+[node name="Fishie" type="StaticBody3D" parent="MusicTest" groups=["npc"]]
+transform = Transform3D(0.73056763, 0, 0.6828404, 0, 1, 0, -0.6828404, 0, 0.73056763, -2.3292189, 0.80459225, 4.6723547)
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("40_sdkx4")
+NPC_name = "Fishie"
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("65_3vwys")])
+funny_sound = ExtResource("32_pqgu7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicTest/Fishie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960874, 0)
+shape = SubResource("CapsuleShape3D_abqhh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MusicTest/Fishie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
+volume_db = -32.381
+
+[node name="ModelOrigin" parent="MusicTest/Fishie" instance=ExtResource("66_gy2um")]
+
 [node name="PauseMenu" parent="." instance=ExtResource("59_ethiv")]
+
+[node name="Desert" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("68_esmde")
+music = ExtResource("69_oj0e3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.93591, -142.73264, 0)
+shape = SubResource("SphereShape3D_kapuu")
+
+[node name="Observatory2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 829.07434)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("68_esmde")
+music = ExtResource("70_bdgmh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.28525, -156.5683, -216.62946)
+shape = SubResource("SphereShape3D_kapuu")
+
+[node name="Forest" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.49374, 139.8728, 188.84857)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("68_esmde")
+music = ExtResource("71_3sil5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-0.047402777, 0.89786774, 0.43770596, -0.99887586, -0.042609327, -0.02077183, -1.8626451e-09, -0.43819857, 0.8988782, 7.6079445, -267.94388, 82.66283)
+shape = SubResource("CylinderShape3D_hfud1")
+debug_color = Color(0.51265943, 0, 0.20523602, 0.41960785)
+
+[node name="Sea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -737.77563, 0, 276.29208)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("68_esmde")
+music = ExtResource("72_3osn7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.19157, -92.18227, 130.34619)
+shape = SubResource("SphereShape3D_kapuu")
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
