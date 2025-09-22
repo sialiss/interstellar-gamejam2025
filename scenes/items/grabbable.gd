@@ -4,6 +4,8 @@ const NORMAL_LAYER = 3
 const GRABBED_LAYER = 7
 
 var can_enlarge: bool = true
+var do_shrink_back: bool = true
+var do_unfreeze: bool = true
 
 func grabbed():
 	freeze = true
@@ -12,7 +14,8 @@ func grabbed():
 
 
 func ungrabbed():
-	freeze = false
+	if do_unfreeze:
+		freeze = false
 	set_collision_layer_value(NORMAL_LAYER, true)
 	set_collision_layer_value(GRABBED_LAYER, false)
 
@@ -41,6 +44,8 @@ func enlarge() -> void:
 	timer.start()
 
 func _shrink_back(scale_to_shrink: Vector3) -> void:
+	if !do_shrink_back:
+		return
 	var tween: Tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(self, "scale", scale_to_shrink, 2.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

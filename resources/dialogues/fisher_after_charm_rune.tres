@@ -1,19 +1,25 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://qhghgyf0aft6"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=8 format=3 uid="uid://qhghgyf0aft6"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_nxdsd"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_ccvb4"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_ccvb4"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="4_oy2c5"]
+[ext_resource type="Script" uid="uid://c0ndb52jrb6r3" path="res://scripts/resources/effects/fishingrod_effect.gd" id="5_41dga"]
 
 [sub_resource type="Resource" id="Resource_oy2c5"]
 script = ExtResource("3_ccvb4")
 type = "Rune"
-data = "charm_rune"
+data = "enchantment_rune"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="Resource" id="Resource_vw2lj"]
+script = ExtResource("5_41dga")
+metadata/_custom_type_script = "uid://c0ndb52jrb6r3"
 
 [resource]
 script = ExtResource("1_nxdsd")
 dialogue_id = "fisher_after_charm_rune"
 text = "Oh, I've seen this before. A Master from lands beyond fixed my old rod with a similar sign."
 conditions = Array[ExtResource("2_ccvb4")]([SubResource("Resource_oy2c5")])
+effects = Array[ExtResource("4_oy2c5")]([SubResource("Resource_vw2lj")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
