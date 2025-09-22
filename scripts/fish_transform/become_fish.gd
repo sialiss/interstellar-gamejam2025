@@ -1,4 +1,4 @@
-class_name BecomeFish extends Node
+class_name BecomeFish extends Node3D
 
 @export var fish_scene: PackedScene = preload("uid://dkr0eaj8a7o2f")
 @export var revolution_trigger: RevolutionTrigger
@@ -14,5 +14,5 @@ func become_fish():
 	becomes_fish.emit(entity)
 	var fish = fish_scene.instantiate()
 	entity.get_parent().add_child(fish)
-	fish.transform = entity.transform
+	fish.global_transform = self.global_transform
 	entity.queue_free()

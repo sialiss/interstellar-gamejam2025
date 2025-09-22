@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RevolutionTrigger" load_steps=2 format=3 uid="uid://b8cj7fqpr6lkc"]
+
+[ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="1_xgs5b"]
+
+[resource]
+script = ExtResource("1_xgs5b")
+metadata/_custom_type_script = "uid://bfy0wsrhdba5v"
