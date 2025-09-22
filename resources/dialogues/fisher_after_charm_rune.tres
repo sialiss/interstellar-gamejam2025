@@ -14,6 +14,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 [resource]
 script = ExtResource("1_nxdsd")
 dialogue_id = "fisher_after_charm_rune"
-text = "Ох, когда-то я уже видел такое. Мастер из другой страны починил мою старую удочку похожим символом."
+text = "Oh, I've seen this before. A Master from lands beyond fixed my old rod with a similar sign."
 conditions = Array[ExtResource("2_ccvb4")]([SubResource("Resource_oy2c5")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

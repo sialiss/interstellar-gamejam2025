@@ -6,37 +6,37 @@
 
 [sub_resource type="Resource" id="Resource_fvn6n"]
 script = ExtResource("1_neuk6")
-text = "Посмотри на небо. Ничего, кроме неё, больше не водится."
+text = "Look at the sky. There's nothing but that anymore."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_neuk6"]
 script = ExtResource("1_neuk6")
 speaker = "player"
-text = "Рыба?"
+text = "The fish?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_fvn6n")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_ko8y0"]
 script = ExtResource("1_neuk6")
-text = "Ты шутишь? Рыбак без рыбы — всё равно что лодка без моря."
+text = "You joke? A fisher without fish — same as a boat without sea."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_2d82t"]
 script = ExtResource("1_neuk6")
 speaker = "player"
-text = "Почему бы просто не бросить ловлю?"
+text = "Why not just stop fishing?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_ko8y0")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_jdncu"]
 script = ExtResource("1_neuk6")
-text = "Вот и я думаю… Но чем можно поймать саму Тьму?"
+text = "Yeah, I wonder… how one can catch Darkness itself?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_okihx"]
 script = ExtResource("1_neuk6")
 speaker = "player"
-text = "Может, есть другой способ?"
+text = "Could there be a different way to fish?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_jdncu")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
@@ -44,7 +44,7 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 script = ExtResource("1_neuk6")
 is_repeatable = true
 dialogue_id = "fisher_start"
-text = "Эй, ты тоже заметил? Сети пусты, удочки молчат…
-Всё море кишит только этими… копиями рыбы. Огромной, крутящейся… да ведь ты тоже её видел?"
+text = "Hey, did you notice it too? The nets are empty, the fishing rods are quiet…
+The sea is full of these… copies of the fish. The huge one, spinning… you saw it too, right?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_neuk6"), SubResource("Resource_2d82t"), SubResource("Resource_okihx")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

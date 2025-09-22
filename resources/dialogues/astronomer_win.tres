@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_8keiw")
 is_repeatable = true
 dialogue_id = "astronomer_win"
-text = "Ты сделал невозможное. Мир больше не вращается вокруг её плавников. Небо стало ясным."
+text = "You did the impossible. The world revolves around its fins no longer. The sky became clear."
 conditions = Array[ExtResource("2_8ce2u")]([SubResource("Resource_gy2um")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

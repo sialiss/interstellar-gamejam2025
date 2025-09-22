@@ -13,6 +13,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 [resource]
 script = ExtResource("1_7gqg0")
 dialogue_id = "astronomer_telescope_fixed"
-text = "Прекрасно! Смотри сам, на её плавнике… кажется, что-то есть."
+text = "Splendid! There's something peculiar on the readings. Would you press the scan button?"
 conditions = Array[ExtResource("2_wbesa")]([SubResource("Resource_yykwv")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
