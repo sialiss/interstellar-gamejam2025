@@ -6,7 +6,7 @@ extends Node3D
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+
 	btn_start.pressed.connect(SceneManager.start_game)
 	#btn_credits.pressed.connect(SceneManager.open_credits)
 	btn_exit.pressed.connect(get_tree().quit)
