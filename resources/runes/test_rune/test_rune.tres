@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="TestRune" load_steps=4 format=3 uid="uid://b5eo64fhlifke"]
+[gd_resource type="Resource" script_class="TestRune" load_steps=5 format=3 uid="uid://b5eo64fhlifke"]
 
+[ext_resource type="Texture2D" uid="uid://bn8pxlh4ciqmj" path="res://assets/sprites/amnyam_rune_pattern.png" id="1_ihoq6"]
 [ext_resource type="Script" uid="uid://d2rq4uyb1p2gj" path="res://resources/runes/test_rune/test_rune.gd" id="1_yn3ed"]
 [ext_resource type="Texture2D" uid="uid://cqecgh65161wp" path="res://assets/sprites/amnyam.png" id="2_a6nay"]
 [ext_resource type="AudioStream" uid="uid://drndvoakj1krn" path="res://assets/sounds/audio/amnyam.ogg" id="2_c0yn1"]
@@ -9,5 +10,6 @@ script = ExtResource("1_yn3ed")
 texture = ExtResource("2_a6nay")
 sound_effect = ExtResource("2_c0yn1")
 rune_name = "test rune"
-directions_array = Array[int]([0, 2])
+directions_array = Array[int]([3, 2, 1, 0, 7, 6, 5, 4, 6, 0])
+image = ExtResource("1_ihoq6")
 metadata/_custom_type_script = "uid://d2rq4uyb1p2gj"

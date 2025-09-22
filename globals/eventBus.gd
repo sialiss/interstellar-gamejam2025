@@ -5,6 +5,8 @@ signal event_triggered(type, data)
 signal rune_unlocked(rune: RunePattern)
 signal rune_name_revealed(rune: RunePattern)
 signal rune_pattern_revealed(rune: RunePattern)
+signal cycle_reset
+
 
 func trigger(type = null, data = null):
 	emit_signal("event_triggered", type, data)
@@ -30,3 +32,7 @@ func reveal_all(rune: RunePattern):
 	rune.is_pattern_known = true
 	if was_locked:
 		emit_signal("rune_unlocked", rune)
+
+
+func reset_cycle():
+	cycle_reset.emit()
