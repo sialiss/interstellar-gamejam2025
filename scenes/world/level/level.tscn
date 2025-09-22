@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=129 format=3 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -52,7 +52,13 @@
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
+[ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
+[ext_resource type="PackedScene" uid="uid://by4hy0ojy1o12" path="res://assets/models/props/computer.glb" id="41_53qi2"]
+[ext_resource type="ArrayMesh" uid="uid://bqgxbklobey4w" path="res://assets/models/props/screen.res" id="42_b37fd"]
+[ext_resource type="PackedScene" uid="uid://bi0trp734wehx" path="res://assets/models/props/buttons/button_arrow.glb" id="43_yj7bl"]
+[ext_resource type="PackedScene" uid="uid://ia2u7qhjrb6g" path="res://assets/models/props/buttons/button_minus.glb" id="44_b37fd"]
 [ext_resource type="Resource" uid="uid://dfstdxgqdlkqu" path="res://resources/dialogues/desert_after_cool_rod.tres" id="45_ethiv"]
+[ext_resource type="PackedScene" uid="uid://cw68f65orw85v" path="res://assets/models/props/buttons/button_plus.glb" id="45_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://bqovlqy66tk4p" path="res://scenes/entities/persons/desertian/desertian_model.tscn" id="46_3vvvx"]
 [ext_resource type="Resource" uid="uid://bkwtdnx57003f" path="res://resources/dialogues/desert_win.tres" id="46_ohyet"]
 [ext_resource type="PackedScene" uid="uid://cb8nhyt70tlyg" path="res://scenes/items/sign.tscn" id="46_sdkx4"]
@@ -83,33 +89,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_yvoaw"]
+[sub_resource type="Resource" id="Resource_dekj3"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_6oqdp"]
+[sub_resource type="Resource" id="Resource_gw5i7"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_oqj6p"]
+[sub_resource type="Resource" id="Resource_8167w"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_56jom"]
+[sub_resource type="Resource" id="Resource_xb217"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_usf2n"]
+[sub_resource type="Resource" id="Resource_pnpbx"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_yvoaw"), SubResource("Resource_6oqdp"), SubResource("Resource_oqj6p"), SubResource("Resource_56jom")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_dekj3"), SubResource("Resource_gw5i7"), SubResource("Resource_8167w"), SubResource("Resource_xb217")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -137,31 +143,31 @@ metadata/_custom_type_script = "uid://dto7dy11vsd32"
 script = ExtResource("12_vi8x0")
 size = Vector3(94.83258, 13.535, 187.78976)
 
-[sub_resource type="Resource" id="Resource_53qi2"]
+[sub_resource type="Resource" id="Resource_lc8gy"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_b37fd"]
+[sub_resource type="Resource" id="Resource_dkddj"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_yj7bl"]
+[sub_resource type="Resource" id="Resource_32eyw"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_dekj3"]
+[sub_resource type="Resource" id="Resource_c6ddm"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_gw5i7"]
+[sub_resource type="Resource" id="Resource_pk7k4"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_53qi2"), SubResource("Resource_b37fd"), SubResource("Resource_yj7bl"), SubResource("Resource_dekj3")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_lc8gy"), SubResource("Resource_dkddj"), SubResource("Resource_32eyw"), SubResource("Resource_c6ddm")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -227,6 +233,13 @@ radius = 15.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
 size = Vector3(2, 5, 2.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
+viewport_path = NodePath("Observatory/observatory/Dome/Tube/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qbtvk")
 
 [sub_resource type="Curve" id="Curve_a76df"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -300,7 +313,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_usf2n")
+modifier_stack = SubResource("Resource_pnpbx")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -359,7 +372,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_gw5i7")
+modifier_stack = SubResource("Resource_pk7k4")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -543,6 +556,48 @@ shape = SubResource("BoxShape3D_ni50r")
 
 [node name="observatory" parent="Observatory" instance=ExtResource("7_5m2y6")]
 transform = Transform3D(0.5087861, 0, -0.86089295, 0, 1, 0, 0.86089295, 0, 0.5087861, 206.44095, 39.082474, 651.58887)
+
+[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="1"]
+size = Vector2i(256, 256)
+
+[node name="Camera3D" type="Camera3D" parent="Observatory/observatory/Dome/Tube/SubViewport"]
+transform = Transform3D(-0.5087861, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, -0.5087861, 186.22647, 63.575436, 663.5356)
+fov = 60.0
+far = 10000.0
+
+[node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
+transform = Transform3D(0.3435942, 0, 0.93911827, 0, 1, 0, -0.93911827, 0, 0.3435942, 2.4825466, 0, -1.3031888)
+
+[node name="computer" parent="Observatory/observatory/table" instance=ExtResource("41_53qi2")]
+transform = Transform3D(-0.015881866, 0, -0.9998739, 0, 1, 0, 0.9998739, 0, -0.015881866, 0.3868103, 0.79795074, -0.057006836)
+
+[node name="Screen" parent="Observatory/observatory/table/computer" index="1"]
+visible = false
+
+[node name="CameraScreen" type="MeshInstance3D" parent="Observatory/observatory/table/computer"]
+material_override = SubResource("StandardMaterial3D_bjfvr")
+mesh = ExtResource("42_b37fd")
+
+[node name="Keyboard" type="Node3D" parent="Observatory/observatory/table"]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0.7507277, 0.79795074, -0.19693378)
+
+[node name="button_arrow" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, 0.27850342, 0, 0.108444214)
+
+[node name="button_arrow2" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
+transform = Transform3D(1.7881393e-07, 0, 1, 0, 1, 0, -1, 0, 1.7881393e-07, -0.28320313, 0, 0.108444214)
+
+[node name="button_arrow3" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
+transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, -6.1035156e-05, 0, 0.27090454)
+
+[node name="button_arrow4" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("43_yj7bl")]
+transform = Transform3D(1.0000001, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000001, 9.721479e-10, 0, -0.01699487)
+
+[node name="button_minus" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("44_b37fd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6237916, 0, -0.03598502)
+
+[node name="button_plus" parent="Observatory/observatory/table/Keyboard" instance=ExtResource("45_yj7bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6237916, 0, 0.23781297)
 
 [node name="rocket" parent="Observatory" instance=ExtResource("8_850c4")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
@@ -811,3 +866,5 @@ shape = SubResource("SphereShape3D_kapuu")
 
 [editable path="Cave/cave/Sign"]
 [editable path="Cave/pedestal"]
+[editable path="Observatory/observatory"]
+[editable path="Observatory/observatory/table/computer"]
