@@ -8,69 +8,69 @@
 [sub_resource type="Resource" id="Resource_vih3d"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Как мне найти руну гигантов?"
+text = "How can I find the rune of giants?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_h8hf2"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Как мне найти руну гигантов?"
+text = "How can I find the rune of giants?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_axmp5"]
 script = ExtResource("1_tyqoy")
-text = "Кто-то должен это остановить."
+text = "Someone needs to put an end to this."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_h8hf2")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_0orci"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Зачем ловить рыбу, которая крутит мир?"
+text = "Why would you catch the fish that makes the world go round?"
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_axmp5")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_d56qq"]
 script = ExtResource("1_tyqoy")
-text = "Верю. В пустыне нет рек, но память о воде там вечна. Мы слушаем её эхо в песках."
+text = "I do. There are no rivers in the desert, but the memories of water are eternal. We hear it echoing through the sands."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_vih3d"), SubResource("Resource_0orci")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_6l01a"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Ты веришь, что эта руна существует?"
+text = "Do you believe a rune like this really exists?"
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_d56qq")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_o0hm2"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Зачем ловить рыбу, которая крутит мир?"
+text = "Why would you catch the fish that makes the world go round?"
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_axmp5")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_vgo5i"]
 script = ExtResource("1_tyqoy")
-text = "Ты уже несёшь её фрагменты. Осталось лишь соединить их так, как делали древние мастера."
+text = "You hold its fragments. What's left is to unite them, like the ancient scholars did."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_h8il7"]
 script = ExtResource("1_tyqoy")
 speaker = "player"
-text = "Как мне найти руну гигантов?"
+text = "How can I find the rune of giants?"
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_vgo5i")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_e5ikp"]
 script = ExtResource("1_tyqoy")
-text = "Представь… удочка размером с башню. Разве это не чудо? С такой можно поймать даже саму космическую рыбу."
+text = "Imagine… A fishing rod the size of a tower. What a wonder. With a rod like this you could catch even the cosmic fish itself."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_6l01a"), SubResource("Resource_o0hm2"), SubResource("Resource_h8il7")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_tyqoy"]
 script = ExtResource("1_tyqoy")
-text = "Есть ещё одна руна, о которой шепчут пески. Руна гигантов. Говорят, она сложена из осколков двух других: руны чар и того, что записано на древних страницах."
+text = "There's another rune the sands whisper about. The rune of giants. They say it's combined from pieces of two other runes: the rune of enchantment and that which is written in the ancient pages."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_e5ikp")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
@@ -84,7 +84,7 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_tyqoy")
 is_repeatable = true
 dialogue_id = "desert_after_cool_rod"
-text = "Ты сделал это… ты оживил удочку. Я знал, что руна чар существует, но её половина ускользнула от моей книги. И всё же ты нашёл её."
+text = "You actually did it… you invigorated the fishing rod. I knew the rune of enchantment exists, but I could only figure out one half it. And you got it whole."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_tyqoy")])
 conditions = Array[ExtResource("2_e5ikp")]([SubResource("Resource_mykmr")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

@@ -14,6 +14,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_swlor")
 is_repeatable = true
 dialogue_id = "fisher_after_cool_rod"
-text = "Я устал. Море сошло с ума, и я тоже. Но если ты сумеешь поймать ту рыбу… может, всё это кончится."
+text = "I'm tired. The sea's gone mad, as did I. But if you catch that fish… maybe, it'll all end."
 conditions = Array[ExtResource("2_65iqi")]([SubResource("Resource_8o8w0")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

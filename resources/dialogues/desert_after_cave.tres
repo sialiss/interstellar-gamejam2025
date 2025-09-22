@@ -9,26 +9,26 @@
 
 [sub_resource type="Resource" id="Resource_3eonq"]
 script = ExtResource("1_fvs2n")
-text = "Я знаю только, что они могут влиять на саму суть вещей. Но как именно для меня пока загадка."
+text = "I only know they can influence the very essence of reality. But how exactly they do it is a mystery to me."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_km357"]
 script = ExtResource("1_fvs2n")
 speaker = "player"
-text = "Расскажешь подробнее о рунах?"
+text = "Can you tell me more about the runes?"
 choices = Array[ExtResource("1_fvs2n")]([SubResource("Resource_3eonq")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_fvs2n"]
 script = ExtResource("1_fvs2n")
 speaker = "player"
-text = "А ты уверен? Вдруг станет хуже."
+text = "Are you sure about this? What if it gets worse."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_el80l"]
 script = ExtResource("1_fvs2n")
 speaker = "player"
-text = "Ладно, посмотрим, что там."
+text = "Alright, let's see what it does."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_ikfjn"]
@@ -45,9 +45,9 @@ metadata/_custom_type_script = "uid://beg4qik32tc5x"
 [resource]
 script = ExtResource("1_fvs2n")
 dialogue_id = "desert_after_cave"
-text = "Знаешь… Я давно изучаю руны. Они странные. Древние.
-Но толком не понимаю, для чего они нужны. Та руна, которую ты нашёл в пещере, определенно связана со временем.
-Может, попробуешь повторить её?"
+text = "You know… I've been studying the runes for a long time. They're strange. Ancient.
+But I don't quite get what they're for. The rune you found in the cave definitely has something to do with time.
+Can you maybe try drawing it?"
 choices = Array[ExtResource("1_fvs2n")]([SubResource("Resource_km357"), SubResource("Resource_fvs2n"), SubResource("Resource_el80l")])
 conditions = Array[ExtResource("2_em7oo")]([SubResource("Resource_ikfjn")])
 effects = Array[ExtResource("3_ikfjn")]([SubResource("Resource_8ghms")])

@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_3yt0m"]
 script = ExtResource("1_bnnnx")
-text = "Представь: закидываешь в море — и вытаскиваешь сразу половину пристани. Вот бы дед мой посмотрел!"
+text = "Imagine: you throw it in — an pull out half the pier. If only my gran'pa saw this!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_4wkkv"]
@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 [resource]
 script = ExtResource("1_bnnnx")
 dialogue_id = "fisher_after_giant_rod"
-text = "Ох!.. Это… это удочка?! Ха-ха-ха! Да на неё можно ловить целые дома!"
+text = "Oh! This… is this a fishing rod?! Ha-ha-ha! With this you could catch an entire house!"
 choices = Array[ExtResource("1_bnnnx")]([SubResource("Resource_3yt0m")])
 conditions = Array[ExtResource("2_3yt0m")]([SubResource("Resource_4wkkv")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

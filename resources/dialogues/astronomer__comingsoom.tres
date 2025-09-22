@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_28xpt")
 is_repeatable = true
 dialogue_id = "astronomer_coming_soon"
-text = "Скоро что-то произойдёт..."
+text = "Something will happen soon..."
 conditions = Array[ExtResource("2_xj6cj")]([SubResource("Resource_xc25k")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

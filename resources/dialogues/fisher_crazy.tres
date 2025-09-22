@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 script = ExtResource("1_ph3tm")
 is_repeatable = true
 dialogue_id = "fisher_crazy_repeat"
-text = "Ха-ха-ха! Смотри, смотри, их глаза блестят, как у рыб! Они все — рыбы! И я тоже! Нет, нет, ещё нет… или уже?"
+text = "Ha-ha-ha! Look, look, their eyes shine, like fish! They're all fish! And me too! No, no, not yet… or am I?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_y8jjm"]
@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://b0v03wtkr0nql"
 [resource]
 script = ExtResource("1_ph3tm")
 dialogue_id = "fisher_crazy"
-text = "Ха-ха-ха! Смотри, смотри, их глаза блестят, как у рыб! Они все — рыбы! И я тоже! Нет, нет, ещё нет… или уже?"
+text = "Ha-ha-ha! Look, look, their eyes shine, like fish! They're all fish! And me too! No, no, not yet… or am I?"
 conditions = Array[ExtResource("2_gbtla")]([SubResource("Resource_a1wrn")])
 effects = Array[ExtResource("4_up2g1")]([SubResource("Resource_y8jjm")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

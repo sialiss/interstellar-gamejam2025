@@ -9,45 +9,45 @@
 [sub_resource type="Resource" id="Resource_6xvrv"]
 script = ExtResource("1_mh30e")
 speaker = "player"
-text = "Ладно, донесу."
+text = "Alright, I'll bring the food."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_ethiv"]
 script = ExtResource("1_mh30e")
 speaker = "player"
-text = "Я не грузчик, сам отнеси"
+text = "Do it yourself, I'm not gonna heave your stuff."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_abblm"]
 script = ExtResource("1_mh30e")
-text = "Я не смогу сразу пойти. Но вот, возьми коробку с едой. Отнеси её в пещеру, пригодится, если придётся задержаться."
+text = "I need some time to prepare. But here, grab a box of food. Take it to the cave, it will come in handy if we end up staying in there for some time."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_6xvrv"), SubResource("Resource_ethiv")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_km357"]
 script = ExtResource("1_mh30e")
 speaker = "player"
-text = "Пещера звучит неплохо. Пойдём."
+text = "Sounds like a plan. let's go."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_abblm")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_3mjd8"]
 script = ExtResource("1_mh30e")
-text = "А ты не видишь? Возьми коробку с едой и отнеси её в пещеру, пригодится, если придётся задержаться."
+text = "Didn't you see it? It's covering half the sky. Take this box of food to the cave, it will come in handy if we end up staying in there for some time."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_6xvrv"), SubResource("Resource_ethiv")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_3eonq"]
 script = ExtResource("1_mh30e")
 speaker = "player"
-text = "Какая ещё рыба? Ты серьёзно?"
+text = "What fish? Are you feeling well?"
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_3mjd8")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_el80l"]
 script = ExtResource("1_mh30e")
 speaker = "player"
-text = "Хочешь, чтобы я пошёл туда один?"
+text = "Do you want me to go there alone?"
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_abblm")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
@@ -59,8 +59,8 @@ metadata/_custom_type_script = "uid://bu34cktxuc8ja"
 [resource]
 script = ExtResource("1_mh30e")
 dialogue_id = "desert_start"
-text = "Эй, ты тоже слышал, как в песках что-то шуршит? Рыба снова поблизости… 
-Лучше найти укрытие. Вон там есть пещера, может, получится спрятаться."
+text = "Hey, did you hear the rustling in the sands? The fish is here again… 
+We better find shelter. There's a cave nearby, maybe, we can hide in there."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_km357"), SubResource("Resource_3eonq"), SubResource("Resource_el80l")])
 effects = Array[ExtResource("3_gsflu")]([SubResource("Resource_gsflu")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

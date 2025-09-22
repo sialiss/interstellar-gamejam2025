@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://cujws3rcdujt0"
 [resource]
 script = ExtResource("1_4ob2y")
 dialogue_id = "desert_after_rune"
-text = "У тебя получилось!
-Честно говоря, я не уверен насчёт эффекта. Может быть, ты что-нибудь поймёшь."
+text = "You did it!
+Honestly, I'm not sure about its effect. Maybe you'll understand it yourself."
 conditions = Array[ExtResource("2_w72co")]([SubResource("Resource_ngdvu")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
