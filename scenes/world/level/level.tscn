@@ -1,11 +1,10 @@
-[gd_scene load_steps=178 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=188 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_m7tpt"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
-[ext_resource type="Script" uid="uid://dpysnq47idk5n" path="res://addons/proton_scatter/src/modifiers/create_inside_poisson.gd" id="7_6l5f2"]
 [ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/1_revolution_trigger.tres" id="3_yvoaw"]
 [ext_resource type="Resource" uid="uid://dedw2qs8ynwjt" path="res://resources/revolution_triggers/2_revolution_trigger.tres" id="4_6oqdp"]
 [ext_resource type="PackedScene" uid="uid://cd408mqcnrnpt" path="res://assets/models/props/house.glb" id="4_l07wb"]
@@ -17,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://b8cj7fqpr6lkc" path="res://resources/revolution_triggers/4_revolution_trigger.tres" id="6_56jom"]
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="6_65y7h"]
 [ext_resource type="PackedScene" uid="uid://ca8wl56yovi2i" path="res://assets/models/props/observatory.glb" id="7_5m2y6"]
+[ext_resource type="Script" uid="uid://dpysnq47idk5n" path="res://addons/proton_scatter/src/modifiers/create_inside_poisson.gd" id="7_6l5f2"]
 [ext_resource type="Resource" uid="uid://chyxot58e0urv" path="res://resources/revolution_triggers/5_revolution_trigger.tres" id="7_usf2n"]
 [ext_resource type="Resource" uid="uid://co30ta6jjyppe" path="res://resources/revolution_triggers/6_revolution_trigger.tres" id="8_53qi2"]
 [ext_resource type="Script" uid="uid://buoque686huhy" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_60pun"]
@@ -110,33 +110,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_je5e5"]
+[sub_resource type="Resource" id="Resource_sr2vx"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_78awm"]
+[sub_resource type="Resource" id="Resource_kge0y"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_sr2vx"]
+[sub_resource type="Resource" id="Resource_whib0"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kge0y"]
+[sub_resource type="Resource" id="Resource_3ehlk"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_whib0"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_sr2vx"), SubResource("Resource_kge0y"), SubResource("Resource_whib0"), SubResource("Resource_3ehlk")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -169,31 +169,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_3ehlk"]
+[sub_resource type="Resource" id="Resource_ipee5"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_jpodg"]
+[sub_resource type="Resource" id="Resource_bhuc7"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ipee5"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_bhuc7"]
+[sub_resource type="Resource" id="Resource_caskx"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_p8loj"]
+[sub_resource type="Resource" id="Resource_nnhlb"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_3ehlk"), SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_ipee5"), SubResource("Resource_bhuc7"), SubResource("Resource_p8loj"), SubResource("Resource_caskx")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -1247,7 +1247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_whib0")
+modifier_stack = SubResource("Resource_jpodg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1312,7 +1312,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_p8loj")
+modifier_stack = SubResource("Resource_nnhlb")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1770,10 +1770,8 @@ transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242
 [node name="fishing_rod" parent="Observatory/rocket" index="1"]
 transform = Transform3D(10, 0, 0, 0, 0.031066649, 9.999952, 0, -9.999952, 0.031066649, 2.1002407, 14.597013, 0)
 
-[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
-texture_filter = 0
-texture = ExtResource("47_dkddj")
+[node name="Area3D" parent="Observatory/rocket" index="2" node_paths=PackedStringArray("win_animation_player")]
+win_animation_player = NodePath("../../../WinAnimationPlayer")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Observatory/rocket"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47640514, 0)
@@ -1786,6 +1784,11 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13.11795, 0)
 material_override = SubResource("StandardMaterial3D_je5e5")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_78awm")
+
+[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
+texture_filter = 0
+texture = ExtResource("47_dkddj")
 
 [node name="Village" type="Node3D" parent="."]
 
@@ -2039,8 +2042,6 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
 transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
-collision_layer = 516
-collision_mask = 7
 
 [node name="VillageChild" parent="NPCs" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.19972709, 0, 0.97985154, 0, 1, 0, -0.97985154, 0, -0.19972709, -401.03235, -8.761753, 477.2537)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://coh1a2bw6hpoy"]
+[gd_scene load_steps=5 format=3 uid="uid://coh1a2bw6hpoy"]
 
 [ext_resource type="Script" uid="uid://dam00albwwbdp" path="res://scenes/fishrod/fishrod.gd" id="1_8mowb"]
 [ext_resource type="PackedScene" uid="uid://cnop4fxa4gxug" path="res://assets/models/props/fishing_rod.glb" id="2_bbjin"]
@@ -6,10 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mowb"]
 size = Vector3(0.32080078, 0.23297119, 3.75354)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bbjin"]
+size = Vector3(3.21, 2.33, 37.54)
+
 [node name="fishrod" type="RigidBody3D" groups=["enchantable", "enlargable", "fishing_rod"]]
-collision_mask = 2
-gravity_scale = 0.0
+collision_layer = 512
+collision_mask = 7
 freeze = true
+freeze_mode = 1
 script = ExtResource("1_8mowb")
 
 [node name="fishing_rod" parent="." instance=ExtResource("2_bbjin")]
@@ -23,3 +27,8 @@ shape = SubResource("BoxShape3D_8mowb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008276939, -0.024539173, 1.7922344)
 shape = SubResource("BoxShape3D_8mowb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, -0.025, 17.92)
+shape = SubResource("BoxShape3D_bbjin")
+disabled = true
