@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=11 format=3 uid="uid://dabyb3jpxdvoi"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=14 format=3 uid="uid://dabyb3jpxdvoi"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_mh30e"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_it0ch"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_gsflu"]
+[ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="4_gsflu"]
+[ext_resource type="Script" uid="uid://bu34cktxuc8ja" path="res://scripts/resources/effects/give_item_effect.gd" id="5_r7hce"]
 
 [sub_resource type="Resource" id="Resource_6xvrv"]
 script = ExtResource("1_mh30e")
@@ -18,7 +20,7 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_abblm"]
 script = ExtResource("1_mh30e")
-text = "I need some time to prepare."
+text = "I need some time to prepare. But here, grab a box of food. Take it to the cave, it will come in handy if we end up staying in there for some time."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_6xvrv"), SubResource("Resource_ethiv")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
@@ -49,10 +51,16 @@ text = "Do you want me to go there alone?"
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_abblm")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
+[sub_resource type="Resource" id="Resource_gsflu"]
+script = ExtResource("5_r7hce")
+item_scene = ExtResource("4_gsflu")
+metadata/_custom_type_script = "uid://bu34cktxuc8ja"
+
 [resource]
 script = ExtResource("1_mh30e")
 dialogue_id = "desert_start"
 text = "Hey, did you hear the rustling in the sands? The fish is here again… 
 We better find shelter. There's a cave nearby, maybe, we can hide in there."
 choices = Array[ExtResource("1_mh30e")]([SubResource("Resource_km357"), SubResource("Resource_3eonq"), SubResource("Resource_el80l")])
+effects = Array[ExtResource("3_gsflu")]([SubResource("Resource_gsflu")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

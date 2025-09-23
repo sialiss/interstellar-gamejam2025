@@ -23,6 +23,7 @@ seamless = true
 
 [resource]
 _shader_parameters = {
+&"": null,
 &"bias_distance": 512.0,
 &"blend_sharpness": 0.5,
 &"depth_blur": 0.0,
