@@ -15,13 +15,13 @@ func _ready() -> void:
 func enlarge() -> void:
 	if !can_enlarge or was_enlarged:
 		return
-	
+
 	can_enlarge = false
 	was_enlarged = true
-	
+
 	freeze = true
 	$CollisionShape3D.disabled = true
-	
+
 	var target_scale = scale * enlargment_coeff
 	var tween: Tween = create_tween()
 	tween.set_parallel(true)
@@ -29,9 +29,9 @@ func enlarge() -> void:
 	#tween.tween_property(self, "rotation:y", rotation.y + TAU, 2.0)
 	tween.tween_property(self, "position:y", position.y + 10.0, 1.0)
 	#tween.tween_property(self, "position:y", position.y, 1.0).set_delay(1.0)
-	
+
 	await tween.finished
-	
+
 	$CollisionShape3D2.disabled = false
 	freeze = false
 	can_pickup = false
