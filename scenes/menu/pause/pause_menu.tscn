@@ -104,7 +104,7 @@ offset_right = 28.031937
 offset_bottom = 102.73259
 grow_horizontal = 2
 text = "[ N ] - RUNEBOOK
-[ TAB ] - RUNE MODE
+[ CTRL ] - RUNE MODE
 IN RUNE MODE HOLD 
 [ LMB ] TO DRAW"
 label_settings = SubResource("LabelSettings_4xkyh")

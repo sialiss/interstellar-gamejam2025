@@ -1,7 +1,6 @@
 extends Node
 
 var completed_dialogues: Dictionary = {}
-#var active_triggers: Dictionary = {}
 
 func mark_completed(id: String) -> void:
 	if id != "":
