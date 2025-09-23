@@ -6,7 +6,6 @@ extends Node3D
 @onready var player: CharacterBody3D = $Player
 
 @export var revolution_triggers: Array[RevolutionTrigger] = []
-@export var npcs: Array[NPC] = []
 
 var current_revolution = -1
 #var dialogue_mode: bool = false
@@ -20,7 +19,7 @@ func _ready():
 	dualogue_ui.is_dialogue_mode.connect(player._on_dialogue_mode)
 	#dualogue_ui.is_dialogue_mode.connect(self._switch_dialogue_mode)
 	#npc.interaction_started.connect(self._on_npc_interaction_started)
-	for npc in npcs:
+	for npc in get_tree().get_nodes_in_group("npc"):
 		npc.interaction_started.connect(dualogue_ui.choose_npc_dialogue)
 
 func trigger_revolution():
