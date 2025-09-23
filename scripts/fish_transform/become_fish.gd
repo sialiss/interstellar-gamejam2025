@@ -1,12 +1,18 @@
 class_name BecomeFish extends Node3D
 
 @export var fish_scene: PackedScene = preload("uid://dkr0eaj8a7o2f")
-@export var revolution_trigger: RevolutionTrigger
+@export var revolution_triggers: Array[RevolutionTrigger]
 
 signal becomes_fish(npc)
 
 func _ready() -> void:
-	revolution_trigger.triggered.connect(become_fish)
+	var size = revolution_triggers.size()
+	if size > 1:
+		var i = randi_range(0, size)
+		revolution_triggers[i].triggered.connect(become_fish)
+	else:
+		revolution_triggers[0].triggered.connect(become_fish)
+
 	becomes_fish.connect(get_tree().current_scene.check_npc_fish_transformation)
 
 func become_fish():
