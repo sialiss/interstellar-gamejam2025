@@ -1784,7 +1784,6 @@ transform = Transform3D(0.8126534, 0, -0.58274716, 0, 1, 0, 0.58274716, 0, 0.812
 
 [node name="evil_smoke" parent="DesertTown/house2" instance=ExtResource("29_i2f8p")]
 transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
-visible = false
 process_material = SubResource("ParticleProcessMaterial_yra41")
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
 
