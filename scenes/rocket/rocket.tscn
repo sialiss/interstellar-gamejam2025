@@ -6,7 +6,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0wp70"]
 height = 24.56958
-radius = 9.883301
+radius = 9.182129
 
 [node name="Rocket" type="StaticBody3D"]
 
@@ -15,7 +15,7 @@ radius = 9.883301
 [node name="fishing_rod" parent="." instance=ExtResource("3_2efvq")]
 transform = Transform3D(10, 0, 0, 0, 0.031066764, 9.999952, 0, -9.999952, 0.031066764, 2.1002407, 14.597013, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["flammable", "rocket"]]
 script = ExtResource("1_7lajs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
