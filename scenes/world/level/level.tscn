@@ -1,6 +1,7 @@
-[gd_scene load_steps=203 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=200 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
+[ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
 [ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/1_revolution_trigger.tres" id="3_yvoaw"]
 [ext_resource type="Resource" uid="uid://dedw2qs8ynwjt" path="res://resources/revolution_triggers/2_revolution_trigger.tres" id="4_6oqdp"]
@@ -24,14 +25,10 @@
 [ext_resource type="Script" uid="uid://duonbjg3okn3g" path="res://scenes/entities/logic/logic_counter/logic_counter.gd" id="23_i2f8p"]
 [ext_resource type="PackedScene" uid="uid://bgaa066vtrwmj" path="res://scenes/entities/super_door/super_door.tscn" id="25_7bk07"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
-[ext_resource type="Script" uid="uid://kkjkuo7566ao" path="res://scenes/entities/fish/big_fish.gd" id="26_7gb3y"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
-[ext_resource type="PackedScene" uid="uid://desowp246qpu8" path="res://scenes/entities/fish/bullet.tscn" id="27_vgk2m"]
-[ext_resource type="Script" uid="uid://dxhjy8wd5ad5c" path="res://scripts/states/state_manager.gd" id="28_ubk87"]
 [ext_resource type="Texture2D" uid="uid://b36iwn2wwdr0g" path="res://assets/sprites/magic4.png" id="28_whib0"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
-[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="29_s11b2"]
 [ext_resource type="Texture2D" uid="uid://cqh4i5ql1djue" path="res://assets/sprites/eenlargment_rune_pattern2.png" id="29_sr2vx"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
@@ -1640,19 +1637,12 @@ directional_shadow_max_distance = 762.4
 [node name="Player" parent="." instance=ExtResource("5_pcmfc")]
 transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 66.28232, 0.6192311, 68.79785)
 
-[node name="BigFish" type="Node3D" parent="."]
+[node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
 transform = Transform3D(943.80066, 330.51437, 0, -232.0717, 662.6923, -712.0258, -235.33487, 672.0105, 702.15283, 3000, 5000, -2000)
-script = ExtResource("26_7gb3y")
 kill_turn_duration = 4.0
-bullet_scene = ExtResource("27_vgk2m")
-kill_trigger = ExtResource("8_53qi2")
 metadata/_edit_group_ = true
 
-[node name="StateManager" type="Node" parent="BigFish"]
-script = ExtResource("28_ubk87")
-metadata/_custom_type_script = "uid://dxhjy8wd5ad5c"
-
-[node name="Fish" parent="BigFish" instance=ExtResource("29_s11b2")]
+[node name="Fish" parent="BigFish" index="1"]
 transform = Transform3D(0.9999997, -1.4901163e-08, 0, 1.49011585e-08, 1, -1.3027006e-15, 1.9411753e-23, 1.302701e-15, 0.9999997, 0, 0, 0)
 metadata/_edit_group_ = true
 
@@ -3054,7 +3044,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -455.23373, -6.2916565, 452.1
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/evil_smoke" method="disable"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/HintHider" method="hide"]
 
+[editable path="BigFish"]
 [editable path="BigFish/Fish"]
+[editable path="BigFish/Fish/GunContainer/gun"]
 [editable path="Cave/cave/Sign"]
 [editable path="Cave/cave/pedestal"]
 [editable path="Observatory/observatory"]
