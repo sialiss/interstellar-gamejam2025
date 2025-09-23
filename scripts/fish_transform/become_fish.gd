@@ -8,7 +8,7 @@ signal becomes_fish(npc)
 func _ready() -> void:
 	var size = revolution_triggers.size()
 	if size > 1:
-		var i = randi_range(0, size)
+		var i = randi_range(0, size-1)
 		revolution_triggers[i].triggered.connect(become_fish)
 	else:
 		revolution_triggers[0].triggered.connect(become_fish)

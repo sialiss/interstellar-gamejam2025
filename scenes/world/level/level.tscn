@@ -1,4 +1,4 @@
-[gd_scene load_steps=203 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=204 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
@@ -93,14 +93,17 @@
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
 [ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
-[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="77_dekj3"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
-[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="78_gw5i7"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
 [ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://c82v7bnpdv1r8" path="res://assets/models/props/bed.glb" id="92_pnpbx"]
 [ext_resource type="Texture2D" uid="uid://dm7td23ipbh3k" path="res://assets/sprites/fishroll.svg" id="93_lc8gy"]
+[ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
+[ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
+[ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
+[ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
+[ext_resource type="PackedScene" uid="uid://boijfqij0ims3" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
 [ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="113_ipee5"]
@@ -1081,18 +1084,6 @@ size = Vector2(2000, 2000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
-
-[sub_resource type="Resource" id="Resource_pk7k4"]
-script = ExtResource("30_88k61")
-is_repeatable = true
-text = "Hello! Will you come with us to the dark house?"
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
-
-[sub_resource type="Resource" id="Resource_qbtvk"]
-script = ExtResource("30_88k61")
-is_repeatable = true
-text = "I'm scared... I'll take a lantern with me..."
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
 radius = 400.0
@@ -2681,6 +2672,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -451.6754, -7.0896072, 448.32
 [node name="table7" parent="Village" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.97904545, 0, -0.20364176, 0, 1, 0, 0.20364176, 0, 0.97904545, -454.70303, -7.089607, 452.06726)
 
+[node name="Forest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -286.75806, 5.1483116, 297.7152)
+
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 298.3998, 6.0084453, 445.933)
 
@@ -2773,7 +2767,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o4wlm")
 
 [node name="NPCs" type="Node3D" parent="."]
 
-[node name="Desert" type="StaticBody3D" parent="NPCs" groups=["npc"]]
+[node name="Desert Dweller" type="StaticBody3D" parent="NPCs" groups=["npc"]]
 transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.8463048, 73.88464, -0.8531324, 89.50265)
 collision_layer = 256
 collision_mask = 0
@@ -2782,17 +2776,17 @@ NPC_name = "Dweller"
 dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
-[node name="ModelOrigin" parent="NPCs/Desert" instance=ExtResource("46_3vvvx")]
+[node name="ModelOrigin" parent="NPCs/Desert Dweller" instance=ExtResource("46_3vvvx")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Desert"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Desert Dweller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960874, 0)
 shape = SubResource("CapsuleShape3D_abqhh")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="NPCs/Desert"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="NPCs/Desert Dweller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
 volume_db = -32.381
 
-[node name="BecomeFish" type="Node3D" parent="NPCs/Desert"]
+[node name="BecomeFish" type="Node3D" parent="NPCs/Desert Dweller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("5_oqj6p")])
@@ -2929,7 +2923,7 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 [node name="VillageChild2" parent="ExtrasVillage" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(0.7131527, 0, 0.70100886, 0, 1, 0, -0.70100886, 0, 0.7131527, -3.532013, 0.4663, 5.3450317)
 NPC_name = "Child"
-dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_pk7k4")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("96_78awm")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/VillageChild2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
@@ -2940,12 +2934,90 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 [node name="VillageChild3" parent="ExtrasVillage" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.8447578, 0, 0.53514874, 0, 1, 0, -0.53514874, 0, -0.8447578, -2.361145, 0.46318054, 8.956421)
 NPC_name = "Child"
-dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_qbtvk")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("97_sr2vx")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/VillageChild3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.09772181, 0, 0.9952137, 0, 1, 0, -0.9952137, 0, -0.09772181, 0.6940052, 0.46318054, 13.358653)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue3" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.9698081, 0, -0.24386889, 0, 1, 0, 0.24386889, 0, -0.9698081, 12.350142, 0.46318054, 11.254009)
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("99_78awm")])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue3"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue4" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.73161554, 0, -0.6817175, 0, 1, 0, 0.6817175, 0, -0.73161554, 14.586178, 0.46318054, 2.7671945)
+dialogues = Array[ExtResource("30_88k61")]([])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue4"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue5" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.6523894, 0, -0.7578838, 0, 1, 0, 0.7578838, 0, -0.6523894, 18.095312, 0.46318054, 19.397537)
+dialogues = Array[ExtResource("30_88k61")]([])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue5"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue6" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.61805165, 0, 0.7861374, 0, 1, 0, -0.7861374, 0, -0.61805165, 11.438782, 0.40484428, 2.5959778)
+dialogues = Array[ExtResource("30_88k61")]([])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue6"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue7" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.96674305, 0, -0.25574932, 0, 1, 0, 0.25574932, 0, -0.96674305, -21.649837, -0.49142122, 43.551846)
+dialogues = Array[ExtResource("30_88k61")]([])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue7"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue2" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(0.40958875, 0, 0.91227025, 0, 1, 0, -0.91227025, 0, 0.40958875, -18.02478, 0.46318054, 24.374115)
+dialogues = Array[ExtResource("30_88k61")]([])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue2"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonPurple" parent="ExtrasVillage" instance=ExtResource("100_sr2vx")]
+transform = Transform3D(-0.733445, 0, 0.67974865, 0, 1, 0, -0.67974865, 0, -0.733445, 4.794283, 0.46318054, 25.946398)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonPurple"]
+transform = Transform3D(0.61513877, 0, 0.7884192, 0, 1, 0, -0.7884192, 0, 0.61513877, 0, 0, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="ExtrasForest" type="Node3D" parent="."]
