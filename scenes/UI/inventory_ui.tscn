@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgmdgketpnli8"]
 
 [ext_resource type="Script" uid="uid://fi483p7q5a5t" path="res://scenes/UI/inventory_ui.gd" id="1_brv7c"]
-[ext_resource type="Texture2D" path="res://resources/inventory_icon.tres" id="2_hhucr"]
+[ext_resource type="Texture2D" uid="uid://bgdiv6mave6ly" path="res://resources/inventory_icon.tres" id="2_hhucr"]
 
 [node name="InventoryUI" type="Node"]
 script = ExtResource("1_brv7c")

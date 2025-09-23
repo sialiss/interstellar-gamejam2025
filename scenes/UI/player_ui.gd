@@ -2,6 +2,7 @@ extends Control
 class_name PlayerUI
 
 @onready var prompt_label: Label = $InteractionPrompt
+@onready var timered_label: Label = $TimeredPrompt
 @onready var runes_ui = $RunesUI
 @onready var next_button: Button = $RunesUI/Next
 @onready var prev_button: Button = $RunesUI/Prev
@@ -13,6 +14,7 @@ var pending_flash_runes: Array = []
 
 func _ready():
 	prompt_label.visible = false
+	timered_label.visible = false
 	runes_ui.visible = false
 	runes_ui_setup()
 	show_pages(0)
@@ -124,10 +126,13 @@ func _on_show_prompt(text: String) -> void:
 	prompt_label.text = text
 	prompt_label.visible = true
 
-# Показать временную подсказку (наверху) (пока не работает)
-func _on_show_timer_prompt(text: String) -> void:
-	#prompt_label.text = text
-	prompt_label.visible = true
+# Показать временную подсказку (наверху) (пока не работает (теперь работает))
+func _on_show_timer_prompt(time, text: String) -> void:
+	timered_label.text = text
+	timered_label.visible = true
+	get_tree().create_timer(time).timeout.connect(func():
+		timered_label.visible = false
+	)
 
 # Скрыть подсказку
 func _on_hide_prompt() -> void:

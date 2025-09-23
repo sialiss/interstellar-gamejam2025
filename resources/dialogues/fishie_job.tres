@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=8 format=3 uid="uid://4s7tw1njipxt"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_x1v55"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_c7rr4"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_hq818"]
+
+[sub_resource type="Resource" id="Resource_0hvbb"]
+script = ExtResource("1_x1v55")
+text = "Please contact me via Telegram. 
+t.me/saphielle"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_n4u2g"]
+script = ExtResource("1_x1v55")
+speaker = "player"
+text = "Yes"
+choices = Array[ExtResource("1_x1v55")]([SubResource("Resource_0hvbb")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_78awm"]
+script = ExtResource("1_x1v55")
+text = "What a pity"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_je5e5"]
+script = ExtResource("1_x1v55")
+speaker = "player"
+text = "No"
+choices = Array[ExtResource("1_x1v55")]([SubResource("Resource_78awm")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[resource]
+script = ExtResource("1_x1v55")
+dialogue_id = "fishie_job"
+text = "I hate looking for a job. Do you have any front-end developer positions available?"
+choices = Array[ExtResource("1_x1v55")]([SubResource("Resource_n4u2g"), SubResource("Resource_je5e5")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

@@ -13,7 +13,7 @@ var current_revolution = -1
 func _ready():
 	# сигналы к методам UI
 	player.show_prompt.connect(player_ui._on_show_prompt)
-	#player.show_timer_prompt.connect(player_ui._on_show_timer_prompt)
+	player.show_timer_prompt.connect(player_ui._on_show_timer_prompt)
 	player.hide_prompt.connect(player_ui._on_hide_prompt)
 	dualogue_ui.is_dialogue_mode.connect(player_ui._set_ui_enabled)
 	dualogue_ui.is_dialogue_mode.connect(player._on_dialogue_mode)
