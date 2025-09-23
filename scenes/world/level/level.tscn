@@ -1,8 +1,7 @@
-[gd_scene load_steps=238 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=262 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
-[ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
 [ext_resource type="Terrain3DAssets" uid="uid://bllt8qrx3jixa" path="res://scenes/world/level/terrain_assets.tres" id="2_m7tpt"]
 [ext_resource type="Script" uid="uid://bfy0wsrhdba5v" path="res://scripts/resources/revolution_trigger.gd" id="2_oj0e3"]
 [ext_resource type="Resource" uid="uid://t3ubsev478qp" path="res://resources/revolution_triggers/1_revolution_trigger.tres" id="3_yvoaw"]
@@ -39,18 +38,26 @@
 [ext_resource type="Script" uid="uid://duonbjg3okn3g" path="res://scenes/entities/logic/logic_counter/logic_counter.gd" id="23_i2f8p"]
 [ext_resource type="PackedScene" uid="uid://bgaa066vtrwmj" path="res://scenes/entities/super_door/super_door.tscn" id="25_7bk07"]
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
+[ext_resource type="Script" uid="uid://kkjkuo7566ao" path="res://scenes/entities/fish/big_fish.gd" id="26_7gb3y"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
+[ext_resource type="PackedScene" uid="uid://desowp246qpu8" path="res://scenes/entities/fish/bullet.tscn" id="27_vgk2m"]
+[ext_resource type="Script" uid="uid://dxhjy8wd5ad5c" path="res://scripts/states/state_manager.gd" id="28_ubk87"]
 [ext_resource type="Texture2D" uid="uid://b36iwn2wwdr0g" path="res://assets/sprites/magic4.png" id="28_whib0"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
+[ext_resource type="PackedScene" uid="uid://cmgcl6nuih6jb" path="res://assets/models/fish/fish.glb" id="29_s11b2"]
 [ext_resource type="Texture2D" uid="uid://cqh4i5ql1djue" path="res://assets/sprites/eenlargment_rune_pattern2.png" id="29_sr2vx"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
+[ext_resource type="Script" uid="uid://ck5cuh4s3y5mg" path="res://scenes/world/environment_test/fish_eye.gd" id="30_gdawa"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
 [ext_resource type="Texture2D" uid="uid://dkh4m5kdli0d5" path="res://assets/sprites/magic6.png" id="30_tuxnq"]
+[ext_resource type="Texture2D" uid="uid://tjr74s7mqc82" path="res://scenes/entities/fish/fish_eye_jitter_noise.tres" id="31_peu42"]
+[ext_resource type="PackedScene" uid="uid://boab6cew1onfk" path="res://assets/models/fish/gun.glb" id="32_4ntm1"]
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
+[ext_resource type="Texture2D" uid="uid://vld4r61hbgw0" path="res://assets/textures/flash.png" id="33_j3hp4"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
 [ext_resource type="PackedScene" uid="uid://c7mot86sds2bb" path="res://scenes/items/blue_book.tscn" id="35_kge0y"]
 [ext_resource type="Texture2D" uid="uid://lqw7nd3brwnm" path="res://assets/sprites/magic2.png" id="36_tuxnq"]
@@ -118,33 +125,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_p8loj"]
+[sub_resource type="Resource" id="Resource_7gb3y"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_caskx"]
+[sub_resource type="Resource" id="Resource_vgk2m"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_nnhlb"]
+[sub_resource type="Resource" id="Resource_ubk87"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_1t2ts"]
+[sub_resource type="Resource" id="Resource_s11b2"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_cl431"]
+[sub_resource type="Resource" id="Resource_gdawa"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_p8loj"), SubResource("Resource_caskx"), SubResource("Resource_nnhlb"), SubResource("Resource_1t2ts")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_7gb3y"), SubResource("Resource_vgk2m"), SubResource("Resource_ubk87"), SubResource("Resource_s11b2")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -177,31 +184,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_kls22"]
+[sub_resource type="Resource" id="Resource_peu42"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_irlnd"]
+[sub_resource type="Resource" id="Resource_4ntm1"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_7gb3y"]
+[sub_resource type="Resource" id="Resource_j3hp4"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_vgk2m"]
+[sub_resource type="Resource" id="Resource_p2rjb"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_ubk87"]
+[sub_resource type="Resource" id="Resource_erutg"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_kls22"), SubResource("Resource_irlnd"), SubResource("Resource_7gb3y"), SubResource("Resource_vgk2m")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_peu42"), SubResource("Resource_4ntm1"), SubResource("Resource_j3hp4"), SubResource("Resource_p2rjb")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -260,6 +267,415 @@ auto_exposure_scale = 0.8
 dof_blur_far_distance = 120.59
 dof_blur_far_transition = 209.75
 auto_exposure_max_sensitivity = 700.0
+
+[sub_resource type="Gradient" id="Gradient_b4cmy"]
+offsets = PackedFloat32Array(0.24723247, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tcj6u"]
+gradient = SubResource("Gradient_b4cmy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svlls"]
+transparency = 1
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_tcj6u")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_35a62"]
+_data = [Vector2(0.4736842, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d7q3v"]
+curve = SubResource("Curve_35a62")
+
+[sub_resource type="Curve" id="Curve_asmty"]
+_data = [Vector2(0, 0.39121032), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7ur82"]
+curve = SubResource("Curve_asmty")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gqyxt"]
+lifetime_randomness = 0.63
+emission_shape = 1
+emission_sphere_radius = 0.75
+direction = Vector3(0, 0, 1)
+spread = 79.48
+initial_velocity_min = 0.25
+initial_velocity_max = 2.95
+scale_min = 480.88998
+scale_max = 756.42
+scale_curve = SubResource("CurveTexture_7ur82")
+alpha_curve = SubResource("CurveTexture_d7q3v")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ly5rv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_svlls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35a62"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(2.008, 2.008, 2.008, 1)
+albedo_texture = ExtResource("33_j3hp4")
+disable_receive_shadows = true
+
+[sub_resource type="Animation" id="Animation_7muls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iumo6"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_emit_revolutioned"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj0d7"]
+_data = {
+&"RESET": SubResource("Animation_7muls"),
+&"spin": SubResource("Animation_iumo6")
+}
+
+[sub_resource type="Animation" id="Animation_tcj6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish/GunContainer/gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.5),
+"update": 0,
+"values": [Vector3(0.09500014, 0.045083154, 0.60476106)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish/GunContainer/gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.5),
+"update": 0,
+"values": [Vector3(-1.5707964, 0.08724923, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish/GunContainer/gun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.5),
+"update": 0,
+"values": [Vector3(0.034999993, 0.034999993, 0.034999974)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish/GunContainer/gun/Cyllingedre:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -5.2359877)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish/GunContainer/gun/Revolver_001:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish/GunContainer/gun/Smoke:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/Flash:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:light_indirect_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:omni_attenuation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b4cmy"]
+resource_name = "kill"
+length = 15.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish/GunContainer/gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.7, 5.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector3(0.09500014, 0.045083154, 0.60476106), Vector3(-1.1167617, 0.3865148, 0.5133742), Vector3(-0.704743, 0.43505135, 0.51337445), Vector3(-0.684, -0.235, 2.196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish/GunContainer/gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.7, 5.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0.08724923, 0), Vector3(-0.8543996, -1.5604541, 0.70158285), Vector3(-1.3132731, -1.5707966, 0.6835935), Vector3(-0.05235988, 0.17802358, 0.60039324)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish/GunContainer/gun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.7, 5.2, 6.2),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.18301095, 1),
+"update": 0,
+"values": [Vector3(0.034999993, 0.034999993, 0.034999974), Vector3(0.10499999, 0.10499997, 0.10499998), Vector3(0.105, 0.105, 0.105), Vector3(0.120000005, 0.120000005, 0.12), Vector3(0.12, 0.12, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish/GunContainer/gun/Revolver_001:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 3.4),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.7644542, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish/GunContainer/gun/Cyllingedre:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.2, 7.4000006, 8.2, 8.4, 9.200001, 9.4, 10.200001, 10.4, 11.4, 13.4),
+"transitions": PackedFloat32Array(1, -2, -2, -2, -2, -2, -2, -2, -2, 7.999997, -2),
+"update": 0,
+"values": [Vector3(0, 0, -5.2359877), Vector3(0, 0, -5.2359877), Vector3(0, 0, -4.1887903), Vector3(0, 0, -4.1887903), Vector3(0, 0, -3.1415927), Vector3(0, 0, -3.1415927), Vector3(0, 0, -2.0943952), Vector3(0, 0, -2.0943952), Vector3(0, 0, -1.0471976), Vector3(0, 0, -1.0471976), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish/GunContainer/gun/Smoke:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(14),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/Flash:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 14, 14.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 14, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(14, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:light_indirect_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(14, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fish/GunContainer/gun/MuzzlePoint/OmniLight3D:omni_attenuation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(14, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.2710000000000008, 0.0]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(14),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot_bullet"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcj6u"]
+_data = {
+&"RESET": SubResource("Animation_tcj6u"),
+&"kill": SubResource("Animation_b4cmy")
+}
 
 [sub_resource type="Curve" id="Curve_a76df"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -1767,7 +2183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_cl431")
+modifier_stack = SubResource("Resource_gdawa")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1832,7 +2248,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_ubk87")
+modifier_stack = SubResource("Resource_erutg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1902,14 +2318,89 @@ directional_shadow_max_distance = 762.4
 [node name="Player" parent="." instance=ExtResource("5_pcmfc")]
 transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.95225734, 66.28232, 0.6192311, 68.79785)
 
-[node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
+[node name="BigFish" type="Node3D" parent="."]
 transform = Transform3D(943.80066, 330.51437, 0, -232.0717, 662.6923, -712.0258, -235.33487, 672.0105, 702.15283, 3000, 5000, -2000)
+script = ExtResource("26_7gb3y")
 kill_turn_duration = 4.0
+bullet_scene = ExtResource("27_vgk2m")
+kill_trigger = ExtResource("8_53qi2")
 metadata/_edit_group_ = true
 
-[node name="Fish" parent="BigFish" index="1"]
+[node name="StateManager" type="Node" parent="BigFish"]
+script = ExtResource("28_ubk87")
+metadata/_custom_type_script = "uid://dxhjy8wd5ad5c"
+
+[node name="Fish" parent="BigFish" instance=ExtResource("29_s11b2")]
 transform = Transform3D(0.9999997, -1.4901163e-08, 0, 1.49011585e-08, 1, -1.3027006e-15, 1.9411753e-23, 1.302701e-15, 0.9999997, 0, 0, 0)
 metadata/_edit_group_ = true
+
+[node name="Cube" parent="BigFish/Fish" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="Cube_003" parent="BigFish/Fish/Empty" index="0"]
+script = ExtResource("30_gdawa")
+limit_angle = 0.5410520681182421
+jitter_noise_texture = ExtResource("31_peu42")
+jitter_speed = 100.0
+jitter_magnitude = 0.06
+
+[node name="Cube_004" parent="BigFish/Fish/Empty_001" index="0"]
+script = ExtResource("30_gdawa")
+limit_angle = 0.5410520681182421
+jitter_noise_texture = ExtResource("31_peu42")
+jitter_speed = 100.0
+jitter_magnitude = 0.06
+
+[node name="GunContainer" type="Node3D" parent="BigFish/Fish"]
+
+[node name="gun" parent="BigFish/Fish/GunContainer" instance=ExtResource("32_4ntm1")]
+transform = Transform3D(0.03486686, -0.0030498493, -1.3331307e-10, 0, -1.5298983e-09, 0.034999974, -0.0030498493, -0.03486686, -1.524078e-09, 0.09500014, 0.045083154, 0.60476106)
+
+[node name="Cyllingedre" parent="BigFish/Fish/GunContainer/gun" index="1"]
+transform = Transform3D(0.4999999, -0.86602545, 0, 0.86602545, 0.4999999, 0, 0, 0, 1, 0, -1.0436823, -0.33632463)
+
+[node name="Smoke" type="GPUParticles3D" parent="BigFish/Fish/GunContainer/gun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5238994e-07, 0.29508093, 10.211397)
+material_override = SubResource("StandardMaterial3D_svlls")
+emitting = false
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_gqyxt")
+draw_pass_1 = SubResource("QuadMesh_ly5rv")
+
+[node name="MuzzlePoint" type="Node3D" parent="BigFish/Fish/GunContainer/gun"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -1.5577823e-08, -1.509958e-07, -1.5577823e-08, 1, -3.8944594e-09, 1.509958e-07, -3.894457e-09, -1, 0, 0.23082066, 10.380592)
+
+[node name="Flash" type="MeshInstance3D" parent="BigFish/Fish/GunContainer/gun/MuzzlePoint"]
+transform = Transform3D(-15, 2.1932644e-06, 2.264937e-06, 2.1932644e-06, 15, 1.117586e-07, -2.264937e-06, 1.11758936e-07, -15, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_svlls")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_35a62")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BigFish/Fish/GunContainer/gun/MuzzlePoint"]
+transform = Transform3D(0.00054448453, -2.5920599e-11, 2.1827873e-11, 3.5015546e-11, 0.0005444845, -1.8189894e-11, -7.275958e-12, 5.456968e-12, 0.00032669073, 0, 0, 0.18500006)
+visible = false
+light_volumetric_fog_energy = 5.083
+shadow_enabled = true
+omni_range = 4096.0
+omni_attenuation = 0.0
+omni_shadow_mode = 0
+
+[node name="SpinAnimationPlayer" type="AnimationPlayer" parent="BigFish"]
+root_node = NodePath("../Fish")
+libraries = {
+&"": SubResource("AnimationLibrary_nj0d7")
+}
+autoplay = "spin"
+speed_scale = 0.02
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BigFish"]
+libraries = {
+&"": SubResource("AnimationLibrary_tcj6u")
+}
 
 [node name="Lantern" parent="." instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-0.9773272, 0, 0.21173427, 0, 1, 0, -0.21173427, 0, -0.9773272, 69.08747, 0.49660444, 71.2636)
@@ -3259,7 +3750,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -455.23373, -6.2916565, 452.1
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/evil_smoke" method="disable"]
 [connection signal="ignited" from="Village/evil_house/EvilHouseLantern" to="Village/evil_house/HintHider" method="hide"]
 
-[editable path="BigFish"]
 [editable path="BigFish/Fish"]
 [editable path="BigFish/Fish/GunContainer/gun"]
 [editable path="Cave/cave/Sign"]
