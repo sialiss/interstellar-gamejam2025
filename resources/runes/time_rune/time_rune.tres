@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TimeRune" load_steps=3 format=3 uid="uid://cmrgsajfpa3dh"]
 
-[ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/textures/speed_rune.png" id="1_p3ovv"]
+[ext_resource type="Texture2D" uid="uid://ctj1jairf2gt" path="res://assets/sprites/fire_rune_pattern2.png" id="1_p3ovv"]
 [ext_resource type="Script" uid="uid://372ugn800bkr" path="res://resources/runes/time_rune/time_rune.gd" id="2_bf5oi"]
 
 [resource]
 script = ExtResource("2_bf5oi")
 rune_name = "Time Rune"
-directions_array = Array[int]([0, 2, 4])
+directions_array = Array[int]([1, 4, 6, 7, 4, 1])
 image = ExtResource("1_p3ovv")
 metadata/_custom_type_script = "uid://deyjd1bbu5t8v"
