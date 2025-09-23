@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=17 format=3 uid="uid://dfstdxgqdlkqu"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=23 format=3 uid="uid://dfstdxgqdlkqu"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_tyqoy"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_e5ikp"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_6l01a"]
+[ext_resource type="Script" uid="uid://d3qbo24syt5g1" path="res://resources/runes/gigantism_rune/gigantism_rune.gd" id="4_h8il7"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="4_o0hm2"]
+[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="5_vih3d"]
 
 [sub_resource type="Resource" id="Resource_vih3d"]
 script = ExtResource("1_tyqoy")
@@ -68,10 +70,20 @@ text = "Imagine… A fishing rod the size of a tower. What a wonder. With a rod 
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_6l01a"), SubResource("Resource_o0hm2"), SubResource("Resource_h8il7")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
+[sub_resource type="Resource" id="Resource_c4bap"]
+script = ExtResource("4_h8il7")
+metadata/_custom_type_script = "uid://d3qbo24syt5g1"
+
+[sub_resource type="Resource" id="Resource_ess6h"]
+script = ExtResource("5_vih3d")
+rune = SubResource("Resource_c4bap")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
 [sub_resource type="Resource" id="Resource_tyqoy"]
 script = ExtResource("1_tyqoy")
-text = "There's another rune the sands whisper about. The rune of giants. They say it's combined from pieces of two other runes: the rune of enchantment and that which is written in the ancient pages."
+text = "There's another rune the sands whisper about. The rune of giants. They say it's written in the ancient pages."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_e5ikp")])
+effects = Array[ExtResource("3_6l01a")]([SubResource("Resource_ess6h")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_mykmr"]
@@ -80,6 +92,15 @@ type = "Inventory"
 data = "charmed_rod"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
+[sub_resource type="Resource" id="Resource_yo52v"]
+script = ExtResource("4_h8il7")
+metadata/_custom_type_script = "uid://d3qbo24syt5g1"
+
+[sub_resource type="Resource" id="Resource_gn0qi"]
+script = ExtResource("5_vih3d")
+rune = SubResource("Resource_yo52v")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
 [resource]
 script = ExtResource("1_tyqoy")
 is_repeatable = true
@@ -87,4 +108,5 @@ dialogue_id = "desert_after_cool_rod"
 text = "You actually did it… you invigorated the fishing rod. I knew the rune of enchantment exists, but I could only figure out one half it. And you got it whole."
 choices = Array[ExtResource("1_tyqoy")]([SubResource("Resource_tyqoy")])
 conditions = Array[ExtResource("2_e5ikp")]([SubResource("Resource_mykmr")])
+effects = Array[ExtResource("3_6l01a")]([SubResource("Resource_gn0qi")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
