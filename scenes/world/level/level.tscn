@@ -268,7 +268,7 @@ curve = SubResource("Curve_a76df")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
 resource_local_to_scene = true
 emission_shape = 3
-emission_box_extents = Vector3(3.535, 1.705, 2.78)
+emission_box_extents = Vector3(2.745, 1.705, 2.61)
 gravity = Vector3(0, 0, 0)
 scale_min = 2.1499999
 scale_max = 2.1499999
