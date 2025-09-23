@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_oy2c5"]
 script = ExtResource("3_ccvb4")
 type = "Rune"
-data = "enchantment_rune"
+data = "Enchantment Rune"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Resource" id="Resource_vw2lj"]

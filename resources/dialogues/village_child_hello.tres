@@ -6,5 +6,6 @@
 
 [resource]
 script = ExtResource("1_kljgm")
-text = "Привет! Правда тот дом страшный? Мы хотим пойти туда на испытание храбрости!"
+is_repeatable = true
+text = "Hi! Is that house really scary? We want to go there to test our courage!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

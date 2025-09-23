@@ -4,6 +4,9 @@ class_name Item extends Grabbable
 @export var item_name =  "item"
 var is_in_inventory: bool = false
 
+func _ready() -> void:
+	self.add_to_group("items")
+
 func hide_from_world():
 	grabbed()
 	visible = false

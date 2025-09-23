@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqmpwhsg5r52e"]
+[gd_scene load_steps=12 format=3 uid="uid://dqmpwhsg5r52e"]
 
 [ext_resource type="Script" uid="uid://14cpmjcncpl4" path="res://scenes/UI/player_ui.gd" id="1_d6j1s"]
 [ext_resource type="PackedScene" uid="uid://cgmdgketpnli8" path="res://scenes/UI/inventory_ui.tscn" id="2_q3y81"]
 [ext_resource type="Texture2D" uid="uid://nokxltsb07ft" path="res://assets/textures/page.png" id="3_q3y81"]
+[ext_resource type="Texture2D" uid="uid://shn4xbxp3cu" path="res://assets/textures/paper4.bmp" id="4_8xbeg"]
 [ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/textures/speed_rune.png" id="4_hxbk0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hxbk0"]
@@ -95,26 +96,9 @@ grow_vertical = 0
 theme = SubResource("Theme_50a1s")
 text = "N"
 
-[node name="InventoryButton" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.97200006
-anchor_right = 0.081
-anchor_bottom = 0.97200006
-offset_left = 2.6880035
-offset_top = -45.856018
-offset_right = 58.688004
-offset_bottom = 2.143982
-grow_vertical = 0
-theme = SubResource("Theme_50a1s")
-text = "I"
-
 [node name="InventoryUI" parent="." instance=ExtResource("2_q3y81")]
 
 [node name="RunesUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -184,7 +168,7 @@ offset_right = 324.0
 offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_q3y81")
+texture = ExtResource("4_8xbeg")
 flip_h = true
 
 [node name="name" type="Label" parent="RunesUI/Page2"]
@@ -215,6 +199,20 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_hxbk0")
+
+[node name="content" type="TextureRect" parent="RunesUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -192.0
+offset_right = -4.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="RunesUI"]
 layout_mode = 1

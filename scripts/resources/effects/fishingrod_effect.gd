@@ -7,4 +7,3 @@ func apply_effect(_player, _npc):
 	fishrod.can_enlarge = true
 	fishrod.can_pickup = true
 	await fishrod.play_fishing_animation()
-	

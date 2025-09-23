@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @onready var player_ui: PlayerUI = $Player/PlayerUI
 @onready var dualogue_ui: DialogueUI = $DialogueUI
 @onready var player: CharacterBody3D = $Player

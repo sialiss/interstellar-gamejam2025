@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [resource]
 script = ExtResource("1_neuk6")
-is_repeatable = true
 dialogue_id = "fisher_start"
 text = "Hey, did you notice it too? The nets are empty, the fishing rods are quiet…
 The sea is full of these… copies of the fish. The huge one, spinning… you saw it too, right?"

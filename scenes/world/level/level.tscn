@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=176 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -51,8 +51,8 @@
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
-[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
+[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
 [ext_resource type="PackedScene" uid="uid://by4hy0ojy1o12" path="res://assets/models/props/computer.glb" id="41_53qi2"]
@@ -108,33 +108,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_oqj6p"]
+[sub_resource type="Resource" id="Resource_je5e5"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_56jom"]
+[sub_resource type="Resource" id="Resource_78awm"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_usf2n"]
+[sub_resource type="Resource" id="Resource_sr2vx"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_53qi2"]
+[sub_resource type="Resource" id="Resource_kge0y"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_b37fd"]
+[sub_resource type="Resource" id="Resource_whib0"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_oqj6p"), SubResource("Resource_56jom"), SubResource("Resource_usf2n"), SubResource("Resource_53qi2")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -167,31 +167,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_yj7bl"]
+[sub_resource type="Resource" id="Resource_3ehlk"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_dekj3"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_gw5i7"]
+[sub_resource type="Resource" id="Resource_ipee5"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_8167w"]
+[sub_resource type="Resource" id="Resource_bhuc7"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_xb217"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_yj7bl"), SubResource("Resource_dekj3"), SubResource("Resource_gw5i7"), SubResource("Resource_8167w")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_3ehlk"), SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -621,29 +621,20 @@ size = Vector2(2000, 2000)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
 
-[sub_resource type="Resource" id="Resource_whib0"]
-script = ExtResource("30_88k61")
-text = "h"
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
-
-[sub_resource type="Resource" id="Resource_3ehlk"]
-script = ExtResource("30_88k61")
-text = "g"
-choices = Array[ExtResource("30_88k61")]([SubResource("Resource_whib0")])
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqhh"]
 radius = 0.4
 height = 2.632
 
 [sub_resource type="Resource" id="Resource_pk7k4"]
 script = ExtResource("30_88k61")
-text = "Привет! Сходишь с нами в тёмный дом?"
+is_repeatable = true
+text = "Hello! Will you come with us to the dark house?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_qbtvk"]
 script = ExtResource("30_88k61")
-text = "Мне страшно... Я возьму с собой фонарик..."
+is_repeatable = true
+text = "I'm scared... I'll take a lantern with me..."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
@@ -698,7 +689,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_b37fd")
+modifier_stack = SubResource("Resource_whib0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -763,7 +754,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_xb217")
+modifier_stack = SubResource("Resource_p8loj")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1210,11 +1201,10 @@ camera = NodePath("../../../Dome/Tube/SubViewport/Camera3D")
 completion_animation = NodePath("../../../Dome/Tube/SubViewport/AnimationPlayer")
 metadata/_custom_type_script = "uid://covh76n2nab30"
 
-
 [node name="Rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
 transform = Transform3D(-1.0383022, 0, 2.814592, 0, 3, 0, -2.814592, 0, -1.0383022, 32.853, -1.245, 750.699)
 
-[node name="Sprite3D" type="Sprite3D" parent="Observatory/rocket"]
+[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
 texture_filter = 0
 texture = ExtResource("47_dkddj")
@@ -1397,8 +1387,8 @@ transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.846
 collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
-NPC_name = "Desert dweller"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet"), SubResource("Resource_3ehlk")])
+NPC_name = "Dweller"
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Desert" instance=ExtResource("46_3vvvx")]
@@ -1469,6 +1459,11 @@ script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("7_usf2n")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
+[node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
+transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
+collision_layer = 516
+collision_mask = 7
+
 [node name="VillageChild" parent="NPCs" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.19972709, 0, 0.97985154, 0, 1, 0, -0.97985154, 0, -0.19972709, -401.03235, -8.761753, 477.2537)
 NPC_name = "Child"
@@ -1500,9 +1495,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("5_oqj6p")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
-transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
 
 [node name="extras" type="Node3D" parent="."]
 
@@ -1562,7 +1554,7 @@ shape = SubResource("CapsuleShape3D_abqhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
 volume_db = -32.381
 
-[node name="fish_pink" parent="MusicTest/Fishie" instance=ExtResource("83_gw5i7")]
+[node name="ModelOrigin" parent="MusicTest/Fishie" instance=ExtResource("83_gw5i7")]
 transform = Transform3D(0.7991075, 9.778887e-09, 2.9802322e-08, 1.071021e-08, 0.793405, 2.7939677e-09, -7.4505806e-08, 0, 0.4528981, -0.026672363, -0.6413355, 0.021881104)
 
 [node name="bed" parent="MusicTest" instance=ExtResource("92_pnpbx")]
