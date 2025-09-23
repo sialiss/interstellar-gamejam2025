@@ -7,9 +7,12 @@ signal revolutioned
 
 @export var kill_turn_duration := 1.0
 @export var bullet_scene: PackedScene
+@export var kill_trigger: RevolutionTrigger
 
 func _ready() -> void:
 	state_manager.set_state(NormalState.new())
+	if kill_trigger:
+		kill_trigger.triggered.connect(enter_kill_state)
 
 func _emit_revolutioned():
 	revolutioned.emit()
