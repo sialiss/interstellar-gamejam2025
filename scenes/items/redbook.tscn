@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=4 uid="uid://cr4debco67gf8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_je5e5"]
+resource_name = "Cover"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78awm"]
+resource_name = "Pages"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sr2vx"]
+_surfaces = [{
+"aabb": AABB(-0.20974565, -0.049379475, -0.29921544, 0.4194913, 0.09875895, 0.5984309),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEABAAFAAEAAQAFAAMABAAGAAUABgADAAUABgAEAAAABgAHAAMABgAAAAcACAACAAMACQAAAAIACAAJAAIACgAHAAAACQAKAAAACwADAAcACwAIAAMACgALAAcACQAIAAwADAAIAAsACQANAAoACQAMAA4ACQAOAA0ADAALAA8ADwALAAoADgAMAA8ADwAKAA0ADgAPAA0A"),
+"name": "Cover",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("RxRFviy3Aj3EMpm+kMdWPiJCSj3EMpm+kMdWviJCSj3EMpm+kMdWviJCSj3EMpk+kMdWPiy3Aj3EMpm+kMdWPiJCSj3EMpk+kMdWPiy3Aj3EMpk+RxRFvi63Aj3EMpk+kMdWviJCSr3EMpk+kMdWviJCSr3EMpm+RxRFvi63Ar3EMpm+RxRFviy3Ar3EMpk+kMdWPiJCSr3EMpk+kMdWPi63Ar3EMpm+kMdWPiJCSr3EMpm+kMdWPi63Ar3EMpk+")
+}, {
+"aabb": AABB(-0.19246016, -0.031912975, -0.28665823, 0.3941207, 0.06382595, 0.57331645),
+"format": 34359742465,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAEAAUABgAFAAcA"),
+"name": "Pages",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("GoBOPi63Ar3exJI+RxRFvi63Aj3exJI+GoBOPiy3Aj3exJI+RxRFviy3Ar3exJI+GoBOPi63Ar3exJK+GoBOPiy3Aj3exJK+RxRFvi63Ar3exJK+RxRFviy3Aj3exJK+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kge0y"]
+resource_name = "book_Cube"
+_surfaces = [{
+"aabb": AABB(-0.20974565, -0.049379475, -0.29921544, 0.4194913, 0.09875895, 0.5984309),
+"attribute_data": PackedByteArray("hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAAFAAAABAAGAAUABAAHAAYACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwASABEAEwARABQAEAAVABEAFgAVABAAFgAQABcAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_je5e5"),
+"name": "Cover",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("RxRFviy3Aj3EMpm+kMdWPiJCSj3EMpm+kMdWviJCSj3EMpm+kMdWPiy3Aj3EMpm+kMdWviJCSr3EMpm+RxRFvi63Ar3EMpm+kMdWPi63Ar3EMpm+kMdWPiJCSr3EMpm+kMdWPiy3Aj3EMpm+kMdWPiJCSj3EMpk+kMdWPiJCSj3EMpm+kMdWPiy3Aj3EMpk+kMdWviJCSr3EMpm+kMdWPiJCSr3EMpk+kMdWPiJCSr3EMpm+kMdWviJCSr3EMpk+RxRFviy3Ar3EMpk+kMdWviJCSj3EMpk+RxRFvi63Aj3EMpk+kMdWPiy3Aj3EMpk+kMdWPiJCSj3EMpk+kMdWviJCSr3EMpk+kMdWPiJCSr3EMpk+kMdWPi63Ar3EMpk+kMdWPiJCSr3EMpm+kMdWPi63Ar3EMpk+kMdWPi63Ar3EMpm+kMdWPiJCSr3EMpk+kMdWviJCSr3EMpk+kMdWviJCSj3EMpm+kMdWviJCSj3EMpk+kMdWviJCSr3EMpm+kMdWPiJCSj3EMpm+kMdWviJCSj3EMpk+kMdWviJCSj3EMpm+kMdWPiJCSj3EMpk+RxRFvi63Ar3EMpm+RxRFvi63Aj3EMpk+RxRFviy3Aj3EMpm+RxRFviy3Ar3EMpk+kMdWPiy3Aj3EMpk+RxRFviy3Aj3EMpm+RxRFvi63Aj3EMpk+kMdWPiy3Aj3EMpm+kMdWPi63Ar3EMpk+RxRFvi63Ar3EMpm+kMdWPi63Ar3EMpm+RxRFviy3Ar3EMpk+/////////7//////////v/////////+//////////7//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////P/9//3////8/////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+/////f////7////9/////v////3////+/////f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////+//3///////7//f///////v/9///////+/")
+}, {
+"aabb": AABB(-0.19246016, -0.031912975, -0.28665823, 0.3941207, 0.06382595, 0.57331645),
+"attribute_data": PackedByteArray("hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9hIHGPkAJcD2EgcY+QAlwPYSBxj5ACXA9"),
+"format": 34359742487,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkA"),
+"material": SubResource("StandardMaterial3D_78awm"),
+"name": "Pages",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("GoBOPi63Ar3exJI+RxRFvi63Aj3exJI+GoBOPiy3Aj3exJI+RxRFviy3Ar3exJI+RxRFvi63Ar3exJK+GoBOPiy3Aj3exJK+RxRFviy3Aj3exJK+GoBOPi63Ar3exJK+GoBOPi63Ar3exJK+GoBOPiy3Aj3exJI+GoBOPiy3Aj3exJK+GoBOPi63Ar3exJI+/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sr2vx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igeo3"]
+albedo_color = Color(0.42590573, 0, 0.15065765, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tuxnq"]
+points = PackedVector3Array(0.20974565, 0.049379468, 0.29921544, -0.20974565, 0.049379468, 0.29921544, 0.20974565, -0.049379475, 0.29921544, 0.20974565, 0.049379468, -0.29921544, -0.20974565, -0.049379475, 0.29921544, -0.20974565, 0.049379468, -0.29921544, 0.20974565, -0.049379475, -0.29921544, -0.20974565, -0.049379475, -0.29921544)
+
+[node name="redbook" type="Node3D"]
+transform = Transform3D(0.93982387, 0, -0.34165916, 0, 1, 0, 0.34165916, 0, 0.93982387, 0, 0, 0)
+
+[node name="Book" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_kge0y")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_igeo3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Book"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_tuxnq")
