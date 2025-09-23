@@ -6,7 +6,8 @@ static var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/time_rune/time_rune.tres"),
 	preload("res://resources/runes/fire_rune/fire_rune.tres"),
 	preload("res://resources/runes/gigantism_rune/gigantism_rune.tres"),
-	preload("res://resources/runes/enchantment_rune/enchantment_rune.tres")
+	preload("res://resources/runes/enchantment_rune/enchantment_rune.tres"),
+	preload("res://resources/runes/transformation_rune/transformation_rune.tres")
 ]
 
 static var max_errors: int = 2 # Все руны должны состоять из n + 1 линий!

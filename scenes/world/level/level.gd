@@ -3,7 +3,7 @@ extends Node3D
 
 @onready var player_ui: PlayerUI = $Player/PlayerUI
 @onready var dualogue_ui: DialogueUI = $DialogueUI
-@onready var player: CharacterBody3D = $Player
+@onready var player: Player = $Player
 
 @export var revolution_triggers: Array[RevolutionTrigger] = []
 
@@ -38,3 +38,6 @@ func check_npc_fish_transformation(npc):
 
 #func _switch_dialogue_mode(value: bool):
 	#dialogue_mode = value
+
+func win_animation_finished():
+	player_ui._on_show_timer_prompt(5.0, "You saved the world, nice!")
