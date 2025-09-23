@@ -9,7 +9,7 @@
 script = ExtResource("1_yn3ed")
 texture = ExtResource("2_a6nay")
 sound_effect = ExtResource("2_c0yn1")
-rune_name = "test rune"
+rune_name = "Amnyam"
 directions_array = Array[int]([3, 2, 1, 0, 7, 6, 5, 4, 6, 0])
 image = ExtResource("1_ihoq6")
 metadata/_custom_type_script = "uid://d2rq4uyb1p2gj"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=176 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -45,13 +45,14 @@
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
+[ext_resource type="PackedScene" uid="uid://c0u3c6ix0t063" path="res://assets/models/props/book/book.glb" id="30_n4u2g"]
 [ext_resource type="PackedScene" uid="uid://bwi4arigbo5pg" path="res://scenes/world/environment_test/music_test.tscn" id="32_88k61"]
 [ext_resource type="AudioStream" uid="uid://cc8jowb7uj3xl" path="res://assets/sounds/voice2.wav" id="32_pqgu7"]
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
-[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
+[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
 [ext_resource type="PackedScene" uid="uid://by4hy0ojy1o12" path="res://assets/models/props/computer.glb" id="41_53qi2"]
@@ -82,6 +83,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgimiii75lct" path="res://assets/models/props/chair_backless.glb" id="53_pk7k4"]
 [ext_resource type="Resource" uid="uid://d4crgsmqea2he" path="res://resources/dialogues/fisher_after_cool_rod.tres" id="54_6xvrv"]
 [ext_resource type="Resource" uid="uid://dmk6xsg7td6q4" path="res://resources/dialogues/fisher_final.tres" id="55_ethiv"]
+[ext_resource type="PackedScene" uid="uid://8j1ua5p76u7t" path="res://scenes/items/green_book.tscn" id="56_0hvbb"]
 [ext_resource type="Script" uid="uid://ck21km2sgfifg" path="res://scripts/fish_transform/become_fish.gd" id="56_b37fd"]
 [ext_resource type="Resource" uid="uid://df4q0ibcduk3h" path="res://resources/dialogues/fisher_after_giant_rod.tres" id="57_3mjd8"]
 [ext_resource type="Resource" uid="uid://dgffi4fi8fkmo" path="res://resources/dialogues/fisher_win.tres" id="58_yra41"]
@@ -101,36 +103,38 @@
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://c82v7bnpdv1r8" path="res://assets/models/props/bed.glb" id="92_pnpbx"]
 [ext_resource type="Texture2D" uid="uid://dm7td23ipbh3k" path="res://assets/sprites/fishroll.svg" id="93_lc8gy"]
+[ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
+[ext_resource type="PackedScene" uid="uid://b2jscrbsu7q4b" path="res://assets/models/props/book/open_book.glb" id="103_0hvbb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_oqj6p"]
+[sub_resource type="Resource" id="Resource_je5e5"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_56jom"]
+[sub_resource type="Resource" id="Resource_78awm"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_usf2n"]
+[sub_resource type="Resource" id="Resource_sr2vx"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_53qi2"]
+[sub_resource type="Resource" id="Resource_kge0y"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_b37fd"]
+[sub_resource type="Resource" id="Resource_whib0"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_oqj6p"), SubResource("Resource_56jom"), SubResource("Resource_usf2n"), SubResource("Resource_53qi2")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -163,31 +167,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_yj7bl"]
+[sub_resource type="Resource" id="Resource_3ehlk"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_dekj3"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_gw5i7"]
+[sub_resource type="Resource" id="Resource_ipee5"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_8167w"]
+[sub_resource type="Resource" id="Resource_bhuc7"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_xb217"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_yj7bl"), SubResource("Resource_dekj3"), SubResource("Resource_gw5i7"), SubResource("Resource_8167w")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_3ehlk"), SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -246,155 +250,6 @@ auto_exposure_scale = 0.8
 dof_blur_far_distance = 120.59
 dof_blur_far_transition = 209.75
 auto_exposure_max_sensitivity = 700.0
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xrtkb"]
-height = 10.0
-radius = 15.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
-size = Vector3(2, 5, 2.5)
-
-[sub_resource type="Animation" id="Animation_gw5i7"]
-resource_name = "scan"
-length = 3.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Scan:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Data:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.2176372, 1),
-"update": 0,
-"values": [0.0, 100.0]
-}
-
-[sub_resource type="Animation" id="Animation_8167w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Scan:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Data:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb217"]
-_data = {
-&"RESET": SubResource("Animation_8167w"),
-&"scan": SubResource("Animation_gw5i7")
-}
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
-viewport_path = NodePath("Observatory/observatory/Dome/Tube/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_qbtvk")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gw5i7"]
-size = Vector3(0.27, 0.068894535, 0.27)
-
-[sub_resource type="Curve" id="Curve_a76df"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
-curve = SubResource("Curve_a76df")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
-resource_local_to_scene = true
-emission_shape = 3
-emission_box_extents = Vector3(3.535, 1.705, 2.78)
-gravity = Vector3(0, 0, 0)
-scale_min = 2.1499999
-scale_max = 2.1499999
-alpha_curve = SubResource("CurveTexture_iu8k4")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mjd8"]
-albedo_color = Color(0.05, 0.05, 0.05, 1)
-metallic_specular = 0.31
-
-[sub_resource type="QuadMesh" id="QuadMesh_yra41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62kgg"]
 resource_name = "Cover"
@@ -462,11 +317,157 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1kki2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32eyw"]
-albedo_color = Color(6.617978e-08, 0.20267314, 0.20503065, 1)
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_scct1"]
 points = PackedVector3Array(0.20974565, 0.049379468, 0.29921544, -0.20974565, 0.049379468, 0.29921544, 0.20974565, -0.049379475, 0.29921544, 0.20974565, 0.049379468, -0.29921544, -0.20974565, -0.049379475, 0.29921544, -0.20974565, 0.049379468, -0.29921544, 0.20974565, -0.049379475, -0.29921544, -0.20974565, -0.049379475, -0.29921544)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xrtkb"]
+height = 10.0
+radius = 15.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
+size = Vector3(2, 5, 2.5)
+
+[sub_resource type="Animation" id="Animation_8167w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Data:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gw5i7"]
+resource_name = "scan"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Scan:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Data:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Scan/ProgressBar:value")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.2176372, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb217"]
+_data = {
+&"RESET": SubResource("Animation_8167w"),
+&"scan": SubResource("Animation_gw5i7")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
+viewport_path = NodePath("Observatory/observatory/Dome/Tube/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qbtvk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gw5i7"]
+size = Vector3(0.27, 0.068894535, 0.27)
+
+[sub_resource type="Curve" id="Curve_a76df"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
+curve = SubResource("Curve_a76df")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(3.535, 1.705, 2.78)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.1499999
+scale_max = 2.1499999
+alpha_curve = SubResource("CurveTexture_iu8k4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mjd8"]
+albedo_color = Color(0.05, 0.05, 0.05, 1)
+metallic_specular = 0.31
+
+[sub_resource type="QuadMesh" id="QuadMesh_yra41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ku0a"]
 resource_name = "Cover"
@@ -620,29 +621,20 @@ size = Vector2(2000, 2000)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
 
-[sub_resource type="Resource" id="Resource_whib0"]
-script = ExtResource("30_88k61")
-text = "h"
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
-
-[sub_resource type="Resource" id="Resource_3ehlk"]
-script = ExtResource("30_88k61")
-text = "g"
-choices = Array[ExtResource("30_88k61")]([SubResource("Resource_whib0")])
-metadata/_custom_type_script = "uid://chvnh0rt1wrj"
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqhh"]
 radius = 0.4
 height = 2.632
 
 [sub_resource type="Resource" id="Resource_pk7k4"]
 script = ExtResource("30_88k61")
-text = "Привет! Сходишь с нами в тёмный дом?"
+is_repeatable = true
+text = "Hello! Will you come with us to the dark house?"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="Resource" id="Resource_qbtvk"]
 script = ExtResource("30_88k61")
-text = "Мне страшно... Я возьму с собой фонарик..."
+is_repeatable = true
+text = "I'm scared... I'll take a lantern with me..."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
@@ -651,6 +643,19 @@ radius = 400.0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hfud1"]
 height = 200.0
 radius = 400.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgkao"]
+size = Vector3(1.5, 0.85, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgkao"]
+albedo_color = Color(0.40942743, 0.17377031, 0.1330474, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2811w"]
+size = Vector3(1.6, 2, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2811w"]
+top_radius = 0.1
+bottom_radius = 0.1
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
 script = ExtResource("1_1mhee")
@@ -684,7 +689,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_b37fd")
+modifier_stack = SubResource("Resource_whib0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -749,7 +754,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_xb217")
+modifier_stack = SubResource("Resource_p8loj")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -841,7 +846,49 @@ transform = Transform3D(-0.9987795, 0, -0.049390316, 0, 1, 0, 0.049390316, 0, -0
 transform = Transform3D(-0.04939028, 0, 0.9987796, 0, 1, 0, -0.9987796, 0, -0.04939028, 90.64198, 5.995583, 106.15562)
 
 [node name="house3" parent="DesertTown" instance=ExtResource("6_65y7h")]
-transform = Transform3D(-0.5523445, 0, 0.8336159, 0, 1, 0, -0.8336159, 0, -0.5523445, 71.171555, 0.38530874, 93.24507)
+transform = Transform3D(-0.5523445, 0, 0.8336159, 0, 1, 0, -0.8336159, 0, -0.5523445, 71.163574, 0.39422655, 93.25134)
+
+[node name="table" parent="DesertTown" instance=ExtResource("40_usf2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.18573, 0.38530922, 99.934105)
+
+[node name="book" type="Node3D" parent="DesertTown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.5174, 1.3792459, 97.543564)
+
+[node name="Book" type="MeshInstance3D" parent="DesertTown/book"]
+mesh = SubResource("ArrayMesh_x3ivo")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DesertTown/book/Book"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DesertTown/book/Book/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_scct1")
+
+[node name="book2" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.57016, 1.4780046, 97.651955)
+
+[node name="book3" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.6755, 1.5767637, 97.61162)
+
+[node name="book4" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(0.5806461, 0, -0.81415606, 0, 1, 0, 0.81415606, 0, 0.5806461, 75.14622, 1.3792459, 99.29011)
+
+[node name="book5" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(0.91735214, 0, -0.3980767, 0, 1, 0, 0.3980767, 0, 0.91735214, 75.26933, 1.5139314, 99.21696)
+
+[node name="book6" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.19218, 1.6126903, 99.23689)
+
+[node name="book7" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(0.65217775, 0, 0.75806606, 0, 1, 0, -0.75806606, 0, 0.65217775, 72.65255, 1.2326394, 100.27563)
+
+[node name="book8" parent="DesertTown" instance=ExtResource("30_n4u2g")]
+transform = Transform3D(0.867427, 0, -0.4975645, 0, 1, 0, 0.4975645, 0, 0.867427, 73.803345, 1.2326394, 100.026245)
+
+[node name="bed" parent="DesertTown" instance=ExtResource("92_pnpbx")]
+transform = Transform3D(0.79622376, 0, 0.6050022, 0, 1, 0, -0.6050022, 0, 0.79622376, 68.76017, 0.38530877, 93.62209)
+
+[node name="Lantern" parent="DesertTown" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.18483, 1.3248419, 98.14103)
 
 [node name="Cave" type="Node3D" parent="."]
 
@@ -1144,7 +1191,7 @@ min_fov = 5.0
 max_fov = 60.0
 zoom_step = 5.0
 target_y_min = 3.141592653589793
-target_y_max = 3.6651914291880923
+target_y_max = 3.665191429188092
 target_x_min = -0.9599310885968813
 target_x_max = -0.7853981633974483
 target_zoom_max = 27.0
@@ -1154,11 +1201,10 @@ camera = NodePath("../../../Dome/Tube/SubViewport/Camera3D")
 completion_animation = NodePath("../../../Dome/Tube/SubViewport/AnimationPlayer")
 metadata/_custom_type_script = "uid://covh76n2nab30"
 
-
 [node name="Rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
 transform = Transform3D(-1.0383022, 0, 2.814592, 0, 3, 0, -2.814592, 0, -1.0383022, 32.853, -1.245, 750.699)
 
-[node name="Sprite3D" type="Sprite3D" parent="Observatory/rocket"]
+[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
 texture_filter = 0
 texture = ExtResource("47_dkddj")
@@ -1205,18 +1251,8 @@ mesh = SubResource("QuadMesh_yra41")
 [node name="table" parent="Village/evil_house" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.5271336, 0, 0.5642516, 0, 1, 0, -0.8497823, 0, 0.35001433, 2.239914, 0, 2.036621)
 
-[node name="book" type="Node3D" parent="Village/evil_house"]
+[node name="book" parent="Village/evil_house" instance=ExtResource("56_0hvbb")]
 transform = Transform3D(0.91583776, 0, 0.4015483, 0, 1, 0, -0.4015483, 0, 0.91583776, 2.0291138, 0.8473301, 2.6350708)
-
-[node name="Book" type="MeshInstance3D" parent="Village/evil_house/book"]
-mesh = SubResource("ArrayMesh_x3ivo")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_32eyw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Village/evil_house/book/Book"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/evil_house/book/Book/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_scct1")
 
 [node name="open_book" type="Node3D" parent="Village/evil_house"]
 transform = Transform3D(-0.27128923, 0, -0.9624979, 0, 1, 0, 0.9624979, 0, -0.27128923, 2.5222168, 0.798018, 1.6524048)
@@ -1351,8 +1387,8 @@ transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.846
 collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
-NPC_name = "Desert dweller"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet"), SubResource("Resource_3ehlk")])
+NPC_name = "Dweller"
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Desert" instance=ExtResource("46_3vvvx")]
@@ -1423,6 +1459,11 @@ script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("7_usf2n")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
+[node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
+transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
+collision_layer = 516
+collision_mask = 7
+
 [node name="VillageChild" parent="NPCs" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.19972709, 0, 0.97985154, 0, 1, 0, -0.97985154, 0, -0.19972709, -401.03235, -8.761753, 477.2537)
 NPC_name = "Child"
@@ -1454,9 +1495,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
 revolution_trigger = ExtResource("5_oqj6p")
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
-transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
 
 [node name="extras" type="Node3D" parent="."]
 
@@ -1516,7 +1554,7 @@ shape = SubResource("CapsuleShape3D_abqhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
 volume_db = -32.381
 
-[node name="fish_pink" parent="MusicTest/Fishie" instance=ExtResource("83_gw5i7")]
+[node name="ModelOrigin" parent="MusicTest/Fishie" instance=ExtResource("83_gw5i7")]
 transform = Transform3D(0.7991075, 9.778887e-09, 2.9802322e-08, 1.071021e-08, 0.793405, 2.7939677e-09, -7.4505806e-08, 0, 0.4528981, -0.026672363, -0.6413355, 0.021881104)
 
 [node name="bed" parent="MusicTest" instance=ExtResource("92_pnpbx")]
@@ -1610,6 +1648,45 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.19157, -92.18227, 130.34619)
 shape = SubResource("SphereShape3D_kapuu")
+
+[node name="Car" parent="." instance=ExtResource("101_2811w")]
+transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
+
+[node name="Sign" type="StaticBody3D" parent="."]
+transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sign"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.043214113, 1.2726736, -0.0008886811)
+mesh = SubResource("BoxMesh_xgkao")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_xgkao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sign"]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.7173553, 0)
+shape = SubResource("BoxShape3D_2811w")
+
+[node name="Label3D" type="Label3D" parent="Sign"]
+transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, -1.6915994e-09, 1.3581362, -0.07336403)
+modulate = Color(0, 0, 0, 1)
+text = "Caution!
+Broken car!"
+font_size = 20
+outline_size = 0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sign"]
+mesh = SubResource("CylinderMesh_2811w")
+
+[node name="table" parent="." instance=ExtResource("40_usf2n")]
+transform = Transform3D(0.8340558, 0, 0.78762376, 0, 1, 0, -1.0661613, 0, 0.61615646, 75.5143, 0.53191614, 98.173874)
+
+[node name="open_book" parent="." instance=ExtResource("103_0hvbb")]
+transform = Transform3D(0.30228674, 0, 0.953217, 0, 1, 0, -0.953217, 0, 0.30228674, 75.65219, 1.3299336, 97.78284)
+
+[node name="open_book2" parent="." instance=ExtResource("103_0hvbb")]
+transform = Transform3D(0.9859844, 0, 0.16683757, 0, 1, 0, -0.16683757, 0, 0.9859844, 74.94761, 1.3299334, 98.5766)
+
+[node name="chair" parent="." instance=ExtResource("52_c6ddm")]
+transform = Transform3D(-0.5948929, 0, 0.8038049, 0, 1, 0, -0.8038049, 0, -0.5948929, 69.56122, 0.3853097, 95.49082)
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]

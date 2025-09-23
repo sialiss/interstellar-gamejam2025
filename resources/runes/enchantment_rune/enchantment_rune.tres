@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_p4608")
+rune_name = "Enchantment Rune"
 directions_array = Array[int]([4, 2, 4, 6, 4, 2, 4, 6])
 image = ExtResource("1_q8tua")
 metadata/_custom_type_script = "uid://drrd4e0xexfrm"

@@ -65,6 +65,8 @@ func cast_rune() -> void:
 		if not player:
 			push_error("Player is not found")
 		rune.execute(player)
+		print(rune.rune_name)
+		MusicManager.play_rune_sound()
 	else:
 		pass
 

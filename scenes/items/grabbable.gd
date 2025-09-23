@@ -23,20 +23,20 @@ func ungrabbed():
 func enlarge() -> void:
 	if !can_enlarge:
 		return
-		
+
 	var original_scale = scale
 	var target_scale = scale * 2
 	var tween: Tween = create_tween()
 	tween.set_parallel(true)
-	
+
 	tween.tween_property(self, "scale", target_scale, 2.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	
+
 	tween.tween_property(self, "rotation:y", rotation.y + TAU, 2.0)
-	tween.tween_property(self, "position:y", position.y + 1.0, 1.0)  
-	tween.tween_property(self, "position:y", position.y, 1.0).set_delay(1.0)  
-	
+	tween.tween_property(self, "position:y", position.y + 1.0, 1.0)
+	tween.tween_property(self, "position:y", position.y, 1.0).set_delay(1.0)
+
 	can_enlarge = false
-	
+
 	var timer = Timer.new()
 	timer.wait_time = 15
 	timer.timeout.connect(_shrink_back.bind(original_scale))

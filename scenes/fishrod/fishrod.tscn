@@ -7,6 +7,7 @@
 size = Vector3(0.32080078, 0.23297119, 3.75354)
 
 [node name="fishrod" type="RigidBody3D" groups=["enchantable", "enlargable", "fishing_rod"]]
+collision_mask = 2
 gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_8mowb")
@@ -16,5 +17,9 @@ script = ExtResource("1_8mowb")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008276939, -0.024539173, 1.7922344)
+shape = SubResource("BoxShape3D_8mowb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008276939, -0.024539173, 1.7922344)
 shape = SubResource("BoxShape3D_8mowb")
