@@ -3124,7 +3124,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.19157, -92.18227, 130.346
 shape = SubResource("SphereShape3D_kapuu")
 
 [node name="Car" parent="." instance=ExtResource("101_2811w")]
-transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
+transform = Transform3D(-0.2372915, 0.01823359, -0.97126734, 0.07661462, 0.9970608, 1.8626451e-09, 0.96841264, -0.07441328, -0.237991, -63.329468, 1.0604298, 758.05835)
+collision_layer = 6
+collision_mask = 5
 
 [node name="Sign" type="StaticBody3D" parent="."]
 transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
