@@ -3025,24 +3025,6 @@ mesh = SubResource("QuadMesh_78awm")
 [node name="house_wood" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.9976555, 0, 0.068433285, 0, 1, 0, -0.068433285, 0, 0.9976555, -386.98352, -8.388227, 502.51328)
 
-[node name="person" parent="Village/house_wood" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.8299149, 0, -0.55788994, 0, 1, 0, 0.55788994, 0, -0.8299149, 1.5860956, -0.7509327, -3.6685545)
-
-[node name="BecomeFish" type="Node3D" parent="Village/house_wood/person"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("7_usf2n")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="person" parent="Village/house_wood/person" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(0.4680223, 0, -0.88371664, 0, 1, 0, 0.88371664, 0, 0.4680223, -5.6063886, 0.40311766, 1.0533162)
-
-[node name="BecomeFish" type="Node3D" parent="Village/house_wood/person/person"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("7_usf2n")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
 [node name="house_wood2" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.44112983, 0, -0.89744323, 0, 1, 0, 0.89744323, 0, 0.44112983, -399.26385, -8.388227, 488.4465)
 
@@ -3367,7 +3349,7 @@ volume_db = -32.381
 [node name="BecomeFish" type="Node3D" parent="NPCs/Desert"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("5_oqj6p")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("5_oqj6p")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="Astronomer" type="StaticBody3D" parent="NPCs" groups=["npc"]]
@@ -3393,7 +3375,7 @@ volume_db = -32.381
 [node name="BecomeFish" type="Node3D" parent="NPCs/Astronomer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("7_usf2n")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("7_usf2n")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="chair" parent="NPCs/Astronomer" instance=ExtResource("52_c6ddm")]
@@ -3422,81 +3404,105 @@ volume_db = -32.381
 [node name="BecomeFish" type="Node3D" parent="NPCs/Fisher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("7_usf2n")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("7_usf2n")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
 transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
 
-[node name="VillageChild" parent="NPCs" instance=ExtResource("77_yj7bl")]
+[node name="ExtrasDesert" type="Node3D" parent="."]
+
+[node name="ExtrasObservatory" type="Node3D" parent="."]
+
+[node name="person" parent="ExtrasObservatory" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(-0.095116064, 0, -0.9954662, 0, 1, 0, 0.9954662, 0, -0.095116064, 202.86366, 37.87734, 642.0101)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasObservatory/person"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="person2" parent="ExtrasObservatory" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 200.96378, 37.87734, 643.00397)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasObservatory/person2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="person3" parent="ExtrasObservatory" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(-0.4573773, 0, -0.88927275, 0, 1, 0, 0.88927275, 0, -0.4573773, 216.93947, 39.192673, 644.96875)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasObservatory/person3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="person4" parent="ExtrasObservatory" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 196.52242, 39.16148, 664.78265)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasObservatory/person4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="ExtrasVillage" type="Node3D" parent="."]
+
+[node name="person" parent="ExtrasVillage" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(-0.7897909, 0, -0.6133758, 0, 1, 0, 0.6133758, 0, -0.7897909, -385.6522, -9.13916, 498.74478)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/person"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="person" parent="ExtrasVillage/person" instance=ExtResource("48_3vvvx")]
+transform = Transform3D(0.4680223, 0, -0.88371664, 0, 1, 0, 0.88371664, 0, 0.4680223, -5.6063886, 0.40311766, 1.0533162)
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/person/person"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="VillageChild" parent="ExtrasVillage" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.19972709, 0, 0.97985154, 0, 1, 0, -0.97985154, 0, -0.19972709, -401.03235, -8.761753, 477.2537)
 NPC_name = "Child"
 
-[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild"]
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/VillageChild"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("5_oqj6p")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
-[node name="VillageChild2" parent="NPCs" instance=ExtResource("77_yj7bl")]
+[node name="VillageChild2" parent="ExtrasVillage" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(0.7131527, 0, 0.70100886, 0, 1, 0, -0.70100886, 0, 0.7131527, -400.92978, -8.7505045, 476.2841)
 NPC_name = "Child"
 dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_pk7k4")])
 
-[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild2"]
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/VillageChild2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("5_oqj6p")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
-[node name="VillageChild3" parent="NPCs" instance=ExtResource("77_yj7bl")]
+[node name="VillageChild3" parent="ExtrasVillage" instance=ExtResource("77_yj7bl")]
 transform = Transform3D(-0.8447578, 0, 0.53514874, 0, 1, 0, -0.53514874, 0, -0.8447578, -399.7589, -8.753624, 479.89548)
 NPC_name = "Child"
 dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_qbtvk")])
 
-[node name="BecomeFish" type="Node3D" parent="NPCs/VillageChild3"]
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/VillageChild3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
 script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("5_oqj6p")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("7_usf2n")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
-[node name="extras" type="Node3D" parent="."]
-
-[node name="person" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.095116064, 0, -0.9954662, 0, 1, 0, 0.9954662, 0, -0.095116064, 202.86366, 37.87734, 642.0101)
-
-[node name="BecomeFish" type="Node3D" parent="extras/person"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("3_yvoaw")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="person2" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 200.96378, 37.87734, 643.00397)
-
-[node name="BecomeFish" type="Node3D" parent="extras/person2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("3_yvoaw")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="person3" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.4573773, 0, -0.88927275, 0, 1, 0, 0.88927275, 0, -0.4573773, 216.93947, 39.192673, 644.96875)
-
-[node name="BecomeFish" type="Node3D" parent="extras/person3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("4_6oqdp")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
-
-[node name="person4" parent="extras" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.9897089, 0, 0.14309537, 0, 1, 0, -0.14309537, 0, -0.9897089, 196.52242, 39.16148, 664.78265)
-
-[node name="BecomeFish" type="Node3D" parent="extras/person4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
-script = ExtResource("56_b37fd")
-revolution_trigger = ExtResource("4_6oqdp")
-metadata/_custom_type_script = "uid://ck21km2sgfifg"
+[node name="ExtrasWood" type="Node3D" parent="."]
 
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 298.3998, 6.0084453, 445.933)
@@ -3562,7 +3568,7 @@ transform = Transform3D(-0.75147134, 0, -0.6597657, 0, 0.99999976, 0, 0.6597657,
 [node name="PauseMenu" parent="." instance=ExtResource("59_ethiv")]
 layer = 10
 
-[node name="Desert" type="Area3D" parent="."]
+[node name="DesertMusic" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
@@ -3570,11 +3576,11 @@ music = ExtResource("69_oj0e3")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Desert"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DesertMusic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.93591, -142.73264, 0)
 shape = SubResource("SphereShape3D_kapuu")
 
-[node name="Observatory2" type="Area3D" parent="."]
+[node name="ObservatoryMusic" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 829.07434)
 collision_layer = 0
 collision_mask = 2
@@ -3583,11 +3589,11 @@ music = ExtResource("70_bdgmh")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObservatoryMusic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.28525, -156.5683, -216.62946)
 shape = SubResource("SphereShape3D_kapuu")
 
-[node name="Forest" type="Area3D" parent="."]
+[node name="ForestMusic" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.49374, 139.8728, 188.84857)
 collision_layer = 0
 collision_mask = 2
@@ -3596,12 +3602,12 @@ music = ExtResource("71_3sil5")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForestMusic"]
 transform = Transform3D(-0.047402777, 0.89786774, 0.43770596, -0.99887586, -0.042609327, -0.02077183, -1.8626451e-09, -0.43819857, 0.8988782, 7.6079445, -267.94388, 82.66283)
 shape = SubResource("CylinderShape3D_hfud1")
 debug_color = Color(0.51265943, 0, 0.20523602, 0.41960785)
 
-[node name="Sea" type="Area3D" parent="."]
+[node name="SeaMusic" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -737.77563, 0, 276.29208)
 collision_layer = 0
 collision_mask = 2
@@ -3610,7 +3616,7 @@ music = ExtResource("72_3osn7")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SeaMusic"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.19157, -92.18227, 130.34619)
 shape = SubResource("SphereShape3D_kapuu")
 
