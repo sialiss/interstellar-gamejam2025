@@ -2342,6 +2342,12 @@ material_override = SubResource("StandardMaterial3D_je5e5")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_78awm")
 
+[node name="Car2" parent="Observatory" instance=ExtResource("101_2811w")]
+transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
+
+[node name="Sign2" type="StaticBody3D" parent="Observatory"]
+transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
+
 [node name="Car" parent="Observatory" instance=ExtResource("101_2811w")]
 transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
 
@@ -2369,23 +2375,17 @@ outline_size = 0
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Observatory/Sign"]
 mesh = SubResource("CylinderMesh_2811w")
 
-[node name="Car" parent="Observatory" instance=ExtResource("101_2811w")]
-transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
-
-[node name="Sign" type="StaticBody3D" parent="Observatory"]
-transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Observatory/Sign"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Observatory/Sign"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.043214113, 1.2726736, -0.0008886811)
 mesh = SubResource("BoxMesh_xgkao")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgkao")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/Sign"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Observatory/Sign"]
 transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.7173553, 0)
 shape = SubResource("BoxShape3D_2811w")
 
-[node name="Label3D" type="Label3D" parent="Observatory/Sign"]
+[node name="Label3D2" type="Label3D" parent="Observatory/Sign"]
 transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, -1.6915994e-09, 1.3581362, -0.07336403)
 modulate = Color(0, 0, 0, 1)
 text = "Caution!
@@ -2393,7 +2393,7 @@ Broken car!"
 font_size = 20
 outline_size = 0
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Observatory/Sign"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Observatory/Sign"]
 mesh = SubResource("CylinderMesh_2811w")
 
 [node name="Village" type="Node3D" parent="."]
