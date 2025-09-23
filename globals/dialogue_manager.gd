@@ -1,7 +1,6 @@
 extends Node
 
 var completed_dialogues: Dictionary = {}
-#var active_triggers: Dictionary = {}
 
 func _ready() -> void:
 	EventBus.cycle_reset.connect(_reset)
