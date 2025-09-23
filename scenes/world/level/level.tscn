@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=201 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
