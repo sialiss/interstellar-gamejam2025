@@ -22,6 +22,9 @@ func shoot_bullet():
 	get_parent().add_child(bullet)
 	bullet.global_transform = %MuzzlePoint.global_transform
 
+func stop_spinning():
+	$SpinAnimationPlayer.stop(true)
+
 
 class BigFishState extends State:
 	var host: BigFish
@@ -42,7 +45,7 @@ class KillTurnState extends BigFishState:
 	var current_quat: Quaternion
 
 	func _ready():
-		host.get_node(^"SpinAnimationPlayer").stop(true)
+		host.stop_spinning()
 		current_transform = host.fish.global_transform
 		current_quat = Quaternion(current_transform.basis.orthonormalized())
 
