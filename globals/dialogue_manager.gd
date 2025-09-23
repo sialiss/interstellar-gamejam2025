@@ -3,6 +3,12 @@ extends Node
 var completed_dialogues: Dictionary = {}
 #var active_triggers: Dictionary = {}
 
+func _ready() -> void:
+	EventBus.cycle_reset.connect(_reset)
+
+func _reset():
+	completed_dialogues.clear()
+
 func mark_completed(id: String) -> void:
 	if id != "":
 		completed_dialogues[id] = true
