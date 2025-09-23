@@ -19,9 +19,6 @@ signal hide_prompt()
 @export var mass := 1.0
 
 var can_move: bool = true
-
-# Переменные для управления камерой
-var camera_angle: float = 0
 var do_camera_move: bool = true
 
 var grabbed_item: Grabbable
@@ -138,6 +135,20 @@ func _physics_process(delta: float) -> void:
 
 	# Применение движения
 	move_and_slide()
+
+
+func start_transformation_sequence():
+	can_move = false
+	do_camera_move = false
+	ungrab()
+	set_physics_process(false)
+	set_process(false)
+	set_process_input(false)
+	$TransformationAnimationPlayer.play("transform")
+
+func transformation_complete():
+	SceneManager.change_to_death_scene()
+
 
 func _on_dialogue_mode(is_dialogue_mode: bool):
 	can_move = !is_dialogue_mode
