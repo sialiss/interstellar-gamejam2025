@@ -1,5 +1,4 @@
-[gd_scene load_steps=188 format=4 uid="uid://cqelj6eb7mfuo"]
-[gd_scene load_steps=212 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=224 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -116,33 +115,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_whib0"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_3ehlk"]
+[sub_resource type="Resource" id="Resource_ipee5"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_jpodg"]
+[sub_resource type="Resource" id="Resource_bhuc7"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ipee5"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_bhuc7"]
+[sub_resource type="Resource" id="Resource_caskx"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_whib0"), SubResource("Resource_3ehlk"), SubResource("Resource_jpodg"), SubResource("Resource_ipee5")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7"), SubResource("Resource_p8loj")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -175,31 +174,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_p8loj"]
+[sub_resource type="Resource" id="Resource_nnhlb"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_caskx"]
+[sub_resource type="Resource" id="Resource_1t2ts"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_nnhlb"]
+[sub_resource type="Resource" id="Resource_cl431"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_1t2ts"]
+[sub_resource type="Resource" id="Resource_kls22"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_cl431"]
+[sub_resource type="Resource" id="Resource_irlnd"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_p8loj"), SubResource("Resource_caskx"), SubResource("Resource_nnhlb"), SubResource("Resource_1t2ts")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_nnhlb"), SubResource("Resource_1t2ts"), SubResource("Resource_cl431"), SubResource("Resource_kls22")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -885,15 +884,7 @@ fixed_size = true
 [sub_resource type="QuadMesh" id="QuadMesh_78awm"]
 size = Vector2(0.125, 0.125)
 
-[sub_resource type="Curve" id="Curve_a76df"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
-curve = SubResource("Curve_a76df")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_caskx"]
-
 resource_local_to_scene = true
 emission_shape = 3
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
@@ -1598,1023 +1589,7 @@ _data = {
 &"win": SubResource("Animation_78awm")
 }
 
-[sub_resource type="Animation" id="Animation_sr2vx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(32.853115, -1.2451088, 750.6987)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rocket:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.0279117, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3, 3, 3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rocket/GPUParticles3D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rocket/Flash:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("rocket/fishing_rod:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(10, 10.000001, 10.000001)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("rocket/fishing_rod:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(2.1002407, 14.597013, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("rocket/fishing_rod:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5676897, 0, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../WinCamera:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(55.148983, 14.717134, 764.88666)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../WinCamera:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.34320155, 1.033357, 1.0290349e-09)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../WinCamera:fov")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [75.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../WinCamera:current")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../BigFish/Fish:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.302701e-15, 0, 1.4901163e-08)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../BigFish:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.7923795, 0, -0.33684868)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../BigFish:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3000, 5000, -2000)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("rocket/Flash:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 13.11795, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("rocket/rocket/Cylinder:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../WinCamera/CanvasLayer:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("rocket:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("../BigFish:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_78awm"]
-resource_name = "win"
-length = 32.6
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.6000001, 5, 5.4, 15, 24.8, 26.4, 32.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, 374.18445, 750.6987), Vector3(32.853115, 374.18445, 750.6987), Vector3(2364.16, 5000, -2000), Vector3(2364.16, 5000, -2000), Vector3(2364.16, 5000, -2000), Vector3(-23135.377, 5000, -2000)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rocket:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.1999998, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.8999999, 2.9999998, 3.1, 3.2, 3.3, 3.3999999, 3.5, 3.6, 5, 5.4, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.0279117, 0), Vector3(0, 1.0279117, 0), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(0, 1.0279117, 0), Vector3(0, 4.3964844, 0), Vector3(0, 4.3964844, 0), Vector3(0, 4.3964844, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5, 5.4, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(3, 3, 3), Vector3(3, 3, 3), Vector3(3, 3, 3), Vector3(3, 3, 3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rocket/GPUParticles3D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rocket/Flash:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4.7, 4.9, 5.6, 15, 15.1, 15.4, 25.800003, 25.9, 26.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(2, 2, 2), Vector3(0.3, 0.3, 0.3), Vector3(0.135, 0.135, 0.135), Vector3(0.585, 0.585, 0.585), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(2, 2, 2), Vector3(0.795, 0.795, 0.795)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("rocket/fishing_rod:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(10, 10.000001, 10.000001), Vector3(10, 10.000001, 10.000001), Vector3(500, 500, 500), Vector3(500, 500, 500)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("rocket/fishing_rod:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(2.1002407, 14.597013, 0), Vector3(2.1002407, 14.597013, 0), Vector3(852.75183, -378.91327, 1353.7799), Vector3(852.75183, -378.91327, 1353.7799)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("rocket/fishing_rod:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.5676897, 0, 0), Vector3(-1.5676897, 0, 0), Vector3(-2.4260077, 0.56199604, 3.1415927)]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../BigFish")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"stop_spinning"
-}]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../WinCamera:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 2.4, 4.1, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 26.2),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(73.63043, 101.78834, 781.04236), Vector3(55.55702, 6.397622, 765.1298), Vector3(-10.670887, 28.395378, 848.35785), Vector3(-403.26355, -9.015161, 503.25278), Vector3(45.62036, 3.4201927, 92.360825), Vector3(161.31422, 38.13964, 660.30176), Vector3(-832.3093, 2407.9526, 534.85223), Vector3(-1041.2167, 13.185669, 639.64966), Vector3(-1041.2167, 13.185669, 639.64966), Vector3(-503.36432, -10.245115, 447.9606), Vector3(-503.31143, -10.264652, 448.07568)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../WinCamera:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 2.4, 4.1, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 26.2),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.53476894, 0.8970643, -1.7319149e-08), Vector3(0.631408, 1.0333571, -9.2301855e-09), Vector3(0.60562927, -0.5375614, 0), Vector3(0.60562927, -0.7507883, 1.556844e-08), Vector3(0.58817595, -1.0803589, 0), Vector3(0.5009095, -0.8883726, 0), Vector3(0.45727625, -1.0960667, 0), Vector3(0.7452556, -1.0454522, 0), Vector3(1.0157816, -0.83252203, 0), Vector3(1.0943215, -0.40491638, 0), Vector3(1.0419616, -0.23038352, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../WinCamera:fov")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 2.4, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 29.9),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [49.5, 82.2, 72.2, 85.2, 66.4, 25.4, 27.9, 43.9, 36.2, 97.9]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../WinCamera:current")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 32.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../BigFish/Fish:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.302701e-15, 0, 1.4901163e-08)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../BigFish:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 6.1, 18.5, 21.5, 22.6, 24.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.7923795, 0, -0.33684868), Vector3(0.7923795, 0, -0.33684868), Vector3(0.56076, -0.40529794, -0.1937594), Vector3(0.06803668, -1.6462147, -0.23711902), Vector3(0.06803668, -1.6462147, -0.23711902), Vector3(0.06803668, -1.5765761, -0.23711902)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../BigFish:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 19.5, 21.5, 22.6, 24.2, 26.4, 32.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(3000, 5000, -2000), Vector3(3000, 5000, -2000), Vector3(5349.652, 6992.287, -2000), Vector3(5349.652, 6992.287, -2000), Vector3(4425.6777, 6856.208, -2000), Vector3(4425.6777, 6856.208, -2000), Vector3(-21073.857, 6856.208, -2000)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("rocket/Flash:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 25.6, 25.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 13.11795, 0), Vector3(0, 13.11795, 0), Vector3(703.91785, -182.5039, 1124.8293)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("rocket/rocket/Cylinder:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 4.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("../WinCamera/CanvasLayer:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(31.3, 32.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("rocket:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 32.600002),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("../BigFish:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 32.600002),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kge0y"]
-_data = {
-&"RESET": SubResource("Animation_sr2vx"),
-&"win": SubResource("Animation_78awm")
-}
-
-[sub_resource type="Animation" id="Animation_sr2vx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(32.853115, -1.2451088, 750.6987)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rocket:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.0279117, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3, 3, 3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rocket/GPUParticles3D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rocket/Flash:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("rocket/fishing_rod:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(10, 10.000001, 10.000001)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("rocket/fishing_rod:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(2.1002407, 14.597013, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("rocket/fishing_rod:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5676897, 0, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../WinCamera:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(55.148983, 14.717134, 764.88666)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../WinCamera:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.34320155, 1.033357, 1.0290349e-09)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../WinCamera:fov")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [75.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../WinCamera:current")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../BigFish/Fish:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.302701e-15, 0, 1.4901163e-08)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../BigFish:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.7923795, 0, -0.33684868)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../BigFish:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3000, 5000, -2000)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("rocket/Flash:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 13.11795, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("rocket/rocket/Cylinder:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../WinCamera/CanvasLayer:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("rocket:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("../BigFish:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_78awm"]
-resource_name = "win"
-length = 32.6
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.6000001, 5, 5.4, 15, 24.8, 26.4, 32.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, 374.18445, 750.6987), Vector3(32.853115, 374.18445, 750.6987), Vector3(2364.16, 5000, -2000), Vector3(2364.16, 5000, -2000), Vector3(2364.16, 5000, -2000), Vector3(-23135.377, 5000, -2000)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rocket:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.1999998, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.8999999, 2.9999998, 3.1, 3.2, 3.3, 3.3999999, 3.5, 3.6, 5, 5.4, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.0279117, 0), Vector3(0, 1.0279117, 0), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(0, 1.0279117, 0), Vector3(0, 4.3964844, 0), Vector3(0, 4.3964844, 0), Vector3(0, 4.3964844, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5, 5.4, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(3, 3, 3), Vector3(3, 3, 3), Vector3(3, 3, 3), Vector3(3, 3, 3)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rocket/GPUParticles3D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rocket/Flash:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4.7, 4.9, 5.6, 15, 15.1, 15.4, 25.800003, 25.9, 26.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(2, 2, 2), Vector3(0.3, 0.3, 0.3), Vector3(0.135, 0.135, 0.135), Vector3(0.585, 0.585, 0.585), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(2, 2, 2), Vector3(0.795, 0.795, 0.795)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("rocket/fishing_rod:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(10, 10.000001, 10.000001), Vector3(10, 10.000001, 10.000001), Vector3(500, 500, 500), Vector3(500, 500, 500)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("rocket/fishing_rod:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(2.1002407, 14.597013, 0), Vector3(2.1002407, 14.597013, 0), Vector3(852.75183, -378.91327, 1353.7799), Vector3(852.75183, -378.91327, 1353.7799)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("rocket/fishing_rod:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 15.091576, 18),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.5676897, 0, 0), Vector3(-1.5676897, 0, 0), Vector3(-2.4260077, 0.56199604, 3.1415927)]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../BigFish")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"stop_spinning"
-}]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../WinCamera:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 2.4, 4.1, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 26.2),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(73.63043, 101.78834, 781.04236), Vector3(55.55702, 6.397622, 765.1298), Vector3(-10.670887, 28.395378, 848.35785), Vector3(-403.26355, -9.015161, 503.25278), Vector3(45.62036, 3.4201927, 92.360825), Vector3(161.31422, 38.13964, 660.30176), Vector3(-832.3093, 2407.9526, 534.85223), Vector3(-1041.2167, 13.185669, 639.64966), Vector3(-1041.2167, 13.185669, 639.64966), Vector3(-503.36432, -10.245115, 447.9606), Vector3(-503.31143, -10.264652, 448.07568)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../WinCamera:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 2.4, 4.1, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 26.2),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.53476894, 0.8970643, -1.7319149e-08), Vector3(0.631408, 1.0333571, -9.2301855e-09), Vector3(0.60562927, -0.5375614, 0), Vector3(0.60562927, -0.7507883, 1.556844e-08), Vector3(0.58817595, -1.0803589, 0), Vector3(0.5009095, -0.8883726, 0), Vector3(0.45727625, -1.0960667, 0), Vector3(0.7452556, -1.0454522, 0), Vector3(1.0157816, -0.83252203, 0), Vector3(1.0943215, -0.40491638, 0), Vector3(1.0419616, -0.23038352, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../WinCamera:fov")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 2.4, 6.1, 8.2, 10.2, 12.1, 15.1, 18.300001, 21.9, 29.9),
-"transitions": PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1, 1),
-"update": 0,
-"values": [49.5, 82.2, 72.2, 85.2, 66.4, 25.4, 27.9, 43.9, 36.2, 97.9]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../WinCamera:current")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 32.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../BigFish/Fish:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.302701e-15, 0, 1.4901163e-08)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../BigFish:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 6.1, 18.5, 21.5, 22.6, 24.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.7923795, 0, -0.33684868), Vector3(0.7923795, 0, -0.33684868), Vector3(0.56076, -0.40529794, -0.1937594), Vector3(0.06803668, -1.6462147, -0.23711902), Vector3(0.06803668, -1.6462147, -0.23711902), Vector3(0.06803668, -1.5765761, -0.23711902)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../BigFish:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 19.5, 21.5, 22.6, 24.2, 26.4, 32.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(3000, 5000, -2000), Vector3(3000, 5000, -2000), Vector3(5349.652, 6992.287, -2000), Vector3(5349.652, 6992.287, -2000), Vector3(4425.6777, 6856.208, -2000), Vector3(4425.6777, 6856.208, -2000), Vector3(-21073.857, 6856.208, -2000)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("rocket/Flash:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 25.6, 25.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 13.11795, 0), Vector3(0, 13.11795, 0), Vector3(703.91785, -182.5039, 1124.8293)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("rocket/rocket/Cylinder:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 4.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("../WinCamera/CanvasLayer:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(31.3, 32.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("rocket:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 32.600002),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("../BigFish:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 32.600002),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kge0y"]
-_data = {
-&"RESET": SubResource("Animation_sr2vx"),
-&"win": SubResource("Animation_78awm")
-}
-
-[node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
+[node name="Level" type="Node3D"]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
 
@@ -2625,6 +1600,9 @@ assets = ExtResource("2_m7tpt")
 collision_mode = 4
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="Observatory_observatory__StaticBody3D_34467#Lantern2" parent="." instance=ExtResource("25_iu8k4")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, 210.82716, 39.888054, 641.07733)
 
 [node name="LowerBoundary" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.582245, -9.078999, 320.60693)
@@ -2645,7 +1623,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_bhuc7")
+modifier_stack = SubResource("Resource_caskx")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -2710,7 +1688,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_cl431")
+modifier_stack = SubResource("Resource_irlnd")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -3261,9 +2239,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_xb217")
 }
 
-[node name="Lantern" parent="Observatory/observatory/@StaticBody3D@34467" index="1" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, 3.0781305, -12.924896, -21.857748)
-
 [node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.029334787, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334787, 3.3853662, 0, -0.5534874)
 
@@ -3388,6 +2363,11 @@ metadata/_custom_type_script = "uid://covh76n2nab30"
 [node name="rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
 
+[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="Observatory/rocket/rocket" index="1"]
+transform = Transform3D(0.025566064, 0, 0.01569638, 0, 0.03, 0, -0.01569638, 0, 0.025566064, 3.2822876, 1.0413412, -1.7051239)
+texture_filter = 0
+texture = ExtResource("47_dkddj")
+
 [node name="fishing_rod" parent="Observatory/rocket" index="1"]
 transform = Transform3D(10, 0, 0, 0, 0.031066649, 9.999952, 0, -9.999952, 0.031066649, 2.1002407, 14.597013, 0)
 
@@ -3405,11 +2385,6 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13.11795, 0)
 material_override = SubResource("StandardMaterial3D_je5e5")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_78awm")
-
-[node name="Observatory_rocket#Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.0433052, 0, 0.024993194, 0, 0.05, 0, -0.024993194, 0, 0.0433052, 2.8830585, 2.7077262, -1.520741)
-texture_filter = 0
-texture = ExtResource("47_dkddj")
 
 [node name="Village" type="Node3D" parent="."]
 
