@@ -7,4 +7,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and music:
-		MusicManager.play_music(music)
+		MusicManager.play_music(self.name, music)
