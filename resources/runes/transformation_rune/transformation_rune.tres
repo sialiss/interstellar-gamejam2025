@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="TransformationRune" load_steps=3 format=3 uid="uid://bgwak8m8gk75i"]
 
-[ext_resource type="Texture2D" uid="uid://crrwglfctbcv8" path="res://assets/sprites/1.1.png" id="1_bh8t8"]
+[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/7.1.png" id="1_bh8t8"]
 [ext_resource type="Script" uid="uid://bfxcoluapkkiv" path="res://resources/runes/transformation_rune/transformation_rune.gd" id="1_wapav"]
 
 [resource]
 script = ExtResource("1_wapav")
 rune_name = "Transformation Rune"
-directions_array = Array[int]([4, 3, 2, 1, 0, 7, 6, 5, 4, 6, 0])
+directions_array = Array[int]([0, 2, 4, 7, 1])
 image = ExtResource("1_bh8t8")
 metadata/_custom_type_script = "uid://bfxcoluapkkiv"
