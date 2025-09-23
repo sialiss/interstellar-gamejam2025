@@ -2,6 +2,7 @@ extends Node
 
 @onready var player_a: AudioStreamPlayer = $LocationAudio1
 @onready var player_b: AudioStreamPlayer = $LocationAudio2
+@onready var rune_player: AudioStreamPlayer = $RuneSound
 var active_player: AudioStreamPlayer
 var inactive_player: AudioStreamPlayer
 
@@ -32,3 +33,6 @@ func _swap_players():
 	var temp = active_player
 	active_player = inactive_player
 	inactive_player = temp
+
+func play_rune_sound():
+	rune_player.play()

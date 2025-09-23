@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://f4jq7vu5p1am"]
+[gd_scene load_steps=8 format=3 uid="uid://f4jq7vu5p1am"]
 
 [ext_resource type="Theme" uid="uid://c8nb6ck7k047d" path="res://scenes/menu/main/main_menu_theme.tres" id="1_a3xnm"]
 [ext_resource type="Script" uid="uid://c3hfssw4tkp7d" path="res://scenes/menu/pause/pause_menu.gd" id="1_ab405"]
 [ext_resource type="Script" uid="uid://rt1yhlpa3o0f" path="res://scenes/menu/pause/volume_slider.gd" id="2_igexi"]
+[ext_resource type="Texture2D" uid="uid://nokxltsb07ft" path="res://assets/textures/page.png" id="4_cpfut"]
 
 [sub_resource type="Gradient" id="Gradient_3lxs2"]
 colors = PackedColorArray(0, 0, 0, 0.35686275, 0, 0, 0, 0.77254903)
@@ -13,6 +14,10 @@ width = 455
 height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xkyh"]
+line_spacing = 2.5
+font_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -70,3 +75,37 @@ custom_minimum_size = Vector2(192, 48)
 layout_mode = 2
 theme = ExtResource("1_a3xnm")
 text = "Quit"
+
+[node name="Page1" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -135.99994
+offset_right = 96.0
+offset_bottom = 248.00006
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.11922016
+texture = ExtResource("4_cpfut")
+
+[node name="name" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.0625
+anchor_right = 0.5
+anchor_bottom = 0.0625
+offset_left = -142.96806
+offset_top = 1.7325859
+offset_right = 28.031937
+offset_bottom = 102.73259
+grow_horizontal = 2
+text = "[ N ] - RUNEBOOK
+[ TAB ] - RUNE MODE
+IN RUNE MODE HOLD 
+[ LMB ] TO DRAW"
+label_settings = SubResource("LabelSettings_4xkyh")
+horizontal_alignment = 1

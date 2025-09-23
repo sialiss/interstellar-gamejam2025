@@ -9,7 +9,7 @@ static var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/enchantment_rune/enchantment_rune.tres")
 ]
 
-static var max_errors: int = 3 # Все руны должны состоять из n + 1 линий!
+static var max_errors: int = 2 # Все руны должны состоять из n + 1 линий!
 
 static func get_patterns() -> Array[RunePattern]:
 	return rune_patterns
