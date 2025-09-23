@@ -1,4 +1,4 @@
-[gd_scene load_steps=226 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=238 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -118,33 +118,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_jpodg"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ipee5"]
+[sub_resource type="Resource" id="Resource_caskx"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_bhuc7"]
+[sub_resource type="Resource" id="Resource_nnhlb"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_p8loj"]
+[sub_resource type="Resource" id="Resource_1t2ts"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_caskx"]
+[sub_resource type="Resource" id="Resource_cl431"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7"), SubResource("Resource_p8loj")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_p8loj"), SubResource("Resource_caskx"), SubResource("Resource_nnhlb"), SubResource("Resource_1t2ts")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -177,31 +177,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_nnhlb"]
+[sub_resource type="Resource" id="Resource_kls22"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_1t2ts"]
+[sub_resource type="Resource" id="Resource_irlnd"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_cl431"]
+[sub_resource type="Resource" id="Resource_7gb3y"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kls22"]
+[sub_resource type="Resource" id="Resource_vgk2m"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_irlnd"]
+[sub_resource type="Resource" id="Resource_ubk87"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_nnhlb"), SubResource("Resource_1t2ts"), SubResource("Resource_cl431"), SubResource("Resource_kls22")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_kls22"), SubResource("Resource_irlnd"), SubResource("Resource_7gb3y"), SubResource("Resource_vgk2m")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -1767,7 +1767,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_caskx")
+modifier_stack = SubResource("Resource_cl431")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1832,7 +1832,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_irlnd")
+modifier_stack = SubResource("Resource_ubk87")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -1928,7 +1928,6 @@ transform = Transform3D(0.8126534, 0, -0.58274716, 0, 1, 0, 0.58274716, 0, 0.812
 
 [node name="evil_smoke" parent="DesertTown/house2" instance=ExtResource("29_i2f8p")]
 transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
-visible = false
 process_material = SubResource("ParticleProcessMaterial_yra41")
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
 
