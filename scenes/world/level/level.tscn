@@ -1564,10 +1564,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 transform = Transform3D(-1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000002, 0, 11.933823, 13.318619)
 remote_path = NodePath("../SubViewport/Camera3D")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Observatory/observatory/Dome/Tube" index="2"]
-layer = 406
-
-[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="3"]
+[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="2"]
 size = Vector2i(256, 256)
 
 [node name="Camera3D" type="Camera3D" parent="Observatory/observatory/Dome/Tube/SubViewport"]
