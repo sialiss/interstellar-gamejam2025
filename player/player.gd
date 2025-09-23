@@ -169,7 +169,6 @@ func ungrab():
 
 func store(item: Item):
 	grabbed_item = item
-	print('store', item)
 	if inventory.add_item(item):
 		#item.stored()
 		item.hide_from_world()
@@ -179,5 +178,7 @@ func unstore(index: int):
 	var item = inventory.remove_item(index)
 	if item:
 		var forward = - global_transform.basis.z.normalized()
-		var drop_pos = global_transform.origin + forward * 1.5 + Vector3(0, 1, 0)
+		#var drop_pos = global_transform.origin + forward * 1.5 + Vector3(0, 1.5, 0)
+		var drop_pos = global_transform.origin + forward * 1.5 + Vector3(0, 1.5, 0)
+		print()
 		item.show_in_world(drop_pos, get_parent())

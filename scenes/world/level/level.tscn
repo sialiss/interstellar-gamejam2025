@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=177 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cmynn8s2ylaur" path="res://scenes/world/level/terrain_material.tres" id="1_2br6d"]
@@ -41,7 +41,6 @@
 [ext_resource type="PackedScene" uid="uid://ddlk028qp6ygu" path="res://scenes/entities/lantern/lantern.tscn" id="25_iu8k4"]
 [ext_resource type="Texture2D" uid="uid://ba35am4forio5" path="res://assets/textures/Ground/simple_sand.png" id="26_60pun"]
 [ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
-[ext_resource type="Texture2D" uid="uid://3mtdvoayf8iw" path="res://assets/sprites/cave_rune_pic.png" id="27_x13hu"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
@@ -51,6 +50,7 @@
 [ext_resource type="Resource" uid="uid://dabyb3jpxdvoi" path="res://resources/dialogues/desert_start.tres" id="32_xsiqw"]
 [ext_resource type="Resource" uid="uid://bqcmed43hgbjd" path="res://resources/dialogues/desert_after_cave.tres" id="33_g7qrx"]
 [ext_resource type="Resource" uid="uid://ch8lfoaucgyff" path="res://resources/dialogues/desert_after_rune.tres" id="34_g7qrx"]
+[ext_resource type="Texture2D" uid="uid://c3kcsvsu4ytwx" path="res://assets/sprites/3.1.png" id="39_je5e5"]
 [ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
 [ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
@@ -108,33 +108,33 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
-[sub_resource type="Resource" id="Resource_je5e5"]
+[sub_resource type="Resource" id="Resource_78awm"]
 script = ExtResource("7_6l5f2")
 radius = 13.0
 samples_before_rejection = 5
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_78awm"]
+[sub_resource type="Resource" id="Resource_sr2vx"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(0.7, 0.7, 0.7)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_sr2vx"]
+[sub_resource type="Resource" id="Resource_kge0y"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kge0y"]
+[sub_resource type="Resource" id="Resource_whib0"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 15.0
 
-[sub_resource type="Resource" id="Resource_whib0"]
+[sub_resource type="Resource" id="Resource_3ehlk"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_je5e5"), SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_78awm"), SubResource("Resource_sr2vx"), SubResource("Resource_kge0y"), SubResource("Resource_whib0")])
 
 [sub_resource type="Resource" id="Resource_a76df"]
 script = ExtResource("12_vi8x0")
@@ -167,31 +167,31 @@ script = ExtResource("12_vi8x0")
 size = Vector3(100, 150, 1)
 metadata/_custom_type_script = "uid://dto7dy11vsd32"
 
-[sub_resource type="Resource" id="Resource_3ehlk"]
+[sub_resource type="Resource" id="Resource_jpodg"]
 script = ExtResource("16_60pun")
 amount = 1000
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_jpodg"]
+[sub_resource type="Resource" id="Resource_ipee5"]
 script = ExtResource("16_2v6y8")
 scale = Vector3(3, 3, 3)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ipee5"]
+[sub_resource type="Resource" id="Resource_bhuc7"]
 script = ExtResource("8_60pun")
 position = Vector3(5, 5, 0)
 rotation = Vector3(0, 360, 0)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_bhuc7"]
+[sub_resource type="Resource" id="Resource_p8loj"]
 script = ExtResource("10_ml3ux")
 ray_length = 100.0
 max_slope = 30.0
 
-[sub_resource type="Resource" id="Resource_p8loj"]
+[sub_resource type="Resource" id="Resource_caskx"]
 script = ExtResource("5_vi8x0")
-stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_3ehlk"), SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
+stack = Array[ExtResource("6_2wrvh")]([SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7"), SubResource("Resource_p8loj")])
 
 [sub_resource type="Resource" id="Resource_ni50r"]
 script = ExtResource("12_vi8x0")
@@ -250,6 +250,28 @@ auto_exposure_scale = 0.8
 dof_blur_far_distance = 120.59
 dof_blur_far_transition = 209.75
 auto_exposure_max_sensitivity = 700.0
+
+[sub_resource type="Curve" id="Curve_a76df"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
+curve = SubResource("Curve_a76df")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(3.535, 1.705, 2.78)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.1499999
+scale_max = 2.1499999
+alpha_curve = SubResource("CurveTexture_iu8k4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mjd8"]
+albedo_color = Color(0.05, 0.05, 0.05, 1)
+metallic_specular = 0.31
+
+[sub_resource type="QuadMesh" id="QuadMesh_yra41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62kgg"]
 resource_name = "Cover"
@@ -447,14 +469,7 @@ albedo_texture = SubResource("ViewportTexture_qbtvk")
 [sub_resource type="BoxShape3D" id="BoxShape3D_gw5i7"]
 size = Vector3(0.27, 0.068894535, 0.27)
 
-[sub_resource type="Curve" id="Curve_a76df"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_iu8k4"]
-curve = SubResource("Curve_a76df")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yra41"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_caskx"]
 resource_local_to_scene = true
 emission_shape = 3
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
@@ -462,12 +477,6 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.1499999
 scale_max = 2.1499999
 alpha_curve = SubResource("CurveTexture_iu8k4")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mjd8"]
-albedo_color = Color(0.05, 0.05, 0.05, 1)
-metallic_specular = 0.31
-
-[sub_resource type="QuadMesh" id="QuadMesh_yra41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ku0a"]
 resource_name = "Cover"
@@ -657,10 +666,9 @@ size = Vector3(1.6, 2, 0.1)
 top_radius = 0.1
 bottom_radius = 0.1
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("npcs")]
+[node name="Level" type="Node3D"]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
-npcs = [NodePath("NPCs/Desert"), NodePath("NPCs/Astronomer"), NodePath("NPCs/Fisher"), NodePath("NPCs/VillageChild"), NodePath("NPCs/VillageChild2"), NodePath("NPCs/VillageChild3"), NodePath("MusicTest/Fishie")]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/world/level/terrain_data"
@@ -689,7 +697,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 36
 script = ExtResource("4_ml3ux")
 keep_static_colliders = true
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_whib0")
+modifier_stack = SubResource("Resource_3ehlk")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -754,7 +762,7 @@ metadata/_custom_type_script = "uid://63oua4i1wyv1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -272.1042, -6.1035156e-05, 361.26407)
 script = ExtResource("4_ml3ux")
 force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_p8loj")
+modifier_stack = SubResource("Resource_caskx")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://dux7gm4b61iwq"
@@ -838,6 +846,24 @@ transform = Transform3D(0.9738928, 0, 0.22700827, 0, 1, 0, -0.22700827, 0, 0.973
 
 [node name="house2" parent="DesertTown" instance=ExtResource("4_l07wb")]
 transform = Transform3D(0.8126534, 0, -0.58274716, 0, 1, 0, 0.58274716, 0, 0.8126534, 84.23818, 0.9830953, 75.13281)
+
+[node name="evil_smoke" parent="DesertTown/house2" instance=ExtResource("29_i2f8p")]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
+visible = false
+process_material = SubResource("ParticleProcessMaterial_yra41")
+emission_box_extents = Vector3(3.535, 1.705, 2.78)
+
+[node name="RuneHint" type="Sprite3D" parent="DesertTown/house2"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 2.402812e-07, 1.3093967, -2.477152)
+
+[node name="HintHider" type="MeshInstance3D" parent="DesertTown/house2"]
+transform = Transform3D(2.0898712, 0, 0.011099845, 0, 1, 0, -0.023198605, 0, 0.99993837, -0.004477287, 1.3120532, -2.441262)
+visible = false
+material_override = SubResource("StandardMaterial3D_3mjd8")
+mesh = SubResource("QuadMesh_yra41")
+
+[node name="Lantern" parent="DesertTown/house2" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -1.6769769, -0.9763231, 3.7134416)
 
 [node name="house4" parent="DesertTown" instance=ExtResource("4_l07wb")]
 transform = Transform3D(-0.9987795, 0, -0.049390316, 0, 1, 0, 0.049390316, 0, -0.9987795, 90.64198, 0.78053427, 106.15562)
@@ -924,16 +950,16 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.347642, -23.527863)
 texture = ExtResource("26_lhtwf")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Cave/cave"]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 35.792152, -4.3602133, -17.557861)
-texture = ExtResource("27_x13hu")
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 35.792152, -3.6175451, -17.557861)
+texture = ExtResource("39_je5e5")
 
 [node name="Sprite3D3" type="Sprite3D" parent="Cave/cave"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 26.02494, -4.3602133, -26.365082)
-texture = ExtResource("27_x13hu")
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 26.02494, -3.654077, -26.365082)
+texture = ExtResource("39_je5e5")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Cave/cave"]
-transform = Transform3D(-3, 2.6226832e-07, 0, -2.6226832e-07, -3, 0, 0, 0, 3, 26.02494, -3.4551191, -10.048325)
-texture = ExtResource("27_x13hu")
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 26.02494, -3.4551191, -10.048325)
+texture = ExtResource("39_je5e5")
 
 [node name="Lantern" parent="Cave/cave" instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.068275, -7.366039, -25.775726)
@@ -1231,8 +1257,7 @@ transform = Transform3D(0.52713364, 0, -0.8497824, 0, 1, 0, 0.8497824, 0, 0.5271
 
 [node name="evil_smoke" parent="Village/evil_house" instance=ExtResource("29_i2f8p")]
 transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -0.21948856, 1.7146869, 0.3231478)
-visible = false
-process_material = SubResource("ParticleProcessMaterial_yra41")
+process_material = SubResource("ParticleProcessMaterial_caskx")
 emission_box_extents = Vector3(3.535, 1.705, 2.78)
 
 [node name="EvilHouseLantern" parent="Village/evil_house" instance=ExtResource("25_iu8k4")]
@@ -1244,7 +1269,6 @@ texture = ExtResource("50_pk7k4")
 
 [node name="HintHider" type="MeshInstance3D" parent="Village/evil_house"]
 transform = Transform3D(-2.09, 0, 1.509958e-07, 0, 1, 0, -3.1558122e-07, 0, -1, -4.1163853e-06, 1.3120532, 3.0812163)
-visible = false
 material_override = SubResource("StandardMaterial3D_3mjd8")
 mesh = SubResource("QuadMesh_yra41")
 
@@ -1689,6 +1713,8 @@ transform = Transform3D(0.9859844, 0, 0.16683757, 0, 1, 0, -0.16683757, 0, 0.985
 transform = Transform3D(-0.5948929, 0, 0.8038049, 0, 1, 0, -0.8038049, 0, -0.5948929, 69.56122, 0.3853097, 95.49082)
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
+[connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]
+[connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/HintHider" method="hide"]
 [connection signal="output_changed" from="Cave/cave/SuperButton" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/SuperButton2" to="Cave/cave/LogicCounter" method="receive_input"]
 [connection signal="output_changed" from="Cave/cave/SuperButton3" to="Cave/cave/LogicCounter" method="receive_input"]

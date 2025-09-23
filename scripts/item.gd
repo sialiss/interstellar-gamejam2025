@@ -23,4 +23,5 @@ func show_in_world(pos: Vector3, parent: Node):
 		$CollisionShape3D.disabled = false
 	is_in_inventory = false
 	parent.add_child(self)
-	global_transform.origin = pos
+	self.global_position = pos
+	print(self.global_position)

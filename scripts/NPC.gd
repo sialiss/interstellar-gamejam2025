@@ -22,6 +22,7 @@ signal interaction_ended(dialogues, npc)
 
 func _ready() -> void:
 	bind_dualogues()
+	add_to_group("npc")
 
 func interact() -> void:
 	if (block_dialogues):
