@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=212 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -84,6 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
 [ext_resource type="PackedScene" uid="uid://gnklfllpy42t" path="res://assets/models/environment/Tree_3.fbx" id="59_kge0y"]
 [ext_resource type="ArrayMesh" uid="uid://u66ug8fyg1qt" path="res://assets/models/props/paper.obj" id="59_whib0"]
+[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/7.1.png" id="60_bhuc7"]
 [ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
 [ext_resource type="Texture2D" uid="uid://p3r0l1n7640c" path="res://assets/sprites/magic5.png" id="66_jpodg"]
 [ext_resource type="Texture2D" uid="uid://bwdtvxugvhv7i" path="res://assets/sprites/magic1.png" id="67_ipee5"]
@@ -2410,11 +2411,11 @@ emission_box_extents = Vector3(3.535, 1.705, 2.78)
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.93572974, 0.0017151833, -0.67346215)
 
 [node name="RuneHint" type="Sprite3D" parent="Village/evil_house"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.1920928e-07, 1.3093967, 3.1074426)
-texture = ExtResource("50_pk7k4")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.1920928e-07, 1.8284998, 3.1074426)
+texture = ExtResource("60_bhuc7")
 
 [node name="HintHider" type="MeshInstance3D" parent="Village/evil_house"]
-transform = Transform3D(-2.09, 0, 1.509958e-07, 0, 1, 0, -3.1558122e-07, 0, -1, -4.1163853e-06, 1.3120532, 3.0812163)
+transform = Transform3D(-2.09, 0, 1.509958e-07, 0, 1.8685108, 0, -3.1558122e-07, 0, -1, -4.1163853e-06, 1.8134675, 3.0812163)
 material_override = SubResource("StandardMaterial3D_3mjd8")
 mesh = SubResource("QuadMesh_yra41")
 
@@ -2677,10 +2678,14 @@ transform = Transform3D(-0.77229077, -1.08748795e-10, 0.009675769, 0.00030385784
 [node name="bed" parent="Forest/house_wood" instance=ExtResource("92_pnpbx")]
 transform = Transform3D(0.042503145, -5.578976e-11, -1.1860745, -0.064218946, 0.8263691, -0.0021374985, 1.5916084, 0.048710335, 0.052975956, 1.6434479, 0.044252396, -1.0404663)
 
-[node name="Paper" type="MeshInstance3D" parent="Forest/house_wood"]
+[node name="RuneHint" type="MeshInstance3D" parent="Forest/house_wood"]
 transform = Transform3D(-1.4517949, 0.00025243545, -0.00020769176, 0.00042484357, 0.0108015705, -0.8272807, -0.0006077718, -0.99991477, -0.013055682, -0.16842651, 2.0318909, 3.0930176)
 mesh = ExtResource("59_whib0")
 skeleton = NodePath("../../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
+transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
+texture = ExtResource("50_pk7k4")
 
 [node name="Plant_2" parent="Forest" instance=ExtResource("57_sr2vx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.729156, -2.1033735, 20.233337)

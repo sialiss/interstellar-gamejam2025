@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_wapav")
 rune_name = "Transformation Rune"
-directions_array = Array[int]([0, 2, 4, 7, 1])
+directions_array = Array[int]([4, 2, 4, 6, 4, 2, 4, 6])
 image = ExtResource("1_bh8t8")
 metadata/_custom_type_script = "uid://bfxcoluapkkiv"
