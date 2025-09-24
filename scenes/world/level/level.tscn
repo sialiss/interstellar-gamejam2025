@@ -109,7 +109,6 @@
 [ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
 [ext_resource type="PackedScene" uid="uid://cuuab3xe3g4iq" path="res://assets/models/environment/Log_3.fbx" id="77_dnajr"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
-[ext_resource type="Texture2D" uid="uid://kln1pxkkqfe8" path="res://assets/sprites/transformation_rune_wood.png" id="83_42ss4"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
 [ext_resource type="Texture2D" uid="uid://kln1pxkkqfe8" path="res://assets/sprites/transformation_rune_wood.png" id="83_ues6x"]
 [ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
@@ -3308,7 +3307,7 @@ script = ExtResource("61_1t2ts")
 
 [node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
 transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
-script = ExtResource("61_1t2ts")
+texture = ExtResource("83_ues6x")
 
 [node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, 0.67233276, 0.17641354, -4.117218)
@@ -3575,8 +3574,8 @@ offset_bottom = 512.0
 position = Vector2(128, 128)
 texture = ExtResource("28_whib0")
 
-[node name="funny_lights" parent="MusicTest" instance=ExtResource("97_jimsq")]
-transform = Transform3D(0.99992555, 0, 0.01219955, -0.0006157225, 0.9987253, 0.050467167, -0.0121840015, -0.05047091, 0.9986512, -3.29858, 3.7977273, -3.2115266)
+[node name="funny_lights2" parent="MusicTest" instance=ExtResource("97_jimsq")]
+transform = Transform3D(-0.029802205, 0, 0.99982226, 0, 0.99999976, 0, -1.5808645, 0, -0.018848492, -12.384933, 6.484419, 0.12280311)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)

@@ -102,4 +102,4 @@ func _on_rune_detector_exited(value: int) -> void:
 		current_rune_node.queue_free()
 		current_rune_node = null
 	spawn_rune_direction_detector()
-	# print('returned_directions', returned_directions)
+	print('returned_directions', returned_directions)
