@@ -66,7 +66,6 @@
 [ext_resource type="Resource" uid="uid://bbqrn3yt4bwoo" path="res://resources/dialogues/astronomer_telescope_fixed.tres" id="48_uxisk"]
 [ext_resource type="Resource" uid="uid://dqtyjpeyv4eik" path="res://resources/dialogues/astronomer_after_rune.tres" id="49_wj558"]
 [ext_resource type="Texture2D" uid="uid://vbx1hrb5edv2" path="res://assets/textures/flame.png" id="50_8167w"]
-[ext_resource type="Texture2D" uid="uid://2p3ferbumwcq" path="res://assets/sprites/2.1.png" id="50_pk7k4"]
 [ext_resource type="Resource" uid="uid://0sjyvf1of6px" path="res://resources/dialogues/fisher_start.tres" id="51_el80l"]
 [ext_resource type="Texture2D" uid="uid://dwuc7hqwtsyi7" path="res://assets/textures/flash_2.png" id="51_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://d2mju6gjlhrvh" path="res://scenes/entities/persons/fisher/fisher_model.tscn" id="51_uxisk"]
@@ -110,6 +109,7 @@
 [ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
 [ext_resource type="PackedScene" uid="uid://cuuab3xe3g4iq" path="res://assets/models/environment/Log_3.fbx" id="77_dnajr"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
+[ext_resource type="Texture2D" uid="uid://kln1pxkkqfe8" path="res://assets/sprites/transformation_rune_wood.png" id="83_42ss4"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
 [ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
@@ -3307,7 +3307,7 @@ script = ExtResource("61_1t2ts")
 
 [node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
 transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
-texture = ExtResource("50_pk7k4")
+texture = ExtResource("83_42ss4")
 
 [node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, 0.67233276, 0.17641354, -4.117218)
