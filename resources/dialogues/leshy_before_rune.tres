@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://dfp46g8swtptl"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_okgca"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_co3el"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_co3el"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_lrj3p"]
+
+[sub_resource type="Resource" id="Resource_lrj3p"]
+script = ExtResource("3_co3el")
+type = "Progress"
+data = "Rebirth"
+invert = true
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[resource]
+script = ExtResource("1_okgca")
+dialogue_id = "leshy_before_rune"
+text = "It's still too early. Come to me when you see the flow of time from within."
+conditions = Array[ExtResource("2_co3el")]([SubResource("Resource_lrj3p")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

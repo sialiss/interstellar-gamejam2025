@@ -45,7 +45,7 @@ func _start_dialogue(root: DialogueResource, npc: Node) -> void:
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
-	npc_name_label.text = str(_current_npc.name) if node.speaker == "npc" else "You"
+	npc_name_label.text = str(_current_npc.NPC_name) if node.speaker == "npc" else "You"
 
 	if node.speaker == "npc" and _current_npc.has_method("start_talking"):
 		_current_npc.start_talking(node)
@@ -122,5 +122,6 @@ func create_button(i, choice_name):
 	var btn := Button.new()
 	btn.text = "[%d] %s" % [i, choice_name]
 	btn.clip_text = true
+	btn.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	return btn

@@ -20,6 +20,7 @@ func _ready() -> void:
 	load_profile()
 
 	EventBus.rune_unlocked.connect(on_rune_unlocked)
+	EventBus.cycle_reset.connect(on_rebirth_unlocked)
 
 #region PROFILE
 
@@ -27,7 +28,7 @@ func load_profile():
 	if FileAccess.file_exists(save_file_location):
 		profile = ResourceLoader.load(save_file_location)
 		return
-	
+
 	load_default_profile()
 
 func load_default_profile():
@@ -39,11 +40,11 @@ func save_profile():
 
 func reset_profile():
 	load_default_profile()
-	
+
 	for rune_pattern in RuneManager.rune_patterns:
 		rune_pattern.is_name_known = false
 		rune_pattern.is_pattern_known = false
-	
+
 	EventBus.reset_cycle()
 
 
@@ -57,12 +58,12 @@ func load_settings():
 	var file := FileAccess.open(settings_file_location, FileAccess.READ)
 	settings = file.get_var()
 	file.close()
-	
+
 	apply_settings(default_settings.merged(settings, true))
 
 func save_setting(setting_name: String, value: Variant):
 	settings[setting_name] = value
-	
+
 	var file := FileAccess.open(settings_file_location, FileAccess.WRITE)
 	file.store_var(settings)
 	file.close()
@@ -85,5 +86,13 @@ func on_rune_unlocked(rune: RunePattern):
 func unlock_known_runes():
 	for rune_pattern in RuneManager.rune_patterns:
 		profile.restore_rune(rune_pattern)
+
+#endregion
+
+#region PROGRESS
+
+func on_rebirth_unlocked():
+	profile.save_rebirth_progress()
+	save_profile()
 
 #endregion

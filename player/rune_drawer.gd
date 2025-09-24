@@ -2,6 +2,7 @@ extends Control
 
 @export var magic_particle: Texture
 
+var last_direction: int
 var returned_directions: Array[int] = []
 var current_rune_node: Area2D = null
 var is_mouse_pressed: bool = false
@@ -67,7 +68,7 @@ func cast_rune() -> void:
 		rune.execute(player)
 		MusicManager.play_rune_sound()
 	else:
-		pass
+		MusicManager.play_runefailure_sound()
 
 	# cleanup
 	returned_directions = []
@@ -92,9 +93,11 @@ func spawn_rune_direction_detector() -> void:
 
 # Добавить направление в массив, когда мышка двигается в направлении
 func _on_rune_detector_exited(value: int) -> void:
-	if returned_directions.size() == 0 or returned_directions.get(returned_directions.size() - 1) != value:
+	if ((returned_directions.size() == 0 or returned_directions.get(returned_directions.size() - 1) != value)
+	and last_direction == value):
 		returned_directions.append(value)
 	# Удалить предыдущий детектор и создать новый
+	last_direction = value
 	if current_rune_node:
 		current_rune_node.queue_free()
 		current_rune_node = null

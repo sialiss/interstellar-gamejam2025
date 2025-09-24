@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=18 format=3 uid="uid://bweipot2m6xjr"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_21yd5"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_gwy7l"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_eprtq"]
+
+[sub_resource type="Resource" id="Resource_7gb3y"]
+script = ExtResource("1_21yd5")
+text = "Then the road will become straight. And straight always leads to the end."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_irlnd"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "What happens if I refuse?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_7gb3y")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_ubk87"]
+script = ExtResource("1_21yd5")
+text = "A curse is a road of no return. Fish always know the way back."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_vgk2m"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Isn't transformation a curse?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_ubk87")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_0s0xc"]
+script = ExtResource("1_21yd5")
+text = "The river is patient. But its circles are not eternal."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_s11b2"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "I will have to come back many times."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_0s0xc")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_kls22"]
+script = ExtResource("1_21yd5")
+text = "It is not the body that sinks, but the path. Fish swim where people sink."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_irlnd"), SubResource("Resource_vgk2m"), SubResource("Resource_s11b2")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_cl431"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Are you suggesting I drown myself?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_kls22")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_1t2ts"]
+script = ExtResource("1_21yd5")
+text = "Silence is her song. Those who listen are already in the river."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_jpodg"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "All I hear is silence."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_1t2ts")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_nnhlb"]
+script = ExtResource("1_21yd5")
+text = "The one that flows through you. It leads neither forward nor backward, but in a circle."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_ipee5"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "I don't know what river you're talking about."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_nnhlb")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_caskx"]
+script = ExtResource("1_21yd5")
+text = "There are circles. They lead to what you have already lost and to what has not yet been."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_bhuc7"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "If there is a river, does that mean there is a bridge?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_caskx")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[resource]
+script = ExtResource("1_21yd5")
+is_repeatable = true
+dialogue_id = "leshy_about_river"
+text = "You have come too far from the sands and stars. There is a river here, but its course is not in the earth, but in time. Can you hear the water whispering your footsteps?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

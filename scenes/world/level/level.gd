@@ -22,6 +22,10 @@ func _ready():
 	for npc in get_tree().get_nodes_in_group("npc"):
 		npc.interaction_started.connect(dualogue_ui.choose_npc_dialogue)
 
+	SaveManager.unlock_known_runes()
+	if (SaveManager.profile.player_was_reborn):
+		EventBus.trigger("Progress", "Rebirth")
+
 func trigger_revolution():
 	current_revolution += 1
 	print('current_revolution', current_revolution)
