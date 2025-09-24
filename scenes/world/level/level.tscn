@@ -1,4 +1,4 @@
-[gd_scene load_steps=275 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=276 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -66,7 +66,6 @@
 [ext_resource type="Resource" uid="uid://bbqrn3yt4bwoo" path="res://resources/dialogues/astronomer_telescope_fixed.tres" id="48_uxisk"]
 [ext_resource type="Resource" uid="uid://dqtyjpeyv4eik" path="res://resources/dialogues/astronomer_after_rune.tres" id="49_wj558"]
 [ext_resource type="Texture2D" uid="uid://vbx1hrb5edv2" path="res://assets/textures/flame.png" id="50_8167w"]
-[ext_resource type="Texture2D" uid="uid://2p3ferbumwcq" path="res://assets/sprites/2.1.png" id="50_pk7k4"]
 [ext_resource type="Resource" uid="uid://0sjyvf1of6px" path="res://resources/dialogues/fisher_start.tres" id="51_el80l"]
 [ext_resource type="Texture2D" uid="uid://dwuc7hqwtsyi7" path="res://assets/textures/flash_2.png" id="51_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://d2mju6gjlhrvh" path="res://scenes/entities/persons/fisher/fisher_model.tscn" id="51_uxisk"]
@@ -111,6 +110,7 @@
 [ext_resource type="PackedScene" uid="uid://cuuab3xe3g4iq" path="res://assets/models/environment/Log_3.fbx" id="77_dnajr"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
+[ext_resource type="Texture2D" uid="uid://kln1pxkkqfe8" path="res://assets/sprites/transformation_rune_wood.png" id="83_ues6x"]
 [ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
 [ext_resource type="PackedScene" uid="uid://cwwu6dys78xsf" path="res://assets/models/environment/Tree_2.fbx" id="88_7yqty"]
@@ -122,6 +122,7 @@
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
 [ext_resource type="Resource" uid="uid://dfp46g8swtptl" path="res://resources/dialogues/leshy_before_rune.tres" id="97_caskx"]
 [ext_resource type="AudioStream" uid="uid://kv187sixi24s" path="res://assets/sounds/voice_deep.wav" id="97_ipee5"]
+[ext_resource type="PackedScene" uid="uid://dy6dmtn5s6gm3" path="res://assets/models/props/funny_lights.glb" id="97_jimsq"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
 [ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
@@ -3292,7 +3293,7 @@ script = ExtResource("61_1t2ts")
 
 [node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
 transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
-texture = ExtResource("50_pk7k4")
+texture = ExtResource("83_ues6x")
 
 [node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
 transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, 0.67233276, 0.17641354, -4.117218)
@@ -3480,6 +3481,9 @@ transform = Transform3D(0.22841716, 0.9731531, -0.028261688, 0.009498477, -0.031
 
 [node name="Tree_7" parent="MusicTest" instance=ExtResource("88_7yqty")]
 transform = Transform3D(0.17082122, -0.98442876, -0.041474387, -0.54287505, -0.058907017, -0.8377447, 0.82225704, 0.16562003, -0.54448444, 5.7383423, 12.110523, -2.4905548)
+
+[node name="funny_lights" parent="MusicTest" instance=ExtResource("97_jimsq")]
+transform = Transform3D(0.99992555, 0, 0.01219955, -0.0006157225, 0.9987253, 0.050467167, -0.0121840015, -0.05047091, 0.9986512, -4.6759043, 4.539882, -3.2322068)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
