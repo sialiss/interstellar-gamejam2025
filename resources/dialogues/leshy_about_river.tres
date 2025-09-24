@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=18 format=3 uid="uid://bweipot2m6xjr"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_21yd5"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_gwy7l"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_eprtq"]
+
+[sub_resource type="Resource" id="Resource_7gb3y"]
+script = ExtResource("1_21yd5")
+text = "Тогда дорога станет прямой. И прямое всегда приводит к концу."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_irlnd"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Что будет, если я откажусь?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_7gb3y")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_ubk87"]
+script = ExtResource("1_21yd5")
+text = "Проклятие — это дорога без возврата. Рыба всегда знает путь обратно."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_vgk2m"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Превращение это не проклятие?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_ubk87")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_0s0xc"]
+script = ExtResource("1_21yd5")
+text = "Река терпелива. Но её круги не вечны."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_s11b2"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Мне придётся вернуться ещё много раз."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_0s0xc")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_kls22"]
+script = ExtResource("1_21yd5")
+text = "Не тело тонет, а путь. Рыба плывёт там, где человек тонет."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_irlnd"), SubResource("Resource_vgk2m"), SubResource("Resource_s11b2")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_cl431"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Ты предлагаешь мне утонуть?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_kls22")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_1t2ts"]
+script = ExtResource("1_21yd5")
+text = "Тишина и есть её песня. Кто слушает — тот уже в реке."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_jpodg"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Я слышу только тишину."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_1t2ts")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_nnhlb"]
+script = ExtResource("1_21yd5")
+text = "Про ту, что течёт сквозь тебя. Она ведёт не вперёд и не назад, а в круг."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_ipee5"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Я не понимаю, о какой реке ты."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_nnhlb")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_caskx"]
+script = ExtResource("1_21yd5")
+text = "Есть круги. Они ведут к тому, что ты уже потерял, и к тому, чего ещё не было."
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_cl431")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_bhuc7"]
+script = ExtResource("1_21yd5")
+speaker = "player"
+text = "Если есть река, значит, есть и мост?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_caskx")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[resource]
+script = ExtResource("1_21yd5")
+is_repeatable = true
+dialogue_id = "leshy_about_river"
+text = "Ты пришёл слишком далеко от песков и звёзд. Здесь течёт река, но её русло — не в земле, а во времени. Слышишь, как вода шепчет твои шаги?"
+choices = Array[ExtResource("1_21yd5")]([SubResource("Resource_jpodg"), SubResource("Resource_ipee5"), SubResource("Resource_bhuc7")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

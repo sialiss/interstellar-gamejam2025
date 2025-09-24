@@ -25,6 +25,7 @@ func _ready() -> void:
 	add_to_group("npc")
 
 func interact() -> void:
+
 	if (block_dialogues):
 		emit_signal("interaction_started", block_dialogues, self)
 	else:

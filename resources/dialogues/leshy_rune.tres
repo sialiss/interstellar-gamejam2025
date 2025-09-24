@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://bi6t76ywedhih"]
+
+[ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_xuwrl"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_c4t7m"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_f5uxn"]
+[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="4_c4t7m"]
+
+[sub_resource type="Resource" id="Resource_ykc1o"]
+script = ExtResource("1_xuwrl")
+text = "But beware: the more often you swim against the current, the faster you forget why you are moving forward in the first place."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_f5uxn"]
+script = ExtResource("4_c4t7m")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
+[resource]
+script = ExtResource("1_xuwrl")
+dialogue_id = "leshy_rune"
+text = "There is no beginning and no end in the forest, only circles on the water. Those who learn to fall into these circles will return to the first step without losing their memory of the path. The rune of water is not about transformation, but about return."
+choices = Array[ExtResource("1_xuwrl")]([SubResource("Resource_ykc1o")])
+effects = Array[ExtResource("3_f5uxn")]([SubResource("Resource_f5uxn")])
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"

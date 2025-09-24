@@ -1,6 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b1mnwomaomind"]
-
-[ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="1_hto4d"]
+[gd_scene load_steps=15 format=4 uid="uid://b1mnwomaomind"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dssr"]
 resource_name = "Material"
@@ -216,7 +214,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2of8p")
 
 [node name="ModelOrigin" type="Node3D"]
-transform = Transform3D(-0.9783179, 0, 0.20710927, 0, 1, 0, -0.20710927, 0, -0.9783179, 0, 0, 0)
+transform = Transform3D(-0.9783179, 0, 0.20710933, 0, 1, 0, -0.20710933, 0, -0.9783179, 0, 0, 0)
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3557191, 0)
@@ -294,9 +292,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1764074e-09, 0.71144974, -0
 mesh = SubResource("ArrayMesh_4tx3u")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_78awm")
-
-[node name="Bush_1" parent="Armature/Skeleton3D/Body_2" instance=ExtResource("1_hto4d")]
-transform = Transform3D(0.24401852, 0, -0.22708163, 0, 0.5, 0, 0.34062245, 0, 0.36602777, -1.0530396, -0.29799426, 2.0561905)
 
 [node name="Hand_R" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
 transform = Transform3D(3, 0, -2.6226834e-07, -2.6226834e-07, 0, -3, 0, 3, 0, -0.263, 1.1442809, 0.098)
