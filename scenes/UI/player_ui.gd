@@ -1,6 +1,8 @@
 extends Control
 class_name PlayerUI
 
+signal notebook_visibility_changed(is_open: bool)
+
 @onready var prompt_label: Label = $InteractionPrompt
 @onready var timered_label: Label = $TimeredPrompt
 @onready var runes_ui = $RunesUI
@@ -38,6 +40,7 @@ func hide_name_and_content(page_name: String):
 				content.texture = null
 
 func open_runes_ui():
+	notebook_visibility_changed.emit(true)
 	runes_ui.visible = true
 	is_notebook_open = true
 	current_page = 0
@@ -52,6 +55,7 @@ func open_runes_ui():
 		pending_flash_runes.clear()
 
 func close_runes_ui():
+	notebook_visibility_changed.emit(false)
 	runes_ui.visible = false
 	is_notebook_open = false
 

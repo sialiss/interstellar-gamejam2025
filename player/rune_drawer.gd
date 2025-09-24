@@ -67,7 +67,7 @@ func cast_rune() -> void:
 			push_error("Player is not found")
 		rune.execute(player)
 		MusicManager.play_rune_sound()
-	else:
+	elif returned_directions.size() > 0:
 		MusicManager.play_runefailure_sound()
 
 	# cleanup

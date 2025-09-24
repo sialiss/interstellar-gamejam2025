@@ -2,7 +2,7 @@ extends Node
 
 # todo: добавить сюда новые руны. Можно сделать удобнее с автозаполнением.
 static var rune_patterns: Array[RunePattern] = [
-	preload("res://resources/runes/test_rune/test_rune.tres"),
+	preload("res://resources/runes/test_rune/amnyam_rune.tres"),
 	preload("res://resources/runes/time_rune/time_rune.tres"),
 	preload("res://resources/runes/fire_rune/fire_rune.tres"),
 	preload("res://resources/runes/gigantism_rune/gigantism_rune.tres"),

@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://do40ho7xllh1v" path="res://assets/models/props/bridge.glb" id="10_ve8xh"]
 [ext_resource type="Material" uid="uid://bwirrnln368j7" path="res://assets/materials/water.tres" id="11_ve8xh"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_svlle"]
-[ext_resource type="Texture2D" uid="uid://bhnu14vmdehc" path="res://assets/sprites/6.png" id="18_42ss4"]
+[ext_resource type="Texture2D" uid="uid://bhnu14vmdehc" path="res://assets/sprites/gigantism_rune.png" id="18_42ss4"]
 [ext_resource type="PackedScene" uid="uid://cc6b2vssow7al" path="res://assets/models/props/cave.glb" id="21_a76df"]
 [ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="22_5xoqh"]
 [ext_resource type="PackedScene" uid="uid://b4u0v4x0cbfxb" path="res://scenes/entities/logic/super_button/super_button.tscn" id="22_7bk07"]
@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2uji81u0mg3" path="res://assets/sprites/magic3.png" id="37_tuxnq"]
 [ext_resource type="Texture2D" uid="uid://c3kcsvsu4ytwx" path="res://assets/sprites/time_rune_wood.png" id="39_je5e5"]
 [ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
-[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
+[ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_digital.png" id="40_gw5i7"]
 [ext_resource type="PackedScene" uid="uid://bp11xa4y3d3bw" path="res://assets/models/environment/Rock_2.fbx" id="40_hwi08"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
 [ext_resource type="PackedScene" uid="uid://b2vrpfc2vodst" path="res://assets/models/props/table.glb" id="40_usf2n"]
@@ -2483,7 +2483,6 @@ mesh = ExtResource("42_b37fd")
 
 [node name="SubViewport" type="SubViewport" parent="Observatory/observatory/table/computer/CameraScreen"]
 size = Vector2i(256, 256)
-render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport"]
 transform = Transform3D(-0.5087862, 0, 0.860893, 0, 0.9999999, 0, -0.86089313, 0, -0.50878614, 186.22649, 63.575436, 663.5356)
