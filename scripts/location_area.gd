@@ -10,7 +10,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and music:
-		if (condition.is_completed and corrupted_music):
+		if condition and condition.is_completed and corrupted_music:
 			MusicManager.play_music(self.name, corrupted_music)
 		else:
 			MusicManager.play_music(self.name, music)

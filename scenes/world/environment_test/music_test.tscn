@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwi4arigbo5pg"]
+[gd_scene load_steps=10 format=3 uid="uid://bwi4arigbo5pg"]
 
 [ext_resource type="PackedScene" uid="uid://r1erklnvoxe" path="res://assets/models/props/house2.glb" id="1_3trob"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="2_qxflf"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="3_c56i5"]
+[ext_resource type="AudioStream" uid="uid://d0oiwxocfv26a" path="res://assets/sounds/country_2.wav" id="4_gjlvx"]
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="4_grte2"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="5_gjlvx"]
+[ext_resource type="AudioStream" uid="uid://dhd46evdtf4qb" path="res://assets/sounds/observatory_2.wav" id="6_et4ui"]
+[ext_resource type="AudioStream" uid="uid://b4hgolnffbrou" path="res://assets/sounds/desert_theme_2.wav" id="6_qxflf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1lye0"]
 size = Vector3(3, 5.086, 6)
@@ -19,6 +22,7 @@ transform = Transform3D(0.9987949, 0, -0.049078517, 0, 1, 0, 0.049078517, 0, 0.9
 collision_mask = 2
 script = ExtResource("2_qxflf")
 music = ExtResource("3_c56i5")
+corrupted_music = ExtResource("4_gjlvx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MusicTestHouse/MiniCountyArea"]
 transform = Transform3D(0.9999998, 0, -9.313226e-09, 0, 0.9999997, 0, -1.0658141e-14, 0, 0.9999997, 0.5696869, -2.648613, 0.27061462)
@@ -30,6 +34,7 @@ transform = Transform3D(0.99879485, 0, -0.049078517, 0, 1, 0, 0.04907852, 0, 0.9
 collision_mask = 2
 script = ExtResource("2_qxflf")
 music = ExtResource("4_grte2")
+corrupted_music = ExtResource("6_et4ui")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MusicTestHouse/MiniObservatoryArea"]
 transform = Transform3D(0.9999999, 0, -5.5879354e-09, 0, 0.9999998, 0, -7.1054274e-15, 0, 0.9999998, -1.6149292, -2.2243671, 0.27061462)
@@ -41,6 +46,7 @@ transform = Transform3D(0.99879485, 0, -0.049078517, 0, 1, 0, 0.04907852, 0, 0.9
 collision_mask = 2
 script = ExtResource("2_qxflf")
 music = ExtResource("5_gjlvx")
+corrupted_music = ExtResource("6_qxflf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MusicTestHouse/MiniDesertArea"]
 transform = Transform3D(0.9999998, 0, -1.1175871e-08, 0, 0.99999964, 0, -1.7763568e-14, 0, 0.9999996, -1.2961655, -1.2949905, 0.27061462)
