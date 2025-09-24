@@ -2416,7 +2416,7 @@ emission_box_extents = Vector3(3.535, 1.705, 2.78)
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -0.93572974, 0.0017151833, -0.67346215)
 
 [node name="RuneHint" type="Sprite3D" parent="Village/evil_house"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.1920928e-07, 1.8284998, 3.1074426)
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -1.1920928e-07, 1.8284998, 3.1074426)
 texture = ExtResource("60_bhuc7")
 
 [node name="HintHider" type="MeshInstance3D" parent="Village/evil_house"]
