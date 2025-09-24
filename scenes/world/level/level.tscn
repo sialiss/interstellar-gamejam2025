@@ -1,4 +1,4 @@
-[gd_scene load_steps=271 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=275 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -146,6 +146,7 @@
 [ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="141_tgdjs"]
 [ext_resource type="AudioStream" uid="uid://d0oiwxocfv26a" path="res://assets/sounds/country_2.wav" id="142_42ss4"]
 [ext_resource type="AudioStream" uid="uid://c846rr7n5kd7a" path="res://assets/sounds/forest_2.wav" id="144_ues6x"]
+[ext_resource type="Texture2D" uid="uid://chwp6qa6ode8v" path="res://assets/sprites/amnyam_rune_wood.png" id="147_42ss4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -1333,14 +1334,18 @@ type = "Revolution"
 data = "4"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gq2n"]
 radius = 200.0
+height = 600.0
 
 [sub_resource type="Resource" id="Resource_ues6x"]
 script = ExtResource("139_1gq2n")
 type = "Revolution"
 data = "4"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
+radius = 200.0
 
 [sub_resource type="Resource" id="Resource_jimsq"]
 script = ExtResource("139_1gq2n")
@@ -1885,6 +1890,13 @@ _data = {
 &"RESET": SubResource("Animation_sr2vx"),
 &"win": SubResource("Animation_78awm")
 }
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ues6x"]
+viewport_path = NodePath("Paper/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jimsq"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ues6x")
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1mhee")
@@ -3791,8 +3803,8 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Desert"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.93591, -142.73264, 0)
-shape = SubResource("SphereShape3D_kapuu")
+transform = Transform3D(0.2981751, 0.95197994, 0.06946917, 0.28204286, -0.018342346, -0.95922655, -0.91189015, 0.3056107, -0.27396837, 98.03754, -31.06253, 108.703064)
+shape = SubResource("CapsuleShape3D_1gq2n")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
 
@@ -3893,6 +3905,26 @@ libraries = {
 
 [node name="Rock_1" parent="." instance=ExtResource("141_tgdjs")]
 transform = Transform3D(0.5845896, 0, -0.8113292, 0, 1, 0, 0.8113292, 0, 0.5845896, 204.20639, -0.18552661, 150.26833)
+
+[node name="Paper" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.20305943, -0.22074054, -0.0063650482, 0.028321642, -0.034606945, 0.2966483, -0.2190087, 0.2001899, 0.044263322, -311.91116, 4.9343634, 308.24707)
+mesh = ExtResource("59_whib0")
+surface_material_override/0 = SubResource("StandardMaterial3D_jimsq")
+
+[node name="SubViewport2" type="SubViewport" parent="Paper"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="ColorRect" type="ColorRect" parent="Paper/SubViewport2"]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Paper/SubViewport2/ColorRect"]
+position = Vector2(128, 128)
+rotation = 3.1415927
+texture = ExtResource("147_42ss4")
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]
