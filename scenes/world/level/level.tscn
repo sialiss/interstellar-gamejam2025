@@ -101,9 +101,9 @@
 [ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="94_tuxnq"]
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
-[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
+[ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
 [ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
-[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
+[ext_resource type="PackedScene" uid="uid://boijfqij0ims3" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
 [ext_resource type="PackedScene" uid="uid://bwk045of76yjy" path="res://scenes/items/rock/rock.tscn" id="108_kge0y"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
@@ -134,6 +134,7 @@ fog_depth_begin = 0.0
 fog_depth_end = 2511.9
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
+volumetric_fog_ambient_inject = 0.3
 adjustment_enabled = true
 adjustment_saturation = 1.4
 
