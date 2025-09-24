@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=216 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -85,6 +85,8 @@
 [ext_resource type="PackedScene" uid="uid://gnklfllpy42t" path="res://assets/models/environment/Tree_3.fbx" id="59_kge0y"]
 [ext_resource type="ArrayMesh" uid="uid://u66ug8fyg1qt" path="res://assets/models/props/paper.obj" id="59_whib0"]
 [ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/enchantment_rune_wood.png" id="60_bhuc7"]
+[ext_resource type="Script" uid="uid://cembcnpd0x7dl" path="res://scripts/rune_hint.gd" id="61_1t2ts"]
+[ext_resource type="PackedScene" uid="uid://dfape4tnfgcty" path="res://assets/models/props/pot.glb" id="63_nnhlb"]
 [ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
 [ext_resource type="Texture2D" uid="uid://p3r0l1n7640c" path="res://assets/sprites/magic5.png" id="66_jpodg"]
 [ext_resource type="Texture2D" uid="uid://bwdtvxugvhv7i" path="res://assets/sprites/magic1.png" id="67_ipee5"]
@@ -104,6 +106,7 @@
 [ext_resource type="Resource" uid="uid://bi6t76ywedhih" path="res://resources/dialogues/leshy_rune.tres" id="94_tuxnq"]
 [ext_resource type="Resource" uid="uid://bweipot2m6xjr" path="res://resources/dialogues/leshy_about_river.tres" id="96_3ehlk"]
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
+[ext_resource type="Resource" uid="uid://dfp46g8swtptl" path="res://resources/dialogues/leshy_before_rune.tres" id="97_caskx"]
 [ext_resource type="AudioStream" uid="uid://kv187sixi24s" path="res://assets/sounds/voice_deep.wav" id="97_ipee5"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
@@ -2675,7 +2678,7 @@ transform = Transform3D(-0.99997157, 5.180482e-09, 0.00753969, 0.00036726595, 0.
 enabled = true
 
 [node name="table" parent="Forest/house_wood" instance=ExtResource("40_usf2n")]
-transform = Transform3D(-0.77229077, -1.08748795e-10, 0.009675769, 0.00030385784, 1.610809, 0.06696249, -0.0075308434, 0.09494915, -1.6596045, -2.6620178, 0.06434536, 1.6921387)
+transform = Transform3D(-0.77229077, -1.08748795e-10, 0.012278269, 0.00030385784, 1.610809, 0.08497345, -0.0075308434, 0.09494915, -2.1059897, -2.6620178, 0.06434536, 1.6921387)
 
 [node name="bed" parent="Forest/house_wood" instance=ExtResource("92_pnpbx")]
 transform = Transform3D(0.042503145, -5.578976e-11, -1.1860745, -0.064218946, 0.8263691, -0.0021374985, 1.5916084, 0.048710335, 0.052975956, 1.6434479, 0.044252396, -1.0404663)
@@ -2684,6 +2687,7 @@ transform = Transform3D(0.042503145, -5.578976e-11, -1.1860745, -0.064218946, 0.
 transform = Transform3D(-1.4517949, 0.00025243545, -0.00020769176, 0.00042484357, 0.0108015705, -0.8272807, -0.0006077718, -0.99991477, -0.013055682, -0.16842651, 2.0318909, 3.0930176)
 mesh = ExtResource("59_whib0")
 skeleton = NodePath("../../..")
+script = ExtResource("61_1t2ts")
 
 [node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
 transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
@@ -2724,6 +2728,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.545517, 10.616089)
 size = Vector3(197.59, 67.346054, 111.83136)
 shape = 0
 material = SubResource("FogMaterial_sr2vx")
+
+[node name="pot" parent="Forest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.874115, 0.2465787, 9.3576355)
+
+[node name="pot2" parent="Forest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(2.5001502, 0, 0, 0, 1.8551788, 0, 0, 0, 2.328827, -11.113403, -1.5441005, 11.526978)
+
+[node name="Plant_10" parent="Forest" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.52250206, 0, 0, 0, 0.7976375, 0, 0, 0, 0.5919564, -10.888763, 0.58523273, 9.342621)
+
+[node name="Paper" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(0.20689487, 0, 0, 0, 1, 0, 0, 0, 0.21666461, -11.325317, 0.36224937, 7.372101)
+mesh = ExtResource("59_whib0")
+
+[node name="pot3" parent="Forest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.845154, 0.24657822, 8.530457)
+
+[node name="lantern" parent="Forest" instance=ExtResource("113_ipee5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6936035, -1.3360882, 7.6124268)
+
+[node name="lantern2" parent="Forest" instance=ExtResource("113_ipee5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.625763, -1.3717356, 8.141693)
+
+[node name="lantern3" parent="Forest" instance=ExtResource("113_ipee5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603638, -1.398092, 8.682007)
 
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 298.3998, 6.0084453, 445.933)
@@ -2903,7 +2932,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Leshy"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("94_tuxnq"), ExtResource("96_3ehlk")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("97_caskx"), ExtResource("94_tuxnq"), ExtResource("96_3ehlk")])
 funny_sound = ExtResource("97_ipee5")
 
 [node name="ModelOrigin" parent="NPCs/Leshy" instance=ExtResource("94_kge0y")]
@@ -3209,6 +3238,9 @@ root_node = NodePath("../Observatory")
 libraries = {
 &"": SubResource("AnimationLibrary_kge0y")
 }
+
+[node name="Plant_2" parent="." instance=ExtResource("57_sr2vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -297.91177, 4.20268, 309.24847)
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]

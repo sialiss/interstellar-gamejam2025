@@ -88,8 +88,9 @@ autowrap_mode = 2
 
 [node name="Choices" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 768.0
-offset_top = -328.0
+offset_left = 736.0
+offset_top = -643.0
 offset_right = 1128.0
 offset_bottom = -200.0
 theme = SubResource("Theme_rc63b")
+alignment = 2

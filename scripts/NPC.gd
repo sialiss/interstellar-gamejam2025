@@ -109,3 +109,4 @@ func bind_dualogues():
 		if each.conditions:
 			for cond in each.conditions:
 				cond._bind_to_bus()
+				cond.is_completed = cond.invert
