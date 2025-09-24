@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn8pxlh4ciqmj"
-path="res://.godot/imported/amnyam_rune_pattern.png-6caf71aca1b2041e55b3cba5ed8308fa.ctex"
+path="res://.godot/imported/amnyam_rune_book.png-cad46c11fafe446e4edd20882ea7dc75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/amnyam_rune_pattern.png"
-dest_files=["res://.godot/imported/amnyam_rune_pattern.png-6caf71aca1b2041e55b3cba5ed8308fa.ctex"]
+source_file="res://assets/sprites/amnyam_rune_book.png"
+dest_files=["res://.godot/imported/amnyam_rune_book.png-cad46c11fafe446e4edd20882ea7dc75.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GigantismRune" load_steps=3 format=3 uid="uid://b52ayro4djcv2"]
 
-[ext_resource type="Texture2D" uid="uid://cfmfllqfftryf" path="res://assets/sprites/eenlargment_rune_pattern_2.png" id="1_mgvof"]
+[ext_resource type="Texture2D" uid="uid://cfmfllqfftryf" path="res://assets/sprites/gigantism_rune_book.png" id="1_mgvof"]
 [ext_resource type="Script" uid="uid://d3qbo24syt5g1" path="res://resources/runes/gigantism_rune/gigantism_rune.gd" id="1_ryw6n"]
 
 [resource]

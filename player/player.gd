@@ -6,6 +6,7 @@ signal hide_prompt()
 
 @onready var ray: RayCast3D = %InteractionRay
 @onready var inventory = $Inventory
+@onready var ui = $PlayerUI
 
 ## Скорость движения
 @export var speed: float = 5.0
@@ -25,6 +26,7 @@ var grabbed_item: Grabbable
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	ui.notebook_visibility_changed.connect(on_notebook_visibility_changed)
 
 func _input(event: InputEvent):
 	# Захват мышки (как в арксе)
@@ -150,8 +152,13 @@ func transformation_complete():
 	SceneManager.change_to_death_scene()
 
 
+func on_notebook_visibility_changed(is_open: bool):
+	_set_mouse_capture(not is_open)
+
 func _on_dialogue_mode(is_dialogue_mode: bool):
 	can_move = !is_dialogue_mode
+	if is_dialogue_mode:
+		ungrab()
 
 func _toggle_mouse_capture():
 	var should_capture := Input.mouse_mode == Input.MOUSE_MODE_VISIBLE
@@ -168,6 +175,7 @@ func _set_mouse_capture(value: bool):
 		$RuneDrawing.set_runes_enabled(true)
 
 func grab(item: Grabbable):
+	if not can_move: return
 	grabbed_item = item
 	item.grabbed()
 	%GrabTransform.remote_path = item.get_path()
@@ -179,6 +187,7 @@ func ungrab():
 		%GrabTransform.remote_path = ^""
 
 func store(item: Item):
+	if not can_move: return
 	grabbed_item = item
 	if inventory.add_item(item):
 		#item.stored()
@@ -186,6 +195,7 @@ func store(item: Item):
 		#%GrabTransform.remote_path = item.get_path()
 
 func unstore(index: int):
+	if not can_move: return
 	var item = inventory.remove_item(index)
 	if item:
 		var forward = - global_transform.basis.z.normalized()

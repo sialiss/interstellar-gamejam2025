@@ -70,6 +70,7 @@ offset_right = 263.0
 offset_bottom = -200.0
 grow_vertical = 0
 theme = SubResource("Theme_qq553")
+vertical_alignment = 2
 
 [node name="DialogueText" type="Label" parent="Panel"]
 layout_mode = 1
@@ -95,5 +96,6 @@ offset_left = -416.0
 offset_top = -643.0
 offset_right = -24.0
 offset_bottom = -200.0
+grow_horizontal = 0
 theme = SubResource("Theme_rc63b")
 alignment = 2
