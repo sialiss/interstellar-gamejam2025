@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=271 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -139,8 +139,13 @@
 [ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="130_p7o0o"]
 [ext_resource type="PackedScene" uid="uid://b2jscrbsu7q4b" path="res://assets/models/props/book/open_book.glb" id="131_uo61o"]
 [ext_resource type="PackedScene" uid="uid://cuup255bpai7y" path="res://assets/models/environment/Log_1.fbx" id="133_g28ww"]
+[ext_resource type="AudioStream" uid="uid://b4hgolnffbrou" path="res://assets/sounds/desert_theme_2.wav" id="138_64mow"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="139_1gq2n"]
 [ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="139_uo61o"]
+[ext_resource type="AudioStream" uid="uid://dhd46evdtf4qb" path="res://assets/sounds/observatory_2.wav" id="140_1gq2n"]
 [ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="141_tgdjs"]
+[ext_resource type="AudioStream" uid="uid://d0oiwxocfv26a" path="res://assets/sounds/country_2.wav" id="142_42ss4"]
+[ext_resource type="AudioStream" uid="uid://c846rr7n5kd7a" path="res://assets/sounds/forest_2.wav" id="144_ues6x"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -1322,12 +1327,42 @@ is_repeatable = true
 text = "Hey! Help! I can't get out of the closet!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
+[sub_resource type="Resource" id="Resource_42ss4"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
 radius = 200.0
+
+[sub_resource type="Resource" id="Resource_ues6x"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="Resource" id="Resource_jimsq"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hfud1"]
 height = 150.0
 radius = 300.0
+
+[sub_resource type="Resource" id="Resource_bq2hc"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="Resource" id="Resource_1a0dc"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Animation" id="Animation_sr2vx"]
 length = 0.001
@@ -3749,6 +3784,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("69_oj0e3")
+corrupted_music = ExtResource("138_64mow")
+condition = SubResource("Resource_42ss4")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3764,6 +3801,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("70_bdgmh")
+corrupted_music = ExtResource("140_1gq2n")
+condition = SubResource("Resource_ues6x")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3779,6 +3818,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("71_3sil5")
+corrupted_music = ExtResource("142_42ss4")
+condition = SubResource("Resource_jimsq")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3794,6 +3835,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("107_kge0y")
+corrupted_music = ExtResource("144_ues6x")
+condition = SubResource("Resource_bq2hc")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3809,6 +3852,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("71_3sil5")
+corrupted_music = ExtResource("142_42ss4")
+condition = SubResource("Resource_1a0dc")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
