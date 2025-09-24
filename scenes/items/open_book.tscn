@@ -1,30 +1,32 @@
-[gd_scene load_steps=13 format=4 uid="uid://bvul4hkkwtbmq"]
+[gd_scene load_steps=14 format=4 uid="uid://bvul4hkkwtbmq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ku0a"]
+[ext_resource type="Texture2D" uid="uid://lqw7nd3brwnm" path="res://assets/sprites/magic2.png" id="1_17x7k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8loj"]
 resource_name = "Cover"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 roughness = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rel80"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caskx"]
 resource_name = "Pages"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 roughness = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl5a4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnhlb"]
 resource_name = "PageLeft"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 roughness = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcyc6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t2ts"]
 resource_name = "PageRight"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lgljx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cl431"]
 _surfaces = [{
 "aabb": AABB(-0.42771336, -6.7055225e-05, -0.2992155, 0.8554267, 0.046361513, 0.598431),
 "format": 34359742465,
@@ -69,7 +71,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xuhi0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kls22"]
 resource_name = "open_book_Cube"
 _surfaces = [{
 "aabb": AABB(-0.42771336, -6.7055225e-05, -0.2992155, 0.8554267, 0.046361513, 0.598431),
@@ -78,7 +80,7 @@ _surfaces = [{
 "index_count": 372,
 "index_data": PackedByteArray("fAA1AH0AfAA3ADUAfgB8AH0AfgB9AH8AgAB+AH8AgAB/AIEANACAAIEANACBADYAAAABAAIAAAADAAEABAAFAAYAggAFAAQAggCDAAUAggAHAIMAggAIAAcACAAJAAcAhAAzADIAhACFADMAhgCFAIQAhgCHAIUAiACHAIYAiACJAIcAMACJAIgAMAAxAIkACgALAAwAigALAAoAigCLAAsAigANAIsAigAOAA0ADgAPAA0AEAARABIAEAATABEAFAASABEAFAARABUAjAA5AI0AjAA7ADkAjgCMAI0AjgCNAI8AkACOAI8AkACPAJEAOACQAJEAOACRADoAkgAuAC8AkgCTAC4AFgAXABgAFgAZABcAGQAaABcAGQAbABoAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkAlABiAGAAlACVAGIAlgBmAGQAlgCXAGYAlgBlAJcAlgBnAGUAmACZAJoAmACbAJkALACcAJ0ALAAtAJwAngCfAKAAngChAJ8APAA9AD4APAA/AD0AogBxAHIAogCjAHEApACjAKIApAClAKMApgClAKQApgCnAKUAcACnAKYAcABzAKcAQABBAEIAQABDAEEAqABvAKkAqABtAG8AqgCoAKkAqgCpAKsArACqAKsArACrAK0AbACsAK0AbACtAG4ARABFAEYARABHAEUASABFAEcASABJAEUArgB1AHYArgCvAHUAsACvAK4AsACxAK8AsgCxALAAsgCzALEAdACzALIAdAB3ALMAtABpALUAtABrAGkASgBLAEwASgBNAEsATABLAE4ATABOAE8AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AtgBhALcAtgBjAGEAuAC5ALoAuAC7ALkAaAC8AGoAaAC9ALwAvgC/AMAAvgDBAL8AeAB5AHoAeAB7AHkA"),
 "lods": [0.11018121, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUABAAIAAcACAAJAAcACgALAAwACgANAAsACgAOAA0ADgAPAA0AEAARABIAEAATABEAFAASABEAFAARABUAFgAXABgAFgAZABcAGQAaABcAGQAbABoAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAuAC8AMAAxADIAMgAxADMANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABFAEcASABJAEUASgBLAEwASgBNAEsATABLAE4ATABOAE8AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbQBvAG4AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkA")],
-"material": SubResource("StandardMaterial3D_5ku0a"),
+"material": SubResource("StandardMaterial3D_p8loj"),
 "name": "Cover",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -90,7 +92,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 180,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAEAAUABgAAAAIABwACAAAABgACAAgABwAJAAIACAAKAAYACQAHAAsACAAMAAoACQALAA0ADAAOAAoADQALAA8ADAAQAA4ADQAPABEAEAASAA4AEQAPABMAEAAUABIAEQATABUAFAAWABIAFQATABcAFAAYABYAGAAZABYAGAAaABkAFQAXABsAGwAXABwAGwAcAB0AHgAfACAAHgAgACEAHgAiAB8AHgAhACMAIgAkAB8AIwAhACUAIgAmACQAIwAlACcAJgAoACQAJwAlACkAJgAqACgAJwApACsAKgAsACgAKwApAC0AKgAuACwAKwAtAC8ALgAwACwALwAtADEALgAyADAAMgAzADAAMgA0ADMALwAxADUANQAxADYANQA2ADcAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUA"),
-"material": SubResource("StandardMaterial3D_rel80"),
+"material": SubResource("StandardMaterial3D_caskx"),
 "name": "Pages",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -102,7 +104,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAEAAUABgAFAAcACAAGAAcACAAHAAkACgAIAAkACgAJAAsADAAKAAsADAANAAoA"),
-"material": SubResource("StandardMaterial3D_tl5a4"),
+"material": SubResource("StandardMaterial3D_nnhlb"),
 "name": "PageLeft",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -114,7 +116,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAFAAQABgAHAAUACAAHAAYACAAJAAcACgAJAAgACgALAAkADAALAAoADAAKAA0A"),
-"material": SubResource("StandardMaterial3D_gcyc6"),
+"material": SubResource("StandardMaterial3D_1t2ts"),
 "name": "PageRight",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -122,94 +124,76 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ycaHvf//icD//8s1AAD0wP//yzX///TAycaHvQAAicBYlYT2//8SwFiVhPYAABLAeVj/////EcB5WP//AAARwFEvNcb//+HAUS81xgAA4cDCDz1h///7wsIPPWEAAPvCAAAAAAAArcQAAAAA//+txO3n9nOv4ddwr+HXcO3n9nO+9d96vvXfehz7xIkc+8SJUPFbnVDxW5336A6u9+gOrjblkLU25ZC1")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_lgljx")
+shadow_mesh = SubResource("ArrayMesh_cl431")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pk7k4"]
-viewport_path = NodePath("open_book/SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_irlnd"]
+viewport_path = NodePath("DesertTown/house3/table/open_book2/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbtvk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gb3y"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_pk7k4")
+albedo_texture = SubResource("ViewportTexture_irlnd")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bjfvr"]
-viewport_path = NodePath("open_book/SubViewport2")
+[sub_resource type="ViewportTexture" id="ViewportTexture_tuxnq"]
+viewport_path = NodePath("DesertTown/house3/table/open_book2/SubViewport2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgqjc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubk87"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_bjfvr")
+albedo_texture = SubResource("ViewportTexture_tuxnq")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lw2cd"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s11b2"]
 points = PackedVector3Array(-0.42771336, 0.013182215, -0.2992155, -0.42771336, 0.013182215, 0.2992155, -0.39304748, 0.050283775, -0.28873006, -0.3052105, 0.07820445, -0.28873006, -0.32656267, 0.031075932, -0.2992155, -0.4267923, 0.00086903456, -0.2992155, -0.23252937, 0.04628739, 0.2991569, -0.32656267, 0.031075932, 0.2991569, -0.3052105, 0.07820445, 0.2886715, -0.39304748, 0.050283775, 0.2886715, -0.4267923, 0.00086903456, 0.2992155, 0.42762962, 0.013182215, 0.2992155, -0.22926374, 0.089932576, -0.28873006, -0.23252937, 0.04628739, -0.2992155, -0.028385818, -6.7055225e-05, -0.2992155, -0.13590032, 0.09188577, 0.2886715, -0.22926374, 0.089932576, 0.2886715, 0.23244563, 0.04628739, 0.2991569, -0.028385818, -6.7055225e-05, 0.2991569, 0.42670855, 0.00086903456, 0.2992155, 0.42771336, 0.013182215, -0.2992155, 0.39296374, 0.050283775, 0.2886715, 0.30512676, 0.07820445, 0.2886715, 0.32647893, 0.031075932, 0.2991569, -0.13590032, 0.09188577, -0.28873006, 0.23244563, 0.04628739, -0.2992155, 0.028302103, -6.7055225e-05, -0.2992155, 0.1358166, 0.09188577, 0.2886715, 0.22918001, 0.089932576, 0.2886715, 0.028302103, -6.7055225e-05, 0.2991569, 0.42670855, 0.00086903456, -0.2992155, 0.32647893, 0.031075932, -0.2992155, 0.30512676, 0.07820445, -0.28873006, 0.39296374, 0.050283775, -0.28873006, 0.1358166, 0.09188577, -0.28873006, 0.22918001, 0.089932576, -0.28873006)
 
-[sub_resource type="LabelSettings" id="LabelSettings_pk7k4"]
+[sub_resource type="LabelSettings" id="LabelSettings_gdawa"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="open_book" type="Node3D"]
+[node name="open_book2" type="Node3D"]
 transform = Transform3D(-0.96091944, 0, -0.27682823, 0, 1, 0, 0.27682823, 0, -0.96091944, 0, 0, 0)
 
 [node name="Book" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_xuhi0")
+mesh = SubResource("ArrayMesh_kls22")
 skeleton = NodePath("")
-surface_material_override/2 = SubResource("StandardMaterial3D_qbtvk")
-surface_material_override/3 = SubResource("StandardMaterial3D_bgqjc")
+surface_material_override/2 = SubResource("StandardMaterial3D_7gb3y")
+surface_material_override/3 = SubResource("StandardMaterial3D_ubk87")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Book/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_lw2cd")
+shape = SubResource("ConvexPolygonShape3D_s11b2")
 
 [node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
 transparent_bg = true
 size = Vector2i(256, 256)
+render_target_update_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="SubViewport"]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewport/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 20
-
-[node name="Label" type="Label" parent="SubViewport/ColorRect/MarginContainer"]
-layout_mode = 2
-text = "
-Runes always seem to 
-hide themselves in the 
-shadows; they do not 
-reveal themselves
-immediately and do not 
-tolerate haste."
-label_settings = SubResource("LabelSettings_pk7k4")
-horizontal_alignment = 3
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/ColorRect"]
+position = Vector2(128, 128)
+texture = ExtResource("1_17x7k")
 
 [node name="SubViewport2" type="SubViewport" parent="."]
+disable_3d = true
 transparent_bg = true
 size = Vector2i(256, 256)
+render_target_update_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="SubViewport2"]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewport2/ColorRect"]
+[node name="Label" type="Label" parent="SubViewport2/ColorRect"]
+custom_minimum_size = Vector2(230, 256)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 20
-
-[node name="Label" type="Label" parent="SubViewport2/ColorRect/MarginContainer"]
-layout_mode = 2
-text = "
-Each line seems to be 
-carved not only into stone 
-or wood, but also into 
-the fabric of reality itself, 
-where the lines form 
-a map of the path."
-label_settings = SubResource("LabelSettings_pk7k4")
+offset_left = 20.0
+offset_right = 250.0
+offset_bottom = 256.0
+text = "The stone beneath your feet can be solid or destructive, and the right path is almost always hidden in the shadows and sounds that the slabs whisper only to the attentive."
+label_settings = SubResource("LabelSettings_gdawa")
 horizontal_alignment = 3
 vertical_alignment = 1
+autowrap_mode = 3
