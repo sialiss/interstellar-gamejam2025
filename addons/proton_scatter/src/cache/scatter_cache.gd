@@ -19,6 +19,7 @@ const ProtonScatterTransformList := preload("../common/transform_list.gd")
 
 signal cache_restored
 
+@export_tool_button("FORCE UPDATE CACHE", "Callable") var force_update_cache_please = force_update_cache
 
 @export_file("*.res", "*.tres") var cache_file := "":
 	set(val):
@@ -32,7 +33,7 @@ signal cache_restored
 # The resource where transforms are actually stored
 var _local_cache: ProtonScatterCacheResource
 var _scene_root: Node
-var _scatter_nodes: Dictionary #Key: ProtonScatter, Value: cached version
+var _scatter_nodes: Dictionary # Key: ProtonScatter, Value: cached version
 var _local_cache_changed := false
 
 
@@ -88,7 +89,14 @@ func clear_cache() -> void:
 	_local_cache = null
 
 
+func force_update_cache() -> void:
+	please_update_cache(true)
+
+
 func update_cache() -> void:
+	please_update_cache(false)
+
+func please_update_cache(force = false) -> void:
 	if cache_file.is_empty():
 		printerr("Cache file path is empty.")
 		return
@@ -101,7 +109,7 @@ func update_cache() -> void:
 	for s in _scatter_nodes:
 		# Ignore this node if its cache is already up to date
 		var cached_version: int = _scatter_nodes[s]
-		if s.build_version == cached_version:
+		if not force and s.build_version == cached_version:
 			continue
 		
 		# If transforms are not available, try to rebuild once.
@@ -118,7 +126,7 @@ func update_cache() -> void:
 		_local_cache_changed = true
 
 	# Only save the cache on disk if there's something new to save
-	if not _local_cache_changed:
+	if not force and not _local_cache_changed:
 		return
 
 	# TODO: Save large files on a thread
