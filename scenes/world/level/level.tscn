@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=212 format=4 uid="uid://cqelj6eb7mfuo"]
-=======
 [gd_scene load_steps=213 format=4 uid="uid://cqelj6eb7mfuo"]
->>>>>>> origin/main
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -45,7 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mot86sds2bb" path="res://scenes/items/blue_book.tscn" id="35_kge0y"]
 [ext_resource type="Texture2D" uid="uid://lqw7nd3brwnm" path="res://assets/sprites/magic2.png" id="36_tuxnq"]
 [ext_resource type="Texture2D" uid="uid://cf2uji81u0mg3" path="res://assets/sprites/magic3.png" id="37_tuxnq"]
-[ext_resource type="Texture2D" uid="uid://c3kcsvsu4ytwx" path="res://assets/sprites/3.1.png" id="39_je5e5"]
+[ext_resource type="Texture2D" uid="uid://c3kcsvsu4ytwx" path="res://assets/sprites/time_rune_wood.png" id="39_je5e5"]
 [ext_resource type="PackedScene" uid="uid://bor4qdfoac56u" path="res://scenes/rocket/rocket.tscn" id="40_6oqdp"]
 [ext_resource type="Texture2D" uid="uid://b0aa36sof2pb5" path="res://assets/sprites/fire_rune_pattern.png" id="40_gw5i7"]
 [ext_resource type="Script" uid="uid://bmfhyjwba1i2o" path="res://scripts/NPC.gd" id="40_sdkx4"]
@@ -88,7 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
 [ext_resource type="PackedScene" uid="uid://gnklfllpy42t" path="res://assets/models/environment/Tree_3.fbx" id="59_kge0y"]
 [ext_resource type="ArrayMesh" uid="uid://u66ug8fyg1qt" path="res://assets/models/props/paper.obj" id="59_whib0"]
-[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/7.1.png" id="60_bhuc7"]
+[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/enchantment_rune_wood.png" id="60_bhuc7"]
 [ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
 [ext_resource type="Texture2D" uid="uid://p3r0l1n7640c" path="res://assets/sprites/magic5.png" id="66_jpodg"]
 [ext_resource type="Texture2D" uid="uid://bwdtvxugvhv7i" path="res://assets/sprites/magic1.png" id="67_ipee5"]
@@ -110,9 +106,9 @@
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
 [ext_resource type="AudioStream" uid="uid://kv187sixi24s" path="res://assets/sounds/voice_deep.wav" id="97_ipee5"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
-[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
+[ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
 [ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
-[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
+[ext_resource type="PackedScene" uid="uid://boijfqij0ims3" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
 [ext_resource type="AudioStream" uid="uid://dqpbjmjn2rm23" path="res://assets/sounds/voice_high.wav" id="101_bhuc7"]
 [ext_resource type="AudioStream" uid="uid://cx700oq0f7y4b" path="res://assets/sounds/forest_without_birds.mp3" id="107_kge0y"]
@@ -2671,11 +2667,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -286.75806, 5.1483116, 297.71
 transform = Transform3D(-1.2947755, 0.00044390556, -0.007530844, -1.5073598e-10, 1.2072418, 0.048710346, 0.009762617, 0.058873363, -0.99878454, -14.835903, -1.4689407, 9.969539)
 
 [node name="Lantern2" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(-0.9999716, -5.820767e-11, 0.007539795, 0.00036726592, 0.99881315, 0.04870897, -0.0075308443, 0.04871034, -0.9987847, 0.39666748, -0.49830437, -3.490509)
+transform = Transform3D(-0.99997157, 5.180482e-09, 0.00753969, 0.00036726595, 0.998813, 0.048708946, -0.0075307395, 0.048710328, -0.9987846, 0.39666748, -0.49830437, -3.490509)
 enabled = true
 
 [node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(-0.9999716, -5.820767e-11, 0.007539795, 0.00036726592, 0.99881315, 0.04870897, -0.0075308443, 0.04871034, -0.9987847, -2.5646057, -0.59565926, -3.3809204)
+transform = Transform3D(-0.99997157, 5.180482e-09, 0.00753969, 0.00036726595, 0.998813, 0.048708946, -0.0075307395, 0.048710328, -0.9987846, -2.5646057, -0.59565926, -3.3809204)
 enabled = true
 
 [node name="table" parent="Forest/house_wood" instance=ExtResource("40_usf2n")]

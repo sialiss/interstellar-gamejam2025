@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TransformationRune" load_steps=3 format=3 uid="uid://bgwak8m8gk75i"]
 
-[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/7.1.png" id="1_bh8t8"]
+[ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/enchantment_rune_wood.png" id="1_bh8t8"]
 [ext_resource type="Script" uid="uid://bfxcoluapkkiv" path="res://resources/runes/transformation_rune/transformation_rune.gd" id="1_wapav"]
 
 [resource]

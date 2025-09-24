@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvglrhsbrdk1w"
-path.s3tc="res://.godot/imported/enchantment_rune_pattern.png-55ce1d5dee17269593c173f83ea242f7.s3tc.ctex"
+uid="uid://bijflhg3i8fgk"
+path="res://.godot/imported/speed_rune.png-053c3808abf99f7b7eacabc310dc73c7.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enchantment_rune_pattern.png"
-dest_files=["res://.godot/imported/enchantment_rune_pattern.png-55ce1d5dee17269593c173f83ea242f7.s3tc.ctex"]
+source_file="res://assets/sprites/speed_rune.png"
+dest_files=["res://.godot/imported/speed_rune.png-053c3808abf99f7b7eacabc310dc73c7.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
