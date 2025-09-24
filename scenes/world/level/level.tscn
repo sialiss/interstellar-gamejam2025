@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=243 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -106,7 +106,6 @@
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
 [ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
-[ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
 [ext_resource type="PackedScene" uid="uid://cuuab3xe3g4iq" path="res://assets/models/environment/Log_3.fbx" id="77_dnajr"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
@@ -3498,7 +3497,7 @@ shape = SubResource("SphereShape3D_kapuu")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
 
-[node name="Observatory2" type="Area3D" parent="Music"]
+[node name="Observatory" type="Area3D" parent="Music"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 829.07434)
 collision_layer = 0
 collision_mask = 2
@@ -3507,13 +3506,13 @@ music = ExtResource("70_bdgmh")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Observatory2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Observatory"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.98048, -24.629517, -181.6289)
 shape = SubResource("SphereShape3D_kapuu")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
 
-[node name="Forest1" type="Area3D" parent="Music"]
+[node name="Meadow" type="Area3D" parent="Music"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.49374, 139.8728, 188.84857)
 collision_layer = 0
 collision_mask = 2
@@ -3522,13 +3521,13 @@ music = ExtResource("71_3sil5")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Forest1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Meadow"]
 transform = Transform3D(-0.047402784, -0.26485425, 0.9631228, -0.99887574, 0.0125689525, -0.045706067, -9.8017414e-11, -0.9642066, -0.2651523, 141.25911, -183.29358, 271.28757)
 shape = SubResource("CylinderShape3D_hfud1")
 debug_color = Color(10.158964, 0, 4.5950737, 1)
 debug_fill = false
 
-[node name="Forest2" type="Area3D" parent="Music"]
+[node name="Forest" type="Area3D" parent="Music"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.49374, 139.8728, 188.84857)
 collision_layer = 0
 collision_mask = 2
@@ -3537,7 +3536,7 @@ music = ExtResource("107_kge0y")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Forest2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Forest"]
 transform = Transform3D(-0.047402788, 0.11479059, 0.99225813, -0.99887574, -0.0054475274, -0.04708872, 3.3564682e-09, -0.99337476, 0.11491981, -93.34013, -297.44565, 104.631424)
 shape = SubResource("CylinderShape3D_hfud1")
 debug_color = Color(10.158964, 0, 4.5950737, 1)
@@ -3548,12 +3547,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -737.77563, 0, 276.29208)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
-music = ExtResource("72_3osn7")
+music = ExtResource("71_3sil5")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Sea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.33516, -92.18227, 229.01501)
+[node name="Sea" type="CollisionShape3D" parent="Music/Sea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.33514, -92.18227, 229.01501)
 shape = SubResource("SphereShape3D_kapuu")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
