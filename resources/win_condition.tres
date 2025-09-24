@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventStringCondition" load_steps=2 format=3 uid="uid://j40vwcmamld0"]
+
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="1_jbnem"]
+
+[resource]
+script = ExtResource("1_jbnem")
+type = "Win"
+data = "Win"
+invert = true
+metadata/_custom_type_script = "uid://cujws3rcdujt0"

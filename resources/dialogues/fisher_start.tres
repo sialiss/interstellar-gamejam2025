@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://0sjyvf1of6px"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=12 format=3 uid="uid://0sjyvf1of6px"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_neuk6"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_2d82t"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_jdncu"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="4_okihx"]
 
 [sub_resource type="Resource" id="Resource_fvn6n"]
 script = ExtResource("1_neuk6")
@@ -40,10 +41,18 @@ text = "Could there be a different way to fish?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_jdncu")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
+[sub_resource type="Resource" id="Resource_hk8ob"]
+script = ExtResource("4_okihx")
+type = "Win"
+data = "Win"
+invert = true
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
 [resource]
 script = ExtResource("1_neuk6")
 dialogue_id = "fisher_start"
 text = "Hey, did you notice it too? The nets are empty, the fishing rods are quiet…
 The sea is full of these… copies of the fish. The huge one, spinning… you saw it too, right?"
 choices = Array[ExtResource("1_neuk6")]([SubResource("Resource_neuk6"), SubResource("Resource_2d82t"), SubResource("Resource_okihx")])
+conditions = Array[ExtResource("2_2d82t")]([SubResource("Resource_hk8ob")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

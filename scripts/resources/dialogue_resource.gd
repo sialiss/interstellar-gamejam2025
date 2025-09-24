@@ -15,7 +15,7 @@ func is_available() -> bool:
 	if conditions.is_empty():
 		return true
 	for cond in conditions:
-		if not cond.is_completed:
+		if not cond.is_completed or cond.is_blocked:
 			return false
 	return true
 

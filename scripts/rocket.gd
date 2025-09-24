@@ -20,4 +20,5 @@ func attach_rod():
 
 func ignite():
 	if is_rod_attached:
+		EventBus.trigger("Win", "Win")
 		win_animation_player.play("win")

@@ -122,5 +122,6 @@ func create_button(i, choice_name):
 	var btn := Button.new()
 	btn.text = "[%d] %s" % [i, choice_name]
 	btn.clip_text = true
+	btn.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	return btn

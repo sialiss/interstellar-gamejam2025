@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TimeRune" load_steps=3 format=3 uid="uid://cmrgsajfpa3dh"]
 
-[ext_resource type="Texture2D" uid="uid://ctj1jairf2gt" path="res://assets/sprites/fire_rune_pattern2.png" id="1_p3ovv"]
+[ext_resource type="Texture2D" uid="uid://dirgjk05m5dkt" path="res://assets/sprites/time_rune_book.png" id="1_p3ovv"]
 [ext_resource type="Script" uid="uid://372ugn800bkr" path="res://resources/runes/time_rune/time_rune.gd" id="2_bf5oi"]
 
 [resource]

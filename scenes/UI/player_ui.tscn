@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://14cpmjcncpl4" path="res://scenes/UI/player_ui.gd" id="1_d6j1s"]
 [ext_resource type="Texture2D" uid="uid://ue4ivy1ayrt1" path="res://assets/sprites/book1.png" id="2_8xbeg"]
 [ext_resource type="PackedScene" uid="uid://cgmdgketpnli8" path="res://scenes/UI/inventory_ui.tscn" id="2_q3y81"]
-[ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/textures/speed_rune.png" id="4_hxbk0"]
+[ext_resource type="Texture2D" uid="uid://bijflhg3i8fgk" path="res://assets/sprites/speed_rune.png" id="4_hxbk0"]
 [ext_resource type="Texture2D" uid="uid://hece4qhcwph2" path="res://assets/textures/paper8.png" id="4_rns76"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hxbk0"]
