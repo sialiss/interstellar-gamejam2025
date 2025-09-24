@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=280 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -3575,7 +3575,7 @@ position = Vector2(128, 128)
 texture = ExtResource("28_whib0")
 
 [node name="funny_lights" parent="MusicTest" instance=ExtResource("97_jimsq")]
-transform = Transform3D(0.99992555, 0, 0.01219955, -0.0006157225, 0.9987253, 0.050467167, -0.0121840015, -0.05047091, 0.9986512, -4.6759043, 4.539882, -3.2322068)
+transform = Transform3D(0.99992555, 0, 0.01219955, -0.0006157225, 0.9987253, 0.050467167, -0.0121840015, -0.05047091, 0.9986512, -3.29858, 3.7977273, -3.2115266)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
