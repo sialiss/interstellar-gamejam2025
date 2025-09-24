@@ -642,7 +642,7 @@ radius = 15.0
 size = Vector3(2, 5, 2.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p7o0o"]
-viewport_path = NodePath("Cave/Paper/SubViewport")
+viewport_path = NodePath("Cave/cave/Paper/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgdjs"]
 resource_local_to_scene = true
@@ -776,14 +776,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tgdjs")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_64mow"]
-viewport_path = NodePath("Cave/open_book2/SubViewport")
+viewport_path = NodePath("Cave/cave/open_book2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gq2n"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_64mow")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_42ss4"]
-viewport_path = NodePath("Cave/open_book2/SubViewport2")
+viewport_path = NodePath("Cave/cave/open_book2/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ues6x"]
 resource_local_to_scene = true
@@ -1274,6 +1274,13 @@ points = PackedVector3Array(-0.42771336, 0.013182215, -0.2992155, -0.42771336, 0
 density = 0.2
 emission = Color(0.2520276, 0.25202766, 0.25202763, 1)
 edge_fade = 0.2732079
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ues6x"]
+viewport_path = NodePath("Forest/Paper2/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jimsq"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ues6x")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqhh"]
 radius = 0.783
@@ -1892,13 +1899,6 @@ _data = {
 &"win": SubResource("Animation_78awm")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ues6x"]
-viewport_path = NodePath("Paper/SubViewport2")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jimsq"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ues6x")
-
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
@@ -2321,25 +2321,23 @@ transform = Transform3D(-0.18811391, 0, -0.04528498, 0.049953938, 0, -0.1705318,
 transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.21616219, 1.8470113, 3.5236013e-08)
 shape = SubResource("BoxShape3D_ni50r")
 
-[node name="Rock" parent="Cave" instance=ExtResource("108_kge0y")]
-transform = Transform3D(0.98122877, -0.1921281, 0.016640097, 0.19284736, 0.97756916, -0.08466666, 0, 0.086286366, 0.99627036, 176.55185, 6.4357986, 143.14456)
-
-[node name="Paper" type="MeshInstance3D" parent="Cave"]
-transform = Transform3D(0.013583337, -0.013916518, -0.2346902, 0, 0.29659608, -0.011049711, 0.23163834, 0.00081606844, 0.0137623, 219.06616, -0.086666346, 157.7785)
+[node name="Paper" type="MeshInstance3D" parent="Cave/cave"]
+transform = Transform3D(0.23163834, 0.000816069, 0.01376231, 0, 0.29659608, -0.011049711, -0.013583347, 0.013916518, 0.2346902, 31.760628, -7.2671785, -25.060974)
 mesh = ExtResource("59_whib0")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgdjs")
 
-[node name="SubViewport" type="SubViewport" parent="Cave/Paper"]
+[node name="SubViewport" type="SubViewport" parent="Cave/cave/Paper"]
 transparent_bg = true
 size = Vector2i(256, 256)
 render_target_update_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Cave/Paper/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="Cave/cave/Paper/SubViewport"]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Label" type="Label" parent="Cave/Paper/SubViewport/ColorRect"]
+[node name="Label" type="Label" parent="Cave/cave/Paper/SubViewport/ColorRect"]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 209.0
@@ -2350,32 +2348,32 @@ label_settings = SubResource("LabelSettings_p7o0o")
 horizontal_alignment = 3
 vertical_alignment = 1
 
-[node name="open_book2" type="Node3D" parent="Cave"]
-transform = Transform3D(-0.155676, 0, -0.9878082, 0, 1, 0, 0.9878082, 0, -0.155676, 219.21515, -0.1854592, 157.5329)
+[node name="open_book2" type="Node3D" parent="Cave/cave"]
+transform = Transform3D(0.9878082, 0, -0.15567596, 0, 1, 0, 0.15567596, 0, 0.9878082, 31.515022, -7.365971, -25.20996)
 
-[node name="Book" type="MeshInstance3D" parent="Cave/open_book2"]
+[node name="Book" type="MeshInstance3D" parent="Cave/cave/open_book2"]
 mesh = SubResource("ArrayMesh_5omyx")
 skeleton = NodePath("")
 surface_material_override/2 = SubResource("StandardMaterial3D_1gq2n")
 surface_material_override/3 = SubResource("StandardMaterial3D_ues6x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cave/open_book2/Book"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cave/cave/open_book2/Book"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/open_book2/Book/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/cave/open_book2/Book/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_jimsq")
 
-[node name="SubViewport" type="SubViewport" parent="Cave/open_book2"]
+[node name="SubViewport" type="SubViewport" parent="Cave/cave/open_book2"]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(256, 256)
 render_target_update_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Cave/open_book2/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="Cave/cave/open_book2/SubViewport"]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Label" type="Label" parent="Cave/open_book2/SubViewport/ColorRect"]
+[node name="Label" type="Label" parent="Cave/cave/open_book2/SubViewport/ColorRect"]
 custom_minimum_size = Vector2(230, 256)
 layout_mode = 0
 offset_left = 20.0
@@ -2387,18 +2385,18 @@ horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="SubViewport2" type="SubViewport" parent="Cave/open_book2"]
+[node name="SubViewport2" type="SubViewport" parent="Cave/cave/open_book2"]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(256, 256)
 render_target_update_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Cave/open_book2/SubViewport2"]
+[node name="ColorRect" type="ColorRect" parent="Cave/cave/open_book2/SubViewport2"]
 custom_minimum_size = Vector2(512, 512)
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Label" type="Label" parent="Cave/open_book2/SubViewport2/ColorRect"]
+[node name="Label" type="Label" parent="Cave/cave/open_book2/SubViewport2/ColorRect"]
 custom_minimum_size = Vector2(230, 256)
 layout_mode = 0
 offset_left = 20.0
@@ -2410,20 +2408,26 @@ horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Rock_2" parent="Cave" instance=ExtResource("40_hwi08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.03543, 1.1879426, 159.50842)
+[node name="Rock_2" parent="Cave/cave" instance=ExtResource("40_hwi08")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.490547, -5.9925694, -12.030243)
 
-[node name="Rock_4" parent="Cave" instance=ExtResource("41_dmyn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.36263, 2.5660195, 159.5754)
+[node name="Rock_4" parent="Cave/cave" instance=ExtResource("41_dmyn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.557518, -4.6144924, -12.357437)
 
-[node name="Rock_5" parent="Cave" instance=ExtResource("41_dmyn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.45851, 0.24291897, 148.28656)
+[node name="Rock_5" parent="Cave/cave" instance=ExtResource("41_dmyn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.268684, -6.937593, -10.453323)
 
-[node name="Rock_6" parent="Cave" instance=ExtResource("41_dmyn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.89824, 0.24292088, 161.3965)
+[node name="Rock_6" parent="Cave/cave" instance=ExtResource("41_dmyn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 35.378624, -6.937591, -13.893051)
 
-[node name="Rock_7" parent="Cave" instance=ExtResource("41_dmyn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.14345, 0.24291897, 157.95953)
+[node name="Rock_7" parent="Cave/cave" instance=ExtResource("41_dmyn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.941658, -6.937593, -10.13826)
+
+[node name="Rock_1" parent="Cave/cave" instance=ExtResource("141_tgdjs")]
+transform = Transform3D(0.8113292, 0, 0.58458966, 0, 1, 0, -0.58458966, 0, 0.8113292, 24.25045, -7.3660383, -10.201202)
+
+[node name="Rock" parent="Cave" instance=ExtResource("108_kge0y")]
+transform = Transform3D(0.98122877, -0.1921281, 0.016640097, 0.19284736, 0.97756916, -0.08466666, 0, 0.086286366, 0.99627036, 176.55185, 6.4357986, 143.14456)
 
 [node name="Observatory" type="Node3D" parent="."]
 
@@ -2449,9 +2453,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Observatory/observatory/Dome/Tube" index="1"]
 transform = Transform3D(-1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000002, 0, 11.933823, 13.318619)
 remote_path = NodePath("../../../table/computer/CameraScreen/SubViewport/Camera3D")
-
-[node name="pot" parent="Observatory/observatory/@StaticBody3D@34467" index="1" instance=ExtResource("63_nnhlb")]
-transform = Transform3D(-1.0457656, 0, 2.8118281, 0, 3, 0, -2.8118281, 0, -1.0457656, 3.1660156, -13.70026, -19.923157)
 
 [node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.029334787, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334787, 3.3853662, 0, -0.5534874)
@@ -2683,101 +2684,104 @@ transform = Transform3D(0.57715964, 0, -0.8166314, 0, 1, 0, 0.8166314, 0, 0.5771
 [node name="closet_3" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.99939454, 0, -0.034794934, 0, 1, 0, 0.034794934, 0, 0.99939454, 3.5415592, 0, -12.970191)
 
+[node name="redbook3" parent="Observatory/observatory/Furniture/closet_3" instance=ExtResource("108_whib0")]
+transform = Transform3D(0.3238157, -0.0029121418, 0.9461156, 0.0016327798, 0.9999956, 0.0025191128, -0.9461186, 0.0007290259, 0.32381916, 0.4383545, 0.941185, -0.090026855)
+
+[node name="book9" parent="Observatory/observatory/Furniture/closet_3" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9708439, 0, 0.23972005, 0, 1, 0, -0.23971993, 0, 0.9708433, -0.0211792, 2.4057884, -0.032409668)
+
 [node name="closet_4" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.99939454, 0, -0.034794934, 0, 1, 0, 0.034794934, 0, 0.99939454, 1.8160299, 0, -13.030267)
+
+[node name="book" parent="Observatory/observatory/Furniture/closet_4" instance=ExtResource("56_0hvbb")]
+transform = Transform3D(-0.9276212, 0, 0.37352195, 0, 1, 0, -0.37352195, 0, -0.9276212, -0.08618164, 1.9438858, -0.06774902)
+
+[node name="book8" parent="Observatory/observatory/Furniture/closet_4" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.97084343, 0, 0.23971975, 0, 1, 0, -0.23971987, 0, 0.97084284, -0.35162354, 0.9435158, 0.10482788)
 
 [node name="closet_5" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, 0.056711674, 0, -13.091519)
 
+[node name="blue book3" parent="Observatory/observatory/Furniture/closet_5" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.8895201, 0, 0.45689636, 0, 1, 0, -0.45689636, 0, 0.8895201, 0.30096436, 1.4483414, -0.17828369)
+
+[node name="redbook" parent="Observatory/observatory/Furniture/closet_5" instance=ExtResource("108_whib0")]
+transform = Transform3D(-0.2031464, -0.15077531, 0.9674702, 9.313226e-09, 0.988073, 0.15398614, -0.9791483, 0.031281702, -0.20072344, -0.15722656, 1.4939499, -0.08041382)
+
 [node name="closet_6" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -1.730577, 0, -13.080914)
+
+[node name="pot" parent="Observatory/observatory/Furniture/closet_6" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.51388574, 0, 0.85785884, 0, 1, 0, -0.85785884, 0, 0.51388574, 0.23565674, 0.8979683, -0.0015411377)
+
+[node name="book6" parent="Observatory/observatory/Furniture/closet_6" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.6995264, 0, -0.7146071, 0, 1, 0, 0.7146075, 0, 0.6995263, -0.23394775, 1.4385452, -0.09136963)
+
+[node name="book7" parent="Observatory/observatory/Furniture/closet_6" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.4727051, 0, 0.8812215, 0, 1, 0, -0.8812217, 0, 0.47270498, 0.18408203, 2.3939743, 0.036193848)
 
 [node name="closet_7" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -3.492711, 0, -13.0704565)
 
+[node name="blue book" parent="Observatory/observatory/Furniture/closet_7" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.8895201, 0, 0.45689636, 0, 1, 0, -0.45689636, 0, 0.8895201, -0.38165283, 0.9253502, 0.1083374)
+
+[node name="redbook2" parent="Observatory/observatory/Furniture/closet_7" instance=ExtResource("108_whib0")]
+transform = Transform3D(-0.2031464, -0.0029394159, 0.9791441, 7.450581e-09, 0.9999956, 0.0030019584, -0.9791483, 0.00060982525, -0.20314541, 0.04815674, 2.4382286, 0.04295349)
+
 [node name="closet_8" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -5.3097286, 0, -13.059674)
+
+[node name="book2" parent="Observatory/observatory/Furniture/closet_8" instance=ExtResource("56_0hvbb")]
+transform = Transform3D(0.6904156, 0, -0.72341305, 0, 1, 0, 0.72341305, 0, 0.6904156, 0.03289795, 1.4507484, 0.04335022)
+
+[node name="book3" parent="Observatory/observatory/Furniture/closet_8" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.99990857, 0, 0.013543338, 0, 1, 0, -0.013543278, 0, 0.99990845, 0.5199585, 1.939579, -0.039886475)
+
+[node name="book4" parent="Observatory/observatory/Furniture/closet_8" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.99990857, 0, 0.013543338, 0, 1, 0, -0.013543278, 0, 0.99990845, 0.5199585, 2.0469818, -0.039886475)
+
+[node name="book5" parent="Observatory/observatory/Furniture/closet_8" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9999088, 0, 0.013543338, 0, 1, 0, -0.013543218, 0, 0.99990845, -0.34191895, 2.4011726, -0.030776978)
 
 [node name="closet_9" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
 transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -7.1192603, 0, -13.048937)
 
-[node name="blue book" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
-transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, -3.8737102, 0.9253502, -12.959846)
-
-[node name="blue book2" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
-transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, -7.034577, 0.9253502, -13.021227)
-
-[node name="blue book3" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
-transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, 0.35663322, 1.4483414, -13.271579)
-
-[node name="redbook" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
-transform = Transform3D(-0.20895308, -0.15058702, 0.9662621, 9.313226e-09, 0.988073, 0.15398614, -0.97792566, 0.03217586, -0.20646083, -0.10107422, 1.4939499, -13.171005)
-
-[node name="redbook2" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
-transform = Transform3D(-0.20895308, -0.0029357453, 0.9779214, 7.450581e-09, 0.9999956, 0.0030019584, -0.97792566, 0.00062725693, -0.20895207, -3.4443552, 2.4382281, -13.027799)
-
-[node name="redbook3" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
-transform = Transform3D(0.35653982, -0.002935745, 0.93427557, 0.0016327798, 0.9999956, 0.0025191128, -0.93427867, 0.0006272568, 0.35654315, 3.9827123, 0.94118357, -13.044949)
-
-[node name="book" parent="Observatory/observatory/Furniture" instance=ExtResource("56_0hvbb")]
-transform = Transform3D(-0.914063, 0, 0.40557232, 0, 1, 0, -0.40557232, 0, -0.914063, 1.7322388, 1.9438858, -13.100983)
-
-[node name="book2" parent="Observatory/observatory/Furniture" instance=ExtResource("56_0hvbb")]
-transform = Transform3D(0.6946962, 0, -0.71930337, 0, 1, 0, 0.71930337, 0, 0.6946962, -5.2765293, 1.4507484, -13.016528)
-
-[node name="pot" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -1.4949341, 0.8979683, -13.083817)
+[node name="blue book2" parent="Observatory/observatory/Furniture/closet_9" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.8895201, 0, 0.45689636, 0, 1, 0, -0.45689636, 0, 0.8895201, 0.08453369, 0.9253502, 0.028244019)
 
 [node name="pot2" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
 transform = Transform3D(1.9854561, 0, -0.8426564, 0, 1, 0, 0.24075896, 0, 6.9490967, -7.5716553, 3.8146973e-06, 6.2646027)
 
+[node name="Plant_1" parent="Observatory/observatory/Furniture/pot2" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.20072618, 0, 0.45794, 0, 1, 0, -0.13083999, 0, 0.057350338, -0.040100098, 0.33743668, 0.14637566)
+
+[node name="Plant_2" parent="Observatory/observatory/Furniture/pot2" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.3439937, 0, 0.3628614, 0, 1, 0, -0.103674665, 0, 0.09828391, 0.06982422, 0.33865356, -0.009250641)
+
+[node name="Plant_3" parent="Observatory/observatory/Furniture/pot2" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.20072618, 0, 0.45794, 0, 1, 0, -0.13083999, 0, 0.057350338, -0.06518555, 0.33743668, -0.12163162)
+
 [node name="pot3" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
 transform = Transform3D(1.9998428, 0, 0.08784008, 0, 1, 0, -0.025097132, 0, 6.9994497, -7.2435303, 3.8146973e-06, -0.8518524)
 
-[node name="Plant_1" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.774597, 0.3374405, 7.2721252)
+[node name="Plant_4" parent="Observatory/observatory/Furniture/pot3" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.2597745, 0, 0.42722034, 0, 1, 0, -0.12206295, 0, 0.07422129, -0.01876831, 0.33865356, 0.15093231)
 
-[node name="Plant_2" parent="Observatory/observatory/Furniture" instance=ExtResource("57_sr2vx")]
-transform = Transform3D(0.77034646, 0, 0.6376257, 0, 1, 0, -0.6376257, 0, 0.77034646, -7.425232, 0.33865738, 6.2171173)
+[node name="Plant_5" parent="Observatory/observatory/Furniture/pot3" instance=ExtResource("52_p7o0o")]
+transform = Transform3D(0.2597745, 0, 0.42722034, 0, 1, 0, -0.12206295, 0, 0.07422129, -0.025238037, 0.3934822, 0.060575485)
 
-[node name="Plant_3" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.598572, 0.3374405, 5.4036865)
+[node name="Plant_6" parent="Observatory/observatory/Furniture/pot3" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.2597745, 0, 0.42722034, 0, 1, 0, -0.12206295, 0, 0.07422129, -0.027313232, 0.33743668, -0.116327286)
 
-[node name="Plant_4" parent="Observatory/observatory/Furniture" instance=ExtResource("57_sr2vx")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.2678833, 0.33865738, 0.2050476)
+[node name="Plant_7" parent="Observatory/observatory/Furniture/pot3" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.40838623, 0, 0.28847992, 0, 1, 0, -0.08242282, 0, 0.116681784, -0.056152344, 0.33743668, -0.03753853)
 
-[node name="Plant_5" parent="Observatory/observatory/Furniture" instance=ExtResource("52_p7o0o")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.2887573, 0.39348602, -0.42723083)
+[node name="pot" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(-2.9527547, 0, 0.53032684, 0, 3, 0, -0.53032684, 0, -2.9527547, 3.2045898, 3.8146973e-06, -8.165894)
 
-[node name="Plant_6" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
-transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.3084106, 0.3374405, -1.6654053)
-
-[node name="Plant_7" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
-transform = Transform3D(0.80946827, 0, 0.58716375, 0, 1, 0, -0.58716375, 0, 0.80946827, -7.359192, 0.3374405, -1.113205)
-
-[node name="Bush_3" parent="Observatory/observatory/Furniture" instance=ExtResource("53_uo61o")]
-transform = Transform3D(-0.3485884, 0, 0.937276, 0, 1, 0, -0.937276, 0, -0.3485884, 3.2045898, 0.9606323, -8.165894)
-
-[node name="book3" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.9998105, 0, 0.019476533, 0, 1, 0, -0.019476473, 0, 0.99981046, -4.789978, 1.939579, -13.102631)
-
-[node name="book4" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.9998105, 0, 0.019476533, 0, 1, 0, -0.019476473, 0, 0.99981046, -4.789978, 2.0469818, -13.102631)
-
-[node name="book5" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.9998108, 0, 0.019476533, 0, 1, 0, -0.019476444, 0, 0.99981046, -5.6518555, 2.4011726, -13.088425)
-
-[node name="book6" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.7037546, 0, -0.71044356, 0, 1, 0, 0.7104439, 0, 0.7037544, -1.9650879, 1.4385452, -13.170868)
-
-[node name="book7" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.46746764, 0, 0.884011, 0, 1, 0, -0.8840112, 0, 0.4674675, -1.5462646, 2.3939743, -13.045761)
-
-[node name="book8" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.9785967, 0, 0.20579425, 0, 1, 0, -0.2057943, 0, 0.9785961, 1.4609375, 0.9435158, -12.937744)
-
-[node name="book9" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
-transform = Transform3D(0.97859716, 0, 0.20579454, 0, 1, 0, -0.2057944, 0, 0.97859657, 3.5214844, 2.4057884, -13.003326)
+[node name="Bush_3" parent="Observatory/observatory/Furniture/pot" instance=ExtResource("53_uo61o")]
+transform = Transform3D(0.16959529, 0, -0.28696427, 0, 0.33333334, 0, 0.28696427, 0, 0.16959529, 0, 0.26319757, 0)
 
 [node name="rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
@@ -3378,6 +3382,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603638, -1.398092, 8.6820
 [node name="Log_3" parent="Forest" instance=ExtResource("77_dnajr")]
 transform = Transform3D(0.9300351, 0.057982206, 0.3628674, -0.054016363, 0.99831754, -0.021075308, -0.36347887, 0, 0.9316024, -11.428356, -2.3294482, 13.84454)
 
+[node name="Paper2" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-0.20305943, -0.22074054, -0.0063650482, 0.028321642, -0.034606945, 0.2966483, -0.2190087, 0.2001899, 0.044263322, -25.153107, -0.21394825, 10.53186)
+mesh = ExtResource("59_whib0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_jimsq")
+
+[node name="SubViewport2" type="SubViewport" parent="Forest/Paper2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="ColorRect" type="ColorRect" parent="Forest/Paper2/SubViewport2"]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest/Paper2/SubViewport2/ColorRect"]
+position = Vector2(128, 128)
+rotation = 3.1415927
+texture = ExtResource("147_42ss4")
+
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 298.3998, 6.0084453, 445.933)
 
@@ -3903,29 +3928,6 @@ root_node = NodePath("../Observatory")
 libraries = {
 &"": SubResource("AnimationLibrary_kge0y")
 }
-
-[node name="Rock_1" parent="." instance=ExtResource("141_tgdjs")]
-transform = Transform3D(0.5845896, 0, -0.8113292, 0, 1, 0, 0.8113292, 0, 0.5845896, 204.20639, -0.18552661, 150.26833)
-
-[node name="Paper" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.20305943, -0.22074054, -0.0063650482, 0.028321642, -0.034606945, 0.2966483, -0.2190087, 0.2001899, 0.044263322, -311.91116, 4.9343634, 308.24707)
-mesh = ExtResource("59_whib0")
-surface_material_override/0 = SubResource("StandardMaterial3D_jimsq")
-
-[node name="SubViewport2" type="SubViewport" parent="Paper"]
-disable_3d = true
-transparent_bg = true
-size = Vector2i(256, 256)
-
-[node name="ColorRect" type="ColorRect" parent="Paper/SubViewport2"]
-custom_minimum_size = Vector2(512, 512)
-offset_right = 512.0
-offset_bottom = 512.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Paper/SubViewport2/ColorRect"]
-position = Vector2(128, 128)
-rotation = 3.1415927
-texture = ExtResource("147_42ss4")
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]
