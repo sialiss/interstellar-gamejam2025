@@ -68,7 +68,7 @@ func cast_rune() -> void:
 		rune.execute(player)
 		MusicManager.play_rune_sound()
 	else:
-		pass
+		MusicManager.play_runefailure_sound()
 
 	# cleanup
 	returned_directions = []
