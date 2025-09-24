@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=220 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -101,10 +101,11 @@
 [ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="94_tuxnq"]
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
-[ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
+[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
 [ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
-[ext_resource type="PackedScene" uid="uid://boijfqij0ims3" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
+[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
+[ext_resource type="PackedScene" uid="uid://bwk045of76yjy" path="res://scenes/items/rock/rock.tscn" id="108_kge0y"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
 [ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="113_ipee5"]
 
@@ -2254,6 +2255,9 @@ transform = Transform3D(-0.18811391, 0, -0.04528498, 0.049953938, 0, -0.1705318,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cave/cave/pedestal/StaticBody3D"]
 transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.21616219, 1.8470113, 3.5236013e-08)
 shape = SubResource("BoxShape3D_ni50r")
+
+[node name="Rock" parent="Cave" instance=ExtResource("108_kge0y")]
+transform = Transform3D(0.98122877, -0.1921281, 0.016640097, 0.19284736, 0.97756916, -0.08466666, 0, 0.086286366, 0.99627036, 176.55185, 6.4357986, 143.14456)
 
 [node name="Observatory" type="Node3D" parent="."]
 
