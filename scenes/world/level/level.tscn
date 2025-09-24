@@ -1,4 +1,4 @@
-[gd_scene load_steps=275 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=279 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -1285,6 +1285,20 @@ albedo_texture = SubResource("ViewportTexture_ues6x")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abqhh"]
 radius = 0.783
 height = 3.866
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jimsq"]
+viewport_path = NodePath("MusicTest/Paper/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq2hc"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jimsq")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bq2hc"]
+viewport_path = NodePath("MusicTest/Paper2/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a0dc"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_bq2hc")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1mhee"]
 lightmap_size_hint = Vector2i(10002, 10002)
@@ -3480,6 +3494,84 @@ transform = Transform3D(0.22841716, 0.9731531, -0.028261688, 0.009498477, -0.031
 
 [node name="Tree_7" parent="MusicTest" instance=ExtResource("88_7yqty")]
 transform = Transform3D(0.17082122, -0.98442876, -0.041474387, -0.54287505, -0.058907017, -0.8377447, 0.82225704, 0.16562003, -0.54448444, 5.7383423, 12.110523, -2.4905548)
+
+[node name="pot" parent="MusicTest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.99999976, 0, -0.8651514, 0, 0.50151074, -11.288879, 1.6027837, -1.2702942)
+
+[node name="Plant_6" parent="MusicTest" instance=ExtResource("64_atgby")]
+transform = Transform3D(0.3510575, 0, 0.60560596, 0, 0.3, 0, -0.60560596, 0, 0.3510575, -11.269714, 1.871067, -1.2518561)
+
+[node name="pot2" parent="MusicTest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1.0030215, 0, 1.7303028, 0, 1.9999995, 0, -1.7303028, 0, 1.0030215, -11.773499, 4.7683716e-07, 0.060394287)
+
+[node name="closet_1" parent="MusicTest" instance=ExtResource("65_g28ww")]
+transform = Transform3D(0.028532267, 0, -0.9995929, 0, 0.99999976, 0, 0.9995929, 0, 0.028532267, 3.7250366, 9.536743e-07, 1.5812683)
+
+[node name="table2" parent="MusicTest" instance=ExtResource("40_usf2n")]
+transform = Transform3D(0.99805415, 0, 0.062354982, 0, 0.99999976, 0, -0.062354982, 0, 0.99805415, -5.039856, 4.7683716e-07, 2.1730042)
+
+[node name="pot3" parent="MusicTest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.22787672, 0, -0.8651514, 0, 0.50151074, -4.3866577, 0.7979512, 2.0876923)
+
+[node name="pot4" parent="MusicTest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.22787672, 0, -0.8651514, 0, 0.50151074, -5.7229614, 0.7979512, 2.1447296)
+
+[node name="chair4" parent="MusicTest" instance=ExtResource("52_c6ddm")]
+transform = Transform3D(0.09758285, 0, -0.99522734, 0, 0.99999976, 0, 0.99522734, 0, 0.09758285, -3.5717163, 4.7683716e-07, 2.0059204)
+
+[node name="chair5" parent="MusicTest" instance=ExtResource("52_c6ddm")]
+transform = Transform3D(-0.043218374, 0, 0.99906576, 0, 0.99999976, 0, -0.99906576, 0, -0.043218374, -6.511902, 4.7683716e-07, 2.1935272)
+
+[node name="chair6" parent="MusicTest" instance=ExtResource("52_c6ddm")]
+transform = Transform3D(0.993888, 0, 0.110393554, 0, 0.99999976, 0, -0.110393554, 0, 0.993888, -5.0740356, 4.7683716e-07, 1.0850525)
+
+[node name="pot5" parent="MusicTest" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.22787672, 0, -0.8651514, 0, 0.50151074, -5.0390015, 0.7979512, 1.7540283)
+
+[node name="Plant_7" parent="MusicTest" instance=ExtResource("128_7yqty")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 0.99999976, 0, -0.8651514, 0, 0.50151074, -11.75592, 0.57959414, 0.09107971)
+
+[node name="Paper" type="MeshInstance3D" parent="MusicTest"]
+transform = Transform3D(0.998476, 0.0518215, -0.0189789, -0.01838191, -0.011972502, -0.99975914, -0.052036226, 0.9985846, -0.011001682, -6.320923, 3.119423, -3.0536652)
+mesh = ExtResource("59_whib0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bq2hc")
+
+[node name="SubViewport2" type="SubViewport" parent="MusicTest/Paper"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_update_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="MusicTest/Paper/SubViewport2"]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="MusicTest/Paper/SubViewport2/ColorRect"]
+position = Vector2(128, 128)
+texture = ExtResource("37_tuxnq")
+
+[node name="Paper2" type="MeshInstance3D" parent="MusicTest"]
+transform = Transform3D(0.99583495, 0.05182159, 0.07501808, 0.07573311, -0.011972492, -0.99705607, -0.0507707, 0.9985846, -0.015847247, -8.175354, 3.4128485, -3.0085297)
+mesh = ExtResource("59_whib0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1a0dc")
+
+[node name="SubViewport2" type="SubViewport" parent="MusicTest/Paper2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_update_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="MusicTest/Paper2/SubViewport2"]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="MusicTest/Paper2/SubViewport2/ColorRect"]
+position = Vector2(128, 128)
+texture = ExtResource("28_whib0")
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
