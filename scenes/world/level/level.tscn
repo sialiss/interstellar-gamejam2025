@@ -2469,7 +2469,6 @@ mesh = ExtResource("42_b37fd")
 
 [node name="SubViewport" type="SubViewport" parent="Observatory/observatory/table/computer/CameraScreen"]
 size = Vector2i(256, 256)
-render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport"]
 transform = Transform3D(-0.5087862, 0, 0.860893, 0, 0.9999999, 0, -0.86089313, 0, -0.50878614, 186.22649, 63.575436, 663.5356)
