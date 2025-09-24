@@ -23,7 +23,6 @@ static func find_matching_rune_pattern(input_directions_array: Array[int]) -> Ru
 		if distance <= max_errors and distance < min_distance:
 			min_distance = distance
 			matched_rune = rune
-	print(min_distance)
 	if matched_rune != null and !matched_rune.is_pattern_known:
 		EventBus.reveal_pattern(matched_rune)
 		EventBus.trigger("Rune", matched_rune.rune_name)

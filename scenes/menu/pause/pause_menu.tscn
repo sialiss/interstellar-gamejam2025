@@ -82,10 +82,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -216.0
-offset_top = -135.99994
-offset_right = 96.0
-offset_bottom = 248.00006
+offset_left = -200.0
+offset_top = -152.0
+offset_right = 112.0
+offset_bottom = 232.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = -0.11922016
@@ -104,6 +104,7 @@ offset_right = 28.031937
 offset_bottom = 102.73259
 grow_horizontal = 2
 text = "[ N ] - RUNEBOOK
+[ RMB ] - ZOOM
 [ CTRL ] - RUNE MODE
 IN RUNE MODE HOLD 
 [ LMB ] TO DRAW"

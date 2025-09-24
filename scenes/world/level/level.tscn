@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=275 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -139,8 +139,14 @@
 [ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="130_p7o0o"]
 [ext_resource type="PackedScene" uid="uid://b2jscrbsu7q4b" path="res://assets/models/props/book/open_book.glb" id="131_uo61o"]
 [ext_resource type="PackedScene" uid="uid://cuup255bpai7y" path="res://assets/models/environment/Log_1.fbx" id="133_g28ww"]
+[ext_resource type="AudioStream" uid="uid://b4hgolnffbrou" path="res://assets/sounds/desert_theme_2.wav" id="138_64mow"]
+[ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="139_1gq2n"]
 [ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="139_uo61o"]
+[ext_resource type="AudioStream" uid="uid://dhd46evdtf4qb" path="res://assets/sounds/observatory_2.wav" id="140_1gq2n"]
 [ext_resource type="PackedScene" uid="uid://chh8ji0ve18nb" path="res://assets/models/environment/Rock_1.fbx" id="141_tgdjs"]
+[ext_resource type="AudioStream" uid="uid://d0oiwxocfv26a" path="res://assets/sounds/country_2.wav" id="142_42ss4"]
+[ext_resource type="AudioStream" uid="uid://c846rr7n5kd7a" path="res://assets/sounds/forest_2.wav" id="144_ues6x"]
+[ext_resource type="Texture2D" uid="uid://chwp6qa6ode8v" path="res://assets/sprites/amnyam_rune_wood.png" id="147_42ss4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -1322,12 +1328,46 @@ is_repeatable = true
 text = "Hey! Help! I can't get out of the closet!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"
 
+[sub_resource type="Resource" id="Resource_42ss4"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gq2n"]
+radius = 200.0
+height = 600.0
+
+[sub_resource type="Resource" id="Resource_ues6x"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
 radius = 200.0
+
+[sub_resource type="Resource" id="Resource_jimsq"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hfud1"]
 height = 150.0
 radius = 300.0
+
+[sub_resource type="Resource" id="Resource_bq2hc"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
+
+[sub_resource type="Resource" id="Resource_1a0dc"]
+script = ExtResource("139_1gq2n")
+type = "Revolution"
+data = "4"
+metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [sub_resource type="Animation" id="Animation_sr2vx"]
 length = 0.001
@@ -1851,6 +1891,13 @@ _data = {
 &"win": SubResource("Animation_78awm")
 }
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ues6x"]
+viewport_path = NodePath("Paper/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jimsq"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ues6x")
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1mhee")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom"), ExtResource("7_usf2n"), ExtResource("8_53qi2")])
@@ -1885,6 +1932,7 @@ transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.
 [node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
 transform = Transform3D(943.80066, 330.51437, 0, -232.0717, 662.6923, -712.0258, -235.33487, 672.0105, 702.15283, 3000, 5000, -2000)
 kill_turn_duration = 4.0
+kill_trigger = ExtResource("8_53qi2")
 
 [node name="Fish" parent="BigFish" index="1"]
 transform = Transform3D(0.9999997, -1.4901163e-08, 0, 1.49011585e-08, 1, -1.3027006e-15, 1.9411753e-23, 1.302701e-15, 0.9999997, 0, 0, 0)
@@ -3444,7 +3492,7 @@ transform = Transform3D(0.8463048, 0, -0.53269905, 0, 1, 0, 0.53269905, 0, 0.846
 collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
-NPC_name = "Dweller"
+NPC_name = "Desert Dweller"
 dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
@@ -3749,12 +3797,14 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("69_oj0e3")
+corrupted_music = ExtResource("138_64mow")
+condition = SubResource("Resource_42ss4")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Desert"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.93591, -142.73264, 0)
-shape = SubResource("SphereShape3D_kapuu")
+transform = Transform3D(0.2981751, 0.95197994, 0.06946917, 0.28204286, -0.018342346, -0.95922655, -0.91189015, 0.3056107, -0.27396837, 98.03754, -31.06253, 108.703064)
+shape = SubResource("CapsuleShape3D_1gq2n")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
 
@@ -3764,6 +3814,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("70_bdgmh")
+corrupted_music = ExtResource("140_1gq2n")
+condition = SubResource("Resource_ues6x")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3779,6 +3831,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("71_3sil5")
+corrupted_music = ExtResource("142_42ss4")
+condition = SubResource("Resource_jimsq")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3794,6 +3848,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("107_kge0y")
+corrupted_music = ExtResource("144_ues6x")
+condition = SubResource("Resource_bq2hc")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3809,6 +3865,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("68_esmde")
 music = ExtResource("71_3sil5")
+corrupted_music = ExtResource("142_42ss4")
+condition = SubResource("Resource_1a0dc")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -3847,6 +3905,26 @@ libraries = {
 
 [node name="Rock_1" parent="." instance=ExtResource("141_tgdjs")]
 transform = Transform3D(0.5845896, 0, -0.8113292, 0, 1, 0, 0.8113292, 0, 0.5845896, 204.20639, -0.18552661, 150.26833)
+
+[node name="Paper" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.20305943, -0.22074054, -0.0063650482, 0.028321642, -0.034606945, 0.2966483, -0.2190087, 0.2001899, 0.044263322, -311.91116, 4.9343634, 308.24707)
+mesh = ExtResource("59_whib0")
+surface_material_override/0 = SubResource("StandardMaterial3D_jimsq")
+
+[node name="SubViewport2" type="SubViewport" parent="Paper"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="ColorRect" type="ColorRect" parent="Paper/SubViewport2"]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Paper/SubViewport2/ColorRect"]
+position = Vector2(128, 128)
+rotation = 3.1415927
+texture = ExtResource("147_42ss4")
 
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]

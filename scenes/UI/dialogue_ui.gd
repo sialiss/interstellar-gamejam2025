@@ -45,7 +45,7 @@ func _start_dialogue(root: DialogueResource, npc: Node) -> void:
 
 func _show_node(node: DialogueResource) -> void:
 	dialogue_label.text = node.text
-	npc_name_label.text = str(_current_npc.name) if node.speaker == "npc" else "You"
+	npc_name_label.text = str(_current_npc.NPC_name) if node.speaker == "npc" else "You"
 
 	if node.speaker == "npc" and _current_npc.has_method("start_talking"):
 		_current_npc.start_talking(node)
