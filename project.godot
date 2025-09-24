@@ -28,6 +28,15 @@ RuneManager="*res://scripts/resources/runes/pattern_manager.gd"
 
 enabled=PackedStringArray("res://addons/scene_texture/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "purple",
+"res://resources/": "orange",
+"res://scenes/": "blue",
+"res://scripts/": "red"
+}
+
 [global_group]
 
 player=""

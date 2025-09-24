@@ -6,6 +6,8 @@ extends Node
 @onready var player = $"../.."
 @onready var grid = $GridContainer
 
+var label_settings = preload("res://scenes/UI/inventory_slot_number_settings.tres")
+
 func _ready():
 	inventory.inventory_changed.connect(update_slots)
 	update_slots()
@@ -27,6 +29,14 @@ func update_slots():
 			#img.save_png(path)
 			#print("Saved icon to:", path)
 		)
+		var number = Label.new()
+		number.text = str(i + 1)
+		number.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+		number.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		number.anchor_right = 1
+		number.anchor_bottom = 1
+		number.label_settings = label_settings
+		btn.add_child(number)
 		btn.pressed.connect(func(): _on_slot_pressed(i))
 
 		grid.add_child(btn)

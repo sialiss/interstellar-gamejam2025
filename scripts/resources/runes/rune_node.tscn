@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dlwsn57pvdb2e" path="res://scripts/resources/runes/rune_node.gd" id="1_cyyuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj0ju"]
-size = Vector2(75, 75)
+size = Vector2(30, 30)
 
 [node name="RuneNode" type="Area2D"]
 script = ExtResource("1_cyyuu")
