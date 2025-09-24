@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=220 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -101,10 +101,11 @@
 [ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="94_tuxnq"]
 [ext_resource type="Resource" uid="uid://cqde7k0i4bjha" path="res://resources/dialogues/village_child2_hello.tres" id="96_78awm"]
 [ext_resource type="Resource" uid="uid://drv5sys5nkbte" path="res://resources/dialogues/village_child_scary.tres" id="97_sr2vx"]
-[ext_resource type="PackedScene" uid="uid://4fovisesj7p" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
+[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_blue.tscn" id="98_je5e5"]
 [ext_resource type="Resource" uid="uid://dxj1mfwvdu1s8" path="res://resources/dialogues/villager_about_flowers.tres" id="99_78awm"]
-[ext_resource type="PackedScene" uid="uid://boijfqij0ims3" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
+[ext_resource type="PackedScene" path="res://scenes/entities/persons/person_purple.tscn" id="100_sr2vx"]
 [ext_resource type="PackedScene" uid="uid://ijq2ocxk1dk3" path="res://scenes/car/car.tscn" id="101_2811w"]
+[ext_resource type="PackedScene" uid="uid://bwk045of76yjy" path="res://scenes/items/rock/rock.tscn" id="108_kge0y"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
 [ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="113_ipee5"]
 
@@ -600,6 +601,13 @@ radius = 15.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_ni50r"]
 size = Vector3(2, 5, 2.5)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
+viewport_path = NodePath("Observatory/observatory/table/computer/CameraScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qbtvk")
+
 [sub_resource type="Animation" id="Animation_8167w"]
 length = 0.001
 tracks/0/type = "value"
@@ -709,13 +717,6 @@ _data = {
 &"RESET": SubResource("Animation_8167w"),
 &"scan": SubResource("Animation_gw5i7")
 }
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_qbtvk"]
-viewport_path = NodePath("Observatory/observatory/Dome/Tube/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjfvr"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_qbtvk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gw5i7"]
 size = Vector3(0.27, 0.068894535, 0.27)
@@ -2255,6 +2256,9 @@ transform = Transform3D(-0.18811391, 0, -0.04528498, 0.049953938, 0, -0.1705318,
 transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.21616219, 1.8470113, 3.5236013e-08)
 shape = SubResource("BoxShape3D_ni50r")
 
+[node name="Rock" parent="Cave" instance=ExtResource("108_kge0y")]
+transform = Transform3D(0.98122877, -0.1921281, 0.016640097, 0.19284736, 0.97756916, -0.08466666, 0, 0.086286366, 0.99627036, 176.55185, 6.4357986, 143.14456)
+
 [node name="Observatory" type="Node3D" parent="."]
 
 [node name="observatory" parent="Observatory" instance=ExtResource("7_5m2y6")]
@@ -2278,85 +2282,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Observatory/observatory/Dome/Tube" index="1"]
 transform = Transform3D(-1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000002, 0, 11.933823, 13.318619)
-remote_path = NodePath("../SubViewport/Camera3D")
-
-[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/Dome/Tube" index="2"]
-disable_3d = true
-size = Vector2i(256, 256)
-render_target_update_mode = 0
-
-[node name="Camera3D" type="Camera3D" parent="Observatory/observatory/Dome/Tube/SubViewport"]
-transform = Transform3D(-0.5087862, 0, 0.860893, 0, 0.9999999, 0, -0.86089313, 0, -0.50878614, 186.22649, 63.575436, 663.5356)
-fov = 65.0
-far = 10000.0
-
-[node name="ColorRect" type="ColorRect" parent="Observatory/observatory/Dome/Tube/SubViewport"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.011770378, 0.020875523, 0.012100077, 1)
-
-[node name="Scan" type="VBoxContainer" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Scan"]
-layout_mode = 2
-text = "Scanning Fish..."
-
-[node name="ProgressBar" type="ProgressBar" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Scan"]
-layout_mode = 2
-
-[node name="Data" type="VBoxContainer" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
-layout_mode = 2
-text = "Data retrieved successfully!"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
-layout_mode = 2
-text = "Temperature: Overwhelming°K"
-
-[node name="Label3" type="Label" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
-layout_mode = 2
-text = "Pictographical Data Decoded:"
-
-[node name="TextureRect" type="TextureRect" parent="Observatory/observatory/Dome/Tube/SubViewport/ColorRect/Data"]
-layout_mode = 2
-texture = ExtResource("40_gw5i7")
-stretch_mode = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Observatory/observatory/Dome/Tube/SubViewport"]
-libraries = {
-&"": SubResource("AnimationLibrary_xb217")
-}
+remote_path = NodePath("../../../table/computer/CameraScreen/SubViewport/Camera3D")
 
 [node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.029334787, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334787, 3.3853662, 0, -0.5534874)
@@ -2370,6 +2296,82 @@ visible = false
 [node name="CameraScreen" type="MeshInstance3D" parent="Observatory/observatory/table/computer"]
 material_override = SubResource("StandardMaterial3D_bjfvr")
 mesh = ExtResource("42_b37fd")
+
+[node name="SubViewport" type="SubViewport" parent="Observatory/observatory/table/computer/CameraScreen"]
+size = Vector2i(256, 256)
+
+[node name="Camera3D" type="Camera3D" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport"]
+transform = Transform3D(-0.5087862, 0, 0.860893, 0, 0.9999999, 0, -0.86089313, 0, -0.50878614, 186.22649, 63.575436, 663.5356)
+fov = 65.0
+far = 10000.0
+
+[node name="ColorRect" type="ColorRect" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011770378, 0.020875523, 0.012100077, 1)
+
+[node name="Scan" type="VBoxContainer" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Scan"]
+layout_mode = 2
+text = "Scanning Fish..."
+
+[node name="ProgressBar" type="ProgressBar" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Scan"]
+layout_mode = 2
+
+[node name="Data" type="VBoxContainer" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Data retrieved successfully!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Temperature: Overwhelming°K"
+
+[node name="Label3" type="Label" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Data"]
+layout_mode = 2
+text = "Pictographical Data Decoded:"
+
+[node name="TextureRect" type="TextureRect" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport/ColorRect/Data"]
+layout_mode = 2
+texture = ExtResource("40_gw5i7")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Observatory/observatory/table/computer/CameraScreen/SubViewport"]
+libraries = {
+&"": SubResource("AnimationLibrary_xb217")
+}
 
 [node name="Keyboard" type="Node3D" parent="Observatory/observatory/table"]
 transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -0.7507277, 0.79795074, -0.19693378)
@@ -2475,8 +2477,8 @@ target_x_max = -0.7853981633974483
 target_zoom_max = 27.0
 y_rotor = NodePath("../../../Dome")
 x_rotor = NodePath("../../../Dome/Tube")
-camera = NodePath("../../../Dome/Tube/SubViewport/Camera3D")
-completion_animation = NodePath("../../../Dome/Tube/SubViewport/AnimationPlayer")
+camera = NodePath("../../computer/CameraScreen/SubViewport/Camera3D")
+completion_animation = NodePath("../../computer/CameraScreen/SubViewport/AnimationPlayer")
 metadata/_custom_type_script = "uid://covh76n2nab30"
 
 [node name="Furniture" type="Node3D" parent="Observatory/observatory"]
