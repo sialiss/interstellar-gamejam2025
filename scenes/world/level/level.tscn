@@ -1920,6 +1920,7 @@ transform = Transform3D(-0.95225734, 0, -0.30529636, 0, 1, 0, 0.30529636, 0, -0.
 [node name="BigFish" parent="." instance=ExtResource("1_o7lpa")]
 transform = Transform3D(943.80066, 330.51437, 0, -232.0717, 662.6923, -712.0258, -235.33487, 672.0105, 702.15283, 3000, 5000, -2000)
 kill_turn_duration = 4.0
+kill_trigger = ExtResource("8_53qi2")
 
 [node name="Fish" parent="BigFish" index="1"]
 transform = Transform3D(0.9999997, -1.4901163e-08, 0, 1.49011585e-08, 1, -1.3027006e-15, 1.9411753e-23, 1.302701e-15, 0.9999997, 0, 0, 0)
