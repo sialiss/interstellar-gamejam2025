@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://do40ho7xllh1v" path="res://assets/models/props/bridge.glb" id="10_ve8xh"]
 [ext_resource type="Material" uid="uid://bwirrnln368j7" path="res://assets/materials/water.tres" id="11_ve8xh"]
 [ext_resource type="PackedScene" uid="uid://ctkwti7f04w2f" path="res://scenes/UI/dialogue_ui.tscn" id="13_svlle"]
+[ext_resource type="Texture2D" uid="uid://bhnu14vmdehc" path="res://assets/sprites/6.png" id="18_42ss4"]
 [ext_resource type="PackedScene" uid="uid://cc6b2vssow7al" path="res://assets/models/props/cave.glb" id="21_a76df"]
 [ext_resource type="PackedScene" uid="uid://cywmqo42ji8g0" path="res://scenes/items/box/box.tscn" id="22_5xoqh"]
 [ext_resource type="PackedScene" uid="uid://b4u0v4x0cbfxb" path="res://scenes/entities/logic/super_button/super_button.tscn" id="22_7bk07"]
@@ -29,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://bba411trqsrql" path="res://assets/sprites/cave_pic.png" id="26_lhtwf"]
 [ext_resource type="Texture2D" uid="uid://b36iwn2wwdr0g" path="res://assets/sprites/magic4.png" id="28_whib0"]
 [ext_resource type="PackedScene" uid="uid://cx7dwd1x6akhh" path="res://scenes/entities/darkness/darkness.tscn" id="29_i2f8p"]
-[ext_resource type="Texture2D" uid="uid://cqh4i5ql1djue" path="res://assets/sprites/eenlargment_rune_pattern2.png" id="29_sr2vx"]
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="30_88k61"]
 [ext_resource type="PackedScene" uid="uid://c61eovpoxc8ug" path="res://assets/models/props/pedestal.glb" id="30_l083c"]
 [ext_resource type="Texture2D" uid="uid://dkh4m5kdli0d5" path="res://assets/sprites/magic6.png" id="30_tuxnq"]
@@ -1971,8 +1971,8 @@ process_material = SubResource("ParticleProcessMaterial_yra41")
 emission_box_extents = Vector3(2.745, 1.705, 2.61)
 
 [node name="RuneHint" type="Sprite3D" parent="DesertTown/house2"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 2.402812e-07, 1.3093967, -2.477152)
-texture = ExtResource("29_sr2vx")
+transform = Transform3D(0.78, 0, 0, 0, 0.78, 0, 0, 0, 0.78, 0.027784318, 1.2248837, -2.4771488)
+texture = ExtResource("18_42ss4")
 
 [node name="HintHider" type="MeshInstance3D" parent="DesertTown/house2"]
 transform = Transform3D(2.0898712, 0, 0.011099845, 0, 2.2230504, 0, -0.023198605, 0, 0.99993837, -0.004477287, 1.3120532, -2.441262)

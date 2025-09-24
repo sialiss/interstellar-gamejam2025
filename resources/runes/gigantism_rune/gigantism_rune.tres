@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="GigantismRune" load_steps=3 format=3 uid="uid://b52ayro4djcv2"]
 
-[ext_resource type="Texture2D" uid="uid://gojtj5c0a3d6" path="res://assets/sprites/eenlargment_rune_pattern.png" id="1_mgvof"]
+[ext_resource type="Texture2D" uid="uid://cfmfllqfftryf" path="res://assets/sprites/eenlargment_rune_pattern_2.png" id="1_mgvof"]
 [ext_resource type="Script" uid="uid://d3qbo24syt5g1" path="res://resources/runes/gigantism_rune/gigantism_rune.gd" id="1_ryw6n"]
 
 [resource]
 script = ExtResource("1_ryw6n")
 radius = 5.0
 rune_name = "Enlargment Rune"
-directions_array = Array[int]([0, 1, 2, 3, 4, 5, 6, 7])
+directions_array = Array[int]([6, 3, 0, 5, 2])
 image = ExtResource("1_mgvof")
 metadata/_custom_type_script = "uid://d3qbo24syt5g1"
