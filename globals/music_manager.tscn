@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb5onqsighxn5"]
+[gd_scene load_steps=7 format=3 uid="uid://bb5onqsighxn5"]
 
 [ext_resource type="Script" uid="uid://cn2nigooyb4l8" path="res://globals/music_manager.gd" id="1_tn5dr"]
 [ext_resource type="AudioStream" uid="uid://d6ggf3w2m66k" path="res://assets/sounds/menu.wav" id="2_hetdf"]
 [ext_resource type="AudioStream" uid="uid://cbqyi7r4e8dig" path="res://assets/sounds/rune.wav" id="3_gq8vl"]
 [ext_resource type="AudioStream" uid="uid://kx6x2s3nqch" path="res://assets/sounds/birds.mp3" id="4_i6s1y"]
 [ext_resource type="AudioStream" uid="uid://bs1fy0prbay2h" path="res://assets/sounds/sea.mp3" id="5_h5l8h"]
+[ext_resource type="AudioStream" uid="uid://8y3wcqfwkuhy" path="res://assets/sounds/rune_failure2.wav" id="6_iui2q"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_tn5dr")
@@ -27,3 +28,7 @@ volume_db = -80.0
 [node name="Sea" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_h5l8h")
 volume_db = -80.0
+
+[node name="RuneFailure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_iui2q")
+volume_db = -10.0
