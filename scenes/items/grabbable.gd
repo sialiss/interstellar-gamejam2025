@@ -3,7 +3,7 @@ class_name Grabbable extends RigidBody3D
 const NORMAL_LAYER = 3
 const GRABBED_LAYER = 7
 
-var can_enlarge: bool = true
+@export var can_enlarge: bool = true
 var do_shrink_back: bool = true
 var do_unfreeze: bool = true
 

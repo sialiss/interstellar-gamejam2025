@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("1_0rscc")
 is_repeatable = true
-text = "Я не против того, чтобы дети развлекались, но тот дом..."
+text = "I don't mind children having fun, but that house..."
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

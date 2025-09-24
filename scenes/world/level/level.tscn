@@ -1,4 +1,4 @@
-[gd_scene load_steps=216 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=244 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -71,10 +71,13 @@
 [ext_resource type="Resource" uid="uid://bmkoevxuvckb" path="res://resources/dialogues/fisher_crazy.tres" id="52_abblm"]
 [ext_resource type="PackedScene" uid="uid://df3xlrxf20g7c" path="res://assets/models/props/chair.glb" id="52_c6ddm"]
 [ext_resource type="Resource" uid="uid://2sk3gb43vvdo" path="res://resources/dialogues/astronomer_win.tres" id="52_nnxxf"]
+[ext_resource type="PackedScene" uid="uid://40nma0x6xu3e" path="res://assets/models/environment/Plant_3.fbx" id="52_p7o0o"]
 [ext_resource type="Resource" uid="uid://qhghgyf0aft6" path="res://resources/dialogues/fisher_after_charm_rune.tres" id="53_abblm"]
 [ext_resource type="Resource" uid="uid://dcumsjnaf8udk" path="res://resources/dialogues/astronomer__comingsoom.tres" id="53_ohyet"]
 [ext_resource type="PackedScene" uid="uid://dtgimiii75lct" path="res://assets/models/props/chair_backless.glb" id="53_pk7k4"]
+[ext_resource type="PackedScene" uid="uid://bxuqlannlvinv" path="res://assets/models/environment/Bush_3.fbx" id="53_uo61o"]
 [ext_resource type="Resource" uid="uid://d4crgsmqea2he" path="res://resources/dialogues/fisher_after_cool_rod.tres" id="54_6xvrv"]
+[ext_resource type="PackedScene" uid="uid://c0u3c6ix0t063" path="res://assets/models/props/book/book.glb" id="54_jjm2y"]
 [ext_resource type="Resource" uid="uid://dmk6xsg7td6q4" path="res://resources/dialogues/fisher_final.tres" id="55_ethiv"]
 [ext_resource type="PackedScene" uid="uid://8j1ua5p76u7t" path="res://scenes/items/green_book.tscn" id="56_0hvbb"]
 [ext_resource type="Script" uid="uid://ck21km2sgfifg" path="res://scripts/fish_transform/become_fish.gd" id="56_b37fd"]
@@ -84,22 +87,32 @@
 [ext_resource type="PackedScene" uid="uid://f4jq7vu5p1am" path="res://scenes/menu/pause/pause_menu.tscn" id="59_ethiv"]
 [ext_resource type="PackedScene" uid="uid://gnklfllpy42t" path="res://assets/models/environment/Tree_3.fbx" id="59_kge0y"]
 [ext_resource type="ArrayMesh" uid="uid://u66ug8fyg1qt" path="res://assets/models/props/paper.obj" id="59_whib0"]
+[ext_resource type="PackedScene" uid="uid://dsex1460imvn2" path="res://assets/models/props/dresser.glb" id="60_7gb3y"]
 [ext_resource type="Texture2D" uid="uid://dfgvrhv87qjj" path="res://assets/sprites/enchantment_rune_wood.png" id="60_bhuc7"]
 [ext_resource type="Script" uid="uid://cembcnpd0x7dl" path="res://scripts/rune_hint.gd" id="61_1t2ts"]
+[ext_resource type="PackedScene" uid="uid://d3wln4t30qdqb" path="res://assets/models/props/closet_3.glb" id="61_vgk2m"]
+[ext_resource type="PackedScene" uid="uid://jss1yaks7aqf" path="res://assets/models/props/short_table.glb" id="63_erutg"]
 [ext_resource type="PackedScene" uid="uid://dfape4tnfgcty" path="res://assets/models/props/pot.glb" id="63_nnhlb"]
+[ext_resource type="PackedScene" uid="uid://dxkjouccofb18" path="res://assets/models/environment/Plant_6.fbx" id="64_atgby"]
 [ext_resource type="Resource" uid="uid://c1tpow6ptbiyf" path="res://resources/dialogues/fishie_hi.tres" id="65_3vwys"]
+[ext_resource type="PackedScene" uid="uid://dkfb05ueu52cb" path="res://assets/models/props/closet_1.glb" id="65_g28ww"]
+[ext_resource type="PackedScene" uid="uid://b812qxl0xbvsy" path="res://assets/models/environment/Plant_1.fbx" id="66_guwsx"]
 [ext_resource type="Texture2D" uid="uid://p3r0l1n7640c" path="res://assets/sprites/magic5.png" id="66_jpodg"]
+[ext_resource type="PackedScene" uid="uid://cvxdhqu75x0sv" path="res://assets/models/environment/Bush_2.fbx" id="67_dnajr"]
 [ext_resource type="Texture2D" uid="uid://bwdtvxugvhv7i" path="res://assets/sprites/magic1.png" id="67_ipee5"]
+[ext_resource type="PackedScene" uid="uid://bob1ivtd3rv1t" path="res://assets/models/environment/Rock_5.fbx" id="68_atgby"]
 [ext_resource type="Script" uid="uid://6ktx8qrs6klp" path="res://scripts/location_area.gd" id="68_esmde"]
 [ext_resource type="AudioStream" uid="uid://wk700d5nlhb8" path="res://assets/sounds/desert_theme.wav" id="69_oj0e3"]
 [ext_resource type="AudioStream" uid="uid://dsx55jjpe6tsu" path="res://assets/sounds/observatory.wav" id="70_bdgmh"]
 [ext_resource type="AudioStream" uid="uid://bna1lh0jd7nsg" path="res://assets/sounds/country.wav" id="71_3sil5"]
 [ext_resource type="PackedScene" uid="uid://coh1a2bw6hpoy" path="res://scenes/fishrod/fishrod.tscn" id="71_6oqdp"]
 [ext_resource type="AudioStream" uid="uid://xfpb3lo2x40s" path="res://assets/sounds/country_with_sea.wav" id="72_3osn7"]
+[ext_resource type="PackedScene" uid="uid://cuuab3xe3g4iq" path="res://assets/models/environment/Log_3.fbx" id="77_dnajr"]
 [ext_resource type="PackedScene" uid="uid://dmr2iig2wvmwq" path="res://scenes/entities/persons/village_child.tscn" id="77_yj7bl"]
 [ext_resource type="PackedScene" uid="uid://wyxpe51akeqy" path="res://assets/models/fish/fish_pink.glb" id="83_gw5i7"]
 [ext_resource type="Resource" uid="uid://4s7tw1njipxt" path="res://resources/dialogues/fishie_job.tres" id="83_xb217"]
 [ext_resource type="Resource" uid="uid://duvrb0plfoogm" path="res://resources/dialogues/fishie_cute.tres" id="84_pnpbx"]
+[ext_resource type="PackedScene" uid="uid://cwwu6dys78xsf" path="res://assets/models/environment/Tree_2.fbx" id="88_7yqty"]
 [ext_resource type="PackedScene" uid="uid://c82v7bnpdv1r8" path="res://assets/models/props/bed.glb" id="92_pnpbx"]
 [ext_resource type="Texture2D" uid="uid://dm7td23ipbh3k" path="res://assets/sprites/fishroll.svg" id="93_lc8gy"]
 [ext_resource type="PackedScene" uid="uid://b1mnwomaomind" path="res://scenes/entities/persons/leshy.tscn" id="94_kge0y"]
@@ -117,7 +130,15 @@
 [ext_resource type="AudioStream" uid="uid://cx700oq0f7y4b" path="res://assets/sounds/forest_without_birds.mp3" id="107_kge0y"]
 [ext_resource type="PackedScene" uid="uid://bwk045of76yjy" path="res://scenes/items/rock/rock.tscn" id="108_kge0y"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
+[ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="111_kls22"]
+[ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="112_irlnd"]
 [ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="113_ipee5"]
+[ext_resource type="PackedScene" uid="uid://cjc18yrr0awi3" path="res://assets/models/environment/Plant_7.fbx" id="128_7yqty"]
+[ext_resource type="PackedScene" uid="uid://dqxnmxwkuaqjg" path="res://assets/models/props/closet_2.glb" id="129_8wl3x"]
+[ext_resource type="PackedScene" uid="uid://cdybokfvd4f0r" path="res://assets/models/environment/Bush_1.fbx" id="130_p7o0o"]
+[ext_resource type="PackedScene" uid="uid://b2jscrbsu7q4b" path="res://assets/models/props/book/open_book.glb" id="131_uo61o"]
+[ext_resource type="PackedScene" uid="uid://cuup255bpai7y" path="res://assets/models/environment/Log_1.fbx" id="133_g28ww"]
+[ext_resource type="PackedScene" uid="uid://dkr0eaj8a7o2f" path="res://scenes/entities/fish/baby_fish.tscn" id="139_uo61o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bk07"]
 
@@ -1103,6 +1124,48 @@ size = Vector2(2000, 2000)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4wlm"]
 albedo_texture = ExtResource("26_60pun")
 
+[sub_resource type="Resource" id="Resource_7gb3y"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "I heard that fish walk on land at night! It's true, my neighbor saw them!"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_kls22"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "You know, sometimes the water in the well moves on its own. I don't look in there at night."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_irlnd"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "They say fish are a punishment. But maybe it's liberation? After all, fish have no worries."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_vgk2m"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "Every day there are fewer of us. But the silence seems to grow thicker."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_ubk87"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "I saw a huge fish... it looked at me like a human being."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_s11b2"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "If you eat fish at night, you'll forget your own name by morning."
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
+[sub_resource type="Resource" id="Resource_g28ww"]
+script = ExtResource("30_88k61")
+is_repeatable = true
+text = "Hey! Help! I can't get out of the closet!"
+metadata/_custom_type_script = "uid://chvnh0rt1wrj"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kapuu"]
 radius = 200.0
 
@@ -2081,6 +2144,9 @@ transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 transform = Transform3D(-1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000002, 0, 11.933823, 13.318619)
 remote_path = NodePath("../../../table/computer/CameraScreen/SubViewport/Camera3D")
 
+[node name="pot" parent="Observatory/observatory/@StaticBody3D@34467" index="1" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(-1.0457656, 0, 2.8118281, 0, 3, 0, -2.8118281, 0, -1.0457656, 3.1660156, -13.70026, -19.923157)
+
 [node name="table" parent="Observatory/observatory" instance=ExtResource("40_usf2n")]
 transform = Transform3D(0.029334787, 0, -0.99956965, 0, 1, 0, 0.99956965, 0, 0.029334787, 3.3853662, 0, -0.5534874)
 
@@ -2307,6 +2373,105 @@ transform = Transform3D(0.13440138, 0, 0.9909271, 0, 1, 0, -0.9909271, 0, 0.1344
 [node name="blue book3" parent="Observatory/observatory/Furniture/table4" instance=ExtResource("35_kge0y")]
 transform = Transform3D(0.57715964, 0, -0.8166314, 0, 1, 0, 0.8166314, 0, 0.57715964, 0.38607788, 0.847332, 0.11462402)
 
+[node name="closet_3" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.99939454, 0, -0.034794934, 0, 1, 0, 0.034794934, 0, 0.99939454, 3.5415592, 0, -12.970191)
+
+[node name="closet_4" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.99939454, 0, -0.034794934, 0, 1, 0, 0.034794934, 0, 0.99939454, 1.8160299, 0, -13.030267)
+
+[node name="closet_5" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, 0.056711674, 0, -13.091519)
+
+[node name="closet_6" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -1.730577, 0, -13.080914)
+
+[node name="closet_7" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -3.492711, 0, -13.0704565)
+
+[node name="closet_8" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -5.3097286, 0, -13.059674)
+
+[node name="closet_9" parent="Observatory/observatory/Furniture" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(0.9999825, 0, 0.0059339926, 0, 1, 0, -0.0059339926, 0, 0.9999825, -7.1192603, 0, -13.048937)
+
+[node name="blue book" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, -3.8737102, 0.9253502, -12.959846)
+
+[node name="blue book2" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, -7.034577, 0.9253502, -13.021227)
+
+[node name="blue book3" parent="Observatory/observatory/Furniture" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.88679326, 0, 0.4621667, 0, 1, 0, -0.4621667, 0, 0.88679326, 0.35663322, 1.4483414, -13.271579)
+
+[node name="redbook" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
+transform = Transform3D(-0.20895308, -0.15058702, 0.9662621, 9.313226e-09, 0.988073, 0.15398614, -0.97792566, 0.03217586, -0.20646083, -0.10107422, 1.4939499, -13.171005)
+
+[node name="redbook2" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
+transform = Transform3D(-0.20895308, -0.0029357453, 0.9779214, 7.450581e-09, 0.9999956, 0.0030019584, -0.97792566, 0.00062725693, -0.20895207, -3.4443552, 2.4382281, -13.027799)
+
+[node name="redbook3" parent="Observatory/observatory/Furniture" instance=ExtResource("108_whib0")]
+transform = Transform3D(0.35653982, -0.002935745, 0.93427557, 0.0016327798, 0.9999956, 0.0025191128, -0.93427867, 0.0006272568, 0.35654315, 3.9827123, 0.94118357, -13.044949)
+
+[node name="book" parent="Observatory/observatory/Furniture" instance=ExtResource("56_0hvbb")]
+transform = Transform3D(-0.914063, 0, 0.40557232, 0, 1, 0, -0.40557232, 0, -0.914063, 1.7322388, 1.9438858, -13.100983)
+
+[node name="book2" parent="Observatory/observatory/Furniture" instance=ExtResource("56_0hvbb")]
+transform = Transform3D(0.6946962, 0, -0.71930337, 0, 1, 0, 0.71930337, 0, 0.6946962, -5.2765293, 1.4507484, -13.016528)
+
+[node name="pot" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -1.4949341, 0.8979683, -13.083817)
+
+[node name="pot2" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1.9854561, 0, -0.8426564, 0, 1, 0, 0.24075896, 0, 6.9490967, -7.5716553, 3.8146973e-06, 6.2646027)
+
+[node name="pot3" parent="Observatory/observatory/Furniture" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1.9998428, 0, 0.08784008, 0, 1, 0, -0.025097132, 0, 6.9994497, -7.2435303, 3.8146973e-06, -0.8518524)
+
+[node name="Plant_1" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.774597, 0.3374405, 7.2721252)
+
+[node name="Plant_2" parent="Observatory/observatory/Furniture" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.77034646, 0, 0.6376257, 0, 1, 0, -0.6376257, 0, 0.77034646, -7.425232, 0.33865738, 6.2171173)
+
+[node name="Plant_3" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.598572, 0.3374405, 5.4036865)
+
+[node name="Plant_4" parent="Observatory/observatory/Furniture" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.2678833, 0.33865738, 0.2050476)
+
+[node name="Plant_5" parent="Observatory/observatory/Furniture" instance=ExtResource("52_p7o0o")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.2887573, 0.39348602, -0.42723083)
+
+[node name="Plant_6" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.50878614, 0, 0.8608931, 0, 1, 0, -0.8608931, 0, 0.50878614, -7.3084106, 0.3374405, -1.6654053)
+
+[node name="Plant_7" parent="Observatory/observatory/Furniture" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.80946827, 0, 0.58716375, 0, 1, 0, -0.58716375, 0, 0.80946827, -7.359192, 0.3374405, -1.113205)
+
+[node name="Bush_3" parent="Observatory/observatory/Furniture" instance=ExtResource("53_uo61o")]
+transform = Transform3D(-0.3485884, 0, 0.937276, 0, 1, 0, -0.937276, 0, -0.3485884, 3.2045898, 0.9606323, -8.165894)
+
+[node name="book3" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9998105, 0, 0.019476533, 0, 1, 0, -0.019476473, 0, 0.99981046, -4.789978, 1.939579, -13.102631)
+
+[node name="book4" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9998105, 0, 0.019476533, 0, 1, 0, -0.019476473, 0, 0.99981046, -4.789978, 2.0469818, -13.102631)
+
+[node name="book5" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9998108, 0, 0.019476533, 0, 1, 0, -0.019476444, 0, 0.99981046, -5.6518555, 2.4011726, -13.088425)
+
+[node name="book6" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.7037546, 0, -0.71044356, 0, 1, 0, 0.7104439, 0, 0.7037544, -1.9650879, 1.4385452, -13.170868)
+
+[node name="book7" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.46746764, 0, 0.884011, 0, 1, 0, -0.8840112, 0, 0.4674675, -1.5462646, 2.3939743, -13.045761)
+
+[node name="book8" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.9785967, 0, 0.20579425, 0, 1, 0, -0.2057943, 0, 0.9785961, 1.4609375, 0.9435158, -12.937744)
+
+[node name="book9" parent="Observatory/observatory/Furniture" instance=ExtResource("54_jjm2y")]
+transform = Transform3D(0.97859716, 0, 0.20579454, 0, 1, 0, -0.2057944, 0, 0.97859657, 3.5214844, 2.4057884, -13.003326)
+
 [node name="rocket" parent="Observatory" instance=ExtResource("40_6oqdp")]
 transform = Transform3D(1.5498242, 0, 2.568666, 0, 3, 0, -2.568666, 0, 1.5498242, 32.853115, -1.2451088, 750.6987)
 
@@ -2392,6 +2557,12 @@ mesh = SubResource("CylinderMesh_2811w")
 [node name="house_wood" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.9976555, 0, 0.068433285, 0, 1, 0, -0.068433285, 0, 0.9976555, -386.98352, -8.388227, 502.51328)
 
+[node name="open_book" parent="Village/house_wood" instance=ExtResource("131_uo61o")]
+transform = Transform3D(-0.9756551, -0.20836104, -0.06843331, 0.20885062, -0.97794753, 0, -0.066924185, -0.014292339, 0.99765587, 2.1665344, 1.0448055, 2.6289368)
+
+[node name="blue book" parent="Village/house_wood" instance=ExtResource("35_kge0y")]
+transform = Transform3D(0.87453526, 0, -0.48496228, 0, 1, 0, 0.48496228, 0, 0.87453526, 1.7618713, 0.9764333, 2.4443054)
+
 [node name="house_wood2" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.44112983, 0, -0.89744323, 0, 1, 0, 0.89744323, 0, 0.44112983, -399.26385, -8.388227, 488.4465)
 
@@ -2400,6 +2571,9 @@ transform = Transform3D(0.71895176, 0, 0.6950599, 0, 1, 0, -0.6950599, 0, 0.7189
 
 [node name="house_wood5" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(0.3983648, 0, -0.9172271, 0, 1, 0, 0.9172271, 0, 0.3983648, -402.8826, -8.388227, 480.66397)
+
+[node name="Bush_1" parent="Village/house_wood5" instance=ExtResource("130_p7o0o")]
+transform = Transform3D(0.39836475, 0, 0.91722697, 0, 1, 0, -0.91722697, 0, 0.39836475, -2.4646606, 0.3038149, -1.5678711)
 
 [node name="house_wood6" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.98379135, 0, -0.1793172, 0, 1, 0, 0.1793172, 0, -0.98379135, -395.28186, -8.167064, 452.13278)
@@ -2489,11 +2663,30 @@ transform = Transform3D(0.52713364, 0, 0.8497824, 0, 1, 0, -0.8497824, 0, 0.5271
 [node name="bed" parent="Village/evil_house" instance=ExtResource("92_pnpbx")]
 transform = Transform3D(0.9998928, 0, -0.014642626, 0, 1, 0, 0.014642626, 0, 0.9998928, -2.4916534, 0.0683794, -0.9898071)
 
+[node name="pot" parent="Village/evil_house" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(0.52713364, 0, 0.8497824, 0, 1, 0, -0.8497824, 0, 0.52713364, 2.3364563, 0, -1.7236328)
+
+[node name="Plant_7" parent="Village/evil_house" instance=ExtResource("128_7yqty")]
+transform = Transform3D(0.52713364, 0, 0.8497824, 0, 1, 0, -0.8497824, 0, 0.52713364, 2.2402954, 0.32285976, -1.656311)
+
+[node name="closet_2" parent="Village/evil_house" instance=ExtResource("129_8wl3x")]
+transform = Transform3D(-0.03861472, 0, 0.9992541, 0, 1, 0, -0.9992541, 0, -0.03861472, -2.9192352, 9.536743e-07, 2.2767944)
+
 [node name="house_wood8" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.6590441, 0, -0.7521044, 0, 1, 0, 0.7521044, 0, -0.6590441, -429.8965, -7.794083, 507.08243)
 
 [node name="bed3" parent="Village/house_wood8" instance=ExtResource("92_pnpbx")]
 transform = Transform3D(0.502039, 0, 0.8648449, 0, 1, 0, -0.8648449, 0, 0.502039, -1.972168, 4.7683716e-07, 1.660675)
+
+[node name="closet_3" parent="Village/house_wood8" instance=ExtResource("129_8wl3x")]
+transform = Transform3D(-0.45324606, 0.062055875, -0.8892226, -0.035106968, 0.995557, 0.087370984, 0.8906938, 0.07081847, -0.4490537, 2.321167, 4.7683716e-07, 2.0787354)
+
+[node name="Sign" parent="Village/house_wood8" instance=ExtResource("46_sdkx4")]
+transform = Transform3D(0.9995153, 0, 0.031131625, 0, 1, 0, -0.031131625, 0, 0.9995153, 0.56707764, 1.726954, -2.557953)
+
+[node name="Label3D" parent="Village/house_wood8/Sign" index="2"]
+modulate = Color(1, 1, 1, 1)
+text = "Chad"
 
 [node name="house_wood9" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.66324735, 0, -0.7484002, 0, 1, 0, 0.7484002, 0, -0.66324735, -423.78702, -8.110708, 499.84396)
@@ -2503,6 +2696,9 @@ transform = Transform3D(-0.9974917, 0, -0.07078385, 0, 1, 0, 0.07078385, 0, -0.9
 
 [node name="chair4" parent="Village/house_wood9" instance=ExtResource("52_c6ddm")]
 transform = Transform3D(0.47775674, 0, 0.87849224, 0, 1, 0, -0.87849224, 0, 0.47775674, -2.760315, 0, -1.870758)
+
+[node name="chair" parent="Village/house_wood9" instance=ExtResource("52_c6ddm")]
+transform = Transform3D(0.72320443, 0.36316785, 0.58743876, -0.12583019, 0.90563035, -0.40496987, -0.67907417, 0.21895841, 0.70065355, 2.6552124, 9.536743e-07, 2.7299805)
 
 [node name="house_wood10" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.44411936, 0, -0.8959676, 0, 1, 0, 0.8959676, 0, -0.44411936, -418.70865, -8.143508, 492.05612)
@@ -2663,19 +2859,112 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300.51416, 1.6033093, 328.52
 [node name="lantern" parent="Village" instance=ExtResource("113_ipee5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -455.23373, -6.2916565, 452.15833)
 
+[node name="dresser" parent="Village" instance=ExtResource("60_7gb3y")]
+transform = Transform3D(-0.065281235, 0, 0.9978669, 0, 1, 0, -0.9978669, 0, -0.065281235, -398.18628, -8.167063, 450.6433)
+
+[node name="closet_3" parent="Village" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(-0.99997234, 0, -0.007434994, 0, 1, 0, 0.007434994, 0, -0.99997234, -396.37387, -8.167063, 454.35242)
+
+[node name="bed" parent="Village" instance=ExtResource("92_pnpbx")]
+transform = Transform3D(0.97904545, 0, 0.20364176, 0, 1, 0, -0.20364176, 0, 0.97904545, -392.9862, -8.167063, 449.81265)
+
+[node name="pot" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.39063, -8.167064, 453.25427)
+
+[node name="short_table" parent="Village" instance=ExtResource("63_erutg")]
+transform = Transform3D(0.97322303, 0, 0.13362955, 0, 1, 0, -0.22986288, 0, 0.56577796, -394.81165, -8.167063, 449.2124)
+
+[node name="pot2" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -395.03058, -7.5491896, 449.34738)
+
+[node name="Plant_6" parent="Village" instance=ExtResource("64_atgby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.44595, -7.848689, 453.24033)
+
+[node name="Plant_5" parent="Village" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.81251574, 0, 0, 0, 0.99388707, 0, 0, 0, 0.7715825, -394.9617, -7.210536, 449.32422)
+
+[node name="dresser2" parent="Village" instance=ExtResource("60_7gb3y")]
+transform = Transform3D(0.91316885, 0, 0.40758154, 0, 1, 0, -0.40758154, 0, 0.91316885, -405.97272, -8.3882265, 478.81763)
+
+[node name="pot3" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -406.26828, -7.303746, 478.8658)
+
+[node name="pot4" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1.8664229, 0, 0, 0, 1, 0, 0, 0, 1.8834794, -402.39093, -8.3882265, 477.69897)
+
+[node name="Plant_7" parent="Village" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(0.24080524, 0, 0, 0, 0.67837, 0, 0, 0, 0.3666338, -406.2575, -7.0326524, 478.8746)
+
+[node name="closet_1" parent="Village" instance=ExtResource("65_g28ww")]
+transform = Transform3D(0.63598394, 0, 0.7717023, 0, 1, 0, -0.7717023, 0, 0.63598394, -379.73172, -8.388227, 495.8669)
+
+[node name="pot5" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -376.14734, -7.8902764, 492.65082)
+
+[node name="Plant_1" parent="Village" instance=ExtResource("66_guwsx")]
+transform = Transform3D(0.25212753, 0, 0, 0, 1, 0, 0, 0, 0.18769673, -376.1559, -7.552839, 492.63483)
+
+[node name="closet_4" parent="Village" instance=ExtResource("61_vgk2m")]
+transform = Transform3D(-0.999615, 0, -0.027747065, 0, 1, 0, 0.027747065, 0, -0.999615, -384.9606, -8.3882265, 504.93332)
+
+[node name="redbook3" parent="Village" instance=ExtResource("108_whib0")]
+transform = Transform3D(0.93982387, 0, -0.34165916, 0, 1, 0, 0.34165916, 0, 0.93982387, -385.17337, -6.429017, 505.0193)
+
+[node name="blue book2" parent="Village" instance=ExtResource("35_kge0y")]
+transform = Transform3D(-0.4650737, 0, -0.88527197, 0, 1, 0, 0.88527197, 0, -0.4650737, -384.62674, -5.956442, 504.9673)
+
+[node name="pot6" parent="Village" instance=ExtResource("63_nnhlb")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -389.58282, -8.388227, 501.21857)
+
+[node name="Bush_2" parent="Village" instance=ExtResource("67_dnajr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.60568, -7.408824, 501.35733)
+
+[node name="Rock_5" parent="Village" instance=ExtResource("68_atgby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -416.29196, -7.6074953, 489.86996)
+
+[node name="Sign" parent="Village" instance=ExtResource("46_sdkx4")]
+transform = Transform3D(-0.86829406, 0.14637162, 0.47396284, 0, 0.95547426, -0.29507443, -0.49604982, -0.25621137, -0.8296326, -416.14874, -6.5640826, 489.66824)
+
+[node name="Label3D" parent="Village/Sign" index="2"]
+modulate = Color(1, 1, 1, 1)
+text = "Please 
+do not touch my rock."
+
+[node name="chair_backless" parent="Village" instance=ExtResource("53_pk7k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -425.9691, -8.110708, 501.0262)
+
+[node name="chair_backless2" parent="Village" instance=ExtResource("53_pk7k4")]
+transform = Transform3D(0.6876833, 0, -0.7260108, 0, 1, 0, 0.7260108, 0, 0.6876833, -422.8567, -8.110707, 501.47098)
+
+[node name="chair_backless3" parent="Village" instance=ExtResource("53_pk7k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -424.987, -8.110708, 500.1536)
+
+[node name="chair_backless4" parent="Village" instance=ExtResource("53_pk7k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -423.64108, -8.110707, 500.55438)
+
+[node name="chair_backless5" parent="Village" instance=ExtResource("53_pk7k4")]
+transform = Transform3D(-1, -0.00024433434, 0, 0.00024433434, -1, 0, 0, 0, 1, -424.1444, -6.797022, 502.0951)
+
+[node name="Log_1" parent="Village" instance=ExtResource("133_g28ww")]
+transform = Transform3D(1, 0, 0, 0, -0.030957207, 0.9995207, 0, -0.9995207, -0.030957207, -386.19623, -6.9814982, 479.1335)
+
+[node name="Lantern2" parent="Village" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -386.1311, -4.8134513, 478.91196)
+
+[node name="BabyFish" parent="Village" instance=ExtResource("139_uo61o")]
+transform = Transform3D(0.84376633, 0, 0.5367107, 0, 1, 0, -0.5367107, 0, 0.84376633, -506.3422, -12.168394, 447.27676)
+
+[node name="BabyFish2" parent="Village" instance=ExtResource("139_uo61o")]
+transform = Transform3D(0.84376633, 0, 0.5367107, 0, 1, 0, -0.5367107, 0, 0.84376633, -501.51956, -12.168394, 439.6156)
+
+[node name="BabyFish3" parent="Village" instance=ExtResource("139_uo61o")]
+transform = Transform3D(0.84376633, 0, 0.5367107, 0, 1, 0, -0.5367107, 0, 0.84376633, -509.7603, -12.168394, 439.21454)
+
 [node name="Forest" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -286.75806, 5.1483116, 297.7152)
 
 [node name="house_wood" parent="Forest" instance=ExtResource("9_850c4")]
 transform = Transform3D(-1.2947755, 0.00044390556, -0.007530844, -1.5073598e-10, 1.2072418, 0.048710346, 0.009762617, 0.058873363, -0.99878454, -14.835903, -1.4689407, 9.969539)
-
-[node name="Lantern2" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(-0.99997157, 5.180482e-09, 0.00753969, 0.00036726595, 0.998813, 0.048708946, -0.0075307395, 0.048710328, -0.9987846, 0.39666748, -0.49830437, -3.490509)
-enabled = true
-
-[node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(-0.99997157, 5.180482e-09, 0.00753969, 0.00036726595, 0.998813, 0.048708946, -0.0075307395, 0.048710328, -0.9987846, -2.5646057, -0.59565926, -3.3809204)
-enabled = true
 
 [node name="table" parent="Forest/house_wood" instance=ExtResource("40_usf2n")]
 transform = Transform3D(-0.77229077, -1.08748795e-10, 0.012278269, 0.00030385784, 1.610809, 0.08497345, -0.0075308434, 0.09494915, -2.1059897, -2.6620178, 0.06434536, 1.6921387)
@@ -2692,6 +2981,29 @@ script = ExtResource("61_1t2ts")
 [node name="Sprite3D" type="Sprite3D" parent="Forest/house_wood/RuneHint"]
 transform = Transform3D(-0.6, 6.9938224e-08, 0, 2.2928227e-15, 3.4969112e-08, -0.8, -5.2453668e-08, -0.8, -3.4969112e-08, -3.637979e-12, 0.011738347, 4.839956e-10)
 texture = ExtResource("50_pk7k4")
+
+[node name="Lantern3" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, 0.67233276, 0.17641354, -4.117218)
+enabled = true
+
+[node name="Lantern4" parent="Forest/house_wood" instance=ExtResource("25_iu8k4")]
+transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, -2.65979, 0.08622074, -3.7940369)
+enabled = true
+
+[node name="Log_3" parent="Forest/house_wood" instance=ExtResource("77_dnajr")]
+transform = Transform3D(-0.44623175, -5.578976e-11, 0.6303523, 0.032892834, 0.8263691, 0.023285117, -0.81521916, 0.048710335, -0.5771005, 0.780838, -0.47224808, -4.236023)
+
+[node name="Plant_2" parent="Forest/house_wood" instance=ExtResource("57_sr2vx")]
+transform = Transform3D(-0.77229077, -5.578976e-11, 0.005823079, 0.00030385784, 0.8263691, 0.04029942, -0.0075308434, 0.048710335, -0.99878454, -2.83461, 0.49658203, -1.5640564)
+
+[node name="book" parent="Forest/house_wood" instance=ExtResource("56_0hvbb")]
+transform = Transform3D(-0.70963126, -5.578976e-11, -0.30477902, -0.015903879, 0.8263691, 0.037029743, 0.3941632, 0.048710335, -0.9177486, -3.1771088, 1.3604679, 2.5145874)
+
+[node name="blue book" parent="Forest/house_wood" instance=ExtResource("35_kge0y")]
+transform = Transform3D(-0.65264803, -5.578976e-11, 0.4129377, 0.021547776, 0.8263691, 0.03405626, -0.53404206, 0.048710335, -0.8440535, -3.1581573, 1.4400043, 2.5708008)
+
+[node name="redbook" parent="Forest/house_wood" instance=ExtResource("108_whib0")]
+transform = Transform3D(-0.72382784, -5.578976e-11, 0.2693329, 0.014054239, 0.8263691, 0.03777054, -0.34832156, 0.048710335, -0.9361086, -2.7652893, 1.3563442, 2.6167908)
 
 [node name="Plant_2" parent="Forest" instance=ExtResource("57_sr2vx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.729156, -2.1033735, 20.233337)
@@ -2754,6 +3066,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.625763, -1.3717356, 8.141
 [node name="lantern3" parent="Forest" instance=ExtResource("113_ipee5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603638, -1.398092, 8.682007)
 
+[node name="Log_3" parent="Forest" instance=ExtResource("77_dnajr")]
+transform = Transform3D(0.9300351, 0.057982206, 0.3628674, -0.054016363, 0.99831754, -0.021075308, -0.36347887, 0, 0.9316024, -11.428356, -2.3294482, 13.84454)
+
 [node name="MusicTest" parent="." instance=ExtResource("32_88k61")]
 transform = Transform3D(0.50151074, 0, -0.8651514, 0, 1.0000002, 0, 0.8651514, 0, 0.50151074, 298.3998, 6.0084453, 445.933)
 
@@ -2814,6 +3129,24 @@ transform = Transform3D(-0.5292827, 0, 0.84844553, 0, 0.99999976, 0, -0.84844553
 
 [node name="chair3" parent="MusicTest" instance=ExtResource("52_c6ddm")]
 transform = Transform3D(-0.75147134, 0, -0.6597657, 0, 0.99999976, 0, 0.6597657, 0, -0.75147134, -10.15802, 4.7683716e-07, -0.7023163)
+
+[node name="Tree_2" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 1.3846351, 0, -0.8651514, 0, 0.50151074, -12.882141, -0.44017172, 4.011795)
+
+[node name="Tree_3" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(-0.6405118, 0, 0.76794827, 0, 1.4693519, 0, -0.76794827, 0, -0.6405118, 4.9943237, -0.5636358, 3.0296326)
+
+[node name="Tree_4" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(0.9225987, 0, -0.38576117, 0, 1.3606718, 0, 0.38576117, 0, 0.9225987, -13.43573, -0.017680645, -3.3944244)
+
+[node name="Tree_5" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(0.50151074, 0, 0.8651514, 0, 1.4167478, 0, -0.8651514, 0, 0.50151074, 5.1522217, 0.16012716, -4.40152)
+
+[node name="Tree_6" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(0.22841716, 0.9731531, -0.028261688, 0.009498477, -0.031255323, -0.99946606, -0.97351706, 0.2280268, -0.016382728, -11.991272, 8.918297, -1.6417084)
+
+[node name="Tree_7" parent="MusicTest" instance=ExtResource("88_7yqty")]
+transform = Transform3D(0.17082122, -0.98442876, -0.041474387, -0.54287505, -0.058907017, -0.8377447, 0.82225704, 0.16562003, -0.54448444, 5.7383423, 12.110523, -2.4905548)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
@@ -2925,6 +3258,7 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="fishrod" parent="NPCs/Fisher" instance=ExtResource("71_6oqdp")]
 transform = Transform3D(-0.96299785, 0.007402461, -0.269408, -0.064888164, 0.96384937, 0.25842598, 0.26158172, 0.26634502, -0.9277045, -0.2591858, 0.58487797, -0.17233276)
+can_enlarge = false
 
 [node name="Leshy" type="StaticBody3D" parent="NPCs" groups=["npc"]]
 transform = Transform3D(-0.3100293, 0, -0.95072705, 0, 1, 0, 0.95072705, 0, -0.3100293, -303.7432, 3.7831578, 306.05075)
@@ -2944,15 +3278,6 @@ shape = SubResource("CapsuleShape3D_abqhh")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="NPCs/Leshy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5281584, 0)
 volume_db = -32.381
-
-[node name="book" parent="NPCs" instance=ExtResource("56_0hvbb")]
-transform = Transform3D(0.91583776, 0, 0.4015483, 0, 1, 0, -0.4015483, 0, 0.91583776, -297.49866, 5.444272, 305.2223)
-
-[node name="blue book" parent="NPCs" instance=ExtResource("35_kge0y")]
-transform = Transform3D(0.849064, 0, -0.52829003, 0, 1, 0, 0.52829003, 0, 0.849064, -297.52356, 5.5430307, 305.17102)
-
-[node name="redbook" parent="NPCs" instance=ExtResource("108_whib0")]
-transform = Transform3D(0.93982387, 0, -0.34165916, 0, 1, 0, 0.34165916, 0, 0.93982387, -298.03262, 5.444272, 305.12402)
 
 [node name="ExtrasDesert" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.255264, 0, 89.30352)
@@ -2979,7 +3304,7 @@ revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), Ext
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="person3" parent="ExtrasObservatory" instance=ExtResource("48_3vvvx")]
-transform = Transform3D(-0.4573773, 0, -0.88927275, 0, 1, 0, 0.88927275, 0, -0.4573773, 15.99855, -1.1564255, -3.4107666)
+transform = Transform3D(-0.4573773, 0, -0.88927275, 0, 1, 0, 0.88927275, 0, -0.4573773, 10.532318, -1.1564255, -4.91333)
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasObservatory/person3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0357262, 0)
@@ -3056,7 +3381,7 @@ metadata/_custom_type_script = "uid://ck21km2sgfifg"
 transform = Transform3D(-0.09772181, 0, 0.9952137, 0, 1, 0, -0.9952137, 0, -0.09772181, 0.6940052, 0.46318054, 13.358653)
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
@@ -3066,68 +3391,89 @@ transform = Transform3D(-0.9698081, 0, -0.24386889, 0, 1, 0, 0.24386889, 0, -0.9
 dialogues = Array[ExtResource("30_88k61")]([ExtResource("99_78awm")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue3"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonBlue4" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
 transform = Transform3D(-0.73161554, 0, -0.6817175, 0, 1, 0, 0.6817175, 0, -0.73161554, 14.586178, 0.46318054, 2.7671945)
-dialogues = Array[ExtResource("30_88k61")]([])
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_7gb3y")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue4"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonBlue5" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
 transform = Transform3D(-0.6523894, 0, -0.7578838, 0, 1, 0, 0.7578838, 0, -0.6523894, 18.095312, 0.46318054, 19.397537)
-dialogues = Array[ExtResource("30_88k61")]([])
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_kls22")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue5"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonBlue6" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
 transform = Transform3D(-0.61805165, 0, 0.7861374, 0, 1, 0, -0.7861374, 0, -0.61805165, 11.438782, 0.40484428, 2.5959778)
-dialogues = Array[ExtResource("30_88k61")]([])
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_irlnd")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue6"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonBlue7" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
 transform = Transform3D(-0.96674305, 0, -0.25574932, 0, 1, 0, 0.25574932, 0, -0.96674305, -21.649837, -0.49142122, 43.551846)
-dialogues = Array[ExtResource("30_88k61")]([])
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_vgk2m")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue7"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonBlue2" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
-transform = Transform3D(0.40958875, 0, 0.91227025, 0, 1, 0, -0.91227025, 0, 0.40958875, -18.02478, 0.46318054, 24.374115)
-dialogues = Array[ExtResource("30_88k61")]([])
+transform = Transform3D(0.40958875, 0, 0.91227025, 0, 1, 0, -0.91227025, 0, 0.40958875, -18.02478, 0.12319946, 24.374115)
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_ubk87")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue2"]
-transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 0, 0)
+transform = Transform3D(0.6151389, 0, 0.7884191, 0, 1, 0, -0.7884191, 0, 0.6151389, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="PersonPurple" parent="ExtrasVillage" instance=ExtResource("100_sr2vx")]
 transform = Transform3D(-0.733445, 0, 0.67974865, 0, 1, 0, -0.67974865, 0, -0.733445, 4.794283, 0.46318054, 25.946398)
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_s11b2")])
 
 [node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonPurple"]
-transform = Transform3D(0.61513877, 0, 0.7884192, 0, 1, 0, -0.7884192, 0, 0.61513877, 0, 0, 0)
+transform = Transform3D(0.61513877, 0, 0.7884192, 0, 1, 0, -0.7884192, 0, 0.61513877, 0, 1, 0)
 script = ExtResource("56_b37fd")
 revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonPurple2" parent="ExtrasVillage" instance=ExtResource("100_sr2vx")]
+transform = Transform3D(-0.733445, 0, 0.67974865, 0, 1, 0, -0.67974865, 0, -0.733445, -15.0329895, -0.51487637, 35.34381)
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_s11b2")])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonPurple2"]
+transform = Transform3D(0.61513877, 0, 0.7884192, 0, 1, 0, -0.7884192, 0, 0.61513877, 0, 1, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("3_yvoaw"), ExtResource("4_6oqdp"), ExtResource("5_oqj6p"), ExtResource("6_56jom")])
+metadata/_custom_type_script = "uid://ck21km2sgfifg"
+
+[node name="PersonBlue8" parent="ExtrasVillage" instance=ExtResource("98_je5e5")]
+transform = Transform3D(-0.21107377, -0.14420077, 0.9667752, -0.03075848, 0.98954856, 0.14088218, -0.97698617, 0, -0.21330313, -35.515747, 1.7159691, 36.494324)
+dialogues = Array[ExtResource("30_88k61")]([SubResource("Resource_g28ww")])
+
+[node name="BecomeFish" type="Node3D" parent="ExtrasVillage/PersonBlue8"]
+transform = Transform3D(0.6151388, 0, 0.78841907, 0, 1, 0, -0.78841907, 0, 0.6151388, 0, 1, 0)
+script = ExtResource("56_b37fd")
+revolution_triggers = Array[ExtResource("2_oj0e3")]([ExtResource("8_53qi2")])
 metadata/_custom_type_script = "uid://ck21km2sgfifg"
 
 [node name="ExtrasForest" type="Node3D" parent="."]
@@ -3239,9 +3585,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_kge0y")
 }
 
-[node name="Plant_2" parent="." instance=ExtResource("57_sr2vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -297.91177, 4.20268, 309.24847)
-
 [connection signal="revolutioned" from="BigFish" to="." method="trigger_revolution"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/evil_smoke" method="disable"]
 [connection signal="ignited" from="DesertTown/house2/Lantern" to="DesertTown/house2/HintHider" method="hide"]
@@ -3267,4 +3610,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -297.91177, 4.20268, 309.2484
 [editable path="Observatory/observatory/table/computer"]
 [editable path="Observatory/rocket"]
 [editable path="Observatory/rocket/rocket"]
+[editable path="Village/house_wood8/Sign"]
+[editable path="Village/Sign"]
 [editable path="MusicTest/pedestal"]
