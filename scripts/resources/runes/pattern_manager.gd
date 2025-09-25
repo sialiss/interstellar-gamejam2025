@@ -1,7 +1,7 @@
 extends Node
 
 # todo: добавить сюда новые руны. Можно сделать удобнее с автозаполнением.
-static var rune_patterns: Array[RunePattern] = [
+var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/test_rune/amnyam_rune.tres"),
 	preload("res://resources/runes/time_rune/time_rune.tres"),
 	preload("res://resources/runes/fire_rune/fire_rune.tres"),
@@ -10,12 +10,12 @@ static var rune_patterns: Array[RunePattern] = [
 	preload("res://resources/runes/transformation_rune/transformation_rune.tres")
 ]
 
-static var max_errors: int = 2 # Все руны должны состоять из n + 1 линий!
+var max_errors: int = 2 # Все руны должны состоять из n + 1 линий!
 
-static func get_patterns() -> Array[RunePattern]:
+func get_patterns() -> Array[RunePattern]:
 	return rune_patterns
 
-static func find_matching_rune_pattern(input_directions_array: Array[int]) -> RunePattern:
+func find_matching_rune_pattern(input_directions_array: Array[int]) -> RunePattern:
 	var matched_rune: RunePattern = null
 	var min_distance: float = 1000.0
 	for rune in rune_patterns:
@@ -29,7 +29,7 @@ static func find_matching_rune_pattern(input_directions_array: Array[int]) -> Ru
 	return matched_rune
 
 
-static func calculate_array_distance(arr1: Array[int], arr2: Array[int]) -> float:
+func calculate_array_distance(arr1: Array[int], arr2: Array[int]) -> float:
 	var m: int = arr1.size()
 	var n: int = arr2.size()
 
@@ -63,7 +63,7 @@ static func calculate_array_distance(arr1: Array[int], arr2: Array[int]) -> floa
 			basic_distance += relative_diff
 	return basic_distance
 
-static func arrays_equal(arr1: Array[int], arr2: Array[int]) -> bool:
+func arrays_equal(arr1: Array[int], arr2: Array[int]) -> bool:
 	if arr1.size != arr2.size:
 		return false
 	for i in range(arr1.size()):

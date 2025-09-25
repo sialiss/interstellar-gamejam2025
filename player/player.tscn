@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp8ubqftqvsur"]
+[gd_scene load_steps=17 format=3 uid="uid://bp8ubqftqvsur"]
 
 [ext_resource type="Script" uid="uid://bq85sfyh51552" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://bbwxppese7bml" path="res://player/zoomer.gd" id="2_g1dw6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnn0ynfde8hfx" path="res://assets/sprites/magic_particle.png" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cg5eaihgosde7" path="res://player/rune_drawer.gd" id="3_qjkh3"]
 [ext_resource type="Script" uid="uid://ctqu8vfmogof7" path="res://player/inventory.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://666c5roqn8u4" path="res://player/rune_drawer2.gd" id="6_rgyib"]
 
 [sub_resource type="GDScript" id="GDScript_oul6g"]
 script/source = "extends Camera3D
@@ -20,6 +21,11 @@ height = 1.9008789
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_boad6"]
 size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="Curve" id="Curve_rgyib"]
+_limits = [10.0, 50.0, 0.0, 2000.0]
+_data = [Vector2(0, 25.542694), 0.0, -0.012466963, 0, 0, Vector2(2000, 10), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_rgyib"]
 length = 0.001
@@ -313,6 +319,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_qjkh3")
 magic_particle = ExtResource("3_g1dw6")
+
+[node name="RuneDrawing2" type="Control" parent="." node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_rgyib")
+player = NodePath("..")
+magic_particle = ExtResource("3_g1dw6")
+recent_directions_count_curve = SubResource("Curve_rgyib")
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_rkbax")]
 mouse_filter = 2
