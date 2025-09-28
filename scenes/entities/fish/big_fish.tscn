@@ -492,7 +492,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_nj0d7")
 }
 autoplay = "spin"
-speed_scale = 0.02
+speed_scale = 0.015
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
