@@ -79,11 +79,11 @@ func _physics_process(delta: float) -> void:
 	if ray.is_colliding():
 		var obj = ray.get_collider()
 		#print(obj)
-		if obj.is_in_group("items"):
+		if obj and obj.is_in_group("items"):
 			show_prompt.emit("[F] - store")
 		elif obj and (obj.is_in_group("interactable") or obj.is_in_group("car")):
 			show_prompt.emit("[E] - interact")
-		elif obj and obj.is_in_group("npc"):
+		elif obj and obj.is_in_group("npc") and obj.has_dialogue_available():
 			show_prompt.emit("[E] - talk")
 		else:
 			hide_prompt.emit()

@@ -43,7 +43,6 @@ metadata/_custom_type_script = "uid://beg4qik32tc5x"
 
 [resource]
 script = ExtResource("1_l01e8")
-is_repeatable = true
 dialogue_id = "fisher_after_cool_rod"
 text = "What is this?.. It's like it came alive! The rod is shaking, as if it seeks the water."
 choices = Array[ExtResource("1_l01e8")]([SubResource("Resource_l01e8")])

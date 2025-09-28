@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("1_6h7y0")
 is_repeatable = true
-text = "Hello! Will you come with us to the dark house?"
+text = "A stranger once lived in this house, but since he left, some kind of curse has remained there. We think he hides his secrets in it!"
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

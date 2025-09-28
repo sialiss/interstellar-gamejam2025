@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=13 format=3 uid="uid://bqcmed43hgbjd"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://bqcmed43hgbjd"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_fvs2n"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_em7oo"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_em7oo"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="3_ikfjn"]
-[ext_resource type="Resource" uid="uid://cmrgsajfpa3dh" path="res://resources/runes/time_rune/time_rune.tres" id="5_bmwd4"]
-[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="6_o3q3f"]
 
 [sub_resource type="Resource" id="Resource_3eonq"]
 script = ExtResource("1_fvs2n")
@@ -37,18 +35,12 @@ type = "Area"
 data = "Cave"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
-[sub_resource type="Resource" id="Resource_8ghms"]
-script = ExtResource("6_o3q3f")
-rune = ExtResource("5_bmwd4")
-metadata/_custom_type_script = "uid://beg4qik32tc5x"
-
 [resource]
 script = ExtResource("1_fvs2n")
 dialogue_id = "desert_after_cave"
 text = "You know… I've been studying the runes for a long time. They're strange. Ancient.
-But I don't quite get what they're for. The rune you found in the cave definitely has something to do with time.
+But I don't quite get what they're for.
 Can you maybe try drawing it?"
 choices = Array[ExtResource("1_fvs2n")]([SubResource("Resource_km357"), SubResource("Resource_fvs2n"), SubResource("Resource_el80l")])
 conditions = Array[ExtResource("2_em7oo")]([SubResource("Resource_ikfjn")])
-effects = Array[ExtResource("3_ikfjn")]([SubResource("Resource_8ghms")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

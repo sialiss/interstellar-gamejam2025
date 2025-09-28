@@ -22,15 +22,15 @@ func play_music(location: String, stream: AudioStream):
 		return # уже играет эта музыка
 	#print("music start", stream.resource_path)
 	# второй плеер
-	inactive_player.stop()
 	inactive_player.stream = stream
+	if active_player.stream.resource_name == inactive_player.stream.resource_name:
+		pass
 	inactive_player.volume_db = -80
 	inactive_player.play()
 
 	if location == "Forest": play_birds_sound()
 	else: stop_birds_sound()
-	if active_player.stream.resource_name == inactive_player.stream.resource_name:
-		pass
+
 	# плавный переход
 	var tween := create_tween()
 	tween.parallel().tween_property(active_player, "volume_db", -80.0, fade_time)
