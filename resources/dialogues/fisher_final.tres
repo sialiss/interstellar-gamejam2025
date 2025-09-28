@@ -8,12 +8,13 @@
 [sub_resource type="Resource" id="Resource_8o8w0"]
 script = ExtResource("3_65iqi")
 type = "dialogue"
+data = "fisher_after_cool_rod"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
 [resource]
 script = ExtResource("1_swlor")
 is_repeatable = true
-dialogue_id = "fisher_after_cool_rod"
+dialogue_id = "fisher_final"
 text = "I'm tired. The sea's gone mad, as did I. But if you catch that fish… maybe, it'll all end."
 conditions = Array[ExtResource("2_65iqi")]([SubResource("Resource_8o8w0")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

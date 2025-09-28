@@ -17,6 +17,7 @@ func restore_rune(rune: RunePattern):
 	var rune_data = known_runes[uid]
 	rune.is_name_known = rune_data.name
 	rune.is_pattern_known = rune_data.pattern
+	EventBus.trigger("Rune", rune.rune_name)
 
 func save_rebirth_progress():
 	player_was_reborn = true

@@ -16,27 +16,7 @@ signal is_dialogue_mode(enabled)
 func _ready() -> void:
 	visible = false
 
-func choose_npc_dialogue(npc_dialogues: Array[DialogueResource], npc: Node) -> void:
-	var story_dialogue: DialogueResource = null
-	var repeatable_dialogue: DialogueResource = null
-	for dialogue in npc_dialogues:
-		if DialogueManager.is_dialogue_available(dialogue):
-			if not dialogue.is_repeatable and story_dialogue == null:
-				story_dialogue = dialogue
-			elif dialogue.is_repeatable and repeatable_dialogue == null:
-				repeatable_dialogue = dialogue
-	# приоритет — сюжетный
-	var root = story_dialogue if story_dialogue else repeatable_dialogue
-	if root == null:
-		return # нет доступных диалогов
-	_start_dialogue(root, npc)
-
-func _start_dialogue(root: DialogueResource, npc: Node) -> void:
-	#if not root.is_repeatable and DialogueManager.is_completed(root.dialogue_id):
-		#if root.choices.size() > 0:
-			#root = root.choices[0]
-		#else:
-			#return
+func start_dialogue(root: DialogueResource, npc: Node) -> void:
 	_current_node = root
 	_current_npc = npc
 	visible = true
@@ -102,7 +82,7 @@ func stop_dialogue() -> void:
 
 func _on_end_pressed() -> void:
 	if _current_node:
-		DialogueManager.mark_completed(_current_node.dialogue_id)
+		_current_npc.mark_completed(_current_node.dialogue_id)
 		_current_node.apply_effects(player, _current_npc)
 
 	visible = false

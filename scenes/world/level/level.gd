@@ -20,7 +20,7 @@ func _ready():
 	#dualogue_ui.is_dialogue_mode.connect(self._switch_dialogue_mode)
 	#npc.interaction_started.connect(self._on_npc_interaction_started)
 	for npc in get_tree().get_nodes_in_group("npc"):
-		npc.interaction_started.connect(dualogue_ui.choose_npc_dialogue)
+		npc.interaction_started.connect(dualogue_ui.start_dialogue)
 
 	SaveManager.unlock_known_runes()
 	if (SaveManager.profile.player_was_reborn):

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://bbqrn3yt4bwoo"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://bbqrn3yt4bwoo"]
 
 [ext_resource type="Script" uid="uid://chvnh0rt1wrj" path="res://scripts/resources/dialogue_resource.gd" id="1_7gqg0"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="2_wbesa"]
 [ext_resource type="Script" uid="uid://cujws3rcdujt0" path="res://scripts/resources/eventStringCondition.gd" id="3_wbesa"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="4_yykwv"]
+[ext_resource type="Script" uid="uid://b501kk7fnpkb6" path="res://resources/runes/fire_rune/fire_rune.gd" id="5_3w51d"]
+[ext_resource type="Script" uid="uid://beg4qik32tc5x" path="res://scripts/resources/effects/reveal_rune.gd" id="6_txf5q"]
 
 [sub_resource type="Resource" id="Resource_yykwv"]
 script = ExtResource("3_wbesa")
@@ -11,10 +13,20 @@ type = "Area"
 data = "observatory"
 metadata/_custom_type_script = "uid://cujws3rcdujt0"
 
+[sub_resource type="Resource" id="Resource_6nann"]
+script = ExtResource("5_3w51d")
+metadata/_custom_type_script = "uid://b501kk7fnpkb6"
+
+[sub_resource type="Resource" id="Resource_qb6ma"]
+script = ExtResource("6_txf5q")
+rune = SubResource("Resource_6nann")
+metadata/_custom_type_script = "uid://beg4qik32tc5x"
+
 [resource]
 script = ExtResource("1_7gqg0")
 dialogue_id = "astronomer_telescope_fixed"
 text = "There's something peculiar on the readings, it has abnormally high thermal signature, even in the cold of space!
-And what is this symbol?"
+And what is this symbol? Will you try to do something?"
 conditions = Array[ExtResource("2_wbesa")]([SubResource("Resource_yykwv")])
+effects = Array[ExtResource("4_yykwv")]([SubResource("Resource_qb6ma")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

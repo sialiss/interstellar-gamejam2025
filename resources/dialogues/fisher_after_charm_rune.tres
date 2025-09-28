@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://c0ndb52jrb6r3"
 [resource]
 script = ExtResource("1_nxdsd")
 dialogue_id = "fisher_after_charm_rune"
-text = "Oh, I've seen this before. A Master from lands beyond fixed my old rod with a similar sign."
+text = "Oh, I've seen this before. A Master from lands beyond fixed my old rod with a similar sign. It seems to have made my fishing rod better now."
 conditions = Array[ExtResource("2_ccvb4")]([SubResource("Resource_oy2c5")])
 effects = Array[ExtResource("4_oy2c5")]([SubResource("Resource_vw2lj")])
 metadata/_custom_type_script = "uid://chvnh0rt1wrj"

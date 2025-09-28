@@ -16,23 +16,70 @@ var _can_jumping: bool = false
 var is_jumping: bool = false
 
 var block_dialogues: Array[DialogueResource] = []
+var completed_dialogues: Dictionary = {}
 
 signal interaction_started(dialogues, npc)
 signal interaction_ended(dialogues, npc)
 
 func _ready() -> void:
 	bind_dualogues()
+	EventBus.cycle_reset.connect(_reset)
 	add_to_group("npc")
 
 func interact() -> void:
-
-	if (block_dialogues):
-		emit_signal("interaction_started", block_dialogues, self)
-	else:
-		emit_signal("interaction_started", dialogues, self)
+	var available = choose_dialogue()
+	if block_dialogues:
+		emit_signal("interaction_started", block_dialogues[0], self)
+	elif available:
+		emit_signal("interaction_started", available, self)
 
 func end_interaction() -> void:
 	emit_signal("interaction_ended", dialogues, self)
+
+func bind_dualogues():
+	for each in dialogues:
+		if each.conditions:
+			for cond in each.conditions:
+				cond._bind_to_bus()
+				cond.is_completed = cond.invert
+
+func _reset():
+	completed_dialogues.clear()
+
+func mark_completed(id: String) -> void:
+	if id != "":
+		completed_dialogues[id] = true
+		EventBus.trigger("dialogue", id)
+
+func is_completed(id: String) -> bool:
+	return id != "" and completed_dialogues.has(id)
+
+func is_dialogue_available(dialogue: DialogueResource) -> bool:
+	# Проверка: уже пройден или недоступен
+	if !dialogue.is_available() or (is_completed(dialogue.dialogue_id) and !dialogue.is_repeatable):
+		return false
+	return true
+
+func has_dialogue_available() -> bool:
+	for dialogue in dialogues:
+		if is_dialogue_available(dialogue): return true
+	return false
+
+func choose_dialogue():
+	var story_dialogue: DialogueResource = null
+	var repeatable_dialogue: DialogueResource = null
+	for dialogue in dialogues:
+		if is_dialogue_available(dialogue):
+			if not dialogue.is_repeatable and story_dialogue == null:
+				story_dialogue = dialogue
+			elif dialogue.is_repeatable and repeatable_dialogue == null:
+				repeatable_dialogue = dialogue
+		if story_dialogue: break
+	# приоритет — сюжетный
+	var root = story_dialogue if story_dialogue else repeatable_dialogue
+	if root == null:
+		return # нет доступных диалогов
+	return root
 
 func start_talking(node: DialogueResource) -> void:
 	var char_count = node.text.length()
@@ -103,10 +150,3 @@ func _jump(jump_height: float, jump_duration: float):
 
 	position.y = start_y
 	is_jumping = false
-
-func bind_dualogues():
-	for each in dialogues:
-		if each.conditions:
-			for cond in each.conditions:
-				cond._bind_to_bus()
-				cond.is_completed = cond.invert

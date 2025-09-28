@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctkwti7f04w2f"]
+[gd_scene load_steps=8 format=3 uid="uid://ctkwti7f04w2f"]
 
 [ext_resource type="Script" uid="uid://f68c14ccgj3f" path="res://scenes/UI/dialogue_ui.gd" id="1_80yk7"]
 
@@ -38,8 +38,14 @@ Button/styles/normal = SubResource("StyleBoxFlat_d6j1s")
 Button/styles/pressed = SubResource("StyleBoxFlat_q3y81")
 Label/constants/outline_size = 4
 
+[sub_resource type="LabelSettings" id="LabelSettings_80yk7"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Theme" id="Theme_rc63b"]
 Button/constants/outline_size = 4
+Button/font_sizes/font_size = 20
 
 [node name="DialogueUI" type="Control"]
 layout_mode = 3
@@ -70,6 +76,7 @@ offset_right = 263.0
 offset_bottom = -200.0
 grow_vertical = 0
 theme = SubResource("Theme_qq553")
+label_settings = SubResource("LabelSettings_80yk7")
 vertical_alignment = 2
 
 [node name="DialogueText" type="Label" parent="Panel"]
@@ -79,12 +86,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = -197.0
+offset_top = -176.0
 offset_right = -24.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_qq553")
+label_settings = SubResource("LabelSettings_80yk7")
 autowrap_mode = 2
 
 [node name="Choices" type="VBoxContainer" parent="Panel"]

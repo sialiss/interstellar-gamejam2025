@@ -971,7 +971,7 @@ size = Vector3(1.5, 0.85, 0.1)
 albedo_color = Color(0.40942743, 0.17377031, 0.1330474, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2811w"]
-size = Vector3(1.6, 2, 0.1)
+size = Vector3(1.6, 2.7148438, 0.1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2811w"]
 top_radius = 0.1
@@ -2824,29 +2824,26 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_78awm")
 
 [node name="Car2" parent="Observatory" instance=ExtResource("101_2811w")]
-transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
-
-[node name="Sign2" type="StaticBody3D" parent="Observatory"]
-transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
-
-[node name="Car" parent="Observatory" instance=ExtResource("101_2811w")]
-transform = Transform3D(-0.23799099, 0, -0.97126734, 0, 1, 0, 0.97126734, 0, -0.23799099, -63.329468, 1.0604298, 758.05835)
+transform = Transform3D(0.055089593, 0, -0.9984815, 0, 1, 0, 0.9984815, 0, 0.055089593, -0.55023384, 0.6130822, 760.382)
+collision_layer = 6
+collision_mask = 3
+mass = 300.0
 
 [node name="Sign" type="StaticBody3D" parent="Observatory"]
-transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, -61.901035, 0.8949539, 755.7776)
+transform = Transform3D(0.62780005, 0, -0.7783747, 0, 1, 0, 0.7783747, 0, 0.62780005, 0.011383653, 1.2492218, 755.0257)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.043214113, 1.2726736, -0.0008886811)
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 1.2835639, 0)
 mesh = SubResource("BoxMesh_xgkao")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgkao")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.7173553, 0)
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.35742188, 0)
 shape = SubResource("BoxShape3D_2811w")
 
 [node name="Label3D" type="Label3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, -1.6915994e-09, 1.3581362, -0.07336403)
+transform = Transform3D(-1, 0, -1.7881393e-07, 0, 1, 0, 8.940697e-08, 0, -1.8461926, -5.4923492e-09, 1.2916591, -0.056706622)
 modulate = Color(0, 0, 0, 1)
 text = "Caution!
 Broken car!"
@@ -2854,27 +2851,6 @@ font_size = 20
 outline_size = 0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Observatory/Sign"]
-mesh = SubResource("CylinderMesh_2811w")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.043214113, 1.2726736, -0.0008886811)
-mesh = SubResource("BoxMesh_xgkao")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgkao")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.7173553, 0)
-shape = SubResource("BoxShape3D_2811w")
-
-[node name="Label3D2" type="Label3D" parent="Observatory/Sign"]
-transform = Transform3D(-1, 0, -1.6139929e-07, 0, 1, 0, 8.742278e-08, 0, -1.8461926, -1.6915994e-09, 1.3581362, -0.07336403)
-modulate = Color(0, 0, 0, 1)
-text = "Caution!
-Broken car!"
-font_size = 20
-outline_size = 0
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Observatory/Sign"]
 mesh = SubResource("CylinderMesh_2811w")
 
 [node name="Village" type="Node3D" parent="."]
@@ -3574,8 +3550,8 @@ offset_bottom = 512.0
 position = Vector2(128, 128)
 texture = ExtResource("28_whib0")
 
-[node name="funny_lights" parent="MusicTest" instance=ExtResource("97_jimsq")]
-transform = Transform3D(0.99992555, 0, 0.01219955, -0.0006157225, 0.9987253, 0.050467167, -0.0121840015, -0.05047091, 0.9986512, -3.29858, 3.7977273, -3.2115266)
+[node name="funny_lights2" parent="MusicTest" instance=ExtResource("97_jimsq")]
+transform = Transform3D(-0.029802205, 0, 0.99982226, 0, 0.99999976, 0, -1.5808645, 0, -0.018848492, -12.384933, 6.484419, 0.12280311)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1370.1013, -10.829, 414.44995)
@@ -3614,7 +3590,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Desert Dweller"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("45_ethiv"), ExtResource("46_ohyet")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("32_xsiqw"), ExtResource("33_g7qrx"), ExtResource("34_g7qrx"), ExtResource("46_ohyet"), ExtResource("45_ethiv")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Desert Dweller" instance=ExtResource("46_3vvvx")]
@@ -3665,7 +3641,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Fisher"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("51_el80l"), ExtResource("52_abblm"), ExtResource("53_abblm"), ExtResource("54_6xvrv"), ExtResource("55_ethiv"), ExtResource("57_3mjd8"), ExtResource("58_yra41")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("51_el80l"), ExtResource("52_abblm"), ExtResource("53_abblm"), ExtResource("54_6xvrv"), ExtResource("58_yra41"), ExtResource("55_ethiv"), ExtResource("57_3mjd8")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Fisher" instance=ExtResource("51_uxisk")]
@@ -3996,11 +3972,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.33514, -92.18227, 229.015
 shape = SubResource("SphereShape3D_kapuu")
 debug_color = Color(2.957805e-05, 1.8304405, 1.7554948, 1)
 debug_fill = false
-
-[node name="Car" parent="." instance=ExtResource("101_2811w")]
-transform = Transform3D(-0.2372915, 0.01823359, -0.97126734, 0.07661462, 0.9970608, 1.8626451e-09, 0.96841264, -0.07441328, -0.237991, -63.329468, 1.0604298, 758.05835)
-collision_layer = 6
-collision_mask = 5
 
 [node name="WinCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.511938, 0.2890642, 0.8089261, 9.690238e-10, 0.94168216, -0.33650365, -0.85902244, 0.172269, 0.48208287, 55.148983, 14.717134, 764.88666)
