@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kln1pxkkqfe8"
 path.s3tc="res://.godot/imported/transformation_rune_wood.png-bfede8a850b5a21cc79946c9348af7b8.s3tc.ctex"
+path.etc2="res://.godot/imported/transformation_rune_wood.png-bfede8a850b5a21cc79946c9348af7b8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/transformation_rune_wood.png"
-dest_files=["res://.godot/imported/transformation_rune_wood.png-bfede8a850b5a21cc79946c9348af7b8.s3tc.ctex"]
+dest_files=["res://.godot/imported/transformation_rune_wood.png-bfede8a850b5a21cc79946c9348af7b8.s3tc.ctex", "res://.godot/imported/transformation_rune_wood.png-bfede8a850b5a21cc79946c9348af7b8.etc2.ctex"]
 
 [params]
 

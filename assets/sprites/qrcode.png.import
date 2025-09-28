@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c41pssh0sp6i7"
 path.s3tc="res://.godot/imported/qrcode.png-6de0e0b057c1be2f0ee6dfc63640e43a.s3tc.ctex"
+path.etc2="res://.godot/imported/qrcode.png-6de0e0b057c1be2f0ee6dfc63640e43a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/qrcode.png"
-dest_files=["res://.godot/imported/qrcode.png-6de0e0b057c1be2f0ee6dfc63640e43a.s3tc.ctex"]
+dest_files=["res://.godot/imported/qrcode.png-6de0e0b057c1be2f0ee6dfc63640e43a.s3tc.ctex", "res://.godot/imported/qrcode.png-6de0e0b057c1be2f0ee6dfc63640e43a.etc2.ctex"]
 
 [params]
 

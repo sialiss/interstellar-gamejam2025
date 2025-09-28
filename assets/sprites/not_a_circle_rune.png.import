@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqh4i5ql1djue"
 path.s3tc="res://.godot/imported/not_a_circle_rune.png-342777e02812372f213e7a75d9bdaa73.s3tc.ctex"
+path.etc2="res://.godot/imported/not_a_circle_rune.png-342777e02812372f213e7a75d9bdaa73.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/not_a_circle_rune.png"
-dest_files=["res://.godot/imported/not_a_circle_rune.png-342777e02812372f213e7a75d9bdaa73.s3tc.ctex"]
+dest_files=["res://.godot/imported/not_a_circle_rune.png-342777e02812372f213e7a75d9bdaa73.s3tc.ctex", "res://.godot/imported/not_a_circle_rune.png-342777e02812372f213e7a75d9bdaa73.etc2.ctex"]
 
 [params]
 

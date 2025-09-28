@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkh4m5kdli0d5"
 path.s3tc="res://.godot/imported/magic6.png-b9d24a506833e633526c80634e6fe566.s3tc.ctex"
+path.etc2="res://.godot/imported/magic6.png-b9d24a506833e633526c80634e6fe566.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/magic6.png"
-dest_files=["res://.godot/imported/magic6.png-b9d24a506833e633526c80634e6fe566.s3tc.ctex"]
+dest_files=["res://.godot/imported/magic6.png-b9d24a506833e633526c80634e6fe566.s3tc.ctex", "res://.godot/imported/magic6.png-b9d24a506833e633526c80634e6fe566.etc2.ctex"]
 
 [params]
 

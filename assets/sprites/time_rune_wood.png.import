@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3kcsvsu4ytwx"
 path.s3tc="res://.godot/imported/time_rune_wood.png-bf7f24ab9bfad6b8c8429be459cf7ace.s3tc.ctex"
+path.etc2="res://.godot/imported/time_rune_wood.png-bf7f24ab9bfad6b8c8429be459cf7ace.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/time_rune_wood.png"
-dest_files=["res://.godot/imported/time_rune_wood.png-bf7f24ab9bfad6b8c8429be459cf7ace.s3tc.ctex"]
+dest_files=["res://.godot/imported/time_rune_wood.png-bf7f24ab9bfad6b8c8429be459cf7ace.s3tc.ctex", "res://.godot/imported/time_rune_wood.png-bf7f24ab9bfad6b8c8429be459cf7ace.etc2.ctex"]
 
 [params]
 

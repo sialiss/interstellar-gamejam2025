@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhnu14vmdehc"
 path.s3tc="res://.godot/imported/gigantism_rune.png-dfa95ff72442b297f4491f3659ec1d7c.s3tc.ctex"
+path.etc2="res://.godot/imported/gigantism_rune.png-dfa95ff72442b297f4491f3659ec1d7c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/gigantism_rune.png"
-dest_files=["res://.godot/imported/gigantism_rune.png-dfa95ff72442b297f4491f3659ec1d7c.s3tc.ctex"]
+dest_files=["res://.godot/imported/gigantism_rune.png-dfa95ff72442b297f4491f3659ec1d7c.s3tc.ctex", "res://.godot/imported/gigantism_rune.png-dfa95ff72442b297f4491f3659ec1d7c.etc2.ctex"]
 
 [params]
 
