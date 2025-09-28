@@ -1,4 +1,4 @@
-[gd_scene load_steps=280 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=285 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -1129,6 +1129,97 @@ points = PackedVector3Array(-0.42771336, 0.013182215, -0.2992155, -0.42771336, 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_1t2ts"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6nyh"]
+cull_mode = 2
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_xbd3y"]
+size = Vector2(0.255, 0.06)
+orientation = 0
+
+[sub_resource type="Animation" id="Animation_ues6x"]
+resource_name = "shake"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClosetOrigin/closet_3:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 0),
+"points": PackedFloat32Array(-1.02284705e-08, -0.25, 0, 0.12994488, 0.022725143, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023756234, -0.1666385, -0.0009898286, 0.2666052, 0.0015836285, 0.00015834614, -0.167, 0, 0.07583517, -0.00039590846, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023755591, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6, 0.6999999, 0.84999996)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ClosetOrigin/closet_3/Knock:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jimsq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClosetOrigin/closet_3:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.02284705e-08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ClosetOrigin/closet_3:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5.9604645e-08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ClosetOrigin/closet_3:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8.058372e-10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ClosetOrigin/closet_3/Knock:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jimsq"]
+_data = {
+&"RESET": SubResource("Animation_jimsq"),
+&"shake": SubResource("Animation_ues6x")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s11b2"]
 resource_name = "Cover"
@@ -2981,8 +3072,33 @@ transform = Transform3D(-0.6590441, 0, -0.7521044, 0, 1, 0, 0.7521044, 0, -0.659
 [node name="bed3" parent="Village/house_wood8" instance=ExtResource("92_pnpbx")]
 transform = Transform3D(0.502039, 0, 0.8648449, 0, 1, 0, -0.8648449, 0, 0.502039, -1.972168, 4.7683716e-07, 1.660675)
 
-[node name="closet_3" parent="Village/house_wood8" instance=ExtResource("129_8wl3x")]
-transform = Transform3D(-0.45324606, 0.062055875, -0.8892226, -0.035106968, 0.995557, 0.087370984, 0.8906938, 0.07081847, -0.4490537, 2.321167, 4.7683716e-07, 2.0787354)
+[node name="ClosetOrigin" type="Node3D" parent="Village/house_wood8"]
+transform = Transform3D(-0.453246, 0.06205588, -0.8892227, -0.035106968, 0.995557, 0.087370984, 0.8906938, 0.07081847, -0.44905367, 2.321167, 4.7683716e-07, 2.0787048)
+
+[node name="closet_3" parent="Village/house_wood8/ClosetOrigin" instance=ExtResource("129_8wl3x")]
+transform = Transform3D(1, -8.0583773e-10, 5.960464e-08, 8.058372e-10, 0.99999994, 1.022847e-08, -5.9604645e-08, -1.022847e-08, 0.99999994, 0, 0, 0)
+
+[node name="Knock" type="Node3D" parent="Village/house_wood8/ClosetOrigin/closet_3"]
+transform = Transform3D(0.78103024, 2.7575882e-09, 0.6244932, -4.0779704e-09, 1, -2.1341802e-09, -0.6244932, -5.0386006e-09, 0.78103024, 0.24798614, 1.1783137, 0.75513494)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Village/house_wood8/ClosetOrigin/closet_3/Knock"]
+transform = Transform3D(1, -1.6955384e-09, 2.0764908e-09, -4.8603397e-09, 0.9041423, 0.4272316, 0, -0.42723167, 0.9041422, 1.6724109e-05, 0.17311686, -0.0224069)
+material_override = SubResource("StandardMaterial3D_m6nyh")
+mesh = SubResource("QuadMesh_xbd3y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Village/house_wood8/ClosetOrigin/closet_3/Knock"]
+transform = Transform3D(1, -1.2296368e-09, 0, -4.8603397e-09, 1.0000001, 3.2414391e-09, 0, 1.2152668e-08, 1, 0, -3.8146973e-06, -6.1035156e-05)
+material_override = SubResource("StandardMaterial3D_m6nyh")
+mesh = SubResource("QuadMesh_xbd3y")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Village/house_wood8/ClosetOrigin/closet_3/Knock"]
+transform = Transform3D(1, -1.7069841e-09, -2.1005426e-09, -4.8603397e-09, 0.9017874, -0.4321802, 0, 0.43218026, 0.9017873, 1.3128173e-05, -0.18785933, -0.027640339)
+material_override = SubResource("StandardMaterial3D_m6nyh")
+mesh = SubResource("QuadMesh_xbd3y")
+skeleton = NodePath("../..")
 
 [node name="Sign" parent="Village/house_wood8" instance=ExtResource("46_sdkx4")]
 transform = Transform3D(0.9995153, 0, 0.031131625, 0, 1, 0, -0.031131625, 0, 0.9995153, 0.56707764, 1.726954, -2.557953)
@@ -2990,6 +3106,12 @@ transform = Transform3D(0.9995153, 0, 0.031131625, 0, 1, 0, -0.031131625, 0, 0.9
 [node name="Label3D" parent="Village/house_wood8/Sign" index="2"]
 modulate = Color(1, 1, 1, 1)
 text = "Chad"
+
+[node name="ClosetShake" type="AnimationPlayer" parent="Village/house_wood8"]
+libraries = {
+&"": SubResource("AnimationLibrary_jimsq")
+}
+autoplay = "shake"
 
 [node name="house_wood9" parent="Village" instance=ExtResource("9_850c4")]
 transform = Transform3D(-0.66324735, 0, -0.7484002, 0, 1, 0, 0.7484002, 0, -0.66324735, -423.78702, -8.110708, 499.84396)
