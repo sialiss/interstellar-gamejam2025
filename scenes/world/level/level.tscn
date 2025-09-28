@@ -2086,7 +2086,7 @@ material_override = SubResource("StandardMaterial3D_3mjd8")
 mesh = SubResource("QuadMesh_yra41")
 
 [node name="Lantern" parent="DesertTown/house2" instance=ExtResource("25_iu8k4")]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -1.6769769, -0.9763231, 3.7134416)
+transform = Transform3D(0.8660256, 0, -0.50000024, 0, 1, 0, 0.50000024, 0, 0.8660256, 0.62590027, -0.006757498, 1.6411858)
 
 [node name="Sprite3D" type="Sprite3D" parent="DesertTown/house2"]
 transform = Transform3D(0.0053058183, 0, 0.99998605, 0, 1, 0, -0.99998605, 0, 0.0053058183, -2.5005584, 1.7530665, 0.30198574)
