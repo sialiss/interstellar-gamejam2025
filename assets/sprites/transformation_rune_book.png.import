@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvglrhsbrdk1w"
 path.s3tc="res://.godot/imported/transformation_rune_book.png-efb7b10dc33c4e0d8b6fb9ce7d8124f0.s3tc.ctex"
+path.etc2="res://.godot/imported/transformation_rune_book.png-efb7b10dc33c4e0d8b6fb9ce7d8124f0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/transformation_rune_book.png"
-dest_files=["res://.godot/imported/transformation_rune_book.png-efb7b10dc33c4e0d8b6fb9ce7d8124f0.s3tc.ctex"]
+dest_files=["res://.godot/imported/transformation_rune_book.png-efb7b10dc33c4e0d8b6fb9ce7d8124f0.s3tc.ctex", "res://.godot/imported/transformation_rune_book.png-efb7b10dc33c4e0d8b6fb9ce7d8124f0.etc2.ctex"]
 
 [params]
 

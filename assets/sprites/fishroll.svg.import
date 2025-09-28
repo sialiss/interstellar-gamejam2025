@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm7td23ipbh3k"
 path.s3tc="res://.godot/imported/fishroll.svg-9217d22f32c8692a9bc6c009883624cb.s3tc.ctex"
+path.etc2="res://.godot/imported/fishroll.svg-9217d22f32c8692a9bc6c009883624cb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/fishroll.svg"
-dest_files=["res://.godot/imported/fishroll.svg-9217d22f32c8692a9bc6c009883624cb.s3tc.ctex"]
+dest_files=["res://.godot/imported/fishroll.svg-9217d22f32c8692a9bc6c009883624cb.s3tc.ctex", "res://.godot/imported/fishroll.svg-9217d22f32c8692a9bc6c009883624cb.etc2.ctex"]
 
 [params]
 
