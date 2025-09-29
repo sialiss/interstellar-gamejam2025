@@ -131,12 +131,14 @@ func _on_show_prompt(text: String, _text2: String = "") -> void:
 	prompt_label.visible = true
 
 # Показать временную подсказку (наверху) (пока не работает (теперь работает))
-func _on_show_timer_prompt(time, text: String) -> void:
+func _on_show_timer_prompt(time, text: String) -> SceneTreeTimer:
 	timered_label.text = text
 	timered_label.visible = true
-	get_tree().create_timer(time).timeout.connect(func():
+	var timer := get_tree().create_timer(time)
+	timer.timeout.connect(func():
 		timered_label.visible = false
 	)
+	return timer
 
 # Скрыть подсказку
 func _on_hide_prompt() -> void:

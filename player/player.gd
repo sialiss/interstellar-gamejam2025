@@ -36,6 +36,7 @@ func _input(event: InputEvent):
 	# Респавн
 	if Input.is_action_just_pressed("restart"):
 		position = Vector3(66.282, 0.619, 68.798)
+		velocity = Vector3.ZERO
 		_set_mouse_capture(true)
 
 	if event is InputEventMouseMotion and do_camera_move:

@@ -45,3 +45,9 @@ func check_npc_fish_transformation(npc):
 
 func win_animation_finished():
 	player_ui._on_show_timer_prompt(5.0, "You saved the world, nice!")
+
+func lose_animation_finished():
+	EventBus.trigger("Area", "rocket")
+	var timer = player_ui._on_show_timer_prompt(5.0, "Rocket Launch: Good")
+	await timer.timeout
+	player_ui._on_show_timer_prompt(5.0, "But... nothing happened?")

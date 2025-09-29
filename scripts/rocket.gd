@@ -22,3 +22,5 @@ func ignite():
 	if is_rod_attached:
 		EventBus.trigger("Win", "Win")
 		win_animation_player.play("win")
+	else:
+		win_animation_player.play("lose")

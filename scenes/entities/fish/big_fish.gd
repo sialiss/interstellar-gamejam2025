@@ -27,6 +27,10 @@ func shoot_bullet():
 
 func stop_spinning():
 	$SpinAnimationPlayer.stop(true)
+func pause_spinning():
+	$SpinAnimationPlayer.pause()
+func resume_spinning():
+	$SpinAnimationPlayer.play()
 
 
 class BigFishState extends State:
