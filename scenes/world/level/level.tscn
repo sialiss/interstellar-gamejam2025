@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=4 uid="uid://cqelj6eb7mfuo"]
+[gd_scene load_steps=287 format=4 uid="uid://cqelj6eb7mfuo"]
 
 [ext_resource type="Script" uid="uid://btolh55oqqonj" path="res://scenes/world/level/level.gd" id="1_1mhee"]
 [ext_resource type="PackedScene" uid="uid://xme6ovlyreju" path="res://scenes/entities/fish/big_fish.tscn" id="1_o7lpa"]
@@ -132,6 +132,7 @@
 [ext_resource type="AudioStream" uid="uid://cx700oq0f7y4b" path="res://assets/sounds/forest_without_birds.mp3" id="107_kge0y"]
 [ext_resource type="PackedScene" uid="uid://bwk045of76yjy" path="res://scenes/items/rock/rock.tscn" id="108_kge0y"]
 [ext_resource type="PackedScene" uid="uid://cr4debco67gf8" path="res://scenes/items/redbook.tscn" id="108_whib0"]
+[ext_resource type="Resource" uid="uid://bjh0l7kdoaktp" path="res://resources/dialogues/astronomer_lose.tres" id="111_jimsq"]
 [ext_resource type="Script" uid="uid://f7k5f1q4u1o7" path="res://scripts/resources/eventCondition.gd" id="111_kls22"]
 [ext_resource type="Script" uid="uid://dremtgtur76im" path="res://scripts/resources/effects/dialogue_effect.gd" id="112_irlnd"]
 [ext_resource type="PackedScene" uid="uid://u4ldrm587px1" path="res://assets/models/props/lantern.glb" id="113_ipee5"]
@@ -1138,35 +1139,6 @@ shading_mode = 0
 size = Vector2(0.255, 0.06)
 orientation = 0
 
-[sub_resource type="Animation" id="Animation_ues6x"]
-resource_name = "shake"
-length = 2.0
-loop_mode = 1
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ClosetOrigin/closet_3:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 0),
-"points": PackedFloat32Array(-1.02284705e-08, -0.25, 0, 0.12994488, 0.022725143, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023756234, -0.1666385, -0.0009898286, 0.2666052, 0.0015836285, 0.00015834614, -0.167, 0, 0.07583517, -0.00039590846, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023755591, -0.16666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.6, 0.6999999, 0.84999996)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ClosetOrigin/closet_3/Knock:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-
 [sub_resource type="Animation" id="Animation_jimsq"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -1213,6 +1185,35 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ues6x"]
+resource_name = "shake"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClosetOrigin/closet_3:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 0),
+"points": PackedFloat32Array(-1.02284705e-08, -0.25, 0, 0.12994488, 0.022725143, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023756234, -0.1666385, -0.0009898286, 0.2666052, 0.0015836285, 0.00015834614, -0.167, 0, 0.07583517, -0.00039590846, 0.049250998, -0.06666668, 0, 0.099999994, 0, -0.00023755591, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6, 0.6999999, 0.84999996)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ClosetOrigin/closet_3/Knock:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jimsq"]
@@ -1999,9 +2000,154 @@ tracks/21/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_bq2hc"]
+resource_name = "lose"
+length = 25.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rocket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 7.6000004, 9.4, 19, 25.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, -1.2451088, 750.6987), Vector3(32.853115, 374.18445, 750.6987), Vector3(32.853, 5000, 750.699), Vector3(32.853, 9000, 750.699)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.8999996, 7, 7.1000004, 7.2, 7.3, 7.3999996, 7.5, 7.6000004, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.2745605, 1),
+"update": 0,
+"values": [Vector3(0, 1.0279117, 0), Vector3(0, 1.0279117, 0), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(-0.006981317, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, -0.057595864), Vector3(0.036651913, 1.0279989, 0.04363323), Vector3(0.0418879, 1.0279989, 0.036651913), Vector3(0, 1.0279117, 0), Vector3(0, 32.410763, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rocket/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5.5, 12.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rocket/Flash:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 11.1, 11.300001, 11.6, 25.1, 25.300001, 25.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.525, 0.525, 0.525), Vector3(0.095, 0.095, 0.095), Vector3(0.095, 0.095, 0.095), Vector3(0.525, 0.525, 0.525), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WinCamera:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 8, 9.700001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(198.27017, 41.772095, 670.74243), Vector3(198.27017, 41.772095, 670.74243), Vector3(170.8008, 41.7721, 694.08997)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../WinCamera:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5.8, 7.6000004, 9.4, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.6422812, 2.0228367, 0), Vector3(-0.07853982, 2.0385447, 0), Vector3(0.06632251, 2.057743, 0), Vector3(1.2269665, 2.057743, 0), Vector3(1.436406, 2.057743, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../WinCamera:fov")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8.8, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.6, 42.1, 14.1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WinCamera:current")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("rocket:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4, 25.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("..")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"lose_animation_finished"
+}]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../BigFish")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"pause_spinning"
+}, {
+"args": [],
+"method": &"resume_spinning"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kge0y"]
 _data = {
 &"RESET": SubResource("Animation_sr2vx"),
+&"lose": SubResource("Animation_bq2hc"),
 &"win": SubResource("Animation_78awm")
 }
 
@@ -3737,7 +3883,7 @@ collision_layer = 256
 collision_mask = 0
 script = ExtResource("40_sdkx4")
 NPC_name = "Astronomer"
-dialogues = Array[ExtResource("30_88k61")]([ExtResource("47_7w7vh"), ExtResource("48_uxisk"), ExtResource("49_wj558"), ExtResource("52_nnxxf"), ExtResource("53_ohyet")])
+dialogues = Array[ExtResource("30_88k61")]([ExtResource("47_7w7vh"), ExtResource("48_uxisk"), ExtResource("49_wj558"), ExtResource("111_jimsq"), ExtResource("52_nnxxf"), ExtResource("53_ohyet")])
 funny_sound = ExtResource("32_pqgu7")
 
 [node name="ModelOrigin" parent="NPCs/Astronomer" instance=ExtResource("47_sdkx4")]
